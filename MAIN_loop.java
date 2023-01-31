@@ -1,4 +1,4 @@
-public class pandamicPeriod {
+public class MAIN_loop {
 public static void main(String[] args) {
 //           (Genrating Objects )    
                                 /*Genertings Cites and Regins*/
