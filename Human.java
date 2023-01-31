@@ -7,7 +7,7 @@ public abstract class Human {
     private String Sex;
     private String cD;
     private boolean Alive;
-
+    private covidInfection CovidInfection_Type;
     private ArrayList<Human> friends =new ArrayList<>();
     private ArrayList<Human> family =new ArrayList<>();
     private ArrayList<Human> coWorkers =new ArrayList<>();
@@ -15,6 +15,12 @@ public abstract class Human {
 
     public Human()
     {
+
+
+
+
+
+
 
     }
 
@@ -63,6 +69,25 @@ public abstract class Human {
         return randomIndividuals;
     }
 
+
+
+
+
+    public covidInfection getCovidInfection_Type(){
+
+
+
+        return CovidInfection_Type;
+
+    }
+
+  public void setCovidInfection_Type(covidInfection X){
+
+
+    CovidInfection_Type= X;
+
+           
+    }
 
 
 

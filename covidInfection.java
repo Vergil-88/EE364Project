@@ -1,6 +1,6 @@
 import java.util.Random;
 public abstract class covidInfection {
-
+    
     public void dailyTasks()
     {
        
@@ -10,5 +10,10 @@ public abstract class covidInfection {
     {
         
     }
+
+    public abstract  String getType(); 
+        
+
+
 
 }
