@@ -16,7 +16,7 @@ public int getBed(){
 
 
 
-return ;
+return 1;
 }
 ////////////////////////////////////////////// 
 public void RemoveBed(){

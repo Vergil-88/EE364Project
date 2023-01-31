@@ -1,5 +1,5 @@
 import java.util.Random;
-public class covidInfection {
+public abstract class covidInfection {
 
     public void dailyTasks()
     {

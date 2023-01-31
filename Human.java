@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Human {
+public abstract class Human {
     
     private int id;
     private int Age;
