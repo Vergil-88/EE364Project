@@ -10,18 +10,23 @@ private ArrayList<Human> PostiveC = new ArrayList<Human>();
 private ArrayList<Human> Dead = new ArrayList<Human>();
 
 //methods
+
+// genrait Calls in main
+public void CallCenter(ArrayList <Human> Calls){
+
+this.Calls = Calls ;
+
+}
+
+
+
 public void TestCenter(ArrayList <Human> Calls){
-int i=0;
     for(Human x : Calls){
         
 
-       Human Obj =Calls.get(i);
-        i++;
-        covidInfection Co =Obj.getCovidInfection_Type(); //// Change name to someting makes sesns
+        if  (x.getCovidInfection_Type().getType().equals("A") ){
 
-        if  (Co.getType().equals("A") ){
-
-            PostiveA.add(Obj);
+            PostiveA.add(x);
 
 
         }
@@ -29,11 +34,6 @@ int i=0;
 
 
     }
-
-
-
-
-
 
 }
 
@@ -50,24 +50,67 @@ public void Interacted_A_to_B(){
         if( f.getCovidInfection_Type().getType().equals("B") ){
             PostiveB.add(f);
         }
-
-
-      }
-
-
-
-
-
-
-
     }
 
+        for(Human fr : friends){
+            if( fr.getCovidInfection_Type().getType().equals("B") ){
+                PostiveB.add(fr);
+            }
+      }
+
+      for(Human Co : coWorkers){
+        if( Co.getCovidInfection_Type().getType().equals("B") ){
+            PostiveB.add(Co);
+        }
+    }
+
+    for(Human r : randomIndividuals){
+        if( r.getCovidInfection_Type().getType().equals("B") ){
+            PostiveB.add(r);
+        }
+    }
+        
+
+    }
 
 
 }
 
 //////////////////////////////////////////////
 public void Interacted_B_to_C(){
+
+    for(Human x : PostiveB){
+        ArrayList <Human>  family =x.getfamily();
+        ArrayList <Human>  friends =x.getfriends();
+        ArrayList <Human>  coWorkers =x.getcoWorkers();
+        ArrayList <Human>  randomIndividuals =x.getrandomIndividuals();
+        
+        for(Human f : family){
+          if( f.getCovidInfection_Type().getType().equals("C") ){
+              PostiveC.add(f);
+          }
+      }
+  
+          for(Human fr : friends){
+              if( fr.getCovidInfection_Type().getType().equals("C") ){
+                  PostiveC.add(fr);
+              }
+        }
+  
+        for(Human Co : coWorkers){
+          if( Co.getCovidInfection_Type().getType().equals("C") ){
+              PostiveC.add(Co);
+          }
+      }
+  
+      for(Human r : randomIndividuals){
+          if( r.getCovidInfection_Type().getType().equals("C") ){
+              PostiveC.add(r);
+          }
+      }
+          
+  
+      }
 
 
 
@@ -78,7 +121,15 @@ public void Interacted_B_to_C(){
 //////////////////////////////////////////////
 public void A_to_Dead(){
 
+for (Human D : PostiveA){
 
+    if (!(D.getAlive())){
+
+        Dead.add(D);
+
+    }
+
+}
 
 
 
@@ -87,7 +138,13 @@ public void A_to_Dead(){
 //////////////////////////////////////////////
 public void Recovered(){
 
+for(Human Recovered : PostiveA){
+    if(Recovered.getCovidInfection_Type().getType().equals("Normal")){
 
+        PostiveA.remove(Recovered);
+
+    }
+}
 
 
 
@@ -110,3 +167,4 @@ public void Recovered(){
 
 
 }
+
