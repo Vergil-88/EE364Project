@@ -1,6 +1,14 @@
+import java.util.Random;
+import java.util.random.*;
 public class MAIN_loop {
 public static void main(String[] args) {
-//           (Genrating Objects )    
+ 
+            
+
+
+}
+
+    //           (Genrating Objects )    
                                 /*Genertings Cites and Regins*/
                                 
                                 
@@ -59,6 +67,6 @@ when done with quarantine        */
 
 
 
-}
+
     
 }

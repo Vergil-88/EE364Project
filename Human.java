@@ -1,11 +1,16 @@
 import java.util.ArrayList;
+import java.util.Random;
 
-public abstract class Human {
+
+public class Human {
     
     private int id;
     private int Age;
     private String Sex;
-    private String cD;
+    private boolean cD;
+    /*how many critical dieases do you guys want? three? or four?
+    /* and what about we make "String cD" boolean instead of a string of dieases which will make it easier for us because if it was true we can apply a percantage where the person can get covid faster or not
+    */
     private boolean Alive;
     private covidInfection CovidInfection_Type;
     private ArrayList<Human> friends =new ArrayList<>();
@@ -13,8 +18,34 @@ public abstract class Human {
     private ArrayList<Human> coWorkers =new ArrayList<>();
     private ArrayList<Human> randomIndividuals =new ArrayList<Human>();
 
+   
     public Human()
     {
+        Random random = new Random();
+
+        this.Age = random.nextInt(80) + 1;
+        ///
+        int i=random.nextInt(2);
+        switch (i) {
+            case 0:
+            this.Sex = "Male";
+                break;
+            case 1:
+            this.Sex = "Female";
+                break;
+        }
+        ///
+        int j=random.nextInt(2);
+        if(j == 0)
+            this.cD= true;
+        else
+            this.cD = false;
+        //
+
+
+
+
+
 
 
 
@@ -39,7 +70,7 @@ public abstract class Human {
         return Sex;
     }
 
-    public String getcD()
+    public boolean getcD()
     {
         return cD;
     }
