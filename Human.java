@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Human {
     
-    private int id;
+    private String id;
     private int Age;
     private String Sex;
     private boolean cD;
@@ -22,7 +22,7 @@ public class Human {
     {
        System.out.println(super.toString());
          
-       id = String.valueOf(super.toString()).length() - String.valueOf(super.toString()).indexOf('@') - 1;
+       id = (super.toString()).length() - (super.toString()).indexOf('@') - 1;
        
 
        
