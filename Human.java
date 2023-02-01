@@ -21,6 +21,11 @@ public class Human {
    
     public Human()
     {
+       
+        
+       //id = String.valueOf(super.toString()).length() - String.valueOf(super.toString()).indexOf('@') - 1;
+       id =1;
+       
         Random random = new Random();
 
         this.Age = random.nextInt(80) + 1;
@@ -41,6 +46,10 @@ public class Human {
         else
             this.cD = false;
         //
+
+        Alive = true;
+
+
 
 
 
@@ -120,7 +129,22 @@ public class Human {
            
     }
 
+    public String toString(){
+        return id + "\t" + Sex + "\t" + cD + "\t" + Alive + "\t" + getCovidInfection_Type().getType() + "\t"   ;
+    }
 
+public static void main(String[] args) {
+
+    ArrayList <Human> Citizen = new ArrayList<Human>();
+    
+    for (int i = 0 ;i<100 ; i++ ){
+        Citizen.add(new Human());
+    }
+
+    System.out.println(Citizen);
+
+}
+    
 
 
 }

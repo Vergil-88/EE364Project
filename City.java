@@ -6,8 +6,8 @@ public class City {
     private int Population;
     private double Area;
     private double Overpopulation;
-    ArrayList <Human> Citizen = new ArrayList<Human>();
-    ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
+    private ArrayList <Human> Citizen = new ArrayList<Human>();
+    private ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
 
     public City(String N, int P, double A){
         Name = N;
@@ -40,6 +40,11 @@ public class City {
 
     public double get_Overpopulation(){
         return Overpopulation;
+    }
+
+    public ArrayList<Human> get_Citizen(){
+        
+        return Citizen;
     }
 
 
