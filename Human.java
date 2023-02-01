@@ -21,10 +21,10 @@ public class Human {
    
     public Human()
     {
+       System.out.println(super.toString());
+         
+       id = String.valueOf(super.toString()).length() - String.valueOf(super.toString()).indexOf('@') - 1;
        
-        
-       //id = String.valueOf(super.toString()).length() - String.valueOf(super.toString()).indexOf('@') - 1;
-       id =1;
        
         Random random = new Random();
 
@@ -89,22 +89,22 @@ public class Human {
         return Alive;
     }
 
-    public ArrayList getfamily()
+    public ArrayList <Human> getfamily()
     {
         return family;
     }
 
-    public ArrayList getfriends()
+    public ArrayList <Human>  getfriends()
     {
         return friends;
     }
 
-    public ArrayList getcoWorkers()
+    public ArrayList <Human> getcoWorkers()
     {
         return coWorkers;
     }
 
-    public ArrayList getrandomIndividuals()
+    public ArrayList <Human> getrandomIndividuals()
     {
         return randomIndividuals;
     }
@@ -130,18 +130,19 @@ public class Human {
     }
 
     public String toString(){
-        return id + "\t" + Sex + "\t" + cD + "\t" + Alive + "\t" + getCovidInfection_Type().getType() + "\t"   ;
+        return id + " " + Sex + " " + cD + " " + Alive + " " + CovidInfection_Type.getType() + " "   ;
     }
 
 public static void main(String[] args) {
 
     ArrayList <Human> Citizen = new ArrayList<Human>();
-    
-    for (int i = 0 ;i<100 ; i++ ){
-        Citizen.add(new Human());
-    }
+    Human X = new Human();
+    Citizen.add(X);
+    // for (int i = 0 ;i<100 ; i++ ){
+    //     Citizen.add(new Human());
+    // }
 
-    System.out.println(Citizen);
+    System.out.println(Citizen.get(0).toString());
 
 }
     
