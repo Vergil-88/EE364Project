@@ -92,27 +92,19 @@ public class Human {
         return Alive;
     }
 ///////////////////////////////////////////////////
-    public ArrayList <Human> getfamily()
+    public String getfamily()
     {
-        return family;
-    }
-    public void setfamily(ArrayList <Human> family)
-    {
-       for (int i= 0; i<family.size()-1 ;i++ ){
-
-        for (int j= 0; i<family.size()-1 ;i++ ){
-            if(i==j){
-                continue;
-            }
-            else{
-                family.get(j);
-            }
+        String ids="";
+        for ( Human ff :family ) {
+            ids += ff.id+" | ";
 
         }
 
-
-
-       }
+        return ids;
+    }
+    public void setfamily(Human family)
+    {
+       this.family.add(family);
 
 
     }
@@ -173,15 +165,16 @@ public class Human {
 
     public String toString(){
         return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
-        +"family Members are "+
-        "------------------------------------------------------------------------------------------------------------------------------------"   ;
+        +"family Members are "+ getfamily()+"\n"+
+        "------------------------------------------------------------------------------------------------------------------------------------"  
+         ;
     }
 
 public static void main(String[] args) {
 Random ran1 = new Random();
-    ArrayList <Human> Citizen = new ArrayList<Human>();
+     ArrayList <Human> Citizen = new ArrayList<Human>();
    
-     for (int i = 0 ;i<100 ; i++ ){
+     for (int i = 0 ;i<5 ; i++ ){
 
          Citizen.add(new Human());
 
@@ -189,23 +182,50 @@ Random ran1 = new Random();
         //  System.out.println(Citizen.get(i).toString());
 
      }
-    
-     for(Human C : Citizen){
+    int size= Citizen.size();
+     for(int xx=0; xx<size ;xx++){
          int number_Of_family_mem=ran1.nextInt(7) + 2;
-
-         for(int i=0 ; i < number_Of_family_mem ; i++){
-            
-           ArrayList <Human>  member= new ArrayList <Human>();// all the family is Created
+         ArrayList <Human>  member= new ArrayList <Human>();
+        
+         for(int i=1 ; i < number_Of_family_mem ; i++){
+               
+            member.add(new Human()) ;// all the family is Created
 
          }
+             
+          Citizen.addAll(member);
 
-            Citizen.add(member); //all the familly add to the main Array 
-            C.setfamily(member);//fammliy member to C
+
+            for(Human W : member){
+                
+                Citizen.get(xx).setfamily(W);//fammliy member to C 
+                }
             
-            member.setfamily(C );// familly to c
-            for 
+            
+            for(Human W : member){
+                
+                W.setfamily(Citizen.get(xx));// familly to c 
+                }
+            
+
+
+
+            for(Human m : member){
+                
+                for(Human m2 : member){
+                    if(!(m.equals(m2)))
+                    m.setfamily(m2);
+                }
+            }
+            
 
      }
+   
+     
+for (Human C  : Citizen) {
+    System.out.println(C.toString()); ;
+}
+     
 }
     
 
