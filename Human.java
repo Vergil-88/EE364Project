@@ -12,17 +12,17 @@ public class Human {
     */
     private boolean Alive;
     private covidInfection CovidInfection_Type;
-    private ArrayList<Human> friends =new ArrayList<>();
-    private ArrayList<Human> family =new ArrayList<>();
-    private ArrayList<Human> coWorkers =new ArrayList<>();
+    private ArrayList<Human> friends =new ArrayList<Human>();
+    private ArrayList<Human> family =new ArrayList<Human>();
+    private ArrayList<Human> coWorkers =new ArrayList<Human>();
     private ArrayList<Human> randomIndividuals =new ArrayList<Human>();
 
    
     public Human()
     {
-       System.out.println(super.toString());
-         
-       id = (super.toString()).length() - (super.toString()).indexOf('@') - 1;
+       
+       id=super.toString() ; 
+       id = id.substring(id.indexOf("@")+1,id.length()-1);
        
 
        
@@ -52,6 +52,7 @@ public class Human {
 
     CovidInfection_Type = new Normal();
 
+///////////////////////////////////////////////////
 
 
 
@@ -65,56 +66,94 @@ public class Human {
 
 
     }
-
-    public int getId()
+///////////////////////////////////////////////////
+    public String getId()
     {
         return id;
     }
-
+///////////////////////////////////////////////////
     public int getAge()
     {
         return Age;
     }
-
+///////////////////////////////////////////////////
     public String getSex()
     {
         return Sex;
     }
-
+///////////////////////////////////////////////////
     public boolean getcD()
     {
         return cD;
     }
-
+///////////////////////////////////////////////////
     public boolean getAlive()
     {
         return Alive;
     }
-
+///////////////////////////////////////////////////
     public ArrayList <Human> getfamily()
     {
         return family;
     }
+    public void setfamily(ArrayList <Human> family)
+    {
+       for (int i= 0; i<family.size()-1 ;i++ ){
 
+        for (int j= 0; i<family.size()-1 ;i++ ){
+            if(i==j){
+                continue;
+            }
+            else{
+                family.get(j);
+            }
+
+        }
+
+
+
+       }
+
+
+    }
+    
+///////////////////////////////////////////////////
     public ArrayList <Human>  getfriends()
     {
         return friends;
     }
+    public void setfriends(ArrayList <Human> friends)
+    {
+         this.friends=friends;
+    }
 
+///////////////////////////////////////////////////
     public ArrayList <Human> getcoWorkers()
     {
         return coWorkers;
     }
 
-    public ArrayList <Human> getrandomIndividuals()
+    public void setcoWorkers(ArrayList <Human> coWorkers)
     {
-        return randomIndividuals;
+         this.coWorkers=coWorkers;
     }
 
 
 
 
+///////////////////////////////////////////////////
+    public ArrayList <Human> getRandomIndividuals()
+    {
+        return randomIndividuals;
+    }
+    public void setRandomIndividuals(ArrayList <Human> randomIndividuals)
+    {
+         this.randomIndividuals=randomIndividuals;
+    }
 
+
+
+///////////////////////////////////////////////////
     public covidInfection getCovidInfection_Type(){
 
 
@@ -133,23 +172,40 @@ public class Human {
 
 
     public String toString(){
-        return id + " " + Sex + " " + cD + " " + Alive + " " + CovidInfection_Type.getType() + " "   ;
+        return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
+        +"family Members are "+
+        "------------------------------------------------------------------------------------------------------------------------------------"   ;
     }
 
 public static void main(String[] args) {
-
+Random ran1 = new Random();
     ArrayList <Human> Citizen = new ArrayList<Human>();
-    int C = 0 ;
+   
      for (int i = 0 ;i<100 ; i++ ){
 
          Citizen.add(new Human());
 
 
-         System.out.println(Citizen.get(i).toString());
+        //  System.out.println(Citizen.get(i).toString());
 
      }
     
+     for(Human C : Citizen){
+         int number_Of_family_mem=ran1.nextInt(7) + 2;
 
+         for(int i=0 ; i < number_Of_family_mem ; i++){
+            
+           ArrayList <Human>  member= new ArrayList <Human>();// all the family is Created
+
+         }
+
+            Citizen.add(member); //all the familly add to the main Array 
+            C.setfamily(member);//fammliy member to C
+            
+            member.setfamily(C );// familly to c
+            for 
+
+     }
 }
     
 
