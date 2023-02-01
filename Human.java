@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-
 public class Human {
     
     private int id;
@@ -25,6 +24,7 @@ public class Human {
          
        id = String.valueOf(super.toString()).length() - String.valueOf(super.toString()).indexOf('@') - 1;
        
+
        
         Random random = new Random();
 
@@ -40,7 +40,7 @@ public class Human {
                 break;
         }
         ///
-        int j=random.nextInt(2);
+        int j=random.nextInt(8);
         if(j == 0)
             this.cD= true;
         else
@@ -49,6 +49,8 @@ public class Human {
 
         Alive = true;
 
+
+    CovidInfection_Type = new Normal();
 
 
 
@@ -124,10 +126,11 @@ public class Human {
   public void setCovidInfection_Type(covidInfection X){
 
 
-    CovidInfection_Type= X;
+    CovidInfection_Type = X;
 
            
     }
+
 
     public String toString(){
         return id + " " + Sex + " " + cD + " " + Alive + " " + CovidInfection_Type.getType() + " "   ;
@@ -136,13 +139,16 @@ public class Human {
 public static void main(String[] args) {
 
     ArrayList <Human> Citizen = new ArrayList<Human>();
-    Human X = new Human();
-    Citizen.add(X);
-    // for (int i = 0 ;i<100 ; i++ ){
-    //     Citizen.add(new Human());
-    // }
+    int C = 0 ;
+     for (int i = 0 ;i<100 ; i++ ){
 
-    System.out.println(Citizen.get(0).toString());
+         Citizen.add(new Human());
+
+
+         System.out.println(Citizen.get(i).toString());
+
+     }
+    
 
 }
     

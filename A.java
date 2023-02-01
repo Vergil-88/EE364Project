@@ -8,4 +8,6 @@ public class A extends covidInfection{
         return "A";
     }
 
+    
+
 }
