@@ -16,6 +16,7 @@ public class Human {
     private ArrayList<Human> family =new ArrayList<Human>();
     private ArrayList<Human> coWorkers =new ArrayList<Human>();
     private ArrayList<Human> randomIndividuals =new ArrayList<Human>();
+    private Random ran1 = new Random();
 
    
     public Human()
@@ -51,15 +52,6 @@ public class Human {
 
 
     CovidInfection_Type = new Normal();
-
-///////////////////////////////////////////////////
-
-
-
-
-
-
-
 
 
 
@@ -110,37 +102,56 @@ public class Human {
     }
     
 ///////////////////////////////////////////////////
-    public ArrayList <Human>  getfriends()
+    public String  getfriends()
     {
-        return friends;
+        String ids="";
+        for ( Human ff :friends ) {
+            ids += ff.id+" | ";
+
+        }
+
+        return ids;
     }
-    public void setfriends(ArrayList <Human> friends)
+    public void setfriends( Human friends)
     {
-         this.friends=friends;
+         this.friends.add(friends);
     }
 
 ///////////////////////////////////////////////////
-    public ArrayList <Human> getcoWorkers()
+    public String getcoWorkers()
     {
-        return coWorkers;
+        String ids="";
+        for ( Human ff :coWorkers ) {
+            ids += ff.id+" | ";
+
+        }
+
+        return ids;
     }
 
-    public void setcoWorkers(ArrayList <Human> coWorkers)
+    public void setcoWorkers(Human coWorkers)
     {
-         this.coWorkers=coWorkers;
+         this.coWorkers.add(coWorkers);
     }
 
 
 
 
 ///////////////////////////////////////////////////
-    public ArrayList <Human> getRandomIndividuals()
+    public String getRandomIndividuals()
     {
-        return randomIndividuals;
+        String ids="";
+        for ( Human ff :randomIndividuals ) {
+            ids += ff.id+" | ";
+
+        }
+
+        return ids;
     }
-    public void setRandomIndividuals(ArrayList <Human> randomIndividuals)
+    
+    public void setRandomIndividuals(Human randomIndividuals)
     {
-         this.randomIndividuals=randomIndividuals;
+         this.randomIndividuals.add(randomIndividuals);
     }
 
 
@@ -166,6 +177,9 @@ public class Human {
     public String toString(){
         return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
         +"family Members are "+ getfamily()+"\n"+
+        " friends are "+ getfriends()+"\n"+
+        " CoWorkers are "+ getcoWorkers()+"\n"+
+        " randomIndividuals are "+ getRandomIndividuals()+"\n"+
         "------------------------------------------------------------------------------------------------------------------------------------"  
          ;
     }
@@ -174,7 +188,7 @@ public static void main(String[] args) {
 Random ran1 = new Random();
      ArrayList <Human> Citizen = new ArrayList<Human>();
    
-     for (int i = 0 ;i<5 ; i++ ){
+     for (int i = 0 ;i<1000 ; i++ ){
 
          Citizen.add(new Human());
 
@@ -210,7 +224,7 @@ Random ran1 = new Random();
 
 
 
-            for(Human m : member){
+            for(Human m : member){//the know each others 
                 
                 for(Human m2 : member){
                     if(!(m.equals(m2)))
@@ -221,12 +235,79 @@ Random ran1 = new Random();
 
      }
    
+
+
+        
+
+    
+  for (Human  C : Citizen) {
+    int X= (int)(Math.random()*6+2);
+  
+    for (int i=0;i<X;i++) {
+    if (!(C.equals(Citizen.get(X))))
+        if(!(C.family.contains(Citizen.get(X))))
+            if( !(C.friends.contains(Citizen.get(X)) ))
+                if( !(C.coWorkers.contains(Citizen.get(X)) )){
+                    C.setfriends(Citizen.get(X));
+                    Citizen.get(X).setfriends(C);
+                }
+        }
+    }
+    
+        
+    
+
+    for (Human  C : Citizen) {
+        int X= (int)(Math.random()*6+2);
+      
+        for (int i=0;i<X;i++) {
+        if (!(C.equals(Citizen.get(X))))
+            if(!(C.family.contains(Citizen.get(X))))
+                if( !(C.friends.contains(Citizen.get(X)) ))
+                    if( !(C.coWorkers.contains(Citizen.get(X)) )){
+                        C.setcoWorkers(Citizen.get(X));
+                        Citizen.get(X).setcoWorkers(C);
+        
+                        }   
+        } 
+    }   
+  
+        for (Human  C : Citizen) {
+            int X= (int)(Math.random()*10+2);
+          
+            for (int i=0;i<X;i++) {
+            if (!(C.equals(Citizen.get(X))))
+                if(!(C.family.contains(Citizen.get(X))))
+                    if( !(C.friends.contains(Citizen.get(X)) ))
+                        if( !(C.coWorkers.contains(Citizen.get(X)) )){
+                            C.setRandomIndividuals(Citizen.get(X));
+                            Citizen.get(X).setRandomIndividuals(C);
+                        }
+                
+            
+                    
+            }    
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        for (Human CC  : Citizen) {
+            System.out.println(CC.toString());     
+        }
+
      
-for (Human C  : Citizen) {
-    System.out.println(C.toString()); ;
+
 }
-     
-}
+
     
 
 
