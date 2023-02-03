@@ -16,7 +16,7 @@ public class Human {
     private ArrayList<Human> family =new ArrayList<Human>();
     private ArrayList<Human> coWorkers =new ArrayList<Human>();
     private ArrayList<Human> randomIndividuals =new ArrayList<Human>();
-    private Random ran1 = new Random();
+    
 
    
     public Human()
@@ -188,7 +188,7 @@ public static void main(String[] args) {
 Random ran1 = new Random();
      ArrayList <Human> Citizen = new ArrayList<Human>();
    
-     for (int i = 0 ; i<10 ; i++ ){
+     for (int i = 0 ; i<10000 ; i++ ){
 
          Citizen.add(new Human());
 
