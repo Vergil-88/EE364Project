@@ -80,17 +80,17 @@ public class Region {
 
 
 
-    public static void main(String[] args) {
+    // public static void main(String[] args) {
         
 
-        Region Sowth = new Region("Sowth", 153148);
+    //     Region Sowth = new Region("Sowth", 153148);
 
-        Sowth.addCity("Jeddah", 3000, 1600);
+    //     Sowth.addCity("Jeddah", 3000, 1600);
 
-        System.out.println(Sowth.get_Cities());
+    //     System.out.println(Sowth.get_Cities());
 
-        System.out.println(Sowth.getCities().get(0).get_Citizeninfo());
+    //     System.out.println(Sowth.getCities().get(0).get_Citizeninfo());
 
 
-    }
+    // }
 }
