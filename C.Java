@@ -1,9 +1,10 @@
 public class C extends covidInfection{
     
-    public  String getType(){
+        public  String getType(){
+    
+    
+            return "C";
+        }
 
-
-        return "C";
-    }
+    
 }
-
