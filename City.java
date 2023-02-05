@@ -70,7 +70,7 @@ public class City {
            Random numRan= new Random();
    
        
-     for (Human  C : Citizen) {
+        for (Human  C : Citizen) {
            int Num_Of_friends= (int)(Math.random()*5+2);
    
            for (int i = 0; i<Num_Of_friends; i++) {

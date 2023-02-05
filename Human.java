@@ -274,12 +274,14 @@ Random ran1 = new Random();
         for (int i = 0; i<Num_Of_friends; i++) {
             
         int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
+        
+        Human SearchCitizen = Citizen.get(index_of_friends);
 
-        if( !(C.equals(Citizen.get(index_of_friends))) )
-            if(!(C.family.contains(Citizen.get(index_of_friends))))
-                if(!(C.friends.contains(Citizen.get(index_of_friends))))
-                    if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
-                         if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
+        if(!(C.equals(SearchCitizen)))
+            if(!(C.family.contains(SearchCitizen)))
+                if(!(C.friends.contains(SearchCitizen)))
+                    if(!(C.coWorkers.contains(SearchCitizen)))
+                         if(!(C.randomIndividuals.contains(SearchCitizen))){
 
                             C.setfriends(Citizen.get(index_of_friends));
                             Citizen.get(index_of_friends).setfriends(C);
@@ -294,12 +296,14 @@ Random ran1 = new Random();
         for (int i = 0; i<Num_Of_friends; i++) {
             
         int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
+        Human SearchCitizen = Citizen.get(index_of_friends);
 
-        if( !(C.equals(Citizen.get(index_of_friends))) )
-            if(!(C.family.contains(Citizen.get(index_of_friends))))
-                if(!(C.friends.contains(Citizen.get(index_of_friends))))
-                    if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
-                         if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
+        if(!(C.equals(SearchCitizen)))
+            if(!(C.family.contains(SearchCitizen)))
+                if(!(C.friends.contains(SearchCitizen)))
+                    if(!(C.coWorkers.contains(SearchCitizen)))
+                         if(!(C.randomIndividuals.contains(SearchCitizen))){
+
 
                             C.setcoWorkers(Citizen.get(index_of_friends));
                             Citizen.get(index_of_friends).setcoWorkers(C);
@@ -314,11 +318,13 @@ Random ran1 = new Random();
             
         int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
 
-        if( !(C.equals(Citizen.get(index_of_friends))) )
-            if(!(C.family.contains(Citizen.get(index_of_friends))))
-                if(!(C.friends.contains(Citizen.get(index_of_friends))))
-                    if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
-                         if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
+        Human SearchCitizen = Citizen.get(index_of_friends);
+
+        if(!(C.equals(SearchCitizen)))
+            if(!(C.family.contains(SearchCitizen)))
+                if(!(C.friends.contains(SearchCitizen)))
+                    if(!(C.coWorkers.contains(SearchCitizen)))
+                         if(!(C.randomIndividuals.contains(SearchCitizen))){
 
                             C.setRandomIndividuals(Citizen.get(index_of_friends));
                             Citizen.get(index_of_friends).setRandomIndividuals(C);
