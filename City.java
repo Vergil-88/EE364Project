@@ -66,7 +66,7 @@ public class City {
     
         }
        
-    
+      
     
             Random numRan= new Random();
     
@@ -76,7 +76,7 @@ public class City {
     
             for (int i = 0; i<Num_Of_friends; i++) {
                 
-            int index_of_friends =numRan.nextInt(0, Citizen.size()-1) ;  
+            int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
     
             if( !(C.equals(Citizen.get(index_of_friends))) )
             if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
@@ -96,7 +96,7 @@ public class City {
     
             for (int i = 0; i<Num_Of_friends; i++) {
                 
-            int index_of_friends =numRan.nextInt(0, Citizen.size()-1) ;  
+            int index_of_friends =numRan.nextInt( Citizen.size()-1) ;  
     
             if( !(C.equals(Citizen.get(index_of_friends))) )
                 if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
@@ -115,7 +115,7 @@ public class City {
     
             for (int i = 0; i<Num_Of_friends; i++) {
                 
-            int index_of_friends =numRan.nextInt(0, Citizen.size()-1) ;  
+            int index_of_friends =numRan.nextInt( Citizen.size()-1) ;  
     
             if( !(C.equals(Citizen.get(index_of_friends))) )
                 if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
