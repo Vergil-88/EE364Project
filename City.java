@@ -19,116 +19,115 @@ public class City {
         Random ran1 = new Random();
         
         for (int i = 0 ; i<Population ; i++ ){
-    
-             Citizen.add(new Human());
-    
-    
-            //  System.out.println(Citizen.get(i).toString());
-    
+
+            Citizen.add(new Human());
+   
+   
+           //  System.out.println(Citizen.get(i).toString());
+   
         }
-
-
-        int size= Citizen.size();
+       int size= Citizen.size();
         for(int xx=0; xx<size ;xx++){
-             int number_Of_family_mem=ran1.nextInt(7) + 2;
-             ArrayList <Human>  member= new ArrayList <Human>();
-            
-             for(int i=1 ; i < number_Of_family_mem ; i++){
+            int number_Of_family_mem=ran1.nextInt(7) + 2;
+            ArrayList <Human>  member= new ArrayList <Human>();
+           
+            for(int i=1 ; i < number_Of_family_mem ; i++){
+                  
+               member.add(new Human()) ;// all the family is Created
+   
+            }
+                
+             Citizen.addAll(member);
+   
+   
+               for(Human W : member){
                    
-                member.add(new Human()) ;// all the family is Created
-    
-             }
-                 
-              Citizen.addAll(member);
-    
-    
-                for(Human W : member){
-                    
-                    Citizen.get(xx).setfamily(W);//fammliy member to C 
-                    }
-                
-                
-                for(Human W : member){
-                    
-                    W.setfamily(Citizen.get(xx));// familly to c 
-                    }
-                
-    
-    
-    
-                for(Human m : member){//the know each others 
-                    
-                    for(Human m2 : member){
-                        if(!(m.equals(m2)))
-                        m.setfamily(m2);
-                    }
-                }
-                
-    
+                   Citizen.get(xx).setfamily(W);//fammliy member to C 
+                   }
+               
+               
+               for(Human W : member){
+                   
+                   W.setfamily(Citizen.get(xx));// familly to c 
+                   }
+               
+   
+   
+   
+               for(Human m : member){//the know each others 
+                   
+                   for(Human m2 : member){
+                       if(!(m.equals(m2)))
+                       m.setfamily(m2);
+                   }
+               }
+               
+   
         }
-       
       
-    
-            Random numRan= new Random();
-    
-        
-        for (Human  C : Citizen) {
-            int Num_Of_friends= (int)(Math.random()*5+2);
-    
-            for (int i = 0; i<Num_Of_friends; i++) {
-                
-            int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
-    
-            if( !(C.equals(Citizen.get(index_of_friends))) )
-            if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
-            if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
-                if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
-                     if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
-    
-                                C.setfriends(Citizen.get(index_of_friends));
-                                Citizen.get(index_of_friends).setfriends(C);
-                             }
-            }  
-        }
-        
-            
-        for (Human  C : Citizen) {
-            int Num_Of_friends= (int)(Math.random()*5+2);
-    
-            for (int i = 0; i<Num_Of_friends; i++) {
-                
-            int index_of_friends =numRan.nextInt( Citizen.size()-1) ;  
-    
-            if( !(C.equals(Citizen.get(index_of_friends))) )
-                if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
-                    if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
-                        if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
-                             if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
-    
-                                C.setcoWorkers(Citizen.get(index_of_friends));
-                                Citizen.get(index_of_friends).setcoWorkers(C);
-                             }
-            }  
-        }   
-    
-        for (Human  C : Citizen) {
-            int Num_Of_friends= (int)(Math.random()*5+2);
-    
-            for (int i = 0; i<Num_Of_friends; i++) {
-                
-            int index_of_friends =numRan.nextInt( Citizen.size()-1) ;  
-    
-            if( !(C.equals(Citizen.get(index_of_friends))) )
-                if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
-                    if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
-                        if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
-                             if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
-    
-                                C.setRandomIndividuals(Citizen.get(index_of_friends));
-                                Citizen.get(index_of_friends).setRandomIndividuals(C);
-                             }
-            }  
-        }   
+   
+   
+           Random numRan= new Random();
+   
+       
+     for (Human  C : Citizen) {
+           int Num_Of_friends= (int)(Math.random()*5+2);
+   
+           for (int i = 0; i<Num_Of_friends; i++) {
+               
+           int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
+   
+           if( !(C.equals(Citizen.get(index_of_friends))) )
+               if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
+                   if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
+                       if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
+                            if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
+   
+                               C.setfriends(Citizen.get(index_of_friends));
+                               Citizen.get(index_of_friends).setfriends(C);
+                            }
+           }  
+       }
+       
+           
+       for (Human  C : Citizen) {
+           int Num_Of_friends= (int)(Math.random()*5+2);
+   
+           for (int i = 0; i<Num_Of_friends; i++) {
+               
+           int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
+   
+           if( !(C.equals(Citizen.get(index_of_friends))) )
+               if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
+                   if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
+                       if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
+                            if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
+   
+                               C.setcoWorkers(Citizen.get(index_of_friends));
+                               Citizen.get(index_of_friends).setcoWorkers(C);
+                            }
+           }  
+       }   
+   
+       for (Human  C : Citizen) {
+           int Num_Of_friends= (int)(Math.random()*5+2);
+   
+           for (int i = 0; i<Num_Of_friends; i++) {
+               
+           int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
+   
+           if( !(C.equals(Citizen.get(index_of_friends))) )
+               if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
+                   if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
+                       if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
+                            if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
+   
+                               C.setRandomIndividuals(Citizen.get(index_of_friends));
+                               Citizen.get(index_of_friends).setRandomIndividuals(C);
+                            }
+           }  
+       }   
+   
     
     
     
@@ -175,6 +174,10 @@ public class City {
         
         return Citizen;
     }
+    
+    public void setCitizen(ArrayList<Human> citizen) {
+        Citizen = citizen;
+    }
 
     //////////////////////  dummy code might consider adding    /////////////////////////////
 
@@ -198,12 +201,12 @@ public class City {
 
 public static void main(String[] args) {
         
-        City Jeddah = new City("Jeddah", 10000, 69);
+        City Jeddah = new City("Jeddah", 10, 69);
 
          for (Human c : Jeddah.Citizen)  {
             System.out.println(c.toString());
   
          }
-    
+         System.out.println(Jeddah.Citizen.size());
     }
 }

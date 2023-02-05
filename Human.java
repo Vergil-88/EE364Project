@@ -202,121 +202,129 @@ public class Human {
          ;
     }
 
-// public static void main(String[] args) {
-// Random ran1 = new Random();
-//      ArrayList <Human> Citizen = new ArrayList<Human>();
+    // public static void main(String[] args) {
+    //     Human H = new Human();
+
+    //     H.setCovidInfection_Type(new A());
+
+    //     System.out.println(H);
+
+
+    // }
+
+public static void main(String[] args) {
+Random ran1 = new Random();
+     ArrayList <Human> Citizen = new ArrayList<Human>();
    
-//      for (int i = 0 ; i<10000 ; i++ ){
+     for (int i = 0 ; i<10 ; i++ ){
 
-//          Citizen.add(new Human());
+         Citizen.add(new Human());
 
 
-//         //  System.out.println(Citizen.get(i).toString());
+        //  System.out.println(Citizen.get(i).toString());
 
-//      }
-//     int size= Citizen.size();
-//      for(int xx=0; xx<size ;xx++){
-//          int number_Of_family_mem=ran1.nextInt(7) + 2;
-//          ArrayList <Human>  member= new ArrayList <Human>();
+     }
+    int size= Citizen.size();
+     for(int xx=0; xx<size ;xx++){
+         int number_Of_family_mem=ran1.nextInt(7) + 2;
+         ArrayList <Human>  member= new ArrayList <Human>();
         
-//          for(int i=1 ; i < number_Of_family_mem ; i++){
+         for(int i=1 ; i < number_Of_family_mem ; i++){
                
-//             member.add(new Human()) ;// all the family is Created
+            member.add(new Human()) ;// all the family is Created
 
-//          }
+         }
              
-//           Citizen.addAll(member);
+          Citizen.addAll(member);
 
 
-//             for(Human W : member){
+            for(Human W : member){
                 
-//                 Citizen.get(xx).setfamily(W);//fammliy member to C 
-//                 }
+                Citizen.get(xx).setfamily(W);//fammliy member to C 
+                }
             
             
-//             for(Human W : member){
+            for(Human W : member){
                 
-//                 W.setfamily(Citizen.get(xx));// familly to c 
-//                 }
+                W.setfamily(Citizen.get(xx));// familly to c 
+                }
             
 
 
 
-//             for(Human m : member){//the know each others 
+            for(Human m : member){//the know each others 
                 
-//                 for(Human m2 : member){
-//                     if(!(m.equals(m2)))
-//                     m.setfamily(m2);
-//                 }
-//             }
+                for(Human m2 : member){
+                    if(!(m.equals(m2)))
+                    m.setfamily(m2);
+                }
+            }
             
 
-//      }
+     }
    
 
 
-//         Random numRan= new Random();
+        Random numRan= new Random();
 
     
-//   for (Human  C : Citizen) {
-//         int Num_Of_friends= (int)(Math.random()*5+2);
+  for (Human  C : Citizen) {
+        int Num_Of_friends= (int)(Math.random()*5+2);
 
-//         for (int i = 0; i<Num_Of_friends; i++) {
+        for (int i = 0; i<Num_Of_friends; i++) {
             
-//         int index_of_friends =numRan.nextInt(0, Citizen.size()-1) ;  
+        int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
 
-//         if( !(C.equals(Citizen.get(index_of_friends))) )
-//             if(!(C.family.contains(Citizen.get(index_of_friends))))
-//                 if(!(C.friends.contains(Citizen.get(index_of_friends))))
-//                     if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
-//                          if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
+        if( !(C.equals(Citizen.get(index_of_friends))) )
+            if(!(C.family.contains(Citizen.get(index_of_friends))))
+                if(!(C.friends.contains(Citizen.get(index_of_friends))))
+                    if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
+                         if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
 
-//                             C.setfriends(Citizen.get(index_of_friends));
-//                             Citizen.get(index_of_friends).setfriends(C);
-//                          }
-//         }  
-//     }
+                            C.setfriends(Citizen.get(index_of_friends));
+                            Citizen.get(index_of_friends).setfriends(C);
+                         }
+        }  
+    }
     
         
-//     for (Human  C : Citizen) {
-//         int Num_Of_friends= (int)(Math.random()*5+2);
+    for (Human  C : Citizen) {
+        int Num_Of_friends= (int)(Math.random()*5+2);
 
-//         for (int i = 0; i<Num_Of_friends; i++) {
+        for (int i = 0; i<Num_Of_friends; i++) {
             
-//         int index_of_friends =numRan.nextInt(0, Citizen.size()-1) ;  
+        int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
 
-//         if( !(C.equals(Citizen.get(index_of_friends))) )
-//             if(!(C.family.contains(Citizen.get(index_of_friends))))
-//                 if(!(C.friends.contains(Citizen.get(index_of_friends))))
-//                     if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
-//                          if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
+        if( !(C.equals(Citizen.get(index_of_friends))) )
+            if(!(C.family.contains(Citizen.get(index_of_friends))))
+                if(!(C.friends.contains(Citizen.get(index_of_friends))))
+                    if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
+                         if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
 
-//                             C.setcoWorkers(Citizen.get(index_of_friends));
-//                             Citizen.get(index_of_friends).setcoWorkers(C);
-//                          }
-//         }  
-//     }   
+                            C.setcoWorkers(Citizen.get(index_of_friends));
+                            Citizen.get(index_of_friends).setcoWorkers(C);
+                         }
+        }  
+    }   
 
-//     for (Human  C : Citizen) {
-//         int Num_Of_friends= (int)(Math.random()*5+2);
+    for (Human  C : Citizen) {
+        int Num_Of_friends= (int)(Math.random()*5+2);
 
-//         for (int i = 0; i<Num_Of_friends; i++) {
+        for (int i = 0; i<Num_Of_friends; i++) {
             
-//         int index_of_friends =numRan.nextInt(0, Citizen.size()-1) ;  
+        int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
 
-//         if( !(C.equals(Citizen.get(index_of_friends))) )
-//             if(!(C.family.contains(Citizen.get(index_of_friends))))
-//                 if(!(C.friends.contains(Citizen.get(index_of_friends))))
-//                     if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
-//                          if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
+        if( !(C.equals(Citizen.get(index_of_friends))) )
+            if(!(C.family.contains(Citizen.get(index_of_friends))))
+                if(!(C.friends.contains(Citizen.get(index_of_friends))))
+                    if(!(C.coWorkers.contains(Citizen.get(index_of_friends))))
+                         if(!(C.randomIndividuals.contains(Citizen.get(index_of_friends)))){
 
-//                             C.setRandomIndividuals(Citizen.get(index_of_friends));
-//                             Citizen.get(index_of_friends).setRandomIndividuals(C);
-//                          }
-//         }  
-//     }   
-
-
+                            C.setRandomIndividuals(Citizen.get(index_of_friends));
+                            Citizen.get(index_of_friends).setRandomIndividuals(C);
+                         }
+        }  
+    }   
 
 
 
@@ -327,13 +335,17 @@ public class Human {
 
 
 
-//         for (Human CC  : Citizen) {
-//             System.out.println(CC.toString());     
-//         }
+
+
+        for (Human CC  : Citizen) {
+            System.out.println(CC.toString());     
+        }
+
+        System.out.println(Citizen.size());
 
      
 
-// }
+}
 
     
 

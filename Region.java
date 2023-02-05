@@ -11,42 +11,42 @@ public class Region {
         this.Name = Name;
         
 
-        if (Name.equals("South")){
-            this.Area = 250000;
-            this.Population = 2500;
+        // if (Name.equals("South")){
+        //     this.Area = 250000;
+        //     this.Population = 2;
 
-            this.addCity("Baha", this.Population/4, Area/4);
-            this.addCity("Jazan", this.Population/4, Area/4);
-            this.addCity("Najran", this.Population/4, Area/4);
-            this.addCity("Abha", this.Population/4, Area/4);
-        }
+        //     this.addCity("Baha", this.Population/4, Area/4);
+        //     this.addCity("Jazan", this.Population/4, Area/4);
+        //     this.addCity("Najran", this.Population/4, Area/4);
+        //     this.addCity("Abha", this.Population/4, Area/4);
+        // }
 
-        if (Name.equals("North")){
-            this.Area = 250000;
-            this.Population = 2500;
-            this.addCity("Tabuk", this.Population/4, Area/4);
-            this.addCity("Arar", this.Population/4, Area/4);
-            this.addCity("Rafha", this.Population/4, Area/4);
-            this.addCity("Turayf", this.Population/4, Area/4);
-        }
+        // if (Name.equals("North")){
+        //     this.Area = 250000;
+        //     this.Population = 2500;
+        //     this.addCity("Tabuk", this.Population/4, Area/4);
+        //     this.addCity("Arar", this.Population/4, Area/4);
+        //     this.addCity("Rafha", this.Population/4, Area/4);
+        //     this.addCity("Turayf", this.Population/4, Area/4);
+        // }
 
-        if (Name.equals("West")){
-            this.Area = 250000;
-            this.Population = 2500;
-            this.addCity("Jeddah", this.Population/4, Area/4);
-            this.addCity("Makkah", this.Population/4, Area/4);
-            this.addCity("Taif", this.Population/4, Area/4);
-            this.addCity("Madinah", this.Population/4, Area/4);
-        }
+        // if (Name.equals("West")){
+        //     this.Area = 250000;
+        //     this.Population = 2500;
+        //     this.addCity("Jeddah", this.Population/4, Area/4);
+        //     this.addCity("Makkah", this.Population/4, Area/4);
+        //     this.addCity("Taif", this.Population/4, Area/4);
+        //     this.addCity("Madinah", this.Population/4, Area/4);
+        // }
 
-        if (Name.equals("East")){
-            this.Area = 250000;
-            this.Population = 2500;
-            this.addCity("Dammam", this.Population/4, Area/4);
-            this.addCity("Aljubail", this.Population/4, Area/4);
-            this.addCity("Alhfof", this.Population/4, Area/4);
-            this.addCity("Hafr Albaten", this.Population/4, Area/4);
-        }
+        // if (Name.equals("East")){
+        //     this.Area = 250000;
+        //     this.Population = 2500;
+        //     this.addCity("Dammam", this.Population/4, Area/4);
+        //     this.addCity("Aljubail", this.Population/4, Area/4);
+        //     this.addCity("Alhfof", this.Population/4, Area/4);
+        //     this.addCity("Hafr Albaten", this.Population/4, Area/4);
+        // }
 
 
     }
@@ -116,23 +116,34 @@ public class Region {
 
 
 
-
-
-    // public static void main(String[] args) {
-        
-
+    public static void main(String[] args) {
         Region South = new Region("South");
-        Region West = new Region("West");
-        Region East = new Region("East");
-        Region North = new Region("North");
+        South.addCity("Jeddah", 10, 1600);
+
+        South.getCities().get(0).get_Citizen().get(0).setCovidInfection_Type(new A());
+
+        System.out.println(South.getCities().get(0).get_Citizen().get(0));
+
+        System.out.println(South.getCities().get(0).get_Citizen().size());
+    }
 
 
-        System.out.println(South.get_Cities());
-        System.out.println(North.get_Cities());
-        System.out.println(West.get_Cities());
-        System.out.println(East.get_Cities());
+
+    // // public static void main(String[] args) {
+        
+
+    //     Region South = new Region("South");
+    //     Region West = new Region("West");
+    //     Region East = new Region("East");
+    //     Region North = new Region("North");
+
+
+    //     System.out.println(South.get_Cities());
+    //     System.out.println(North.get_Cities());
+    //     System.out.println(West.get_Cities());
+    //     System.out.println(East.get_Cities());
 
         
 
-    // }
+    // // }
 }

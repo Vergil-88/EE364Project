@@ -5,13 +5,5 @@ public class C extends covidInfection{
 
         return "C";
     }
-public static void main(String[] args) {
-    
-    System.out.println()
-
-
-}
 }
 
-
-    
