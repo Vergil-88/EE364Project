@@ -10,10 +10,11 @@ public class City {
     private ArrayList <Human> Citizen = new ArrayList<Human>();
     private ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
 
-    public City(String N, int P, double A){
-        Name = N;
-        Population = P;
-        Area = A;
+    public City(String Name, int Population, double Area){
+        this.Name = Name;
+        this.Population = Population;
+        this.Area = Area;
+
 
         Random ran1 = new Random();
         
@@ -178,9 +179,11 @@ public class City {
     //////////////////////  dummy code might consider adding    /////////////////////////////
 
     public String get_Citizeninfo(){
-
-        return Citizen.get(20).getId();
-
+        String p="";
+        for (Human human : Citizen) {
+           p+= human.toString();
+        }
+        return p;
     }
     /////////////////////////////////////////////////////////////////////////////////////////
     public String toString(){
@@ -197,8 +200,10 @@ public static void main(String[] args) {
         
         City Jeddah = new City("Jeddah", 10000, 69);
 
-        System.out.println(Jeddah.Citizen.get(20).toString());
-         
+         for (Human c : Jeddah.Citizen)  {
+            System.out.println(c.toString());
+  
+         }
     
     }
 }
