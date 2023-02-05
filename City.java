@@ -14,7 +14,7 @@ public class City {
         this.Name = Name;
         this.Population = Population;
         this.Area = Area;
-
+        Overpopulation = Calc_Overpopulation(Population, Area);
 
         Random ran1 = new Random();
         

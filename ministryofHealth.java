@@ -80,10 +80,10 @@ public void Interacted_A_to_B(){
 public void Interacted_B_to_C(){
 
     for(Human x : PostiveB){
-        ArrayList <Human>  family =x.getfamily();
-        ArrayList <Human>  friends =x.getfriends();
-        ArrayList <Human>  coWorkers =x.getcoWorkers();
-        ArrayList <Human>  randomIndividuals =x.getrandomIndividuals();
+        ArrayList <Human>  family =x.getfamily_Arraylist();
+        ArrayList <Human>  friends =x.getfriends_Arraylist();
+        ArrayList <Human>  coWorkers =x.getcoWorkers_Arraylist();
+        ArrayList <Human>  randomIndividuals =x.getrandomIndividuals_Arraylist();
         
         for(Human f : family){
           if( f.getCovidInfection_Type().getType().equals("C") ){
