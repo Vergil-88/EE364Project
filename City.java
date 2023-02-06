@@ -76,12 +76,13 @@ public class City {
            for (int i = 0; i<Num_Of_friends; i++) {
                
            int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
-   
-           if( !(C.equals(Citizen.get(index_of_friends))) )
-               if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
-                   if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
-                       if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
-                            if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
+           Human SearchCitizen = Citizen.get(index_of_friends);
+
+           if( !(C.equals(SearchCitizen)))
+               if(!(C.getfamily_Arraylist().contains(SearchCitizen)))
+                   if(!(C.getfriends_Arraylist().contains(SearchCitizen)))
+                       if(!(C.getcoWorkers_Arraylist().contains(SearchCitizen)))
+                            if(!(C.getrandomIndividuals_Arraylist().contains(SearchCitizen))){
    
                                C.setfriends(Citizen.get(index_of_friends));
                                Citizen.get(index_of_friends).setfriends(C);
@@ -97,11 +98,13 @@ public class City {
                
            int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
    
-           if( !(C.equals(Citizen.get(index_of_friends))) )
-               if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
-                   if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
-                       if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
-                            if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
+           Human SearchCitizen = Citizen.get(index_of_friends);
+
+           if( !(C.equals(SearchCitizen)))
+               if(!(C.getfamily_Arraylist().contains(SearchCitizen)))
+                   if(!(C.getfriends_Arraylist().contains(SearchCitizen)))
+                       if(!(C.getcoWorkers_Arraylist().contains(SearchCitizen)))
+                            if(!(C.getrandomIndividuals_Arraylist().contains(SearchCitizen))){
    
                                C.setcoWorkers(Citizen.get(index_of_friends));
                                Citizen.get(index_of_friends).setcoWorkers(C);
@@ -116,11 +119,13 @@ public class City {
                
            int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
    
-           if( !(C.equals(Citizen.get(index_of_friends))) )
-               if(!(C.getfamily_Arraylist().contains(Citizen.get(index_of_friends))))
-                   if(!(C.getfriends_Arraylist().contains(Citizen.get(index_of_friends))))
-                       if(!(C.getcoWorkers_Arraylist().contains(Citizen.get(index_of_friends))))
-                            if(!(C.getrandomIndividuals_Arraylist().contains(Citizen.get(index_of_friends)))){
+           Human SearchCitizen = Citizen.get(index_of_friends);
+
+           if( !(C.equals(SearchCitizen)))
+               if(!(C.getfamily_Arraylist().contains(SearchCitizen)))
+                   if(!(C.getfriends_Arraylist().contains(SearchCitizen)))
+                       if(!(C.getcoWorkers_Arraylist().contains(SearchCitizen)))
+                            if(!(C.getrandomIndividuals_Arraylist().contains(SearchCitizen))){
    
                                C.setRandomIndividuals(Citizen.get(index_of_friends));
                                Citizen.get(index_of_friends).setRandomIndividuals(C);
