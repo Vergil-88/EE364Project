@@ -20,7 +20,7 @@ public CovidSpread(){
 
 public void StartCovid(City CityName){
 
-    int numberOfPatients = (int) (CityName.get_Population() * 1);
+    int numberOfPatients = (int) (CityName.get_Population() *0.05);
     int PatientIndex;
     Human Patient;
     ArrayList<Human> Citizen = CityName.get_Citizen();
@@ -36,7 +36,7 @@ public void StartCovid(City CityName){
 
         Patient.setCovidInfection_Type(TypeA);
 
-        System.out.println(Patient);
+        //System.out.println(Patient);
   
     } 
 
@@ -227,7 +227,7 @@ public void SpreadingC(Human Patient){
 public static void main(String[] args) {
 
     Region South = new Region("South");
-    South.addCity("FU_GAMDI", 2, 1600);
+    South.addCity("FU_GAMDI", 10000, 1600);
 
     CovidSpread covid = new CovidSpread();
 
@@ -243,9 +243,62 @@ public static void main(String[] args) {
         
     }
 
-    System.out.println(South.Cities.get(0).get_Citizeninfo());
+    // System.out.println(South.Cities.get(0).get_Citizeninfo());
     System.out.println(South.Cities.get(0).get_Citizen().size());
 
+    int numOf_A=0;
+    int numOf_B=0;
+    int numOf_C=0;
+    int numOf_Normal=0;
+    for (Human H : South.Cities.get(0).get_Citizen()) {
+        
+        String Z= H.getCovidInfection_Type().getType();
+
+       switch (Z){
+       
+       
+       case "A":
+       numOf_A++;
+
+       break;
+    
+       case "B":
+       numOf_B++;
+
+       break;
+       
+
+       case "C":
+       numOf_C++;
+
+       break;
+
+
+       case "Normal":
+
+       numOf_Normal++;
+
+       break;
+
+
+
+
+
+
+       
+       }
+
+
+
+
+
+
+    }
+
+System.out.println("A num = "+numOf_A );
+System.out.println("B num = "+numOf_B );
+System.out.println("C num = "+numOf_C );
+System.out.println("Normal num = "+numOf_Normal );
 
 }
 
