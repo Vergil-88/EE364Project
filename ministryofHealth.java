@@ -12,9 +12,9 @@ private ArrayList<Human> Dead = new ArrayList<Human>();
 //methods
 
 // genrait Calls in main
-public void CallCenter(ArrayList <Human> Calls){
+public void CallCenter(Human Newhu){
 
-this.Calls = Calls ;
+this.Calls.add(Newhu) ;
 
 }
 
@@ -157,6 +157,140 @@ for(Human Recovered : PostiveA){
 
 
 
+public static void main(String[] args) {
+
+    Region South = new Region("South");
+    South.addCity("Jeddah", 1000, 1600);
+
+    CovidSpread covid = new CovidSpread();
+
+    covid.StartCovid(South.Cities.get(0));
+
+
+
+    // System.out.println(South.Cities.get(0).get_Citizeninfo());
+    System.out.println(South.Cities.get(0).get_Citizen().size());
+
+    int numOf_A=0;
+    int numOf_B=0;
+    int numOf_C=0;
+    int numOf_Normal=0;
+
+     numOf_A=0;
+     numOf_B=0;
+     numOf_C=0;
+     numOf_Normal=0;
+    for (Human H : South.Cities.get(0).get_Citizen()) { 
+        String Z= H.getCovidInfection_Type().getType();
+       switch (Z){
+       case "A":
+       numOf_A++;
+       break;
+       case "B":
+       numOf_B++;
+       break;
+       case "C":
+       numOf_C++;
+       break;
+       case "Normal":
+       numOf_Normal++;
+       break;
+       }
+    }
+
+System.out.println("A num = "+numOf_A );
+System.out.println("B num = "+numOf_B );
+System.out.println("C num = "+numOf_C );
+System.out.println("Normal num = "+numOf_Normal );
+
+
+
+
+
+ministryofHealth Gov = new ministryofHealth();
+
+
+for (int i = 0; i < 1; i++) {
+
+
+/// Spreding the Covid 
+for (Human H : South.Cities.get(0).get_Citizen()) {                 
+
+    if(H.getCovidInfection_Type().getType().equals("A"))
+       covid.SpreadingB(H);
+    else if(H.getCovidInfection_Type().getType().equals("B"))
+        covid.SpreadingC(H);
+    
+    
+} 
+///////////////////////////////////// 
+
+
+
+int number_of_A_Calls= (int) ((  numOf_A  ) *  0.35);
+    while( number_of_A_Calls >=0  )   {
+        
+        for (Human H : South.Cities.get(0).get_Citizen()) {
+    
+            
+            
+
+            if(H.getCovidInfection_Type().getType().equals("A")){
+                Gov.CallCenter(H);
+                number_of_A_Calls--; 
+                if(number_of_A_Calls==0)
+                break;
+            }
+   
+
+    }
+
+
+} 
+
+}
+
+//////////////////////////////////////
+
+System.out.println("---------------------");
+numOf_A=0;
+numOf_B=0;
+numOf_C=0;
+numOf_Normal=0;
+for (Human H : South.Cities.get(0).get_Citizen()) { 
+   String Z= H.getCovidInfection_Type().getType();
+  switch (Z){
+  case "A":
+  numOf_A++;
+  break;
+  case "B":
+  numOf_B++;
+  break;
+  case "C":
+  numOf_C++;
+  break;
+  case "Normal":
+  numOf_Normal++;
+  break;
+  }
+}
+
+
+System.out.println("A num = "+numOf_A );
+System.out.println("B num = "+numOf_B );
+System.out.println("C num = "+numOf_C );
+System.out.println("Normal num = "+numOf_Normal );
+
+System.out.println(Gov.Calls.size());
+
+
+
+
+
+}//end of mian metohd
+
+
+
 
 
 
@@ -167,4 +301,6 @@ for(Human Recovered : PostiveA){
 
 
 }
+
+
 

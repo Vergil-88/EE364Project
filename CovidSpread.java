@@ -227,7 +227,7 @@ public void SpreadingC(Human Patient){
 public static void main(String[] args) {
 
     Region South = new Region("South");
-    South.addCity("FU_GAMDI", 10000, 1600);
+    South.addCity("Jeddah", 100000, 1600);
 
     CovidSpread covid = new CovidSpread();
 
