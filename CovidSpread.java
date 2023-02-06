@@ -20,7 +20,7 @@ public CovidSpread(){
 
 public void StartCovid(City CityName){
 
-    int numberOfPatients = (int) (CityName.get_Population() * 0.05);
+    int numberOfPatients = (int) (CityName.get_Population() * 1);
     int PatientIndex;
     Human Patient;
     ArrayList<Human> Citizen = CityName.get_Citizen();
@@ -60,7 +60,10 @@ public void SpreadingB(Human Patient){
     // family to TaypeB
 
     for (Human F : family) {
-
+        String Taype = F.getCovidInfection_Type().getType();
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
             F.setCovidInfection_Type(TypeB);
     }
 
@@ -71,15 +74,19 @@ public void SpreadingB(Human Patient){
     Human Friend;
 
     for (int i = 0; i < numberOfFriends; i++) {
-
+        
         FriendIndex = rad.nextInt(friends.size()-1);
 
         // if(friends.get(FriendIndex).getCovidInfection_Type().getType() == "B")
         //     continue;
 
         Friend = friends.get(FriendIndex);
-
-        Friend.setCovidInfection_Type(TypeB);
+        String Taype = Friend.getCovidInfection_Type().getType();
+        
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                     Friend.setCovidInfection_Type(TypeB);
         
     }
 
@@ -94,8 +101,12 @@ public void SpreadingB(Human Patient){
         coWorkerIndex = rad.nextInt(coWorkers.size()-1);
 
         coWorker = coWorkers.get(coWorkerIndex);
-
-        coWorker.setCovidInfection_Type(TypeB);
+        String Taype = coWorker.getCovidInfection_Type().getType();
+        
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                    coWorker.setCovidInfection_Type(TypeB);
         
     }
 
@@ -110,8 +121,11 @@ public void SpreadingB(Human Patient){
         randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
 
         randomIndividual = randomIndividuals.get(randomIndividualsIndex);
-
-        randomIndividual.setCovidInfection_Type(TypeB);
+        String Taype = randomIndividual.getCovidInfection_Type().getType();
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                    randomIndividual.setCovidInfection_Type(TypeB);
         
     }
     
@@ -131,8 +145,11 @@ public void SpreadingC(Human Patient){
     // family to TaypeC
 
     for (Human F : family) {
-
-            F.setCovidInfection_Type(TypeC);
+        String Taype = F.getCovidInfection_Type().getType();
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                    F.setCovidInfection_Type(TypeC);
     }
 
     // friends to TaypeC
@@ -146,8 +163,12 @@ public void SpreadingC(Human Patient){
         FriendIndex = rad.nextInt(friends.size()-1);
 
         Friend = friends.get(FriendIndex);
-
-        Friend.setCovidInfection_Type(TypeC);
+        String Taype = Friend.getCovidInfection_Type().getType();
+        
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                     Friend.setCovidInfection_Type(TypeC);
         
     }
 
@@ -162,8 +183,12 @@ public void SpreadingC(Human Patient){
         coWorkerIndex = rad.nextInt(coWorkers.size()-1);
 
         coWorker = coWorkers.get(coWorkerIndex);
-
-        coWorker.setCovidInfection_Type(TypeC);
+        String Taype = coWorker.getCovidInfection_Type().getType();
+        
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                     coWorker.setCovidInfection_Type(TypeC);
         
     }
 
@@ -178,8 +203,11 @@ public void SpreadingC(Human Patient){
         randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
 
         randomIndividual = randomIndividuals.get(randomIndividualsIndex);
-
-        randomIndividual.setCovidInfection_Type(TypeC);
+        String Taype = randomIndividual.getCovidInfection_Type().getType();
+        if (!(Taype.equals("A")))
+            if(!(Taype.equals("B")))
+                if(!(Taype.equals("C")))
+                     randomIndividual.setCovidInfection_Type(TypeC);
         
     }
     
@@ -194,15 +222,12 @@ public void SpreadingC(Human Patient){
 
 ///////////////////////////////////////////////
 
-public String toString(){
 
-return "  " ;
-}
 
 public static void main(String[] args) {
 
     Region South = new Region("South");
-    South.addCity("FU_GAMDI", 100, 1600);
+    South.addCity("FU_GAMDI", 2, 1600);
 
     CovidSpread covid = new CovidSpread();
 
@@ -211,7 +236,7 @@ public static void main(String[] args) {
     for (Human H : South.Cities.get(0).get_Citizen()) {
 
         if(H.getCovidInfection_Type().getType().equals("A"))
-            covid.SpreadingB(H);
+           covid.SpreadingB(H);
         else if(H.getCovidInfection_Type().getType().equals("B"))
             covid.SpreadingC(H);
         
