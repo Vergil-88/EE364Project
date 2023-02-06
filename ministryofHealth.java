@@ -49,26 +49,26 @@ public void Interacted_A_to_B(){
       for(Human f : family){
         if( f.getCovidInfection_Type().getType().equals("B") ){
             PostiveB.add(f);
+            }
         }
-    }
 
         for(Human fr : friends){
             if( fr.getCovidInfection_Type().getType().equals("B") ){
                 PostiveB.add(fr);
             }
-      }
+        }
 
       for(Human Co : coWorkers){
         if( Co.getCovidInfection_Type().getType().equals("B") ){
             PostiveB.add(Co);
+            }
         }
-    }
 
     for(Human r : randomIndividuals){
         if( r.getCovidInfection_Type().getType().equals("B") ){
             PostiveB.add(r);
+            }
         }
-    }
         
 
     }
@@ -169,17 +169,13 @@ public static void main(String[] args) {
 
 
     // System.out.println(South.Cities.get(0).get_Citizeninfo());
-    System.out.println(South.Cities.get(0).get_Citizen().size());
+    System.out.println(South.Cities.get(0).get_Citizen().size()); // population
 
     int numOf_A=0;
     int numOf_B=0;
     int numOf_C=0;
     int numOf_Normal=0;
 
-     numOf_A=0;
-     numOf_B=0;
-     numOf_C=0;
-     numOf_Normal=0;
     for (Human H : South.Cities.get(0).get_Citizen()) { 
         String Z= H.getCovidInfection_Type().getType();
        switch (Z){
@@ -208,6 +204,7 @@ System.out.println("Normal num = "+numOf_Normal );
 
 
 ministryofHealth Gov = new ministryofHealth();
+ICU icu = new ICU();
 
 
 for (int i = 0; i < 1; i++) {
@@ -223,84 +220,99 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
     
     
 } 
-///////////////////////////////////// 
+///////////////////////////////////// This code assignes the human to the calls arraylist so we know now that there are calls happened
 
 
-
-int number_of_A_Calls= (int) ((  numOf_A  ) *  0.35);
-    while( number_of_A_Calls >=0  )   {
-        
-        for (Human H : South.Cities.get(0).get_Citizen()) {
+    int number_of_A_Calls = (int) (numOf_A * 0.35);
     
-            
+    for (Human H : South.Cities.get(0).get_Citizen()) {
+
             
 
-            if(H.getCovidInfection_Type().getType().equals("A")){
-                Gov.CallCenter(H);
-                number_of_A_Calls--; 
-                if(number_of_A_Calls==0)
-                break;
-            }
-   
 
+        if(H.getCovidInfection_Type().getType().equals("A")){
+            Gov.CallCenter(H);
+            number_of_A_Calls--; 
+            if(number_of_A_Calls <= 0)
+            break;
+        }
     }
+        
 
-
-} 
-
-}
+    
+    
 
 //////////////////////////////////////
 
+    System.out.println("---------------------");
+    numOf_A=0;
+    numOf_B=0;
+    numOf_C=0;
+    numOf_Normal=0;
+    for (Human H : South.Cities.get(0).get_Citizen()) { 
+    String Z= H.getCovidInfection_Type().getType();
+        switch (Z){
+            case "A":
+            numOf_A++;
+            break;
+            case "B":
+            numOf_B++;
+            break;
+            case "C":
+            numOf_C++;
+            break;
+            case "Normal":
+            numOf_Normal++;
+            break;
+        }
+    }
+
+    
+    //////////////////////////////////////
+
+    Gov.TestCenter(Gov.Calls);
+    Gov.Interacted_A_to_B();
+    // Gov.Interacted_B_to_C();
+
+    for (Human posA : Gov.PostiveA) {
+    icu.SetBed(posA);
+    }
+            
+    }
+
+
+
+System.out.println("Programmer view");
 System.out.println("---------------------");
-numOf_A=0;
-numOf_B=0;
-numOf_C=0;
-numOf_Normal=0;
-for (Human H : South.Cities.get(0).get_Citizen()) { 
-   String Z= H.getCovidInfection_Type().getType();
-  switch (Z){
-  case "A":
-  numOf_A++;
-  break;
-  case "B":
-  numOf_B++;
-  break;
-  case "C":
-  numOf_C++;
-  break;
-  case "Normal":
-  numOf_Normal++;
-  break;
-  }
-}
-
-
 System.out.println("A num = "+numOf_A );
 System.out.println("B num = "+numOf_B );
 System.out.println("C num = "+numOf_C );
 System.out.println("Normal num = "+numOf_Normal );
-
-System.out.println(Gov.Calls.size());
-
-
-
-
-
-}//end of mian metohd
-
-
-
-
-
-
-
-
-
+System.out.println("---------------------");
+System.out.println("Government view");
+System.out.println("---------------------");
+// System.out.println("The number of calls: " + Gov.Calls.size());
+System.out.println("Number of A's: "+Gov.PostiveA.size());
+System.out.println("Number of B's: "+Gov.PostiveB.size());
+System.out.println("Number of people in ICU: "+icu.BedsinUse());
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+}//end of main metohd
+
 
 
 
