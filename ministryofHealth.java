@@ -214,7 +214,7 @@ public ArrayList<Human> getDead() {
 public static void main(String[] args) {
 
     Region South = new Region("South");
-    South.addCity("Jeddah", 100000, 1600);
+    South.addCity("Jeddah", 1000, 1600);
 
     CovidSpread covid = new CovidSpread();
 
@@ -261,10 +261,10 @@ ministryofHealth Gov = new ministryofHealth();
 ICU icu = new ICU();
 
 
-for (int i = 0; i < 1; i++) {
+for (int i = 1; i <= 10; i++) {           // Start of the main Loop
 
 
-/// Spreding the Covid 
+/// Spreding the Covid for the Day 
 for (Human H : South.Cities.get(0).get_Citizen()) {                 
 
     if(H.getCovidInfection_Type().getType().equals("A"))
@@ -296,30 +296,6 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
     
     
 
-//////////////////////////////////////
-
-    System.out.println("---------------------");
-    numOf_A=0;
-    numOf_B=0;
-    numOf_C=0;
-    numOf_Normal=0;
-    for (Human H : South.Cities.get(0).get_Citizen()) { 
-    String Z= H.getCovidInfection_Type().getType();
-        switch (Z){
-            case "A":
-            numOf_A++;
-            break;
-            case "B":
-            numOf_B++;
-            break;
-            case "C":
-            numOf_C++;
-            break;
-            case "Normal":
-            numOf_Normal++;
-            break;
-        }
-    }
 
     
     //////////////////////////////////////
@@ -334,26 +310,65 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 
     Gov.A_to_Dead(icu);
     Gov.Recovered();
-            
-    }
+           
     
 
 
-System.out.println("Programmer view");
+
+
+////////////////////////////////////// Counteing the number of Types for the Current Day  
 System.out.println("---------------------");
-System.out.println("A num = "+numOf_A );
-System.out.println("B num = "+numOf_B );
-System.out.println("C num = "+numOf_C );
-System.out.println("Normal num = "+numOf_Normal );
-System.out.println("---------------------");
-System.out.println("Government view");
-System.out.println("---------------------");
-// System.out.println("The number of calls: " + Gov.Calls.size());
-System.out.println("Number of A's: "+Gov.getPostiveA().size());
-System.out.println("Number of B's: "+Gov.getPostiveB().size());
-System.out.println("Number of people in ICU: "+icu.BedsinUse());
-System.out.println("Number of Dead people: "+Gov.getDead().size());
-System.out.println("Number of Recovered people: "+Gov.getRecovered().size());
+numOf_A=0;
+numOf_B=0;
+numOf_C=0;
+numOf_Normal=0;
+for (Human H : South.Cities.get(0).get_Citizen()) { 
+String Z= H.getCovidInfection_Type().getType();
+    switch (Z){
+        case "A":
+        numOf_A++;
+        break;
+        case "B":
+        numOf_B++;
+        break;
+        case "C":
+        numOf_C++;
+        break;
+        case "Normal":
+        numOf_Normal++;
+        break;
+    }
+}
+ ///////////////////// Output of the  Day ////////////////////////   
+ System.out.println("Day :"+i);
+
+ System.out.println("Programmer view");
+ System.out.println("---------------------");
+ System.out.println("A num = "+numOf_A );
+ System.out.println("B num = "+numOf_B );
+ System.out.println("C num = "+numOf_C );
+ System.out.println("Normal num = "+numOf_Normal );
+ System.out.println("---------------------");
+ System.out.println("Government view");
+ System.out.println("---------------------");
+ System.out.println("The number of calls: " + Gov.Calls.size());
+ System.out.println("Number of A's: "+Gov.getPostiveA().size());
+ System.out.println("Number of B's: "+Gov.getPostiveB().size());
+ System.out.println("Number of people in ICU: "+icu.BedsinUse());
+ System.out.println("Number of Dead people: "+Gov.getDead().size());
+ System.out.println("Number of Recovered people: "+Gov.getRecovered().size());
+
+
+
+/////Clearing The number of Calls After the Day is Done
+    Gov.Calls.clear();
+    
+
+
+} // End of main Loop
+    
+
+
 
 
 
