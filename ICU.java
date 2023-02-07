@@ -5,7 +5,7 @@ public class ICU {
 //methods
     public void SetBed(Human H){
         
-        for (int i = 0; i < Beds.length-1; i++) {
+        for (int i = 0; i <= Beds.length-1; i++) {
             if (Beds[i] == null){
                 bedNum = i;
                 break;
@@ -21,10 +21,12 @@ public class ICU {
 
     public int BedsinUse(){
         int bed = 0;
-        for (int i = 0; i < Beds.length; i++) {
+        for (int i = 0; i <= Beds.length-1; i++) {
             if (Beds[i] != null){
                 bed++;
             }
+            // System.out.println(i);
+            // System.out.println(bed);
         }
         return bed;
     }
