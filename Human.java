@@ -84,6 +84,10 @@ public class Human {
         return Alive;
     }
 ///////////////////////////////////////////////////
+    public void setDead() {
+        Alive = false;
+    }
+///////////////////////////////////////////////////
     public String getfamily()
     {
         String ids="";

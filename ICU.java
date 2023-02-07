@@ -20,13 +20,13 @@ public class ICU {
     }
 
     public int BedsinUse(){
-        int j = 0;
-        for (int i = 0; i < Beds.length-1; i++) {
-            if (!(Beds[i] == null)){
-                j++;
+        int bed = 0;
+        for (int i = 0; i < Beds.length; i++) {
+            if (Beds[i] != null){
+                bed++;
             }
         }
-        return j;
+        return bed;
     }
 
 
@@ -44,10 +44,16 @@ public class ICU {
         }
 
 
-        public void RemoveBedof(){
+    public void RemoveBedof(Human person){
 
+            for (Human bed : Beds) {
 
-    
+                if(person.equals(bed)){
+                    bed = null;
+                }
+                
+            }
+
         }
 
     public Human[] getBeds() {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class ministryofHealth {
 //Delration 
@@ -8,7 +9,8 @@ private ArrayList<Human> PostiveA = new ArrayList<Human>();
 private ArrayList<Human> PostiveB = new ArrayList<Human>();
 private ArrayList<Human> PostiveC = new ArrayList<Human>();
 private ArrayList<Human> Dead = new ArrayList<Human>();
-
+private ArrayList<Human> Recovered = new ArrayList<Human>();
+private Random rad = new Random();
 //methods
 
 // genrait Calls in main
@@ -119,17 +121,33 @@ public void Interacted_B_to_C(){
 }
 
 //////////////////////////////////////////////
-public void A_to_Dead(){
+public void A_to_Dead(ICU Beds){
 
-for (Human D : PostiveA){
+ 
+int numOfDeath= (int) (PostiveA.size() * 0.005 );
+int deadIndex;
+Human person;
 
-    if (!(D.getAlive())){
+while(numOfDeath != 0){
+    
+    deadIndex = rad.nextInt(PostiveA.size()-1);
+    person = PostiveA.get(deadIndex);
 
-        Dead.add(D);
+for (Human B : Beds.getBeds() ) {
 
-    }
+    if(!(B.equals(person)))
+        person.setDead();
+        PostiveA.remove(person);
+        Dead.add(person);
+        numOfDeath--;
+        break;
+        
+    
+}
+    
 
 }
+
 
 
 
@@ -138,17 +156,53 @@ for (Human D : PostiveA){
 //////////////////////////////////////////////
 public void Recovered(){
 
-for(Human Recovered : PostiveA){
-    if(Recovered.getCovidInfection_Type().getType().equals("Normal")){
+    int numOfRecovered= (int) (PostiveA.size() * 0.05 );
+    int RecoveredIndex;
+    Human person;
+    covidInfection normal = new Normal();
+    
+    while(numOfRecovered != 0){
+        
+        RecoveredIndex = rad.nextInt(PostiveA.size());
+        person = PostiveA.get(RecoveredIndex);
+    
+        person.setCovidInfection_Type(normal);
 
-        PostiveA.remove(Recovered);
+        PostiveA.remove(person);
 
+        Recovered.add(person);
+        
+        numOfRecovered--;
+        
     }
+
+
+
+
 }
 
+///////Geters/////////////
 
-
+public ArrayList<Human> getCalls() {
+    return Calls;
 }
+
+public ArrayList<Human> getPostiveA() {
+    return PostiveA;
+}
+
+public ArrayList<Human> getPostiveB() {
+    return PostiveB;
+}
+
+public ArrayList<Human> getRecovered() {
+    return Recovered;
+}
+
+public ArrayList<Human> getDead() {
+    return Dead;
+}
+
 
 //////////////////////////////////////////////
 
@@ -160,7 +214,7 @@ for(Human Recovered : PostiveA){
 public static void main(String[] args) {
 
     Region South = new Region("South");
-    South.addCity("Jeddah", 1000, 1600);
+    South.addCity("Jeddah", 100000, 1600);
 
     CovidSpread covid = new CovidSpread();
 
@@ -277,9 +331,12 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
     for (Human posA : Gov.PostiveA) {
     icu.SetBed(posA);
     }
+
+    Gov.A_to_Dead(icu);
+    Gov.Recovered();
             
     }
-
+    
 
 
 System.out.println("Programmer view");
@@ -292,26 +349,28 @@ System.out.println("---------------------");
 System.out.println("Government view");
 System.out.println("---------------------");
 // System.out.println("The number of calls: " + Gov.Calls.size());
-System.out.println("Number of A's: "+Gov.PostiveA.size());
-System.out.println("Number of B's: "+Gov.PostiveB.size());
+System.out.println("Number of A's: "+Gov.getPostiveA().size());
+System.out.println("Number of B's: "+Gov.getPostiveB().size());
 System.out.println("Number of people in ICU: "+icu.BedsinUse());
-
-
-
-}
-
-
-
-
-
-
-
-
-
+System.out.println("Number of Dead people: "+Gov.getDead().size());
+System.out.println("Number of Recovered people: "+Gov.getRecovered().size());
 
 
 
 }//end of main metohd
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
 
 
