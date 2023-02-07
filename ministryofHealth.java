@@ -421,8 +421,8 @@ int oldGOV_Recovered=GOV_Recovered;
 
 ///////////////////// Output of the  Day ////////////////////////   
  
-Dayslist.add(String.valueOf("Day"+i) );
-data.add(String.valueOf(" A num = "+numOf_A+"("+oldNum_A +")"+" B num = "+numOf_B+"("+oldNum_B +")"+" C num = "+numOf_C+"("+oldNum_C +")"+" Normal num = "+numOf_Normal+"("+oldNum_Normal +")") );
+Dayslist.add(String.format("Day:%-5s",i) );
+data.add(String.format(" A num =  %-10d (%-10d) B num =  %-10d (-%10d) C num =  %-10d (%-10d) Normal num =   %-10d (%-10d)",numOf_A,oldNum_A,numOf_B,oldNum_B,numOf_C,oldNum_C,numOf_Normal,oldNum_Normal) );
 Govdata.add("The number of calls: " + Gov.Calls.size()+" Number of A's: "+Gov.getPostiveA().size()+"("+  oldGOV_A  +")"+" Number of B's: "+Gov.getPostiveB().size()+"("+  oldGOV_B  +")"+" Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length+" Number of Dead people: "+Gov.getDead().size()+"("+  oldGOV_Dead  +")"+" Number of Recovered people: "+Gov.getRecovered().size()+"("+  oldGOV_Recovered  +")");
 
 
