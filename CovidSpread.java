@@ -217,22 +217,23 @@ public void SpreadingC(Human Patient){
 }
 
 //// Chaing B to A by  
-public void B_Becomes_A(Human B){
+public void B_Becomes_A(Human B,ArrayList <Human> PosB){
 if(B.getCovidInfection_Type().getType().equals("B")){
     double percentge=Math.random();
     if(percentge>0.90){   //10%
         B.setCovidInfection_Type(new A());
     }
     else{
-        B.setCovidInfection_Type(new Normal());
-
-    }
-
-
-}   
+        B.setCovidInfection_Type(new Normal()); 
 }
+PosB.remove(B);
+
+}
+   
+}
+
 //// Chaing C to A b 
-public void C_Becomes_A(Human C ){
+public void C_Becomes_A(Human C,ArrayList <Human> PosC ){
     if(C.getCovidInfection_Type().getType().equals("C")){
         double percentge=Math.random();
         if(percentge>0.98){  //%2
@@ -242,10 +243,51 @@ public void C_Becomes_A(Human C ){
             C.setCovidInfection_Type(new Normal());
     
         }
+
+        PosC.remove(C);
     }
    
 }
 ///////////////////////////////////////////////
+
+public void Count_Types(ArrayList<Human>  C){
+    int numOf_A=0;
+    int numOf_B=0;
+    int numOf_C=0;
+    int numOf_Normal=0;
+
+    for (Human H : C) { 
+        String Z= H.getCovidInfection_Type().getType();
+       switch (Z){
+       case "A":
+       numOf_A++;
+       break;
+       case "B":
+       numOf_B++;
+       break;
+       case "C":
+       numOf_C++;
+       break;
+       case "Normal":
+       numOf_Normal++;
+       break;
+       }
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

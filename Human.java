@@ -7,6 +7,7 @@ public class Human {
     private int Age;
     private String Sex;
     private boolean cD;
+    private String History="";
     /*how many critical dieases do you guys want? three? or four?
     /* and what about we make "String cD" boolean instead of a string of dieases which will make it easier for us because if it was true we can apply a percantage where the person can get covid faster or not
     */

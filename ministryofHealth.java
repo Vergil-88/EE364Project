@@ -27,6 +27,7 @@ public void TestCenter(ArrayList <Human> Calls){
         
 
         if  (x.getCovidInfection_Type().getType().equals("A") ){
+            if(!(PostiveA.contains(x)))
 
             PostiveA.add(x);
 
@@ -276,7 +277,7 @@ ministryofHealth Gov = new ministryofHealth();
 ICU icu = new ICU();
 
 
-for (int i = 1; i <= 10; i++) {           // Start of the main Loop
+for (int i = 1; i <= 1000; i++) {           // Start of the main Loop
 
 
 
@@ -284,10 +285,10 @@ for (int i = 1; i <= 10; i++) {           // Start of the main Loop
     if( i%3==0 ){
 /// Changing B to A by Percentiges there rest that we havent made into A will become Normal 
 
-System.out.println("3 Days passed");
+// System.out.println("3 Days passed");
 for (Human B: South.Cities.get(0).get_Citizen() ) {
     if(B.getCovidInfection_Type().getType().equals("B"))
-        covid.B_Becomes_A(B);  
+        covid.B_Becomes_A(B,Gov.PostiveB);  
 }
 
 
@@ -295,7 +296,7 @@ for (Human B: South.Cities.get(0).get_Citizen() ) {
 
 for (Human C: South.Cities.get(0).get_Citizen() ) {
     if(C.getCovidInfection_Type().getType().equals("C"))
-        covid.C_Becomes_A(C);  
+        covid.C_Becomes_A(C,Gov.PostiveC);  
     }
     }
 
@@ -317,7 +318,7 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 ///////////////////////////////////// This code assignes the human to the calls arraylist so we know now that there are calls happened
 
 
-    int number_of_A_Calls = (int) (numOf_A * 0.35);
+    int number_of_A_Calls = (int) (numOf_A * 0.35);//
     
     for (Human H : South.Cities.get(0).get_Citizen()) {
 
@@ -338,17 +339,18 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 
 
     
-    //////////////////////////////////////
+////////////////////////////////////////
 
     Gov.TestCenter(Gov.Calls);
     Gov.Interacted_A_to_B();
     // Gov.Interacted_B_to_C();
 
-    for (Human posA : Gov.PostiveA) {
+    for (Human posA : Gov.PostiveA) {/// make % % % not 100
     icu.SetBed(posA);
     }
 
     Gov.A_to_Dead(icu);
+
     Gov.Recovered();
            
     
@@ -379,7 +381,7 @@ String Z= H.getCovidInfection_Type().getType();
         break;
     }
 }
- ///////////////////// Output of the  Day ////////////////////////   
+///////////////////// Output of the  Day ////////////////////////   
  System.out.println("Day :"+i);
 
  System.out.println("Programmer view");
@@ -394,7 +396,7 @@ String Z= H.getCovidInfection_Type().getType();
  System.out.println("The number of calls: " + Gov.Calls.size());
  System.out.println("Number of A's: "+Gov.getPostiveA().size());
  System.out.println("Number of B's: "+Gov.getPostiveB().size());
- System.out.println("Number of people in ICU: "+icu.BedsinUse());
+ System.out.println("Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length);
  System.out.println("Number of Dead people: "+Gov.getDead().size());
  System.out.println("Number of Recovered people: "+Gov.getRecovered().size());
 

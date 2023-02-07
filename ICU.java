@@ -1,6 +1,6 @@
 public class ICU {
     //Delration 
-    Human Beds[] = new Human [100] ;
+    Human Beds[] = new Human [1000] ;
     int bedNum = 100000000;    
 //methods
     public void SetBed(Human H){
