@@ -229,7 +229,7 @@ public ArrayList<Human> getDead() {
 public static void main(String[] args) {
 
     Region South = new Region("South");
-    South.addCity("Jeddah", 1000, 1600);
+    South.addCity("Jeddah", 10000, 1600);
 
     CovidSpread covid = new CovidSpread();
 
@@ -276,26 +276,28 @@ ministryofHealth Gov = new ministryofHealth();
 ICU icu = new ICU();
 
 
-for (int i = 1; i <= 5; i++) {           // Start of the main Loop
+for (int i = 1; i <= 10; i++) {           // Start of the main Loop
 
 
 
 
+    if( i%3==0 ){
+/// Changing B to A by Percentiges there rest that we havent made into A will become Normal 
 
-/// Changing B to A and C to A by Percentiges 
-
-
-
-
-
-
-
-
+System.out.println("3 Days passed");
+for (Human B: South.Cities.get(0).get_Citizen() ) {
+    if(B.getCovidInfection_Type().getType().equals("B"))
+        covid.B_Becomes_A(B);  
+}
 
 
+/// Changing C to A by Percentiges there rest that we havent made into A will become Normal 
 
-
-
+for (Human C: South.Cities.get(0).get_Citizen() ) {
+    if(C.getCovidInfection_Type().getType().equals("C"))
+        covid.C_Becomes_A(C);  
+    }
+    }
 
 
 
@@ -303,7 +305,6 @@ for (int i = 1; i <= 5; i++) {           // Start of the main Loop
 
 /// Spreding the Covid for the Day 
 for (Human H : South.Cities.get(0).get_Citizen()) {                 
-
     if(H.getCovidInfection_Type().getType().equals("A"))
        covid.SpreadingB(H);
     else if(H.getCovidInfection_Type().getType().equals("B"))
@@ -311,6 +312,8 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
     
     
 } 
+
+
 ///////////////////////////////////// This code assignes the human to the calls arraylist so we know now that there are calls happened
 
 

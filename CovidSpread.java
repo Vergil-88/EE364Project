@@ -216,10 +216,35 @@ public void SpreadingC(Human Patient){
 
 }
 
+//// Chaing B to A by  
+public void B_Becomes_A(Human B){
+if(B.getCovidInfection_Type().getType().equals("B")){
+    double percentge=Math.random();
+    if(percentge>0.90){   //10%
+        B.setCovidInfection_Type(new A());
+    }
+    else{
+        B.setCovidInfection_Type(new Normal());
+
+    }
 
 
-
-
+}   
+}
+//// Chaing C to A b 
+public void C_Becomes_A(Human C ){
+    if(C.getCovidInfection_Type().getType().equals("C")){
+        double percentge=Math.random();
+        if(percentge>0.98){  //%2
+            C.setCovidInfection_Type(new A());
+        }
+        else{
+            C.setCovidInfection_Type(new Normal());
+    
+        }
+    }
+   
+}
 ///////////////////////////////////////////////
 
 
