@@ -50,24 +50,31 @@ public void Interacted_A_to_B(){
       
       for(Human f : family){
         if( f.getCovidInfection_Type().getType().equals("B") ){
+            if(!(PostiveB.contains(f)))
             PostiveB.add(f);
             }
         }
 
         for(Human fr : friends){
             if( fr.getCovidInfection_Type().getType().equals("B") ){
+                if(!(PostiveB.contains(fr)))
+
                 PostiveB.add(fr);
             }
         }
 
       for(Human Co : coWorkers){
         if( Co.getCovidInfection_Type().getType().equals("B") ){
+            if(!(PostiveB.contains(Co)))
+
             PostiveB.add(Co);
             }
         }
 
     for(Human r : randomIndividuals){
         if( r.getCovidInfection_Type().getType().equals("B") ){
+            if(!(PostiveB.contains(r)))
+
             PostiveB.add(r);
             }
         }
@@ -89,24 +96,32 @@ public void Interacted_B_to_C(){
         
         for(Human f : family){
           if( f.getCovidInfection_Type().getType().equals("C") ){
+            if(!(PostiveC.contains(f)))
+
               PostiveC.add(f);
           }
       }
   
           for(Human fr : friends){
               if( fr.getCovidInfection_Type().getType().equals("C") ){
+                if(!(PostiveC.contains(fr)))
+
                   PostiveC.add(fr);
               }
         }
   
         for(Human Co : coWorkers){
           if( Co.getCovidInfection_Type().getType().equals("C") ){
+            if(!(PostiveC.contains(Co)))
+
               PostiveC.add(Co);
           }
       }
   
       for(Human r : randomIndividuals){
           if( r.getCovidInfection_Type().getType().equals("C") ){
+            if(!(PostiveC.contains(r)))
+
               PostiveC.add(r);
           }
       }
@@ -261,7 +276,29 @@ ministryofHealth Gov = new ministryofHealth();
 ICU icu = new ICU();
 
 
-for (int i = 1; i <= 10; i++) {           // Start of the main Loop
+for (int i = 1; i <= 5; i++) {           // Start of the main Loop
+
+
+
+
+
+/// Changing B to A and C to A by Percentiges 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /// Spreding the Covid for the Day 
