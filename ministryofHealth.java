@@ -254,6 +254,11 @@ public static void main(String[] args) {
     int numOf_C=0;
     int numOf_Normal=0;
 
+    int GOV_A=0;
+    int GOV_B=0;
+    int GOV_Dead=0;
+    int GOV_Recovered=0;
+
     for (Human H : South.Cities.get(0).get_Citizen()) { 
         String Z= H.getCovidInfection_Type().getType();
        switch (Z){
@@ -363,10 +368,17 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 
 ////////////////////////////////////// Counteing the number of Types for the Current Day  
 // System.out.println("---------------------");
+int oldNum_A=numOf_A;
+int oldNum_B=numOf_B;
+int oldNum_C=numOf_C;
+int oldNum_Normal=numOf_Normal;
+
+
 numOf_A=0;
 numOf_B=0;
 numOf_C=0;
 numOf_Normal=0;
+
 for (Human H : South.Cities.get(0).get_Citizen()) { 
 String Z= H.getCovidInfection_Type().getType();
     switch (Z){
@@ -384,11 +396,34 @@ String Z= H.getCovidInfection_Type().getType();
         break;
     }
 }
+
+oldNum_A=numOf_A-oldNum_A;
+oldNum_B=numOf_B-oldNum_B;
+oldNum_C=numOf_C-oldNum_C;
+oldNum_Normal=numOf_Normal-oldNum_Normal;
+////////////////////////////////////////////////calculating the diff between Days
+int oldGOV_A=GOV_A;
+int oldGOV_B=GOV_B;
+int oldGOV_Dead=GOV_Dead;
+int oldGOV_Recovered=GOV_Recovered;
+
+
+ GOV_A=Gov.getPostiveA().size();
+ GOV_B=Gov.getPostiveB().size();
+ GOV_Dead=Gov.getDead().size();
+ GOV_Recovered=Gov.getRecovered().size();
+
+
+ oldGOV_A=GOV_A-oldGOV_A;
+ oldGOV_B=GOV_B-oldGOV_B;
+ oldGOV_Dead=GOV_Dead-oldGOV_Dead;
+ oldGOV_Recovered=GOV_Recovered-oldGOV_Recovered;
+
 ///////////////////// Output of the  Day ////////////////////////   
  
 Dayslist.add(String.valueOf("Day"+i) );
-data.add(String.valueOf(" A num = "+numOf_A+" B num = "+numOf_B+" C num = "+numOf_C+" Normal num = "+numOf_Normal) );
-Govdata.add("The number of calls: " + Gov.Calls.size()+" Number of A's: "+Gov.getPostiveA().size()+" Number of B's: "+Gov.getPostiveB().size()+" Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length+" Number of Dead people: "+Gov.getDead().size()+" Number of Recovered people: "+Gov.getRecovered().size());
+data.add(String.valueOf(" A num = "+numOf_A+"("+oldNum_A +")"+" B num = "+numOf_B+"("+oldNum_B +")"+" C num = "+numOf_C+"("+oldNum_C +")"+" Normal num = "+numOf_Normal+"("+oldNum_Normal +")") );
+Govdata.add("The number of calls: " + Gov.Calls.size()+" Number of A's: "+Gov.getPostiveA().size()+"("+  oldGOV_A  +")"+" Number of B's: "+Gov.getPostiveB().size()+"("+  oldGOV_B  +")"+" Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length+" Number of Dead people: "+Gov.getDead().size()+"("+  oldGOV_Dead  +")"+" Number of Recovered people: "+Gov.getRecovered().size()+"("+  oldGOV_Recovered  +")");
 
 
 // System.out.println("Day :"+i);
