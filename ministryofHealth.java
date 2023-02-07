@@ -227,7 +227,15 @@ public ArrayList<Human> getDead() {
 
 
 
+
 public static void main(String[] args) {
+    ArrayList <String>  data = new ArrayList <String>();
+    ArrayList <String>  Dayslist= new ArrayList <String>();
+    ArrayList <String>  Govdata = new ArrayList <String>();
+
+
+
+
 
     Region South = new Region("South");
     South.addCity("Jeddah", 10000, 1600);
@@ -277,7 +285,7 @@ ministryofHealth Gov = new ministryofHealth();
 ICU icu = new ICU();
 
 
-for (int i = 1; i <= 1000; i++) {           // Start of the main Loop
+for (int i = 1; i <= 10; i++) {           // Start of the main Loop
 
 
 
@@ -315,16 +323,11 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 } 
 
 
-///////////////////////////////////// This code assignes the human to the calls arraylist so we know now that there are calls happened
+///////////////////////////////////// Calls Happen 
 
 
     int number_of_A_Calls = (int) (numOf_A * 0.35);//
-    
     for (Human H : South.Cities.get(0).get_Citizen()) {
-
-            
-
-
         if(H.getCovidInfection_Type().getType().equals("A")){
             Gov.CallCenter(H);
             number_of_A_Calls--; 
@@ -359,7 +362,7 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 
 
 ////////////////////////////////////// Counteing the number of Types for the Current Day  
-System.out.println("---------------------");
+// System.out.println("---------------------");
 numOf_A=0;
 numOf_B=0;
 numOf_C=0;
@@ -382,23 +385,29 @@ String Z= H.getCovidInfection_Type().getType();
     }
 }
 ///////////////////// Output of the  Day ////////////////////////   
- System.out.println("Day :"+i);
+ 
+Dayslist.add(String.valueOf("Day"+i) );
+data.add(String.valueOf(" A num = "+numOf_A+" B num = "+numOf_B+" C num = "+numOf_C+" Normal num = "+numOf_Normal) );
+Govdata.add("The number of calls: " + Gov.Calls.size()+" Number of A's: "+Gov.getPostiveA().size()+" Number of B's: "+Gov.getPostiveB().size()+" Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length+" Number of Dead people: "+Gov.getDead().size()+" Number of Recovered people: "+Gov.getRecovered().size());
 
- System.out.println("Programmer view");
- System.out.println("---------------------");
- System.out.println("A num = "+numOf_A );
- System.out.println("B num = "+numOf_B );
- System.out.println("C num = "+numOf_C );
- System.out.println("Normal num = "+numOf_Normal );
- System.out.println("---------------------");
- System.out.println("Government view");
- System.out.println("---------------------");
- System.out.println("The number of calls: " + Gov.Calls.size());
- System.out.println("Number of A's: "+Gov.getPostiveA().size());
- System.out.println("Number of B's: "+Gov.getPostiveB().size());
- System.out.println("Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length);
- System.out.println("Number of Dead people: "+Gov.getDead().size());
- System.out.println("Number of Recovered people: "+Gov.getRecovered().size());
+
+// System.out.println("Day :"+i);
+
+//  System.out.println("Programmer view");
+//  System.out.println("---------------------");
+//  System.out.println("A num = "+numOf_A );
+//  System.out.println("B num = "+numOf_B );
+//  System.out.println("C num = "+numOf_C );
+//  System.out.println("Normal num = "+numOf_Normal );
+//  System.out.println("---------------------");
+//  System.out.println("Government view");
+//  System.out.println("---------------------");
+//  System.out.println("The number of calls: " + Gov.Calls.size());
+//  System.out.println("Number of A's: "+Gov.getPostiveA().size());
+//  System.out.println("Number of B's: "+Gov.getPostiveB().size());
+//  System.out.println("Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length);
+//  System.out.println("Number of Dead people: "+Gov.getDead().size());
+//  System.out.println("Number of Recovered people: "+Gov.getRecovered().size());
 
 
 
@@ -408,9 +417,12 @@ String Z= H.getCovidInfection_Type().getType();
 
 
 } // End of main Loop
-    
-
-
+TableViewer table = new TableViewer(Dayslist, data);
+System.out.println("Programmer view");
+table.viewTable(10, 10);  
+System.out.println("Government view");
+TableViewer table1 = new TableViewer(Dayslist, Govdata);
+table1.viewTable(10, 10);  
 
 
 
