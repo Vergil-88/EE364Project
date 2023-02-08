@@ -137,7 +137,7 @@ public void Interacted_B_to_C(){
 }
 
 //////////////////////////////////////////////
-public void A_to_Dead(ICU Beds){
+public void A_to_Dead( ArrayList <Human>  Beds){
 
  
 int numOfDeath= (int) (PostiveA.size() * 0.005 );
@@ -146,28 +146,20 @@ Human person;
 
 while(numOfDeath != 0){
     
-    deadIndex = rad.nextInt(PostiveA.size()-1);
-    person = PostiveA.get(deadIndex);
+    deadIndex = rad.nextInt(PostiveA.size()-1);// gets a Random index person form Postive A array 
+    person = PostiveA.get(deadIndex);           // gets the person with the index  
 
-for (Human B : Beds.getBeds() ) {
+for (Human B : Beds ) {    // gose over the beds Array
 
-    if(!(B.equals(person)))
+    if(!(B.equals(person)))         
         person.setDead();
         person.updateHistory("\n Type A to Dead");
         PostiveA.remove(person);
         Dead.add(person);
         numOfDeath--;
         break;
-        
-    
 }
-    
-
 }
-
-
-
-
 }
 
 //////////////////////////////////////////////
@@ -354,7 +346,7 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
 
     Gov.TestCenter(Gov.Calls);
     Gov.Interacted_A_to_B();
-    // Gov.Interacted_B_to_C();
+    
 
     // ICU Beds filing
     // int numOfBeds = (int) (Gov.PostiveA.size() *0.25);
@@ -379,7 +371,7 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
      icu.SetBed(posA);
     }
 
-    Gov.A_to_Dead(icu);
+    // Gov.A_to_Dead(icu.getWaitingList());
 
     Gov.Recovered();
            
