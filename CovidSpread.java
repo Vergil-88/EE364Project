@@ -36,7 +36,7 @@ public void StartCovid(City CityName){
 
         Patient.setCovidInfection_Type(TypeA);
 
-        Patient.updateHistory("Normal to Type A");
+        Patient.SetStutes("At Day:"+1+" B\n");
 
         //System.out.println(Patient);
   
@@ -50,7 +50,7 @@ public void StartCovid(City CityName){
 
 ////Spreading B Type :
 
-public void SpreadingB(Human Patient){
+public void SpreadingB(Human Patient,int day){
 
     ArrayList<Human> family =  Patient.getfamily_Arraylist();
     ArrayList<Human> friends  = Patient.getfriends_Arraylist();
@@ -69,7 +69,7 @@ public void SpreadingB(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     F.setCovidInfection_Type(TypeB);
-                    F.updateHistory("Normal to Type B");
+                    F.SetStutes("At Day:"+day+" B\n");
                 }
 
     }
@@ -94,7 +94,7 @@ public void SpreadingB(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                      Friend.setCovidInfection_Type(TypeB);
-                     Friend.updateHistory("Normal to Type B");
+                     Friend.SetStutes("At Day:"+day+" B\n");
                 }
     }
 
@@ -115,7 +115,7 @@ public void SpreadingB(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     coWorker.setCovidInfection_Type(TypeB);
-                    coWorker.updateHistory("Normal to Type B");
+                    coWorker.SetStutes("At Day:"+day+" B\n");
                 }
     }
 
@@ -135,7 +135,7 @@ public void SpreadingB(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     randomIndividual.setCovidInfection_Type(TypeB);
-                    randomIndividual.updateHistory("Normal to Type B");
+                    randomIndividual.SetStutes("At Day:"+day+" B\n");
                 }
         
     }
@@ -145,7 +145,7 @@ public void SpreadingB(Human Patient){
 
 }
 ////// Spreading C Type 
-public void SpreadingC(Human Patient){
+public void SpreadingC(Human Patient,int day){
 
     ArrayList<Human> family =  Patient.getfamily_Arraylist();
     ArrayList<Human> friends  = Patient.getfriends_Arraylist();
@@ -161,7 +161,7 @@ public void SpreadingC(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     F.setCovidInfection_Type(TypeC);
-                    F.updateHistory("Normal to Type C");
+                    F.SetStutes("At Day:"+day+" C\n");
             }
     }
 
@@ -182,7 +182,7 @@ public void SpreadingC(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     Friend.setCovidInfection_Type(TypeC);
-                    Friend.updateHistory("Normal to Type C");
+                    Friend.SetStutes("At Day:"+day+" C\n");
            }
     }
 
@@ -203,7 +203,7 @@ public void SpreadingC(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     coWorker.setCovidInfection_Type(TypeC);
-                    coWorker.updateHistory("Normal to Type C");
+                    coWorker.SetStutes("At Day:"+day+" C\n");
             }
     }
 
@@ -223,7 +223,7 @@ public void SpreadingC(Human Patient){
             if(!(Taype.equals("B")))
                 if(!(Taype.equals("C"))){
                     randomIndividual.setCovidInfection_Type(TypeC);
-                    randomIndividual.updateHistory("Normal to Type C");
+                    randomIndividual.SetStutes("At Day:"+day+" C\n");
             }
     }
     
@@ -233,14 +233,18 @@ public void SpreadingC(Human Patient){
 }
 
 //// Chaing B to A by  
-public void B_Becomes_A(Human B,ArrayList <Human> PosB){
+public void B_Becomes_A(Human B,ArrayList <Human> PosB,int day){
 if(B.getCovidInfection_Type().getType().equals("B")){
     double percentge=Math.random();
     if(percentge>0.90){   //10%
         B.setCovidInfection_Type(new A());
+        B.SetStutes("At Day:"+day+" A\n");
+
     }
     else{
-        B.setCovidInfection_Type(new Normal()); 
+        B.setCovidInfection_Type(new Normal());
+        B.SetStutes("At Day:"+day+" Normal\n");
+
 }
 PosB.remove(B);
 
@@ -248,15 +252,17 @@ PosB.remove(B);
    
 }
 
-//// Chaing C to A b 
-public void C_Becomes_A(Human C,ArrayList <Human> PosC ){
+//// Chaing C to A 
+public void C_Becomes_A(Human C,ArrayList <Human> PosC ,int day){
     if(C.getCovidInfection_Type().getType().equals("C")){
         double percentge=Math.random();
         if(percentge>0.98){  //%2
             C.setCovidInfection_Type(new A());
+            C.SetStutes("At Day:"+day+" A\n");
         }
         else{
             C.setCovidInfection_Type(new Normal());
+            C.SetStutes("At Day:"+day+" Normal\n");
     
         }
 
@@ -295,6 +301,7 @@ public void Count_Types(ArrayList<Human>  C){
 }
 
 
+}
 
 
 
@@ -306,62 +313,61 @@ public void Count_Types(ArrayList<Human>  C){
 
 
 
+// public static void main(String[] args) {
 
-public static void main(String[] args) {
+//     Region South = new Region("South");
+//     South.addCity("Jeddah", 100000, 1600);
 
-    Region South = new Region("South");
-    South.addCity("Jeddah", 100000, 1600);
+//     CovidSpread covid = new CovidSpread();
 
-    CovidSpread covid = new CovidSpread();
+//     covid.StartCovid(South.Cities.get(0));
 
-    covid.StartCovid(South.Cities.get(0));
+//     for (Human H : South.Cities.get(0).get_Citizen()) {
 
-    for (Human H : South.Cities.get(0).get_Citizen()) {
-
-        if(H.getCovidInfection_Type().getType().equals("A"))
-           covid.SpreadingB(H);
-        else if(H.getCovidInfection_Type().getType().equals("B"))
-            covid.SpreadingC(H);
+//         if(H.getCovidInfection_Type().getType().equals("A"))
+//            covid.SpreadingB(H);
+//         else if(H.getCovidInfection_Type().getType().equals("B"))
+//             covid.SpreadingC(H);
         
         
-    }
+//     }
 
-    // System.out.println(South.Cities.get(0).get_Citizeninfo());
-    System.out.println(South.Cities.get(0).get_Citizen().size());
+//     // System.out.println(South.Cities.get(0).get_Citizeninfo());
+//     System.out.println(South.Cities.get(0).get_Citizen().size());
 
-    int numOf_A=0;
-    int numOf_B=0;
-    int numOf_C=0;
-    int numOf_Normal=0;
-    for (Human H : South.Cities.get(0).get_Citizen()) {
+//     int numOf_A=0;
+//     int numOf_B=0;
+//     int numOf_C=0;
+//     int numOf_Normal=0;
+//     for (Human H : South.Cities.get(0).get_Citizen()) {
         
-        String Z= H.getCovidInfection_Type().getType();
+//         String Z= H.getCovidInfection_Type().getType();
 
-       switch (Z){
+//        switch (Z){
        
        
-       case "A":
-       numOf_A++;
+//        case "A":
+//        numOf_A++;
 
-       break;
+//        break;
     
-       case "B":
-       numOf_B++;
+//        case "B":
+//        numOf_B++;
 
-       break;
+//        break;
        
 
-       case "C":
-       numOf_C++;
+//        case "C":
+//        numOf_C++;
 
-       break;
+//        break;
 
 
-       case "Normal":
+//        case "Normal":
 
-       numOf_Normal++;
+//        numOf_Normal++;
 
-       break;
+//        break;
 
 
 
@@ -369,20 +375,20 @@ public static void main(String[] args) {
 
 
        
-       }
+//        }
 
 
 
 
 
 
-    }
+//     }
 
-System.out.println("A num = "+numOf_A );
-System.out.println("B num = "+numOf_B );
-System.out.println("C num = "+numOf_C );
-System.out.println("Normal num = "+numOf_Normal );
+// System.out.println("A num = "+numOf_A );
+// System.out.println("B num = "+numOf_B );
+// System.out.println("C num = "+numOf_C );
+// System.out.println("Normal num = "+numOf_Normal );
 
-}
+// }
 
-}
+// }

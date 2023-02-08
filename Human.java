@@ -7,6 +7,7 @@ public class Human {
     private int Age;
     private String Sex;
     private boolean cD;
+    private String Status="";
     private String History="";
     /*how many critical dieases do you guys want? three? or four?
     /* and what about we make "String cD" boolean instead of a string of dieases which will make it easier for us because if it was true we can apply a percantage where the person can get covid faster or not
@@ -23,6 +24,8 @@ public class Human {
     public Human()
     {
        
+
+        History= "Normal ";
        id=super.toString() ; 
        id = id.substring(id.indexOf("@")+1,id.length()-1);
        
@@ -196,9 +199,15 @@ public class Human {
            
     }
 
-    public void updateHistory(String History){
 
-        this.History += History; 
+    public void SetStutes(String Status){
+
+        this.Status+=Status;
+    }    
+
+    public void updateHistory(int day){
+
+        this.History +="At day: "+day+" "+Status; 
     }
 
     public String getHistory() {
@@ -206,15 +215,18 @@ public class Human {
     }
 
 
-    public String toString(){
-        return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
-        +"family Members are "+ getfamily()+"\n"+
-        " friends are "+ getfriends()+"\n"+
-        " CoWorkers are "+ getcoWorkers()+"\n"+
-        " randomIndividuals are "+ getRandomIndividuals()+"\n"+
-        "------------------------------------------------------------------------------------------------------------------------------------"  
-         ;
-    }
+    
+
+
+    // public String toString(){
+    //     return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
+    //     +"family Members are "+ getfamily()+"\n"+
+    //     " friends are "+ getfriends()+"\n"+
+    //     " CoWorkers are "+ getcoWorkers()+"\n"+
+    //     " randomIndividuals are "+ getRandomIndividuals()+"\n"+
+    //     "------------------------------------------------------------------------------------------------------------------------------------"  
+    //      ;
+    // }
 
     // public static void main(String[] args) {
     //     Human H = new Human();

@@ -7,8 +7,9 @@ public class City {
     private int Population;
     private double Area;
     private double Overpopulation;
-    private ArrayList <Human> Citizen = new ArrayList<Human>();
-    private ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
+    private ArrayList <Human> Citizen   =   new ArrayList<Human>();
+    private ArrayList <Human> DeadCitizen = new ArrayList<Human>();
+    //private ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
 
     public City(String Name, int Population, double Area){
         this.Name = Name;
@@ -201,8 +202,12 @@ public class City {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
+public void setDeadCitizen(ArrayList<Human> deadCitizen) {
+    DeadCitizen = deadCitizen;
+}
+public ArrayList<Human> getDeadCitizen() {
+    return DeadCitizen;
+}
 
 public static void main(String[] args) {
         

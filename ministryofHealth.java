@@ -137,7 +137,7 @@ public void Interacted_B_to_C(){
 }
 
 //////////////////////////////////////////////
-public void A_to_Dead( ArrayList <Human>  Beds){
+public void A_to_Dead( ArrayList <Human>  WaitingList,int day){
 
  
 int numOfDeath= (int) (PostiveA.size() * 0.005 );
@@ -146,24 +146,28 @@ Human person;
 
 while(numOfDeath != 0){
     
-    deadIndex = rad.nextInt(PostiveA.size()-1);// gets a Random index person form Postive A array 
+    deadIndex = rad.nextInt(PostiveA.size()-1); // gets a Random index person form Postive A array 
     person = PostiveA.get(deadIndex);           // gets the person with the index  
+    if(WaitingList.size()==0)
+    break;
+    for (Human B : WaitingList ) {    // gose over the WaitingList Array
+   
 
-for (Human B : Beds ) {    // gose over the beds Array
-
-    if(!(B.equals(person)))         
-        person.setDead();
-        person.updateHistory("\n Type A to Dead");
-        PostiveA.remove(person);
-        Dead.add(person);
-        numOfDeath--;
-        break;
+        if((B.equals(person)))         
+            B.setDead();
+            person.setDead();
+            person.SetStutes("At Day:"+day+" Dead\n");
+            PostiveA.remove(person);
+            Dead.add(person); 
+             
+            numOfDeath--;
+            break;
 }
 }
 }
 
 //////////////////////////////////////////////
-public void Recovered(){
+public void Recovered(int day){
 
     int numOfRecovered= (int) (PostiveA.size() * 0.05 );
     int RecoveredIndex;
@@ -177,7 +181,7 @@ public void Recovered(){
     
         person.setCovidInfection_Type(normal);
 
-        person.updateHistory("\n Type A to Normal");
+        person.SetStutes("At Day:"+day+"Normal\n");
 
         PostiveA.remove(person);
 
@@ -296,7 +300,7 @@ for (int i = 1; i <= 10; i++) {           // Start of the main Loop
 // System.out.println("3 Days passed");
 for (Human B: South.Cities.get(0).get_Citizen() ) {
     if(B.getCovidInfection_Type().getType().equals("B"))
-        covid.B_Becomes_A(B,Gov.PostiveB);  
+        covid.B_Becomes_A(B,Gov.PostiveB,i);  
 }
 
 
@@ -304,7 +308,7 @@ for (Human B: South.Cities.get(0).get_Citizen() ) {
 
 for (Human C: South.Cities.get(0).get_Citizen() ) {
     if(C.getCovidInfection_Type().getType().equals("C"))
-        covid.C_Becomes_A(C,Gov.PostiveC);  
+        covid.C_Becomes_A(C,Gov.PostiveC,i);  
     }
     }
 
@@ -315,9 +319,9 @@ for (Human C: South.Cities.get(0).get_Citizen() ) {
 /// Spreding the Covid for the Day 
 for (Human H : South.Cities.get(0).get_Citizen()) {                 
     if(H.getCovidInfection_Type().getType().equals("A"))
-       covid.SpreadingB(H);
+       covid.SpreadingB(H,i);
     else if(H.getCovidInfection_Type().getType().equals("B"))
-        covid.SpreadingC(H);
+        covid.SpreadingC(H,i);
     
     
 } 
@@ -349,31 +353,31 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
     
 
     // ICU Beds filing
-    // int numOfBeds = (int) (Gov.PostiveA.size() *0.25);
-    // int typeAIndex;
-    // Human person;
+    int numOfBeds = (int) (Gov.PostiveA.size() *0.25); 
+    int typeAIndex; 
+    Human person;
     
-
-    // while(numOfBeds != 0){
+    while(numOfBeds != 0){
        
-    //     typeAIndex = rad.nextInt(Gov.getPostiveA().size()-1);
-    //     person = Gov.PostiveA.get(typeAIndex);
+        typeAIndex = rad.nextInt(Gov.getPostiveA().size()-1);
+        person = Gov.PostiveA.get(typeAIndex);
 
-    //     icu.SetBed(person);
+        icu.SetBed(person,i);
         
-    //    numOfBeds--;
+       numOfBeds--;
         
         
-    // }
-    
-    
-     for (Human posA : Gov.PostiveA) {/// make % % % not 100
-     icu.SetBed(posA);
     }
+    
+    //  for (Human posA : Gov.PostiveA) {/// make % % % not 100
+    //  icu.SetBed(posA,i);
+    // }
 
-    // Gov.A_to_Dead(icu.getWaitingList());
 
-    Gov.Recovered();
+    
+        Gov.A_to_Dead(icu.getWaitingList(),i);
+
+        Gov.Recovered(i);
            
     
 
@@ -436,12 +440,10 @@ int oldGOV_Recovered=GOV_Recovered;
 ///////////////////// Output of the  Day ////////////////////////   
  
 Dayslist.add(String.format("Day:%-5s",i) );
-data.add(String.format(" A num =  %-10d (%-10d) B num =  %-10d (-%10d) C num =  %-10d (%-10d) Normal num =   %-10d (%-10d)",numOf_A,oldNum_A,numOf_B,oldNum_B,numOf_C,oldNum_C,numOf_Normal,oldNum_Normal) );
-Govdata.add("The number of calls: " + Gov.Calls.size()+" Number of A's: "+Gov.getPostiveA().size()+"("+  oldGOV_A  +")"+" Number of B's: "+Gov.getPostiveB().size()+"("+  oldGOV_B  +")"+" Number of people in ICU: "+icu.BedsinUse()+"/"+icu.getBeds().length+" Number of Dead people: "+Gov.getDead().size()+"("+  oldGOV_Dead  +")"+" Number of Recovered people: "+Gov.getRecovered().size()+"("+  oldGOV_Recovered  +")");
-
+data.add(String.format(" A num =  %-5d (%-10d) B num =  %-5d (%-5d) C num =  %-5d (%-5d) Normal num =   %-5d (%-5d)",numOf_A,oldNum_A,numOf_B,oldNum_B,numOf_C,oldNum_C,numOf_Normal,oldNum_Normal) );
+Govdata.add(String.format("The number of calls: %-5d Number of A's: %-5d (%-5d) Number of B's: %-5d (%-5d) Number of people in ICU: %-5d / %-5d  Number of Dead people: %-5d (%-5d) Number of Recovered people: %-5d (%-5d)",Gov.Calls.size(),Gov.getPostiveA().size(),oldGOV_A, Gov.getPostiveB().size(),oldGOV_B, icu.BedsinUse(),icu.getBeds().length,Gov.getDead().size(),oldGOV_Dead,Gov.getRecovered().size(),oldGOV_Recovered));
 
 // System.out.println("Day :"+i);
-
 //  System.out.println("Programmer view");
 //  System.out.println("---------------------");
 //  System.out.println("A num = "+numOf_A );
@@ -460,9 +462,22 @@ Govdata.add("The number of calls: " + Gov.Calls.size()+" Number of A's: "+Gov.ge
 
 
 
+
+for (Human  h :  South.getCities().get(0).get_Citizen()) {
+    h.updateHistory(i);
+    
+}
+
 /////Clearing The number of Calls After the Day is Done
     Gov.Calls.clear();
-    
+///////////////
+South.getCities().get(0).setDeadCitizen(Gov.getDead());
+South.getCities().get(0).get_Citizen().removeAll(Gov.getDead());
+
+
+
+
+///////////////
 
 
 } // End of main Loop
@@ -473,7 +488,13 @@ System.out.println("Government view");
 TableViewer table1 = new TableViewer(Dayslist, Govdata);
 table1.viewTable(10, 10);  
 
+for (Human  h :  South.getCities().get(0).getDeadCitizen() ) {
+    
+       System.out.println(h.getHistory()); 
 
+
+    
+}
 
 }//end of main metohd
 
