@@ -153,6 +153,7 @@ for (Human B : Beds.getBeds() ) {
 
     if(!(B.equals(person)))
         person.setDead();
+        person.updateHistory("\n Type A to Dead");
         PostiveA.remove(person);
         Dead.add(person);
         numOfDeath--;
@@ -183,6 +184,8 @@ public void Recovered(){
         person = PostiveA.get(RecoveredIndex);
     
         person.setCovidInfection_Type(normal);
+
+        person.updateHistory("\n Type A to Normal");
 
         PostiveA.remove(person);
 
@@ -233,7 +236,7 @@ public static void main(String[] args) {
     ArrayList <String>  Dayslist= new ArrayList <String>();
     ArrayList <String>  Govdata = new ArrayList <String>();
 
-
+    Random rad = new Random();
 
 
 
@@ -353,8 +356,27 @@ for (Human H : South.Cities.get(0).get_Citizen()) {
     Gov.Interacted_A_to_B();
     // Gov.Interacted_B_to_C();
 
-    for (Human posA : Gov.PostiveA) {/// make % % % not 100
-    icu.SetBed(posA);
+    // ICU Beds filing
+    // int numOfBeds = (int) (Gov.PostiveA.size() *0.25);
+    // int typeAIndex;
+    // Human person;
+    
+
+    // while(numOfBeds != 0){
+       
+    //     typeAIndex = rad.nextInt(Gov.getPostiveA().size()-1);
+    //     person = Gov.PostiveA.get(typeAIndex);
+
+    //     icu.SetBed(person);
+        
+    //    numOfBeds--;
+        
+        
+    // }
+    
+    
+     for (Human posA : Gov.PostiveA) {/// make % % % not 100
+     icu.SetBed(posA);
     }
 
     Gov.A_to_Dead(icu);

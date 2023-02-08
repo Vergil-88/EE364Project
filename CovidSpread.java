@@ -36,6 +36,8 @@ public void StartCovid(City CityName){
 
         Patient.setCovidInfection_Type(TypeA);
 
+        Patient.updateHistory("Normal to Type A");
+
         //System.out.println(Patient);
   
     } 
@@ -57,14 +59,19 @@ public void SpreadingB(Human Patient){
     
     covidInfection TypeB = new B();
     
+    //String patient = Patient.getId(); // if we want to add the id of type A to hostry
+
     // family to TaypeB
 
     for (Human F : family) {
         String Taype = F.getCovidInfection_Type().getType();
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
-            F.setCovidInfection_Type(TypeB);
+                if(!(Taype.equals("C"))){
+                    F.setCovidInfection_Type(TypeB);
+                    F.updateHistory("Normal to Type B");
+                }
+
     }
 
     // friends to TaypeB
@@ -85,9 +92,10 @@ public void SpreadingB(Human Patient){
         
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
+                if(!(Taype.equals("C"))){
                      Friend.setCovidInfection_Type(TypeB);
-        
+                     Friend.updateHistory("Normal to Type B");
+                }
     }
 
     // coWorkers to TaypeB
@@ -105,9 +113,10 @@ public void SpreadingB(Human Patient){
         
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
+                if(!(Taype.equals("C"))){
                     coWorker.setCovidInfection_Type(TypeB);
-        
+                    coWorker.updateHistory("Normal to Type B");
+                }
     }
 
     // randomIndividuals to TaypeB
@@ -124,8 +133,10 @@ public void SpreadingB(Human Patient){
         String Taype = randomIndividual.getCovidInfection_Type().getType();
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
+                if(!(Taype.equals("C"))){
                     randomIndividual.setCovidInfection_Type(TypeB);
+                    randomIndividual.updateHistory("Normal to Type B");
+                }
         
     }
     
@@ -148,8 +159,10 @@ public void SpreadingC(Human Patient){
         String Taype = F.getCovidInfection_Type().getType();
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
+                if(!(Taype.equals("C"))){
                     F.setCovidInfection_Type(TypeC);
+                    F.updateHistory("Normal to Type C");
+            }
     }
 
     // friends to TaypeC
@@ -167,9 +180,10 @@ public void SpreadingC(Human Patient){
         
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
-                     Friend.setCovidInfection_Type(TypeC);
-        
+                if(!(Taype.equals("C"))){
+                    Friend.setCovidInfection_Type(TypeC);
+                    Friend.updateHistory("Normal to Type C");
+           }
     }
 
     // coWorkers to TaypeC
@@ -187,9 +201,10 @@ public void SpreadingC(Human Patient){
         
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
-                     coWorker.setCovidInfection_Type(TypeC);
-        
+                if(!(Taype.equals("C"))){
+                    coWorker.setCovidInfection_Type(TypeC);
+                    coWorker.updateHistory("Normal to Type C");
+            }
     }
 
     // randomIndividuals to TaypeC
@@ -206,9 +221,10 @@ public void SpreadingC(Human Patient){
         String Taype = randomIndividual.getCovidInfection_Type().getType();
         if (!(Taype.equals("A")))
             if(!(Taype.equals("B")))
-                if(!(Taype.equals("C")))
-                     randomIndividual.setCovidInfection_Type(TypeC);
-        
+                if(!(Taype.equals("C"))){
+                    randomIndividual.setCovidInfection_Type(TypeC);
+                    randomIndividual.updateHistory("Normal to Type C");
+            }
     }
     
     

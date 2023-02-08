@@ -196,6 +196,15 @@ public class Human {
            
     }
 
+    public void updateHistory(String History){
+
+        this.History += History; 
+    }
+
+    public String getHistory() {
+        return History;
+    }
+
 
     public String toString(){
         return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
