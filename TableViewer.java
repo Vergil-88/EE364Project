@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 
 public class TableViewer {
@@ -16,7 +14,6 @@ public class TableViewer {
 		//check if the table shows all the values
 		if(rows*cols<values.size()) {System.out.println("Table is too small!");return;}
 		
-		String table = "";
 		String impliesSymbol = "->";
 		//Based on the number of rows find the width of each column.
 		int[] widthCols = new int [cols]; 
