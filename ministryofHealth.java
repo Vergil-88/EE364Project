@@ -437,7 +437,7 @@ public class ministryofHealth {
                 Gov.Calls.clear();
                 South.getCities().get(0).setDeadCitizen(Gov.getDead());
                 South.getCities().get(0).get_Citizen().removeAll(Gov.getDead());
-
+                System.out.println(South.getCities().get(0).getDeadCitizen()); 
 
 
 

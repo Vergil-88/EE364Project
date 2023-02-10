@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 public class MAIN_loop {
+    static Scanner input = new Scanner(System.in);
 public static void main(String[] args) {
- 
+    int PickedDay=0;   
+    
 //(Genrating Objects )    
 ///////////////////////Genertings Cites and Regins
 
@@ -102,7 +104,7 @@ Main_Method R4_C2 = new Main_Method();
 Main_Method R4_C3 = new Main_Method();
 Main_Method R4_C4 = new Main_Method();
 
-int days=5;
+int days=10;
 for (int day = 1; day <=days  ; day++) {
 
 
@@ -129,15 +131,19 @@ for (int day = 1; day <=days  ; day++) {
 
 
 
+while(day>=PickedDay){
+    boolean ON_OFF=true;
+while  ( ON_OFF==true){
 
 
-
-Scanner input = new Scanner(System.in);
-System.out.println("Pick Regin \n"+
-"1 South: "+
-"2 East:"+
-"3 West:"+
-"4 North:");
+System.out.println("the Day is:"+day+
+" Pick Regin \n"+
+"1 South:\n"+
+"2 East:\n"+
+"3 West:\n"+
+"4 North:\n"+
+"5 Next Day\n"+
+"6 Pick A Day\n");
 
 int  User_Choice= input.nextInt();
 
@@ -147,74 +153,29 @@ switch (User_Choice){
 
 case 1:
 System.out.println("South");
-User_Choice= input.nextInt();
-    System.out.println("Pick The City"+
-    "1 Abha:"+
-    "2 Jizan:"+
-    "3 Najran:"+
-    "4 AlBahah:");
-    
+
+    System.out.println("Pick The City\n"+
+    "1 Abha:\n"+
+    "2 Jizan:\n"+
+    "3 Najran:\n"+
+    "4 AlBahah:\n");
+    User_Choice= input.nextInt();   
     switch (User_Choice){
 
         case 1:
-        System.out.println("The City Name Abha");
-        User_Choice= input.nextInt();
-        System.out.println("Pick the information you wanna see"+
-        "1 Alive Citzizas:"+
-        "2 Dead Citzizas:"+
-        "3 IN ICU:"+
-        "4 Check History of an Individual:");
-        switch (User_Choice){
-
-            case 1:
-            System.out.println("The Alive Citzizas Are");
-
-            break;
-            
-            case 2:
-            System.out.println("The Dead Citzizas Are");
-
-            break;
-            
-            case 3:
-            System.out.println("The  Citzizas in ICU Are");
-
-            break;
-            
-            case 4:
-            System.out.println("The history Of"+ User_Choice);
-
-
-
-            
-            break;
-        }
-
-
-
-
-
-
-
-
-
-
-
+        R1_C1.CitySwitch(South_City_1,day);
         break;
         //////
         case 2:
-        System.out.println("The City Name Jizan");
-
+        R1_C2.CitySwitch(South_City_2,day);
         break;
         //////
         case 3:
-        System.out.println("The City Name Najran");
-
+        R1_C3.CitySwitch(South_City_3,day);
         break;
         //////
         case 4:
-        System.out.println("The City Name AlBahah");
-
+        R1_C4.CitySwitch(South_City_4,day);
         break;
     }
 break;
@@ -222,42 +183,100 @@ break;
 case 2:
 System.out.println("East");
 
+    System.out.println("Pick The City\n"+
+    "1 Dammam:\n"+
+    "2 Jubail:\n"+
+    "3 Qatif:\n"+
+    "4 Ras Tanura:\n");
+    User_Choice= input.nextInt();   
+    switch (User_Choice){
 
-
-
-
-
-
+        case 1:
+        R1_C1.CitySwitch(East_City_1,day);
+        break;
+        //////
+        case 2:
+        R1_C2.CitySwitch(East_City_2,day);
+        break;
+        //////
+        case 3:
+        R1_C3.CitySwitch(East_City_3,day);
+        break;
+        //////
+        case 4:
+        R1_C4.CitySwitch(East_City_4,day);
+        break;
+    }
 break;
 //////////////////////////
 case 3:
 System.out.println("West");
+System.out.println("Pick The City\n"+
+"1 Jeddah:\n"+
+"2 Mecca:\n"+
+"3 Medina:\n"+
+"4 Taif:\n");
+User_Choice= input.nextInt();   
+switch (User_Choice){
 
-
-
-
-
-
+    case 1:
+    R1_C1.CitySwitch(West_City_1,day);
+    break;
+    //////
+    case 2:
+    R1_C2.CitySwitch(West_City_2,day);
+    break;
+    //////
+    case 3:
+    R1_C3.CitySwitch(West_City_3,day);
+    break;
+    //////
+    case 4:
+    R1_C4.CitySwitch(West_City_4,day);
+    break;
+}
 break;
 //////////////////////////
 case 4:
 System.out.println("North");
+System.out.println("Pick The City\n"+
+"1 Tabuk:\n"+
+"2 Sakakah:\n"+
+"3 Arar:\n"+
+"4 Hail:\n");
+User_Choice= input.nextInt();   
+switch (User_Choice){
 
-
-
-
-
-
-
-
+    case 1:
+    R1_C1.CitySwitch(North_City_1,day);
+    break;
+    //////
+    case 2:
+    R1_C2.CitySwitch(North_City_2,day);
+    break;
+    //////
+    case 3:
+    R1_C3.CitySwitch(North_City_3,day);
+    break;
+    //////
+    case 4:
+    R1_C4.CitySwitch(North_City_4,day);
+    break;
+}
+break;
+///////////////
+case 5:
+    ON_OFF=false;
 break;
 //////////////////////////
-
-
+case 6:
+System.out.println("Pick the Day");
+PickedDay=input.nextInt();
+ON_OFF=false;
     }
 
-
-
+}
+}
 
     
 }//end of main loop

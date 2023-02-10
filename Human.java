@@ -215,7 +215,11 @@ public class Human {
     }
 
 
-    
+    @Override
+    public String toString() {
+        
+        return " |ID:"+ id+"|";
+    }
 
 
     // public String toString(){

@@ -198,4 +198,76 @@ public class City {
         return DeadCitizen;
     }
 
+    public void Find_AliveCitizen_History(String ID){
+
+        for (Human human : Citizen) {
+            if (human.getId().equals(ID)){
+                System.out.println(human.getHistory()); 
+            }
+            else{
+                
+            }
+        }
+    }
+
+    public void Find_DeadCitizen_History(String ID){
+
+        for (Human human : DeadCitizen) {
+            if (human.getId().equals(ID)){
+                System.out.println(human.getHistory()); 
+            }
+            else{
+                
+            }
+        }
+
+        
+    }
+
+
+
+
+
+    public void Traveil(ArrayList<City> cities){
+        Random R = new Random();
+        int R1=0;
+        int R2=0;
+        do{
+            R1=R.nextInt(cities.size()-1);
+            R2=R.nextInt(cities.size()-1);
+
+        }
+        while(R1!=R2);
+
+        City City_1 = cities.get(R1);
+        City City_2 = cities.get(R2);
+
+
+       ArrayList<Human> Pepole=City_1.get_Citizen();
+       int NumberOfCitizin= Pepole.size();
+       int RandomIndex=R.nextInt(NumberOfCitizin-1);
+       Human Person=Pepole.get(RandomIndex);
+       
+        
+
+       City_2.addCitizen(Person);
+       
+       Pepole.remove(Person);
+
+    //    Person.//not Completed he should be assigined new RandomInvusulas as he now longer in the same City and he Should not be able to interact with his Friends and Family they Should be Removed from his Array so they dont interact with him
+
+
+
+
+
+
+    }
+
+    public void addCitizen(Human person) {
+
+
+        Citizen.add(person);
+
+    }
+
 }

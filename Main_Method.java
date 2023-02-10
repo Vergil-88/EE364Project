@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main_Method {
     ArrayList <String>  data     = new ArrayList <String>();
     ArrayList <String>  Dayslist = new ArrayList <String>();
     ArrayList <String>  Govdata  = new ArrayList <String>();
-
-
+    Scanner in = new Scanner(System.in);
+    
 
 
     Random rad = new Random();
@@ -154,14 +155,15 @@ for (Human H :  city.get_Citizen()) {
     Dayslist.add(String.format("Day:%-5s",day) );
             data.add(String.format(" A num =  %-5d (%-10d) B num =  %-5d (%-5d) C num =  %-5d (%-5d) Normal num =   %-5d (%-5d)",numOf_A,oldNum_A,numOf_B,oldNum_B,numOf_C,oldNum_C,numOf_Normal,oldNum_Normal) );
             Govdata.add(String.format("The number of calls: %-5d Number of A's: %-5d (%-5d) Number of B's: %-5d (%-5d) Number of people in ICU: %-5d / %-5d  Number of Dead people: %-5d (%-5d) Number of Recovered people: %-5d (%-5d)",MinistryofHealth.getCalls().size(),MinistryofHealth.getPostiveA().size(),oldGOV_A, MinistryofHealth.getPostiveB().size(),oldGOV_B, icu.BedsinUse(),icu.getBeds().length,MinistryofHealth.getDead().size(),oldGOV_Dead,MinistryofHealth.getRecovered().size(),oldGOV_Recovered));
-        for (Human  h :  city.get_Citizen()) {
-            h.updateHistory(day);
+        
+    for (Human  h :  city.get_Citizen()) {
+    h.updateHistory(day);}
           
 ///////////////////Clearing the Call history
 MinistryofHealth.getCalls().clear();            
 
 
-        }
+        
 }
 
 
@@ -181,7 +183,52 @@ public void City_Output(int day){
 
 }
 
+public  void CitySwitch(City city,int day){
+    
 
+    System.out.println("The City Name "+ city.get_Name());
+    City_Output(day);
+    System.out.println("Pick the information you wanna see\n"+
+    "1 Alive Citzizas:\n"+
+    "2 Dead Citzizas:\n"+
+    "3 IN ICU:\n"+
+    "4 Check History of an Individual:\n");
+    int User_Choice= in.nextInt();
+    
+
+    switch (User_Choice){
+
+        case 1:
+        System.out.println("The Alive Citzizas Are");
+        System.out.println(city.get_Citizen());
+        break;
+        
+        case 2:
+        System.out.println("The Dead Citzizas Are");
+        System.out.println(city.getDeadCitizen());
+        break;
+        
+        case 3:
+        System.out.println("The  Citzizas in ICU Are");
+        // System.out.println(icu.getBeds());
+
+        break;
+        
+        case 4:
+        System.out.println("Enter The ID");
+       
+        String FindX = in.next();
+
+        System.out.println("The history Of "+ FindX);
+        
+        
+        city.Find_AliveCitizen_History(FindX);
+        break;
+    }
+
+
+
+}
 
 
 
