@@ -209,7 +209,9 @@ public class ministryofHealth {
     public ArrayList<Human> getDead() {
         return Dead;
     }
-
+    public ArrayList<Human> getPostiveC() {
+        return PostiveC;
+    }
 
     //////////////////////////////////////////////
 
@@ -326,13 +328,6 @@ public class ministryofHealth {
                     break;
                 }
             }
-            
-
-        
-        
-
-
-        
             ////////////////////////////////////////
 
             Gov.TestCenter(Gov.Calls);
@@ -440,7 +435,6 @@ public class ministryofHealth {
 
                 /////Clearing The number of Calls After the Day is Done
                 Gov.Calls.clear();
-                ///////////////
                 South.getCities().get(0).setDeadCitizen(Gov.getDead());
                 South.getCities().get(0).get_Citizen().removeAll(Gov.getDead());
 
