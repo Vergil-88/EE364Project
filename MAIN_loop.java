@@ -133,19 +133,96 @@ for (int day = 1; day <=days  ; day++) {
 
 
 Scanner input = new Scanner(System.in);
-System.out.println("");
+System.out.println("Pick Regin \n"+
+"1 South: "+
+"2 East:"+
+"3 West:"+
+"4 North:");
+
 int  User_Choice= input.nextInt();
+
 
 
 switch (User_Choice){
 
 case 1:
-System.out.println(" day;"+ day + " Sammary ");
+System.out.println("South");
+User_Choice= input.nextInt();
+    System.out.println("Pick The City"+
+    "1 Abha:"+
+    "2 Jizan:"+
+    "3 Najran:"+
+    "4 AlBahah:");
+    
+    switch (User_Choice){
+
+        case 1:
+        System.out.println("The City Name Abha");
+        User_Choice= input.nextInt();
+        System.out.println("Pick the information you wanna see"+
+        "1 Alive Citzizas:"+
+        "2 Dead Citzizas:"+
+        "3 IN ICU:"+
+        "4 Check History of an Individual:");
+        switch (User_Choice){
+
+            case 1:
+            System.out.println("The Alive Citzizas Are");
+
+            break;
+            
+            case 2:
+            System.out.println("The Dead Citzizas Are");
+
+            break;
+            
+            case 3:
+            System.out.println("The  Citzizas in ICU Are");
+
+            break;
+            
+            case 4:
+            System.out.println("The history Of"+ User_Choice);
 
 
+
+            
+            break;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        break;
+        //////
+        case 2:
+        System.out.println("The City Name Jizan");
+
+        break;
+        //////
+        case 3:
+        System.out.println("The City Name Najran");
+
+        break;
+        //////
+        case 4:
+        System.out.println("The City Name AlBahah");
+
+        break;
+    }
 break;
 //////////////////////////
 case 2:
+System.out.println("East");
+
+
 
 
 
@@ -154,6 +231,9 @@ case 2:
 break;
 //////////////////////////
 case 3:
+System.out.println("West");
+
+
 
 
 
@@ -161,25 +241,30 @@ case 3:
 break;
 //////////////////////////
 case 4:
+System.out.println("North");
+
+
+
+
+
 
 
 
 break;
 //////////////////////////
-case 5:
 
 
-
-
-break;
-
-}
+    }
 
 
 
 
     
 }//end of main loop
+
+
+
+
 System.out.println("South");
 
 System.out.println("City1");
