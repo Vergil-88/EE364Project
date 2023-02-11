@@ -33,7 +33,7 @@ public class CovidSpread {
 
             Patient.setCovidInfection_Type(TypeA);
 
-            Patient.SetStutes("At Day:"+1+" B\n");
+            Patient.SetStatus("At Day:"+1+" B\n");
 
             //System.out.println(Patient);
     
@@ -66,7 +66,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         F.setCovidInfection_Type(TypeB);
-                        F.SetStutes("At Day:"+day+" B\n");
+                        F.SetStatus("At Day:"+day+" B\n");
                     }
 
         }
@@ -91,7 +91,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         Friend.setCovidInfection_Type(TypeB);
-                        Friend.SetStutes("At Day:"+day+" B\n");
+                        Friend.SetStatus("At Day:"+day+" B\n");
                     }
         }
 
@@ -112,7 +112,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         coWorker.setCovidInfection_Type(TypeB);
-                        coWorker.SetStutes("At Day:"+day+" B\n");
+                        coWorker.SetStatus("At Day:"+day+" B\n");
                     }
         }
 
@@ -132,7 +132,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         randomIndividual.setCovidInfection_Type(TypeB);
-                        randomIndividual.SetStutes("At Day:"+day+" B\n");
+                        randomIndividual.SetStatus("At Day:"+day+" B\n");
                     }
             
         }
@@ -155,7 +155,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         F.setCovidInfection_Type(TypeC);
-                        F.SetStutes("At Day:"+day+" C\n");
+                        F.SetStatus("At Day:"+day+" C\n");
                 }
         }
 
@@ -176,7 +176,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         Friend.setCovidInfection_Type(TypeC);
-                        Friend.SetStutes("At Day:"+day+" C\n");
+                        Friend.SetStatus("At Day:"+day+" C\n");
             }
         }
 
@@ -197,7 +197,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         coWorker.setCovidInfection_Type(TypeC);
-                        coWorker.SetStutes("At Day:"+day+" C\n");
+                        coWorker.SetStatus("At Day:"+day+" C\n");
                 }
         }
 
@@ -217,7 +217,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         randomIndividual.setCovidInfection_Type(TypeC);
-                        randomIndividual.SetStutes("At Day:"+day+" C\n");
+                        randomIndividual.SetStatus("At Day:"+day+" C\n");
                 }
         }
         
@@ -232,11 +232,11 @@ public class CovidSpread {
             double percentge=Math.random();
             if(percentge>0.90){   //10%
                 B.setCovidInfection_Type(new A());
-                B.SetStutes("At Day:"+day+" A\n");
+                B.SetStatus("At Day:"+day+" A\n");
 
             }else{
                 B.setCovidInfection_Type(new Normal());
-                B.SetStutes("At Day:"+day+" Normal\n");
+                B.SetStatus("At Day:"+day+" Normal\n");
 
             }
             PosB.remove(B);
@@ -249,11 +249,11 @@ public class CovidSpread {
             double percentge=Math.random();
             if(percentge>0.98){  //%2
                 C.setCovidInfection_Type(new A());
-                C.SetStutes("At Day:"+day+" A\n");
+                C.SetStatus("At Day:"+day+" A\n");
             }
             else{
                 C.setCovidInfection_Type(new Normal());
-                C.SetStutes("At Day:"+day+" Normal\n");
+                C.SetStatus("At Day:"+day+" Normal\n");
         
             }
 
