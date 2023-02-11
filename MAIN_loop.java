@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MAIN_loop {
@@ -9,17 +10,7 @@ public static void main(String[] args) {
 //(Genrating Objects )    
 ///////////////////////Genertings Cites and Regins
 
-//////////////////////////////////////////////// Region 1 and its Cities 
-Region South = new Region("South");                            
-South.addCity("Abha", 10000, 0);
-South.addCity("Jizan", 10000, 0);
-South.addCity("Najran", 10000, 0);
-South.addCity("AlBahah", 10000, 0);
-//Saving them to a Varible
-City South_City_1=South.Cities.get(0);
-City South_City_2=South.Cities.get(1);
-City South_City_3=South.Cities.get(2);
-City South_City_4=South.Cities.get(3);
+
 
 //////////////////////////////////////////////// Region 2 and its Cities 
 Region East = new Region("East");                                
@@ -46,24 +37,11 @@ City West_City_3=West.Cities.get(2);
 City West_City_4=West.Cities.get(3);
 
 //////////////////////////////////////////////// Region 4 and its Cities 
-Region North = new Region("North");
-North.addCity("Tabuk", 10000, 0);
-North.addCity("Sakakah", 10000, 0);
-North.addCity("Arar", 10000, 0);
-North.addCity("Hail", 10000, 0);
-//Saving them to a Varible
-City North_City_1=North.Cities.get(0);
-City North_City_2=North.Cities.get(1);
-City North_City_3=North.Cities.get(2);
-City North_City_4=North.Cities.get(3);
 
 ////////////////////////////////////////////////////////////// Start Covid just Happens for 1 time for all the Cities
 CovidSpread covid = new CovidSpread();
 
-covid.StartCovid(South_City_1);
-covid.StartCovid(South_City_2);
-covid.StartCovid(South_City_3);
-covid.StartCovid(South_City_4);
+
 
 covid.StartCovid(East_City_1);
 covid.StartCovid(East_City_2);
@@ -75,20 +53,13 @@ covid.StartCovid(West_City_2);
 covid.StartCovid(West_City_3);
 covid.StartCovid(West_City_4);
 
-covid.StartCovid(North_City_1);
-covid.StartCovid(North_City_2);
-covid.StartCovid(North_City_3);
-covid.StartCovid(North_City_4);
+
 /////////////////////////////////////////////////////////////////
 
 ministryofHealth Gov = new ministryofHealth();
 ICU icu = new ICU();
 
 /////////////////////////////////////////////////////////////////
-Main_Method R1_C1 = new Main_Method();
-Main_Method R1_C2 = new Main_Method();
-Main_Method R1_C3 = new Main_Method();
-Main_Method R1_C4 = new Main_Method();
 
 Main_Method R2_C1 = new Main_Method();
 Main_Method R2_C2 = new Main_Method();
@@ -100,19 +71,18 @@ Main_Method R3_C2 = new Main_Method();
 Main_Method R3_C3 = new Main_Method();
 Main_Method R3_C4 = new Main_Method();
 
-Main_Method R4_C1 = new Main_Method();
-Main_Method R4_C2 = new Main_Method();
-Main_Method R4_C3 = new Main_Method();
-Main_Method R4_C4 = new Main_Method();
+ArrayList<City> Cities = new ArrayList<>();
+
+Cities.addAll(West.getCities());
+Cities.addAll(East.getCities());
+
 
 int days=10;
+int numOfTravle;
 for (int day = 1; day <=days  ; day++) {
 
 
-    R1_C1.City_Activite(day, South_City_1, Gov, icu, covid);
-    R1_C2.City_Activite(day, South_City_1, Gov, icu, covid);
-    R1_C3.City_Activite(day, South_City_2, Gov, icu, covid);
-    R1_C4.City_Activite(day, South_City_4, Gov, icu, covid); 
+   
 
     R2_C1.City_Activite(day, East_City_1, Gov, icu, covid);
     R2_C2.City_Activite(day, East_City_2, Gov, icu, covid);
@@ -124,13 +94,14 @@ for (int day = 1; day <=days  ; day++) {
     R3_C3.City_Activite(day, West_City_3, Gov, icu, covid);
     R3_C4.City_Activite(day, West_City_4, Gov, icu, covid);
 
-    R4_C1.City_Activite(day, North_City_1, Gov, icu, covid);
-    R4_C2.City_Activite(day, North_City_2, Gov, icu, covid);
-    R4_C3.City_Activite(day, North_City_3, Gov, icu, covid);
-    R4_C4.City_Activite(day, North_City_4, Gov, icu, covid);
+    
 
+    numOfTravle = (int) (Math.random()*100);
 
-
+    for (int i = 0; i < numOfTravle; i++) {
+        City.Travel(Cities, day);
+    }
+    
 
 
     
@@ -143,12 +114,10 @@ while  ( ON_OFF==true){
 
 System.out.println("the Day is:"+day+
 " Pick Regin \n"+
-"1 South:\n"+
-"2 East:\n"+
-"3 West:\n"+
-"4 North:\n"+
-"5 Next Day\n"+
-"6 Pick A Day\n");
+"1 East:\n"+
+"2 West:\n"+
+"3 Next Day\n"+
+"4 Pick A Day\n");
 
 int  User_Choice= input.nextInt();
 
@@ -156,36 +125,9 @@ int  User_Choice= input.nextInt();
 
 switch (User_Choice){
 
-case 1:
-System.out.println("South");
 
-    System.out.println("Pick The City\n"+
-    "1 Abha:\n"+
-    "2 Jizan:\n"+
-    "3 Najran:\n"+
-    "4 AlBahah:\n");
-    User_Choice= input.nextInt();   
-    switch (User_Choice){
-
-        case 1:
-        R1_C1.CitySwitch(South_City_1,day);
-        break;
-        //////
-        case 2:
-        R1_C2.CitySwitch(South_City_2,day);
-        break;
-        //////
-        case 3:
-        R1_C3.CitySwitch(South_City_3,day);
-        break;
-        //////
-        case 4:
-        R1_C4.CitySwitch(South_City_4,day);
-        break;
-    }
-break;
 //////////////////////////
-case 2:
+case 1:
 System.out.println("East");
 
     System.out.println("Pick The City\n"+
@@ -197,24 +139,24 @@ System.out.println("East");
     switch (User_Choice){
 
         case 1:
-        R1_C1.CitySwitch(East_City_1,day);
+        R2_C1.CitySwitch(East_City_1,day,icu);
         break;
         //////
         case 2:
-        R1_C2.CitySwitch(East_City_2,day);
+        R2_C2.CitySwitch(East_City_2,day,icu);
         break;
         //////
         case 3:
-        R1_C3.CitySwitch(East_City_3,day);
+        R2_C3.CitySwitch(East_City_3,day,icu);
         break;
         //////
         case 4:
-        R1_C4.CitySwitch(East_City_4,day);
+        R2_C4.CitySwitch(East_City_4,day,icu);
         break;
     }
 break;
 //////////////////////////
-case 3:
+case 2:
 System.out.println("West");
 System.out.println("Pick The City\n"+
 "1 Jeddah:\n"+
@@ -225,56 +167,32 @@ User_Choice= input.nextInt();
 switch (User_Choice){
 
     case 1:
-    R1_C1.CitySwitch(West_City_1,day);
+    R3_C1.CitySwitch(West_City_1,day,icu);
     break;
     //////
     case 2:
-    R1_C2.CitySwitch(West_City_2,day);
+    R3_C2.CitySwitch(West_City_2,day,icu);
     break;
     //////
     case 3:
-    R1_C3.CitySwitch(West_City_3,day);
+    R3_C3.CitySwitch(West_City_3,day,icu);
     break;
     //////
     case 4:
-    R1_C4.CitySwitch(West_City_4,day);
+    R3_C4.CitySwitch(West_City_4,day,icu);
     break;
 }
 break;
 ////////////////////////////
-case 4:
-System.out.println("North");
-System.out.println("Pick The City\n"+
-"1 Tabuk:\n"+
-"2 Sakakah:\n"+
-"3 Arar:\n"+
-"4 Hail:\n");
-User_Choice= input.nextInt();   
-switch (User_Choice){
 
-    case 1:
-    R1_C1.CitySwitch(North_City_1,day);
-    break;
-    //////
-    case 2:
-    R1_C2.CitySwitch(North_City_2,day);
-    break;
-    //////
-    case 3:
-    R1_C3.CitySwitch(North_City_3,day);
-    break;
-    //////
-    case 4:
-    R1_C4.CitySwitch(North_City_4,day);
-    break;
-}
-break;
+
+    
 ///////////////
-case 5:
+case 3:
     ON_OFF=false;
 break;
 //////////////////////////
-case 6:
+case 4:
 System.out.println("Pick the Day");
 PickedDay=input.nextInt();
 ON_OFF=false;
@@ -288,17 +206,6 @@ ON_OFF=false;
 
 
 
-
-System.out.println("South");
-
-System.out.println("City1");
-R1_C1.City_Output(days);
-System.out.println("City2");
-R1_C2.City_Output(days);
-System.out.println("City3");
-R1_C3.City_Output(days);
-System.out.println("City4");
-R1_C4.City_Output(days);
 
 
 System.out.println("East");
@@ -322,16 +229,7 @@ R3_C3.City_Output(days);
 System.out.println("City4");
 R3_C4.City_Output(days);
 
-System.out.println("East");
 
-System.out.println("City1");
-R4_C1.City_Output(days);
-System.out.println("City2");
-R4_C2.City_Output(days);
-System.out.println("City3");
-R4_C3.City_Output(days);
-System.out.println("City4");
-R4_C4.City_Output(days);
 
 
 
@@ -357,3 +255,4 @@ R4_C4.City_Output(days);
 }// end of main 
    
 }
+

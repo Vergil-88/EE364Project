@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Region {
+public class Region implements Places {
     private String Name;
     private int Population;
     private double Area;
@@ -46,8 +46,8 @@ public class Region {
 
     public void addCity(String Name, int Population, double Area){
 
-        City City1 = new City(Name, Population, Area);
-        Cities.add(City1);
+        City city = new City(Name, Population, Area);
+        Cities.add(city);
 
     }
 
@@ -60,7 +60,7 @@ public class Region {
         return Cities;
     }
 
-    public void getPopulation(){
+    public void setPopulation(){
 
         for(City C : Cities){
             Population += C.get_Population();

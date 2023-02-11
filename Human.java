@@ -212,7 +212,7 @@ public class Human {
     }
 
     public String getHistory() {
-        return History;
+        return History + TravelHistory;
     }
    
 
@@ -227,10 +227,10 @@ public class Human {
         family.clear();
         randomIndividuals.clear();
     }
-    public void updateTravelHistory(String CityName,int day){
+    public void updateTravelHistory(String CityName1,String CityName2,int day){
     
 
-        TravelHistory+="at Day:"+day+"City of Residents is "+CityName+"\n";
+        TravelHistory+="at Day:"+day+" Moved from "+CityName1+ " to "+CityName2+"\n";
 
 
     }

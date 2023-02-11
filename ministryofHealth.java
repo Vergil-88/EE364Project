@@ -145,7 +145,7 @@ public class ministryofHealth {
             for (Human B : WaitingList ) {    // gose over the WaitingList Array
         
 
-                if((B.equals(person)))         
+                if((B.equals(person))){      
                     B.setDead();
                     person.setDead();
                     person.SetStutes("At Day:"+day+" Dead\n");
@@ -154,6 +154,7 @@ public class ministryofHealth {
                     
                     numOfDeath--;
                     break;
+                }
             }
         }
     }
@@ -280,7 +281,7 @@ public class ministryofHealth {
         ICU icu = new ICU();
 
 
-        for (int i = 1; i <= 10; i++) {           // Start of the main Loop
+        for (int i = 1; i <= 20; i++) {           // Start of the main Loop
 
 
 

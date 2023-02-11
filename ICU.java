@@ -9,9 +9,10 @@ public class ICU {
     public void SetBed(Human H,int day){
         boolean inBed = false; // if the person is alraedy in bed or not
         String Type = H.getCovidInfection_Type().getType(); 
+        
         for (Human human : Beds) { // gose Over beds
            if(!(human == null))     
-            if(human.equals(H))  // if he exsit in bed 
+                if(human.equals(H))  // if he exsit in bed 
                     inBed = true;  
         }
         

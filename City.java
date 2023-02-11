@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class City {
+public class City implements Places {
     
     private String Name;
     private int Population;
@@ -198,44 +198,36 @@ public class City {
         return DeadCitizen;
     }
 
-    public void Find_AliveCitizen_History(String ID){
+    public void Find_Citizen_History(String ID){
 
         for (Human human : Citizen) {
             if (human.getId().equals(ID)){
                 System.out.println(human.getHistory()); 
-            }
-            else{
-                
-            }
+             }
         }
+                for (Human Person : DeadCitizen) {
+                    if (Person.getId().equals(ID)){
+                       System.out.println(Person.getHistory()); 
+                    }
+                    
+                } 
+            
+                    
     }
-
-    public void Find_DeadCitizen_History(String ID){
-
-        for (Human human : DeadCitizen) {
-            if (human.getId().equals(ID)){
-                System.out.println(human.getHistory()); 
-            }
-            else{
-                
-            }
-        }
-
         
-    }
+    
 
 
 
 
 
-    public void Travel(ArrayList<City> cities,int day){
+    public static void Travel(ArrayList<City> cities,int day){
         Random R = new Random();
         int R1=0;
         int R2=0;
         do{
             R1=R.nextInt(cities.size()-1);
             R2=R.nextInt(cities.size()-1);
-
         }while(R1==R2);
         
 
@@ -243,16 +235,17 @@ public class City {
         City City_2 = cities.get(R2);
 
        ArrayList<Human> Pepole_city2=City_2.get_Citizen();
-       ArrayList<Human> Pepole=City_1.get_Citizen();
-       int NumberOfCitizin= Pepole.size();
+       ArrayList<Human> Pepole_city1=City_1.get_Citizen();
+       int NumberOfCitizin= Pepole_city1.size();
        int RandomIndex=R.nextInt(NumberOfCitizin-1);
-       Human Person=Pepole.get(RandomIndex);
+       Human Person=Pepole_city1.get(RandomIndex);
        
         
 
        City_2.addCitizen(Person);
-       
-        Pepole.remove(Person);
+       Pepole_city1.remove(Person);
+
+
         Person.Clear_F(); // Clears his Current Family and randomIndividuals so he dosent interact with them in the other City
        
         
@@ -274,11 +267,15 @@ public class City {
 
                             Person.setRandomIndividuals(Pepole_city2.get(index_of_friends));
                             Pepole_city2.get(index_of_friends).setRandomIndividuals(Person);
+
                         }
         }  
        
-        
-        Person.updateTravelHistory(City_2.get_Name() , day );
+        String City_1_Name=City_1.get_Name();
+        String City_2_Name=City_2.get_Name();
+        Person.updateTravelHistory(City_1_Name,City_2_Name , day );
+
+        //System.out.println(Person.getHistory());
 
 
 
@@ -290,5 +287,22 @@ public class City {
         Citizen.add(person);
 
     }
+
+    // public static void main(String[] args) {
+        
+        
+    //     City A = new City("Jeddah", 100, 5000);
+    //     City B = new City("Riadh", 100, 1800);
+    //     City E = new City("HHh", 10, 19);
+    //     City F = new City("gfd",100 , 10000);
+    //     ArrayList<City> C = new ArrayList<>();
+    //     C.add(B);
+    //     C.add(A);
+    //     C.add(E);
+    //     C.add(F);
+        
+    //     A.Travel(C, 1);
+
+    // }
 
 }
