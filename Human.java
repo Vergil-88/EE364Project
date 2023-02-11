@@ -20,15 +20,14 @@ public class Human {
     private ArrayList<Human> coWorkers =new ArrayList<Human>();
     private ArrayList<Human> randomIndividuals =new ArrayList<Human>();
     
-
    
     public Human()
     {
        
 
         History= "Normal ";
-       id=super.toString() ; 
-       id = id.substring(id.indexOf("@")+1,id.length()-1);
+        id=super.toString() ; 
+        id = id.substring(id.indexOf("@")+1,id.length()-1);
        
 
        
@@ -95,13 +94,13 @@ public class Human {
 ///////////////////////////////////////////////////
     public String getfamily()
     {
-        String ids="";
-        for ( Human ff :family ) {
-            ids += ff.id+" | ";
+        String familyMembers="";
+        for ( Human fm :family ) {
+            familyMembers += fm.id+" | ";
 
         }
 
-        return ids;
+        return familyMembers;
     }
 
     public ArrayList getfamily_Arraylist(){
@@ -118,13 +117,13 @@ public class Human {
 ///////////////////////////////////////////////////
     public String  getfriends()
     {
-        String ids="";
-        for ( Human ff :friends ) {
-            ids += ff.id+" | ";
+        String Friends="";
+        for ( Human Friend :friends ) {
+            Friends += Friend.id+" | ";
 
         }
 
-        return ids;
+        return Friends;
     }
 
     public ArrayList getfriends_Arraylist(){
@@ -139,13 +138,13 @@ public class Human {
 ///////////////////////////////////////////////////
     public String getcoWorkers()
     {
-        String ids="";
-        for ( Human ff :coWorkers ) {
-            ids += ff.id+" | ";
+        String colleagues="";
+        for ( Human colleague :coWorkers ) {
+            colleagues += colleague.id+" | ";
 
         }
 
-        return ids;
+        return colleagues;
     }
 
     public ArrayList getcoWorkers_Arraylist(){
@@ -163,13 +162,13 @@ public class Human {
 ///////////////////////////////////////////////////
     public String getRandomIndividuals()
     {
-        String ids="";
-        for ( Human ff :randomIndividuals ) {
-            ids += ff.id+" | ";
+        String Randindivs="";
+        for ( Human Randind :randomIndividuals ) {
+            Randindivs += Randind.id+" | ";
 
         }
 
-        return ids;
+        return Randindivs;
     }
 
     public ArrayList getrandomIndividuals_Arraylist(){
@@ -186,8 +185,6 @@ public class Human {
 ///////////////////////////////////////////////////
     public covidInfection getCovidInfection_Type(){
 
-
-
         return CovidInfection_Type;
 
     }
@@ -201,14 +198,14 @@ public class Human {
     }
 
 
-    public void SetStutes(String Status){
+    public void SetStatus(String Status){
 
         this.Status=Status;
     }    
 
     public void updateHistory(int day){
 
-        this.History +="At day: "+day+" "+Status; 
+        this.History +=" At day: "+day+" "+Status; 
     }
 
     public String getHistory() {

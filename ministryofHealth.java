@@ -148,7 +148,7 @@ public class ministryofHealth {
                 if((B.equals(person)))         
                     B.setDead();
                     person.setDead();
-                    person.SetStutes("At Day:"+day+" Dead\n");
+                    person.SetStatus("At Day:"+day+" Dead\n");
                     PostiveA.remove(person);
                     Dead.add(person); 
                     
@@ -173,7 +173,7 @@ public class ministryofHealth {
         
             person.setCovidInfection_Type(normal);
 
-            person.SetStutes("At Day:"+day+"Normal\n");
+            person.SetStatus("At Day:"+day+"Normal\n");
 
             PostiveA.remove(person);
 

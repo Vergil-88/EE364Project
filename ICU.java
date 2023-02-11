@@ -17,21 +17,21 @@ public class ICU {
         
 
         if(Type.equals("A")) {
-            if((bedNum != 0) && !(inBed)){ // if ther is a free bed and the person not in bed
+            if((bedNum != 0) && !(inBed)){ // if there is a free bed and the person not in bed
                 for (int i = 0; i <= Beds.length-1; i++) {
                     if ((Beds[i] == null)){
                             Beds[i] = H;
-                            H.SetStutes("At Day:"+day+" ICU\n");
+                            H.SetStatus("At Day:"+day+" ICU\n");
                             bedNum--;
                             break;
                         }       
                 }   
             }
             else{
-                if(!(inBed) && (bedNum == 0)){ // if ther is no free bed and the person not in bed
+                if(!(inBed) && (bedNum == 0)){ // if there is no free bed and the person not in bed
                     if(!(waitingList.contains(H))){
                         waitingList.add(H);
-                        H.SetStutes("At Day: "+day+" Waiting List\n");
+                        H.SetStatus("At Day: "+day+" Waiting List\n");
                     }
                 }
             }     
