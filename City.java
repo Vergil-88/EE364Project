@@ -228,7 +228,7 @@ public class City {
 
 
 
-    public void Traveil(ArrayList<City> cities){
+    public void Travel(ArrayList<City> cities,int day){
         Random R = new Random();
         int R1=0;
         int R2=0;
@@ -236,13 +236,13 @@ public class City {
             R1=R.nextInt(cities.size()-1);
             R2=R.nextInt(cities.size()-1);
 
-        }
-        while(R1!=R2);
+        }while(R1==R2);
+        
 
         City City_1 = cities.get(R1);
         City City_2 = cities.get(R2);
 
-
+       ArrayList<Human> Pepole_city2=City_2.get_Citizen();
        ArrayList<Human> Pepole=City_1.get_Citizen();
        int NumberOfCitizin= Pepole.size();
        int RandomIndex=R.nextInt(NumberOfCitizin-1);
@@ -252,12 +252,33 @@ public class City {
 
        City_2.addCitizen(Person);
        
-       Pepole.remove(Person);
+        Pepole.remove(Person);
+        Person.Clear_F(); // Clears his Current Family and randomIndividuals so he dosent interact with them in the other City
+       
+        
+    
+    
+        int Num_Of_friends= (int)(Math.random()*5+2);//Person IS ASSIGNED NEW randomIndividuals
 
-    //    Person.//not Completed he should be assigined new RandomInvusulas as he now longer in the same City and he Should not be able to interact with his Friends and Family they Should be Removed from his Array so they dont interact with him
+        for (int i = 0; i<Num_Of_friends; i++) {
+           
+        int index_of_friends =R.nextInt(Pepole_city2.size()-1) ;  
 
+        Human SearchCitizen = Pepole_city2.get(index_of_friends);
 
+        if( !(Person.equals(SearchCitizen)))
+            if(!(Person.getfamily_Arraylist().contains(SearchCitizen)))
+                if(!(Person.getfriends_Arraylist().contains(SearchCitizen)))
+                    if(!(Person.getcoWorkers_Arraylist().contains(SearchCitizen)))
+                        if(!(Person.getrandomIndividuals_Arraylist().contains(SearchCitizen))){
 
+                            Person.setRandomIndividuals(Pepole_city2.get(index_of_friends));
+                            Pepole_city2.get(index_of_friends).setRandomIndividuals(Person);
+                        }
+        }  
+       
+        
+        Person.updateTravelHistory(City_2.get_Name() , day );
 
 
 

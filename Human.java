@@ -9,6 +9,7 @@ public class Human {
     private boolean cD;
     private String Status="";
     private String History="";
+    private String TravelHistory="";
     /*how many critical dieases do you guys want? three? or four?
     /* and what about we make "String cD" boolean instead of a string of dieases which will make it easier for us because if it was true we can apply a percantage where the person can get covid faster or not
     */
@@ -202,7 +203,7 @@ public class Human {
 
     public void SetStutes(String Status){
 
-        this.Status+=Status;
+        this.Status=Status;
     }    
 
     public void updateHistory(int day){
@@ -213,7 +214,7 @@ public class Human {
     public String getHistory() {
         return History;
     }
-
+   
 
     @Override
     public String toString() {
@@ -221,7 +222,18 @@ public class Human {
         return " |ID:"+ id+"|";
     }
 
+    public void Clear_F(){
 
+        family.clear();
+        randomIndividuals.clear();
+    }
+    public void updateTravelHistory(String CityName,int day){
+    
+
+        TravelHistory+="at Day:"+day+"City of Residents is "+CityName+"\n";
+
+
+    }
     // public String toString(){
     //     return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
     //     +"family Members are "+ getfamily()+"\n"+

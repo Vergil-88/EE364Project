@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class MAIN_loop {
     static Scanner input = new Scanner(System.in);
 public static void main(String[] args) {
-    int PickedDay=0;   
+    int PickedDay=0;
+    boolean ON_OFF=true;   
     
 //(Genrating Objects )    
 ///////////////////////Genertings Cites and Regins
@@ -108,31 +109,35 @@ int days=10;
 for (int day = 1; day <=days  ; day++) {
 
 
-    R1_C1.City_Activite(day, North_City_4, Gov, icu, covid);
-    R1_C2.City_Activite(day, North_City_4, Gov, icu, covid);
-    R1_C3.City_Activite(day, North_City_4, Gov, icu, covid);
-    R1_C4.City_Activite(day, North_City_4, Gov, icu, covid); 
+    R1_C1.City_Activite(day, South_City_1, Gov, icu, covid);
+    R1_C2.City_Activite(day, South_City_1, Gov, icu, covid);
+    R1_C3.City_Activite(day, South_City_2, Gov, icu, covid);
+    R1_C4.City_Activite(day, South_City_4, Gov, icu, covid); 
 
-    R2_C1.City_Activite(day, North_City_4, Gov, icu, covid);
-    R2_C2.City_Activite(day, North_City_4, Gov, icu, covid);
-    R2_C3.City_Activite(day, North_City_4, Gov, icu, covid);
-    R2_C4.City_Activite(day, North_City_4, Gov, icu, covid);
+    R2_C1.City_Activite(day, East_City_1, Gov, icu, covid);
+    R2_C2.City_Activite(day, East_City_2, Gov, icu, covid);
+    R2_C3.City_Activite(day, East_City_3, Gov, icu, covid);
+    R2_C4.City_Activite(day, East_City_4, Gov, icu, covid);
 
-    R3_C1.City_Activite(day, North_City_4, Gov, icu, covid);
-    R3_C2.City_Activite(day, North_City_4, Gov, icu, covid);
-    R3_C3.City_Activite(day, North_City_4, Gov, icu, covid);
-    R3_C4.City_Activite(day, North_City_4, Gov, icu, covid);
+    R3_C1.City_Activite(day, West_City_1, Gov, icu, covid);
+    R3_C2.City_Activite(day, West_City_2, Gov, icu, covid);
+    R3_C3.City_Activite(day, West_City_3, Gov, icu, covid);
+    R3_C4.City_Activite(day, West_City_4, Gov, icu, covid);
 
-    R4_C1.City_Activite(day, North_City_4, Gov, icu, covid);
-    R4_C2.City_Activite(day, North_City_4, Gov, icu, covid);
-    R4_C3.City_Activite(day, North_City_4, Gov, icu, covid);
+    R4_C1.City_Activite(day, North_City_1, Gov, icu, covid);
+    R4_C2.City_Activite(day, North_City_2, Gov, icu, covid);
+    R4_C3.City_Activite(day, North_City_3, Gov, icu, covid);
     R4_C4.City_Activite(day, North_City_4, Gov, icu, covid);
 
 
 
 
+
+    
+
+
 while(day>=PickedDay){
-    boolean ON_OFF=true;
+    ON_OFF=true;
 while  ( ON_OFF==true){
 
 

@@ -22,26 +22,7 @@ public class Main_Method {
     int GOV_Recovered=0;    
 
 public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,ICU icu,CovidSpread covid){
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// First Block         this Block tells us who of Type B and C are Actlly A or Normal                      
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    if( day%3==0 ){//Happens Every 3 Days
-        /// Changing B to A by Percentiges there rest that we havent made into A will become Normal 
 
-        
-        for (Human B: city.get_Citizen() ) {
-            if(B.getCovidInfection_Type().getType().equals("B"))
-                covid.B_Becomes_A(B,MinistryofHealth.getPostiveB(),day);  
-        }
-
-
-        /// Changing C to A by Percentiges there rest that we havent made into A will become Normal 
-
-        for (Human C: city.get_Citizen() ) {
-            if(C.getCovidInfection_Type().getType().equals("C"))
-                covid.C_Becomes_A(C,MinistryofHealth.getPostiveC(),day);  
-        }
-    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 2nd Block Spreding the Covid for the Day Happens Every Day
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -52,6 +33,26 @@ public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,IC
         else if(H.getCovidInfection_Type().getType().equals("B"))
             covid.SpreadingC(H,day);   
     } 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// First Block         this Block tells us who of Type B and C are Actlly A or Normal                      
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if( day%3==0 ){//Happens Every 3 Days
+    /// Changing B to A by Percentiges there rest that we havent made into A will become Normal 
+
+    
+    for (Human B: city.get_Citizen() ) {
+        if(B.getCovidInfection_Type().getType().equals("B"))
+            covid.B_Becomes_A(B,MinistryofHealth.getPostiveB(),day);  
+    }
+
+
+    /// Changing C to A by Percentiges there rest that we havent made into A will become Normal 
+
+    for (Human C: city.get_Citizen() ) {
+        if(C.getCovidInfection_Type().getType().equals("C"))
+            covid.C_Becomes_A(C,MinistryofHealth.getPostiveC(),day);  
+    }
+}    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 3rd Block Calls Happen Every day
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
