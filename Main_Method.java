@@ -7,10 +7,11 @@ public class Main_Method {
     ArrayList <String>  Dayslist = new ArrayList <String>();
     ArrayList <String>  Govdata  = new ArrayList <String>();
     Scanner in = new Scanner(System.in);
-    Object [][] table = new String[Dayslist.size()+2][];
-
     
-
+    ArrayList <String>  A   = new ArrayList <String>();
+    ArrayList <String>  B   = new ArrayList <String>();
+    ArrayList <String>  C   = new ArrayList <String>();
+    ArrayList <String>  Normal   = new ArrayList <String>();
 
     Random rad = new Random();
     int numOf_A=0;
@@ -172,6 +173,12 @@ for (Human H :  city.get_Citizen()) {
     oldGOV_Dead=GOV_Dead-oldGOV_Dead;
     oldGOV_Recovered=GOV_Recovered-oldGOV_Recovered;
 
+    A.add(numOf_A+"("+oldNum_A+")");
+    B.add(numOf_B+"("+oldNum_B+")");
+    C.add(numOf_C+"("+oldNum_C+")");
+    Normal.add(numOf_Normal+"("+oldNum_Normal+")");
+
+
     Dayslist.add(String.format("Day:%-5s",day) );
             data.add(String.format(" A num =  %-5d (%-10d) B num =  %-5d (%-5d) C num =  %-5d (%-5d) Normal num =   %-5d (%-5d)",numOf_A,oldNum_A,numOf_B,oldNum_B,numOf_C,oldNum_C,numOf_Normal,oldNum_Normal) );
             Govdata.add(String.format("The number of calls: %-5d Number of A's: %-5d (%-5d) Number of B's: %-5d (%-5d) Number of people in ICU: %-5d / %-5d  Number of Dead people: %-5d (%-5d) Number of Recovered people: %-5d (%-5d)",MinistryofHealth.getCalls().size(),MinistryofHealth.getPostiveA().size(),oldGOV_A, MinistryofHealth.getPostiveB().size(),oldGOV_B, icu.BedsinUse(),icu.getBeds().length,MinistryofHealth.getDead().size(),oldGOV_Dead,MinistryofHealth.getRecovered().size(),oldGOV_Recovered));
@@ -293,20 +300,24 @@ public void Table_XY (City city, ICU icu ){
 
 }
 
-public  void Table_XYZ (int day,ArrayList Dayslist, int numOf_A,int numOf_B,int numOf_C,int numOf_Normal,int oldNum_A,int oldNum_B,int oldNum_C,int oldNum_Normal){
+public  void Table_XYZ (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> C,ArrayList <String> Normal){
 
 
-    String A=String.valueOf(numOf_A+"("+oldNum_A+")");
-    String B=String.valueOf(numOf_B+"("+oldNum_B+")");
-    String C=String.valueOf(numOf_C+"("+oldNum_C+")");
-    String Normal=String.valueOf(numOf_Normal+"("+oldNum_Normal+")");
+    
 
 
+        Object [][] table = new String[day+1][];
 
         table[0] = new String[]{"DAY","A","B","C","Normal"};
-       
-
+       for (int i = 1; i <day ; i++) {
+        A
+        
+        
+        
         table[day] = new String[]{String.valueOf(day),A,B,C,Normal};
+       }
+
+        
 
 
 
@@ -319,6 +330,7 @@ public  void Table_XYZ (int day,ArrayList Dayslist, int numOf_A,int numOf_B,int 
     }
 
 }
+
 }
 
 
