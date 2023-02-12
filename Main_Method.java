@@ -7,6 +7,8 @@ public class Main_Method {
     ArrayList <String>  Dayslist = new ArrayList <String>();
     ArrayList <String>  Govdata  = new ArrayList <String>();
     Scanner in = new Scanner(System.in);
+    Object [][] table = new String[Dayslist.size()+2][];
+
     
 
 
@@ -175,8 +177,10 @@ for (Human H :  city.get_Citizen()) {
             Govdata.add(String.format("The number of calls: %-5d Number of A's: %-5d (%-5d) Number of B's: %-5d (%-5d) Number of people in ICU: %-5d / %-5d  Number of Dead people: %-5d (%-5d) Number of Recovered people: %-5d (%-5d)",MinistryofHealth.getCalls().size(),MinistryofHealth.getPostiveA().size(),oldGOV_A, MinistryofHealth.getPostiveB().size(),oldGOV_B, icu.BedsinUse(),icu.getBeds().length,MinistryofHealth.getDead().size(),oldGOV_Dead,MinistryofHealth.getRecovered().size(),oldGOV_Recovered));
         
     
-   
+            
 
+            
+    Table_XYZ(day,Dayslist, numOf_A, numOf_B, numOf_C, numOf_Normal, oldNum_A, oldNum_B, oldNum_C, oldNum_Normal);
           
 ///////////////////Clearing the Call history
 MinistryofHealth.getCalls().clear();            
@@ -206,7 +210,8 @@ public  void CitySwitch(City city,int day, ICU icu){
     
 
     System.out.println("The City Name "+ city.get_Name());
-    City_Output(day);
+    // City_Output(day);
+    PrintTable_XYZ();
     Table_XY(city, icu);
     System.out.println("Pick the information you wanna see\n"+
     "1 Alive Citzizas:\n"+
@@ -288,11 +293,42 @@ public void Table_XY (City city, ICU icu ){
 
 }
 
+public  void Table_XYZ (int day,ArrayList Dayslist, int numOf_A,int numOf_B,int numOf_C,int numOf_Normal,int oldNum_A,int oldNum_B,int oldNum_C,int oldNum_Normal){
+
+
+    String A=String.valueOf(numOf_A+"("+oldNum_A+")");
+    String B=String.valueOf(numOf_B+"("+oldNum_B+")");
+    String C=String.valueOf(numOf_C+"("+oldNum_C+")");
+    String Normal=String.valueOf(numOf_Normal+"("+oldNum_Normal+")");
+
+
+
+        table[0] = new String[]{"DAY","A","B","C","Normal"};
+       
+
+        table[day] = new String[]{String.valueOf(day),A,B,C,Normal};
 
 
 
 
+   
+    }
+    public void PrintTable_XYZ(){
+        for (Object[] row : table) {
+            System.out.format("%15s%15s%15s%15s%15s%n", row);
+    }
 
 }
+}
+
+
+
+
+
+
+
+
+
+
 
 

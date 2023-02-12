@@ -106,7 +106,6 @@ for (int day = 1; day <=days  ; day++) {
 
     
 
-
 while(day>=PickedDay){
     ON_OFF=true;
 while  ( ON_OFF==true){

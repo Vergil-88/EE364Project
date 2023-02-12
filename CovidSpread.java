@@ -27,13 +27,19 @@ public class CovidSpread {
 
         for (int i = 0 ; i < numberOfPatients ; i++){
 
-            PatientIndex = rad.nextInt(CityName.get_Population()-1);
+           try{ PatientIndex = rad.nextInt(CityName.get_Population()-1);
 
             Patient = Citizen.get(PatientIndex);
 
             Patient.setCovidInfection_Type(TypeA);
 
             Patient.SetStatus("At Day:"+1+" B\n");
+        }
+            catch(Exception e){
+
+             continue;
+
+         }
 
             //System.out.println(Patient);
     
@@ -79,7 +85,7 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfFriends; i++) {
             
-            FriendIndex = rad.nextInt(friends.size()-1);
+          try{  FriendIndex = rad.nextInt(friends.size()-1);
 
             // if(friends.get(FriendIndex).getCovidInfection_Type().getType() == "B")
             //     continue;
@@ -93,6 +99,10 @@ public class CovidSpread {
                         Friend.setCovidInfection_Type(TypeB);
                         Friend.SetStatus("At Day:"+day+" B\n");
                     }
+                }
+                catch(Exception e){
+                    continue;
+                }
         }
 
         // coWorkers to TaypeB
@@ -103,7 +113,7 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfCoWorkers; i++) {
 
-            coWorkerIndex = rad.nextInt(coWorkers.size()-1);
+          try{  coWorkerIndex = rad.nextInt(coWorkers.size()-1);
 
             coWorker = coWorkers.get(coWorkerIndex);
             String Taype = coWorker.getCovidInfection_Type().getType();
@@ -114,7 +124,12 @@ public class CovidSpread {
                         coWorker.setCovidInfection_Type(TypeB);
                         coWorker.SetStatus("At Day:"+day+" B\n");
                     }
-        }
+            }
+            catch(Exception e){
+                continue;
+            }
+                    
+    }
 
         // randomIndividuals to TaypeB
 
@@ -124,7 +139,7 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfRandomIndividuals; i++) {
 
-            randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
+           try{ randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
 
             randomIndividual = randomIndividuals.get(randomIndividualsIndex);
             String Taype = randomIndividual.getCovidInfection_Type().getType();
@@ -134,7 +149,10 @@ public class CovidSpread {
                         randomIndividual.setCovidInfection_Type(TypeB);
                         randomIndividual.SetStatus("At Day:"+day+" B\n");
                     }
-            
+                }
+                catch(Exception e){
+                    continue;
+                }
         }
         
     }
@@ -167,7 +185,7 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfFriends; i++) {
 
-            FriendIndex = rad.nextInt(friends.size()-1);
+         try{   FriendIndex = rad.nextInt(friends.size()-1);
 
             Friend = friends.get(FriendIndex);
             String Taype = Friend.getCovidInfection_Type().getType();
@@ -179,6 +197,10 @@ public class CovidSpread {
                         Friend.SetStatus("At Day:"+day+" C\n");
             }
         }
+        catch(Exception e){
+            continue;
+        }
+        }
 
         // coWorkers to TaypeC
 
@@ -188,7 +210,7 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfCoWorkers; i++) {
 
-            coWorkerIndex = rad.nextInt(coWorkers.size()-1);
+          try{  coWorkerIndex = rad.nextInt(coWorkers.size()-1);
 
             coWorker = coWorkers.get(coWorkerIndex);
             String Taype = coWorker.getCovidInfection_Type().getType();
@@ -199,6 +221,10 @@ public class CovidSpread {
                         coWorker.setCovidInfection_Type(TypeC);
                         coWorker.SetStatus("At Day:"+day+" C\n");
                 }
+            }
+            catch(Exception e){
+                continue;
+            }
         }
 
         // randomIndividuals to TaypeC
@@ -209,7 +235,7 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfRandomIndividuals; i++) {
 
-            randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
+          try{  randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
 
             randomIndividual = randomIndividuals.get(randomIndividualsIndex);
             String Taype = randomIndividual.getCovidInfection_Type().getType();
@@ -219,6 +245,10 @@ public class CovidSpread {
                         randomIndividual.setCovidInfection_Type(TypeC);
                         randomIndividual.SetStatus("At Day:"+day+" C\n");
                 }
+            }
+            catch(Exception e){
+                continue;
+            }
         }
         
         
