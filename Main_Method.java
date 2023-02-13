@@ -115,9 +115,12 @@ if( day%3==0 ){//Happens Every 3 Days
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
 if(day>=7){
+        
         MinistryofHealth.A_to_Dead(icu.getWaitingList(),day);
+        MinistryofHealth.Recovered(day,icu);// add a line to remove the perosn if he exsist in a bed
+        // MinistryofHealth.RecoveredICU(day, icu);
    
-        MinistryofHealth.Recovered(day);
+      
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 7th Clearing the Calls form the day and moveing the Dead Citizins to A diffrant Array and Removing them fomr the Orignal 

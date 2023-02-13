@@ -116,7 +116,7 @@ for (int day = 1; day <=days  ; day++) {
     Porgress++;
     System.out.println("day:"+Porgress);
     
-
+    // System.out.println(West_City_2.get_Citizen().size());
 
 
     numOfTravle = (int) (Math.random()*100);

@@ -160,7 +160,7 @@ public class ministryofHealth {
     }
 
     //////////////////////////////////////////////
-    public void Recovered(int day){
+    public void Recovered(int day,ICU icu){
 
         int numOfRecovered= (int) (PostiveA.size() * 0.05 );
         int RecoveredIndex;
@@ -177,9 +177,9 @@ public class ministryofHealth {
             person.SetStatus("At Day:"+day+"Normal\n");
 
             PostiveA.remove(person);
-
             Recovered.add(person);
-            
+            // icu.RemoveBedof(person);//this line cuze 0 death for someReson 
+
             numOfRecovered--;
             
         }
@@ -188,6 +188,70 @@ public class ministryofHealth {
 
 
     }
+
+    public void RecoveredICU(int day,ICU icu){// like the one above it but it deals wiht ppl in the ICU 
+        Human Bed[]=icu.getBeds();
+        int numOfRecovered= (int) (Bed.length * 0.05 );
+        int RecoveredIndex;
+        Human person;
+        covidInfection normal = new Normal();
+        
+        while(numOfRecovered != 0){
+            
+            RecoveredIndex = rad.nextInt(Bed.length);
+            try {
+                person = Bed[RecoveredIndex] ;  
+                person.setCovidInfection_Type(normal);
+
+                person.SetStatus("At Day:"+day+"Normal\n");
+    
+                PostiveA.remove(person);
+                Recovered.add(person);
+                
+                icu.RemoveBedof(person);//this line cuze 0 death for someReson
+                numOfRecovered--;
+
+            } catch (Exception e) {
+             
+                
+
+            }
+            
+        
+            
+            
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     ///////Geters/////////////
 
@@ -359,7 +423,7 @@ public class ministryofHealth {
             
             Gov.A_to_Dead(icu.getWaitingList(),i);
 
-            Gov.Recovered(i);
+            Gov.Recovered(i,icu);
                 
             
 
