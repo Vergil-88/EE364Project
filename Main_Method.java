@@ -328,6 +328,66 @@ public  void CitySwitch(City city,int day, ICU icu){
         break;
         
         case 5:
+        System.out.println("Pick the information you wanna see\n"+
+        "1 History of Alive Person\n"+
+        "2 History of Dead Person\n"+
+        "3 History of Traveler Person\n"+
+        "4 History of ICU Person\n");
+        int input = Switchinput();
+        int index;
+        Human Person;
+        String History;
+        ArrayList<Human> Citizen;
+        switch (input) {
+
+            case 1:
+            Citizen = city.get_Citizen();
+                System.out.println("inter num from 0 to "+Citizen.size()+": ");
+                index = Switchinput();
+                Person = Citizen.get(index);
+                History = Person.getHistory() ;
+                System.out.println(History);
+
+                break;
+
+            case 2:
+                    Citizen = city.getDeadCitizen();
+                    System.out.println("inter num from 0 to "+Citizen.size()+": ");
+                    index = Switchinput();
+                    Person = Citizen.get(index);
+                    History = Person.getHistory() ;
+                    System.out.println(History);
+                    
+                    break;
+
+            case 3:
+                    Citizen = city.getTravelers();
+                    System.out.println("inter num from 0 to "+Citizen.size()+": ");
+                    index = Switchinput();
+                    Person = Citizen.get(index);
+                    History = Person.getHistory() ;
+                    System.out.println(History);
+                    
+                    break;
+
+            case 4:
+                    Human [] Beds = icu.getBeds();
+                    System.out.println("inter num from 0 to "+Beds.length+": ");
+                    index = Switchinput();
+                    Person = Beds[index];
+                    History = Person.getHistory() ;
+                    System.out.println(History);
+                    
+                    break;
+    
+
+
+            
+        }
+
+
+
+
         System.out.println("Enter The ID");
        
         String FindX = in.next();
