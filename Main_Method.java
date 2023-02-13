@@ -342,7 +342,7 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 1:
             Citizen = city.get_Citizen();
-                System.out.println("inter num from 0 to "+Citizen.size()+": ");
+                System.out.println("Enter num from 0 to "+Citizen.size()+": ");
                 index = Switchinput();
                 Person = Citizen.get(index);
                 History = Person.getHistory() ;
@@ -352,7 +352,7 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 2:
                     Citizen = city.getDeadCitizen();
-                    System.out.println("inter num from 0 to "+Citizen.size()+": ");
+                    System.out.println("Enter num from 0 to "+Citizen.size()+": ");
                     index = Switchinput();
                     Person = Citizen.get(index);
                     History = Person.getHistory() ;
@@ -362,7 +362,7 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 3:
                     Citizen = city.getTravelers();
-                    System.out.println("inter num from 0 to "+Citizen.size()+": ");
+                    System.out.println("Enter num from 0 to "+Citizen.size()+": ");
                     index = Switchinput();
                     Person = Citizen.get(index);
                     History = Person.getHistory() ;
@@ -372,12 +372,16 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 4:
                     Human [] Beds = icu.getBeds();
-                    System.out.println("inter num from 0 to "+Beds.length+": ");
+                    System.out.println("Enter num from 0 to "+Beds.length+": ");
                     index = Switchinput();
+                   try {
                     Person = Beds[index];
-                    History = Person.getHistory() ;
+                    History = Person.getHistory();
                     System.out.println(History);
-                    
+                   } catch (Exception e) {
+                    System.out.println("The bed is empty");
+                   }
+                   
                     break;
     
 
