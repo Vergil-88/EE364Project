@@ -38,6 +38,29 @@ public class Main_Method {
 
 public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,ICU icu,CovidSpread covid){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 5th ICU Beds filing for the the Type Who needs it which is 0.15 of them
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
+int typeAIndex; 
+Human person;
+
+while(numOfBeds != 0){
+
+    typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
+    ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
+    person =  ArrayPostiveA.get(typeAIndex);
+
+    icu.SetBed(person,day);
+    
+    numOfBeds--;
+
+    
+}
+
+if(icu.getBeds().length == 0 )
+     System.out.println("At Day " + day + " The ICU is Full ");
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // First Block         this Block tells us who of Type B and C are Actlly A or Normal                      
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if( day%3==0 ){//Happens Every 3 Days
@@ -85,29 +108,7 @@ if( day%3==0 ){//Happens Every 3 Days
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     MinistryofHealth.TestCenter(MinistryofHealth.getCalls());
     MinistryofHealth.Interacted_A_to_B();
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 5th ICU Beds filing for the the Type Who needs it which is 0.15 of them
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-   int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
-   int typeAIndex; 
-   Human person;
-   
-   while(numOfBeds != 0){
-   
-       typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
-       ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
-       person =  ArrayPostiveA.get(typeAIndex);
 
-       icu.SetBed(person,day);
-       
-       numOfBeds--;
-
-       
-   }
-
-   if(icu.getBeds().length == 0 )
-        System.out.println("At Day " + day + " The ICU is Full ");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 6th Gov declaring type A Recoverd and Dead 
@@ -357,7 +358,7 @@ public  void CitySwitch(City city,int day, ICU icu){
                     Person = Citizen.get(index);
                     History = Person.getHistory() ;
                     System.out.println(History);
-                    
+                    System.out.println(Person.Sumarry());//testing line
                     break;
 
             case 3:
@@ -378,6 +379,7 @@ public  void CitySwitch(City city,int day, ICU icu){
                     Person = Beds[index];
                     History = Person.getHistory();
                     System.out.println(History);
+                    System.out.println(Person.Sumarry());//testing line
                    } catch (Exception e) {
                     System.out.println("The bed is empty");
                    }
@@ -392,16 +394,7 @@ public  void CitySwitch(City city,int day, ICU icu){
 
 
 
-        System.out.println("Enter The ID");
-       
-        String FindX = in.next();
-
-        System.out.println("The history Of "+ FindX);
-        
-        
-        city.Find_Citizen_History(FindX);
-        break;
-
+    
 
     }
 

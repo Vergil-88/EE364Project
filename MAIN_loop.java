@@ -94,7 +94,7 @@ ArrayList<City> Cities = new ArrayList<>();
 Cities.addAll(West.getCities());
 Cities.addAll(East.getCities());
 
-
+int Porgress=0;
 int days=365;// a year
 int numOfTravle;
 for (int day = 1; day <=days  ; day++) {
@@ -113,6 +113,11 @@ for (int day = 1; day <=days  ; day++) {
     R3_C4.City_Activite(day, West_City_4, GovR3_C4, icuR3_C4, covid);
 
     
+    Porgress++;
+    System.out.println("day:"+Porgress);
+    
+
+
 
     numOfTravle = (int) (Math.random()*100);
 

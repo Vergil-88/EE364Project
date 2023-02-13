@@ -33,7 +33,7 @@ public class CovidSpread {
 
             Patient.setCovidInfection_Type(TypeA);
 
-            Patient.SetStatus("At Day:"+1+" B\n");
+            Patient.SetStatus("At Day:"+1+" A\n");
         }
             catch(Exception e){
 

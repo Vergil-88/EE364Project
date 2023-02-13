@@ -231,15 +231,15 @@ public class Human {
 
 
     }
-    // public String toString(){
-    //     return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n "
-    //     +"family Members are "+ getfamily()+"\n"+
-    //     " friends are "+ getfriends()+"\n"+
-    //     " CoWorkers are "+ getcoWorkers()+"\n"+
-    //     " randomIndividuals are "+ getRandomIndividuals()+"\n"+
-    //     "------------------------------------------------------------------------------------------------------------------------------------"  
-    //      ;
-    // }
+    public String Sumarry(){
+        return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n ";
+        // +"family Members are "+ getfamily()+"\n"+
+        // " friends are "+ getfriends()+"\n"+
+        // " CoWorkers are "+ getcoWorkers()+"\n"+
+        // " randomIndividuals are "+ getRandomIndividuals()+"\n"+
+        // "------------------------------------------------------------------------------------------------------------------------------------"  
+        //  ;
+    }
 
     // public static void main(String[] args) {
     //     Human H = new Human();
