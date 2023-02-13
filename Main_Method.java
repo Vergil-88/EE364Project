@@ -302,7 +302,7 @@ public  void CitySwitch(City city,int day, ICU icu){
     "3 IN ICU:\n"+
     "4 Travelers:\n"+
     "5 Check History of an Individual:\n");
-    int User_Choice= in.nextInt();
+    int User_Choice= Switchinput();
     
 
     switch (User_Choice){
@@ -445,9 +445,37 @@ public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,Array
    for (Object[] row : table) {
     System.out.format("%15s%15s%15s%15s%15s%15s%15s%n", row);
 }
-
-
 }
+public  int Switchinput(){
+    int User_Choice=0;
+	boolean TF=true;
+	
+    do {
+		try {
+			
+		
+		User_Choice=in.nextInt();
+		
+
+		
+		TF=false;
+		
+		
+		
+		}
+		catch(Exception e){	
+		System.out.println(" Wrong input ");
+		in.nextLine();
+		TF=true;
+		}
+		}while(TF==true);
+
+        return User_Choice;
+}
+
+
+
+
 
 }
 

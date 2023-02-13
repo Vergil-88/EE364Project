@@ -136,7 +136,8 @@ System.out.println("the Day is:"+day+
 "3 Next Day\n"+
 "4 Pick A Day\n");
 
-int  User_Choice= input.nextInt();
+// int  User_Choice= input.nextInt();
+ int  User_Choice= R2_C1.Switchinput();
 
 
 
@@ -153,7 +154,7 @@ System.out.println("East");
     "3 Qatif:\n"+
     "4 Ras Tanura:\n");
 
-    User_Choice= input.nextInt();   
+    User_Choice= R2_C1.Switchinput();   
     switch (User_Choice){
 
         case 1:
@@ -181,7 +182,7 @@ System.out.println("Pick The City\n"+
 "2 Mecca:\n"+
 "3 Medina:\n"+
 "4 Taif:\n");
-User_Choice= input.nextInt();   
+User_Choice= R2_C1.Switchinput();;   
 switch (User_Choice){
 
     case 1:
@@ -214,7 +215,7 @@ break;
 //////////////////////////
 case 4:
 System.out.println("Pick the Day");
-PickedDay=input.nextInt();
+PickedDay=User_Choice= R2_C1.Switchinput();
 ON_OFF=false;
     }
 
