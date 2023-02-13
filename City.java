@@ -9,6 +9,8 @@ public class City implements Places {
     private double Overpopulation;
     private ArrayList <Human> Citizen   =   new ArrayList<Human>();
     private ArrayList <Human> DeadCitizen = new ArrayList<Human>();
+    private ArrayList <Human> Travelers = new ArrayList<Human>();
+    
     //private ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
 
     public City(String Name, int Population, double Area){
@@ -174,6 +176,10 @@ public class City implements Places {
         Citizen = citizen;
     }
 
+    public ArrayList<Human> getTravelers() {
+        return Travelers;
+    }
+    
     //////////////////////  dummy code might consider adding    /////////////////////////////
 
     public String get_Citizeninfo(){
@@ -234,8 +240,10 @@ public class City implements Places {
         City City_1 = cities.get(R1);
         City City_2 = cities.get(R2);
 
-       ArrayList<Human> Pepole_city2=City_2.get_Citizen();
-       ArrayList<Human> Pepole_city1=City_1.get_Citizen();
+       ArrayList<Human> Pepole_city2 = City_2.get_Citizen();
+       ArrayList<Human> Pepole_city1 = City_1.get_Citizen();
+       ArrayList<Human> travelerPepole = City_2.getTravelers();
+
        int NumberOfCitizin= Pepole_city1.size();
        int RandomIndex=R.nextInt(NumberOfCitizin-1);
        Human Person=Pepole_city1.get(RandomIndex);
@@ -243,6 +251,7 @@ public class City implements Places {
         
 
        City_2.addCitizen(Person);
+       City_2.addTraveler(Person);
        Pepole_city1.remove(Person);
 
 
@@ -287,6 +296,13 @@ public class City implements Places {
         Citizen.add(person);
 
     }
+    public void addTraveler(Human person) {
+
+
+        Travelers.add(person);
+
+    }
+
 
     // public static void main(String[] args) {
         

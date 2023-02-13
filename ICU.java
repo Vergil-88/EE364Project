@@ -5,6 +5,7 @@ public class ICU {
     private Human Beds[] = new Human [1000] ;
     private ArrayList <Human> waitingList = new ArrayList<Human>();
     private int bedNum = Beds.length ; // number of availsble beds
+    private int inWitingList=0;
     //methods
     public void SetBed(Human H,int day){
         boolean inBed = false; // if the person is alraedy in bed or not
@@ -32,6 +33,7 @@ public class ICU {
                 if(!(inBed) && (bedNum == 0)){ // if there is no free bed and the person not in bed
                     if(!(waitingList.contains(H))){
                         waitingList.add(H);
+                        inWitingList++;
                         H.SetStatus("At Day: "+day+" Waiting List\n");
                     }
                 }
@@ -87,6 +89,10 @@ public class ICU {
 
     public int getBedNum() {
         return bedNum;
+    }
+
+    public int getInWitingList() {
+        return inWitingList;
     }
 
 }

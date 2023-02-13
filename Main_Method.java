@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.text.Position;
+
 public class Main_Method {
     ArrayList <String>  data     = new ArrayList <String>();
     ArrayList <String>  Dayslist = new ArrayList <String>();
@@ -18,6 +20,7 @@ public class Main_Method {
     ArrayList <String>  govDead   = new ArrayList <String>();
     ArrayList <String>  govRecovered   = new ArrayList <String>();
     ArrayList <String>  Beds   = new ArrayList <String>();
+    ArrayList <String>  waitingList   = new ArrayList <String>();
 
     Random rad = new Random();
     int numOf_A=0;
@@ -30,6 +33,7 @@ public class Main_Method {
     int GOV_Dead=0;
     int GOV_Recovered=0;    
     int numOf_Beds;
+    int numOfinWiting=0;
     int total_Beds;
 
 public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,ICU icu,CovidSpread covid){
@@ -168,18 +172,21 @@ for (Human H :  city.get_Citizen()) {
     int oldGOV_B=GOV_B;
     int oldGOV_Dead=GOV_Dead;
     int oldGOV_Recovered=GOV_Recovered;
+    int old_numOfinwiting=numOfinWiting;
 
 
     GOV_A=MinistryofHealth.getPostiveA().size();
     GOV_B=MinistryofHealth.getPostiveB().size();
     GOV_Dead=MinistryofHealth.getDead().size();
     GOV_Recovered=MinistryofHealth.getRecovered().size();
+    numOfinWiting = icu.getWaitingList().size(); 
 
 
     oldGOV_A=GOV_A-oldGOV_A;
     oldGOV_B=GOV_B-oldGOV_B;
     oldGOV_Dead=GOV_Dead-oldGOV_Dead;
     oldGOV_Recovered=GOV_Recovered-oldGOV_Recovered;
+    old_numOfinwiting=numOfinWiting-old_numOfinwiting;
 
     numOf_Beds = icu.BedsinUse();
     total_Beds = icu.getBeds().length;
@@ -194,6 +201,7 @@ for (Human H :  city.get_Citizen()) {
     govDead.add(GOV_Dead+"("+oldGOV_Dead+")");
     govRecovered.add(GOV_Recovered+"("+oldGOV_Recovered+")");
     Beds.add(numOf_Beds+"/"+total_Beds);
+    waitingList.add(numOfinWiting+"("+old_numOfinwiting+")");
 
 
     Dayslist.add(String.format("Day:%-5s",day) );
@@ -213,6 +221,30 @@ MinistryofHealth.getCalls().clear();
         
 }
 
+public void Summary(int day,City city,ICU icu){
+
+    String cityStatus;
+    double percentageOfA = (double) (GOV_A) / (double)(city.get_Citizen().size()); 
+    int inWitingList = icu.getInWitingList();
+
+    if (percentageOfA < 0.05 || inWitingList < 0 )
+        cityStatus = "Excellent";
+    else if (percentageOfA < 0.08 ||  inWitingList<100)
+         cityStatus = "Good";
+    else if (percentageOfA < 0.1 ||  inWitingList<500)
+        cityStatus = "Neutral";
+    else if (percentageOfA < 0.12 ||  inWitingList<1000)
+        cityStatus = "Bad";
+    else
+        cityStatus = "Very Bad";
+    
+        
+    System.out.println("\nThe city status at day "+day+" is: "+cityStatus);
+
+   
+
+}
+
 
 public void City_Output(int day){
 
@@ -225,7 +257,7 @@ public void City_Output(int day){
     System.out.println("Government view");
     // TableViewer table1 = new TableViewer(Dayslist, Govdata);
     // table1.viewTable(day, day);
-    Table_XYZ2(day, govA, govB, govDead, govRecovered,Beds);
+    Table_XYZ2(day, govA, govB, govDead, govRecovered,Beds,waitingList);
 
     int fullDays = 0;
 
@@ -239,9 +271,10 @@ public void City_Output(int day){
             fullDays=0;
         } 
     }
-    if(fullDays!=0)
+    if(fullDays!=0){
         System.out.println("\n __________________________________________________________________________________________________ \n");
         System.out.println("Warning: the ICU is full for "+fullDays+" continuous days");
+    }
 }
 
     
@@ -257,6 +290,8 @@ public  void CitySwitch(City city,int day, ICU icu){
     
 
     System.out.println("The City Name "+ city.get_Name());
+    Summary(day,city,icu);
+    System.out.println("\n __________________________________________________________________________________________________ \n");
     City_Output(day);
     System.out.println("\n __________________________________________________________________________________________________ \n");
    // Table_XY(city, icu);
@@ -265,7 +300,8 @@ public  void CitySwitch(City city,int day, ICU icu){
     "1 Alive Citzizas:\n"+
     "2 Dead Citzizas:\n"+
     "3 IN ICU:\n"+
-    "4 Check History of an Individual:\n");
+    "4 Travelers:\n"+
+    "5 Check History of an Individual:\n");
     int User_Choice= in.nextInt();
     
 
@@ -288,6 +324,10 @@ public  void CitySwitch(City city,int day, ICU icu){
         break;
         
         case 4:
+        System.out.println(city.getTravelers());
+        break;
+        
+        case 5:
         System.out.println("Enter The ID");
        
         String FindX = in.next();
@@ -297,6 +337,8 @@ public  void CitySwitch(City city,int day, ICU icu){
         
         city.Find_Citizen_History(FindX);
         break;
+
+
     }
 
 
@@ -370,7 +412,7 @@ public  void Table_XYZ (int day,ArrayList <String> A,ArrayList <String> B,ArrayL
     }
 }
 
-public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> Dead,ArrayList <String> Recoverd,ArrayList <String> Beds ){
+public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> Dead,ArrayList <String> Recoverd,ArrayList <String> Beds ,ArrayList <String> witingList ){
 
 
     
@@ -382,8 +424,9 @@ public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,Array
     String dead;
     String recoverd;
     String bed;
+    String witing ;
 
-    table[0] = new String[]{"DAY","A","B","Dead","Recoverd","ICU"};
+    table[0] = new String[]{"DAY","A","B","Dead","Recoverd","ICU","Witing List"};
 
    for (int i = 1; i < day+1 ; i++) {
      a = A.get(i-1);
@@ -391,13 +434,16 @@ public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,Array
      dead = Dead.get(i-1);
      recoverd = Recoverd.get(i-1);
      bed = Beds.get(i-1);
+     witing = witingList.get(i-1);
+     
+
     
-     table[i] = new String[]{String.valueOf(i),a,b,dead,recoverd,bed};
+     table[i] = new String[]{String.valueOf(i),a,b,dead,recoverd,bed,witing};
 
    }
 
    for (Object[] row : table) {
-    System.out.format("%15s%15s%15s%15s%15s%15s%n", row);
+    System.out.format("%15s%15s%15s%15s%15s%15s%15s%n", row);
 }
 
 

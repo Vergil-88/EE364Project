@@ -152,6 +152,7 @@ System.out.println("East");
     "2 Jubail:\n"+
     "3 Qatif:\n"+
     "4 Ras Tanura:\n");
+
     User_Choice= input.nextInt();   
     switch (User_Choice){
 
