@@ -5,5 +5,5 @@ public class Normal extends covidInfection {
         return "Normal";
 
     }
-    
+   
 }

@@ -46,19 +46,20 @@ int typeAIndex;
 Human person;
 
 while(numOfBeds != 0){
-
+    
+    
     typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
     ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
     person =  ArrayPostiveA.get(typeAIndex);
 
-    icu.SetBed(person,day);
+    icu.SetBedWithCap(person,day);
     
     numOfBeds--;
 
-    
+
 }
 
-if(icu.getBeds().length == 0 )
+if(icu.getBeds().size() == 0 )
      System.out.println("At Day " + day + " The ICU is Full ");
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // First Block         this Block tells us who of Type B and C are Actlly A or Normal                      
@@ -117,8 +118,45 @@ if( day%3==0 ){//Happens Every 3 Days
 if(day>=7){
         
         MinistryofHealth.A_to_Dead(icu.getWaitingList(),day);
-        MinistryofHealth.Recovered(day,icu);// add a line to remove the perosn if he exsist in a bed
-        // MinistryofHealth.RecoveredICU(day, icu);
+        MinistryofHealth.Recovered(day);// add a line to remove the perosn if he exsist in a bed
+      
+
+
+        icu.removeType_Normal_From_ICU();
+
+
+
+       
+    // for (int i=0 ;i < icu.getWaitingList().size() ;i++ ) {
+        
+    //     icu.SetBedWithCap(icu.getWaitingList().get(i),day);
+
+    //    }
+
+
+
+
+
+    
+    //     for (Human HumenBed : icu.getBeds()) {
+    //        ArrayList <Human> WatingList =icu.getWaitingList();
+    //         if(HumenBed != null ){
+    //         String type = HumenBed.getCovidInfection_TypeType();
+           
+    //         if(!type.equals("A")){
+    //           if(WatingList.size() !=  0){
+                
+    //             HumenBed=WatingList.get(0);
+    //             HumenBed.SetStatus("At Day:"+day+" ICU\n");
+    //             WatingList.remove(0);
+
+
+    //           } 
+    //         }
+    //     } 
+         
+            
+    //    }
    
       
 }
@@ -129,7 +167,7 @@ if(day>=7){
 ArrayList<Human> Dead = MinistryofHealth.getDead();
 
 for (Human  h :  city.get_Citizen()) {
-    h.updateHistory(day);
+    h.updatehumna(day);;
 } // UpdateHistry
     city.setDeadCitizen(Dead);
     city.get_Citizen().removeAll(Dead);
@@ -192,8 +230,8 @@ for (Human H :  city.get_Citizen()) {
     oldGOV_Recovered=GOV_Recovered-oldGOV_Recovered;
     old_numOfinwiting=numOfinWiting-old_numOfinwiting;
 
-    numOf_Beds = icu.BedsinUse();
-    total_Beds = icu.getBeds().length;
+    numOf_Beds = icu.getBeds().size();
+    total_Beds = icu.getBedCap();
 
     A.add(numOf_A+"("+oldNum_A+")");
     B.add(numOf_B+"("+oldNum_B+")");
@@ -375,11 +413,11 @@ public  void CitySwitch(City city,int day, ICU icu){
                     break;
 
             case 4:
-                    Human [] Beds = icu.getBeds();
-                    System.out.println("Enter num from 0 to "+Beds.length+": ");
+                    ArrayList<Human> Beds = icu.getBeds();
+                    System.out.println("Enter num from 0 to "+Beds.size()+": ");
                     index = Switchinput();
                    try {
-                    Person = Beds[index];
+                    Person = Beds.get(index);
                     History = Person.getHistory();
                     System.out.println(History);
                     System.out.println(Person.Sumarry());//testing line
@@ -409,7 +447,7 @@ public void Table_XY (City city, ICU icu ){
 
     ArrayList<Human> Alive = city.get_Citizen();
     ArrayList<Human> Dead = city.getDeadCitizen();
-    Human Beds [] = icu.getBeds();
+    ArrayList<Human> Beds = icu.getBeds();
     Human indexAlive;
     Human indexDead;
     Human indexBed;
@@ -428,7 +466,7 @@ public void Table_XY (City city, ICU icu ){
         indexDead = Dead.get(i);
         indexDeadID = indexDead.getId();
 
-        indexBed = Beds[i];
+        indexBed = Beds.get(i);
         indexBedID = indexBed.getId();
 
         table[i] = new String[]{String.valueOf(i),indexAliveID,indexDeadID,indexBedID};

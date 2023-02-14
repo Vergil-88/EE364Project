@@ -72,7 +72,7 @@ public class CovidSpread {
                 if(!(Taype.equals("B")))
                     if(!(Taype.equals("C"))){
                         F.setCovidInfection_Type(TypeB);
-                        F.SetStatus("At Day:"+day+" B\n");
+                         F.SetStatus("At Day:"+day+" B\n");
                     }
 
         }

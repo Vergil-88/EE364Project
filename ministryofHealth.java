@@ -132,35 +132,47 @@ public class ministryofHealth {
     //////////////////////////////////////////////
     public void A_to_Dead( ArrayList <Human>  WaitingList,int day){
 
-        int numOfDeath= (int) (PostiveA.size() * 0.005 );
-        int deadIndex;
         Human person;
+        int Counter;
 
-        while(numOfDeath != 0){
+     
+           
             
-            deadIndex = rad.nextInt(PostiveA.size()-1); // gets a Random index person form Postive A array 
-            person = PostiveA.get(deadIndex);           // gets the person with the index  
-            if(WaitingList.size()==0)
-            break;
+            if(WaitingList.size()!=0){
+            
             for (Human B : WaitingList ) {    // gose over the WaitingList Array
-        
+                
+                covidInfection CovidInf = B.getCovidInfection_Type();
+                Counter = CovidInf.getDaysCounter();
+                double Ran0= Math.random();
+                double Ran1= Math.random();
 
-                if((B.equals(person))){      
+                if(Counter>=7&&Counter<14 ){
+                    if(Ran0 >= 0.90){//10%
                     B.setDead();
-                    person.setDead();
-                    person.SetStatus("At Day:"+day+" Dead\n");
-                    PostiveA.remove(person);
-                    Dead.add(person); 
+                    B.SetStatus("At Day:"+day+" Dead\n");
+                    PostiveA.remove(B);
+                    Dead.add(B); 
                     
-                    numOfDeath--;
-                    break;
+                    
+                    }
+                }
+               else if(Counter>=14){
+                    if(Ran0 >= 0.80){//20%
+                    B.setDead();
+                    B.SetStatus("At Day:"+day+" Dead\n");
+                    PostiveA.remove(B);
+                    Dead.add(B); 
+                    
+                   
+                    }
                 }
             }
         }
     }
 
     //////////////////////////////////////////////
-    public void Recovered(int day,ICU icu){
+    public void Recovered(int day){
 
         int numOfRecovered= (int) (PostiveA.size() * 0.05 );
         int RecoveredIndex;
@@ -178,7 +190,7 @@ public class ministryofHealth {
 
             PostiveA.remove(person);
             Recovered.add(person);
-            // icu.RemoveBedof(person);//this line cuze 0 death for someReson 
+            
 
             numOfRecovered--;
             
@@ -189,43 +201,43 @@ public class ministryofHealth {
 
     }
 
-    public void RecoveredICU(int day,ICU icu){// like the one above it but it deals wiht ppl in the ICU 
-        Human Bed[]=icu.getBeds();
-        int numOfRecovered= (int) (Bed.length * 0.05 );
-        int RecoveredIndex;
-        Human person;
-        covidInfection normal = new Normal();
+    // public void RecoveredICU(int day,ICU icu){// like the one above it but it deals wiht ppl in the ICU 
+    //     Human Bed[]=icu.getBeds();
+    //     int numOfRecovered= (int) (Bed.length * 0.05 );
+    //     int RecoveredIndex;
+    //     Human person;
+    //     covidInfection normal = new Normal();
         
-        while(numOfRecovered != 0){
+    //     while(numOfRecovered != 0){
             
-            RecoveredIndex = rad.nextInt(Bed.length);
-            try {
-                person = Bed[RecoveredIndex] ;  
-                person.setCovidInfection_Type(normal);
+    //         RecoveredIndex = rad.nextInt(Bed.length);
+    //         try {
+    //             person = Bed[RecoveredIndex] ;  
+    //             person.setCovidInfection_Type(normal);
 
-                person.SetStatus("At Day:"+day+"Normal\n");
+    //             person.SetStatus("At Day:"+day+"Normal\n");
     
-                PostiveA.remove(person);
-                Recovered.add(person);
+    //             PostiveA.remove(person);
+    //             Recovered.add(person);
                 
-                icu.RemoveBedof(person);//this line cuze 0 death for someReson
-                numOfRecovered--;
+    //             icu.RemoveBedof(person);//this line cuze 0 death for someReson
+    //             numOfRecovered--;
 
-            } catch (Exception e) {
+    //         } catch (Exception e) {
              
                 
 
-            }
+    //         }
             
         
             
             
-        }
+    //     }
 
 
 
 
-    }
+    // }
 
 
 
@@ -423,7 +435,7 @@ public class ministryofHealth {
             
             Gov.A_to_Dead(icu.getWaitingList(),i);
 
-            Gov.Recovered(i,icu);
+            Gov.Recovered(i);
                 
             
 
