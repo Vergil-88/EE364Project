@@ -3,8 +3,9 @@ import java.util.ArrayList;
 public class ICU {
     //Delration 
     // private Human Beds[] = new Human [1000] ;
+    private int bedCap=1000;
     private  ArrayList <Human> Beds = new ArrayList<Human>();
-    int bedCap=1000;
+    
     private ArrayList <Human> waitingList = new ArrayList<Human>();
     private int bedNum = Beds.size() ; // number of availsble beds
     private int inWitingList=0;

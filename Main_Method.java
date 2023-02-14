@@ -44,7 +44,7 @@ public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,IC
 int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
 int typeAIndex; 
 Human person;
-
+icu.removeType_Normal_From_ICU();
 while(numOfBeds != 0){
     
     
@@ -59,8 +59,8 @@ while(numOfBeds != 0){
 
 }
 
-if(icu.getBeds().size() == 0 )
-     System.out.println("At Day " + day + " The ICU is Full ");
+// if(icu.getBeds().size() == 0 )
+//      System.out.println("At Day " + day + " The ICU is Full ");
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // First Block         this Block tells us who of Type B and C are Actlly A or Normal                      
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -122,7 +122,7 @@ if(day>=7){
       
 
 
-        icu.removeType_Normal_From_ICU();
+        
 
 
 
@@ -137,7 +137,7 @@ if(day>=7){
 
 
 
-    
+
     //     for (Human HumenBed : icu.getBeds()) {
     //        ArrayList <Human> WatingList =icu.getWaitingList();
     //         if(HumenBed != null ){
