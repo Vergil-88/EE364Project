@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package covidstatus;
-import Covid.*;
+import Covid.MAIN_loop;
 import static java.lang.System.in;
 import java.net.URL;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class JeddahController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-               
+         
       List_Two.setItems(MAIN_loop.RRRR); 
            
             
@@ -55,7 +55,7 @@ public class JeddahController implements Initializable {
 
     @FXML
     private void GOV_Action(ActionEvent event) {
-  
+        System.out.println(MAIN_loop.RRRR);
           List_Two.setItems(MAIN_loop.RRRR);
        // List_One.getItems().addAll(MAIN_loop.RRRR);
     }

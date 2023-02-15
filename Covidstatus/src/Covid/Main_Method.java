@@ -5,6 +5,7 @@ import java.util.Scanner;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javax.swing.text.Position;
+import covidstatus.Covidstatus.*;
    
 public class Main_Method {
  public static   ArrayList <String>  output1     = new ArrayList <String>();
@@ -286,7 +287,7 @@ MinistryofHealth.getCalls().clear();
 ArrayList<Human> Dead = MinistryofHealth.getDead();
 
 for (Human  h :  city.get_Citizen()) {
-    h.updatehumna(day);;
+    h.updatehumna(day);
 } // UpdateHistry
 
     city.setDeadCitizen(Dead);
@@ -558,6 +559,8 @@ public  void Table_XYZ (int day,ArrayList <String> A,ArrayList <String> B,ArrayL
 
        for (Object[] row : table) {
         output1.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
+           System.out.println("adsa");
+        Out1 = FXCollections.observableArrayList(output1);
         System.out.format("%15s%15s%15s%15s%15s%n", row);
     }
  
@@ -598,6 +601,7 @@ public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,Array
    for (Object[] row : table) {
     System.out.format("%15s%15s%15s%15s%15s%15s%15s%n", row);
     output2.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
+    Out2 = FXCollections.observableArrayList(output2);
 }
 }
 public  int Switchinput(){
@@ -623,7 +627,7 @@ public  int Switchinput(){
 		TF=true;
 		}
 		}while(TF==true);
-
+    
         return User_Choice;
 }
 
