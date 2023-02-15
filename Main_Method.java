@@ -378,7 +378,7 @@ public  void CitySwitch(City city,int day, ICU icu){
         
         case 3:
         System.out.println("The  Citzizas in ICU Are");
-        // System.out.println(icu.getBeds());
+        System.out.println( (icu.getBeds()) ) ;
 
         break;
         
