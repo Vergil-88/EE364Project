@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package covidstatus;
-import Covid.*;
-
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,9 +24,6 @@ import javafx.stage.Stage;
  */
 public class CovidstatusController implements Initializable {
 
-   
-   
-   
     @FXML
     private Button Exit;
     @FXML
@@ -46,7 +41,7 @@ public class CovidstatusController implements Initializable {
     private void ExitAction(ActionEvent event) {
         System.exit(0);
     }
-    
+
     @FXML
     private void StartAction(ActionEvent event) {
          try {

@@ -53,7 +53,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="aljubailButton" layoutX="333.0" mnemonicParsing="false" onAction="#aljubailAction" opacity="0.0" prefHeight="206.0" prefWidth="334.0" text="Aljubail">
+            <Button fx:id="aljubailButton" layoutX="333.0" layoutY="-1.0" mnemonicParsing="false" onAction="#aljubailAction" opacity="0.0" prefHeight="206.0" prefWidth="334.0" text="Aljubail">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

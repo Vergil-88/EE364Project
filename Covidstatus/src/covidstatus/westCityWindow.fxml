@@ -34,7 +34,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -67,10 +66,15 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label layoutX="153.0" layoutY="32.0" text="Jeddah" />
-            <Label layoutX="476.0" layoutY="32.0" text="Madinah" />
-            <Label layoutX="158.0" layoutY="222.0" text="Makkah" />
-            <Label layoutX="486.0" layoutY="222.0" text="Taif" />
+            <ImageView fx:id="onionHead" fitHeight="420.0" fitWidth="682.0" layoutX="-9.0" layoutY="-8.0" opacity="0.0">
+               <image>
+                  <Image url="@../../../../../../Desktop/onionHead.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="Makkahb" layoutX="141.0" layoutY="218.0" mnemonicParsing="false" onAction="#openMakkah" text="Makkah" />
+            <Button fx:id="jeddahB" layoutX="151.0" layoutY="36.0" mnemonicParsing="false" onAction="#openJeddah" text="Jeddah" />
+            <Button fx:id="MadinahB" layoutX="475.0" layoutY="35.0" mnemonicParsing="false" onAction="#openMadinah" prefHeight="26.0" prefWidth="70.0" text="Madinah" />
+            <Button fx:id="taifB" layoutX="468.0" layoutY="217.0" mnemonicParsing="false" onAction="#openTaif" prefHeight="26.0" prefWidth="70.0" text="Taif" />
       </children>
     </AnchorPane>
   </children>

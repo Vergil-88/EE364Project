@@ -57,7 +57,7 @@ public class NorthStatsController implements Initializable {
     @FXML     public void StartAction(ActionEvent event)throws NullPointerException {          
         
             LtypeA.setText(x);
-            typeA.appendText("Hello");
+            typeA.appendText("xxxxxxxxxxxxxxxxxx");
     }
     
 }

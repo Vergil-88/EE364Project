@@ -10,7 +10,7 @@ public class MAIN_loop {
     public static Main_Method R2_C2;
     public static Main_Method R2_C3;
     public static Main_Method R2_C4;
-public static ObservableList <String> RRRR;
+    public static ObservableList <String> RRRR;
     static Main_Method R3_C1;
     static Main_Method R3_C2;
     static Main_Method R3_C3;
