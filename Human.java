@@ -25,7 +25,7 @@ public class Human {
     {
        
 
-        History= "Normal ";
+        Status= "Normal \n";
         id=super.toString() ; 
         id = id.substring(id.indexOf("@")+1,id.length()-1);
        
