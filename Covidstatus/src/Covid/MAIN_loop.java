@@ -1,8 +1,20 @@
 package Covid;
 import java.util.ArrayList;
 import java.util.Scanner;
+import javafx.collections.ObservableList;
+
+
 
 public class MAIN_loop {
+    public static Main_Method R2_C1;
+    public static Main_Method R2_C2;
+    public static Main_Method R2_C3;
+    public static Main_Method R2_C4;
+public static ObservableList <String> RRRR;
+    static Main_Method R3_C1;
+    static Main_Method R3_C2;
+    static Main_Method R3_C3;
+    static Main_Method R3_C4;
     static Scanner input = new Scanner(System.in);
 public static void main(String[] args) {
     int PickedDay=1;
@@ -80,15 +92,15 @@ ICU icuR3_C4 = new ICU();
 
 /////////////////////////////////////////////////////////////////
 
-Main_Method R2_C1 = new Main_Method();
-Main_Method R2_C2 = new Main_Method();
-Main_Method R2_C3 = new Main_Method();
-Main_Method R2_C4 = new Main_Method();
+R2_C1 = new Main_Method();
+R2_C2 = new Main_Method();
+R2_C3 = new Main_Method();
+R2_C4 = new Main_Method();
 
-Main_Method R3_C1 = new Main_Method();
-Main_Method R3_C2 = new Main_Method();
-Main_Method R3_C3 = new Main_Method();
-Main_Method R3_C4 = new Main_Method();
+R3_C1 = new Main_Method();
+R3_C2 = new Main_Method();
+R3_C3 = new Main_Method();
+R3_C4 = new Main_Method();
 
 ArrayList<City> Cities = new ArrayList<>();
 
@@ -228,8 +240,7 @@ ON_OFF=false;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Output for java Fx
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+RRRR =R2_C1.Out1;
 
 
 

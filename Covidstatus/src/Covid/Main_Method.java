@@ -5,13 +5,15 @@ import java.util.Scanner;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javax.swing.text.Position;
-
+   
 public class Main_Method {
-    ArrayList <String>  output1     = new ArrayList <String>();
-    ArrayList <String>  output2     = new ArrayList <String>();
-    
-    ObservableList <String> Out1 = FXCollections.observableArrayList(output1);
-    ObservableList <String> Out2 = FXCollections.observableArrayList(output2);
+ public static   ArrayList <String>  output1     = new ArrayList <String>();
+ public static   ArrayList <String>  output2     = new ArrayList <String>();
+ 
+ 
+   
+ public static ObservableList <String> Out1 = FXCollections.observableArrayList(output1);
+ public static ObservableList <String> Out2  = FXCollections.observableArrayList(output2);
 
 
 
