@@ -145,7 +145,7 @@ public class ministryofHealth {
                 covidInfection CovidInf = B.getCovidInfection_Type();
                 Counter = CovidInf.getDaysCounter();
                 double Ran0= Math.random();
-                double Ran1= Math.random();
+                
 
                 if(Counter>=7&&Counter<14 ){
                     if(Ran0 >= 0.90){//10%
@@ -169,6 +169,20 @@ public class ministryofHealth {
                 }
             }
         }
+
+        int randomDead = (int) (PostiveA.size()*0.00);
+        int randomIndex;
+        Human Die;
+
+        for(int i = 0;i < randomDead;i++){
+            randomIndex = rad.nextInt(PostiveA.size()-1);
+            Die = PostiveA.get(randomIndex);
+            Die.setDead();
+            Die.SetStatus("At Day:"+day+" Dead\n");
+            PostiveA.remove(Die);
+            Dead.add(Die); 
+        }
+
     }
 
     //////////////////////////////////////////////

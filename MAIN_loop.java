@@ -187,7 +187,7 @@ System.out.println("Pick The City\n"+
 "2 Mecca:\n"+
 "3 Medina:\n"+
 "4 Taif:\n");
-User_Choice= R2_C1.Switchinput();;   
+User_Choice= R3_C1.Switchinput();;   
 switch (User_Choice){
 
     case 1:
@@ -234,26 +234,26 @@ ON_OFF=false;
 
 
 
-System.out.println("East");
+// System.out.println("East");
 
-System.out.println("City1");
-R2_C1.City_Output(days);
-System.out.println("City2");
-R2_C2.City_Output(days);
-System.out.println("City3");
-R2_C3.City_Output(days);
-System.out.println("City4");
-R2_C4.City_Output(days);
+// System.out.println("City1");
+// R2_C1.City_Output(days);
+// System.out.println("City2");
+// R2_C2.City_Output(days);
+// System.out.println("City3");
+// R2_C3.City_Output(days);
+// System.out.println("City4");
+// R2_C4.City_Output(days);
 
-System.out.println("West");
-System.out.println("City1");
-R3_C1.City_Output(days);
-System.out.println("City2");
-R3_C2.City_Output(days);
-System.out.println("City3");
-R3_C3.City_Output(days);
-System.out.println("City4");
-R3_C4.City_Output(days);
+// System.out.println("West");
+// System.out.println("City1");
+// R3_C1.City_Output(days);
+// System.out.println("City2");
+// R3_C2.City_Output(days);
+// System.out.println("City3");
+// R3_C3.City_Output(days);
+// System.out.println("City4");
+// R3_C4.City_Output(days);
 
 
 

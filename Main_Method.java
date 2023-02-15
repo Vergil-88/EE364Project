@@ -37,27 +37,7 @@ public class Main_Method {
     int total_Beds;
 
 public void City_Activite(int day,City city,ministryofHealth MinistryofHealth,ICU icu,CovidSpread covid){
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 5th ICU Beds filing for the the Type Who needs it which is 0.15 of them
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
-int typeAIndex; 
-Human person;
-icu.removeType_Normal_From_ICU();
-while(numOfBeds != 0){
-    
-    
-    typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
-    ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
-    person =  ArrayPostiveA.get(typeAIndex);
 
-    icu.SetBedWithCap(person,day);
-    
-    numOfBeds--;
-
-
-}
 
 // if(icu.getBeds().size() == 0 )
 //      System.out.println("At Day " + day + " The ICU is Full ");
@@ -80,7 +60,19 @@ if( day%3==0 ){//Happens Every 3 Days
         if(C.getCovidInfection_Type().getType().equals("C"))
             covid.C_Becomes_A(C,MinistryofHealth.getPostiveC(),day);  
     }
-}    
+} 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 3rd Block Calls Happen Every day
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+int number_of_A_Calls = (int) (numOf_A * 0.35);
+for (Human H : city.get_Citizen()) {
+    if(H.getCovidInfection_Type().getType().equals("A")){
+        MinistryofHealth.CallCenter(H);
+        number_of_A_Calls--; 
+        if(number_of_A_Calls <= 0)
+        break;
+    }
+}   
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 2nd Block Spreding the Covid for the Day Happens Every Day
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -92,18 +84,7 @@ if( day%3==0 ){//Happens Every 3 Days
             covid.SpreadingC(H,day);   
     } 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 3rd Block Calls Happen Every day
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
-    int number_of_A_Calls = (int) (numOf_A * 0.35);
-    for (Human H : city.get_Citizen()) {
-        if(H.getCovidInfection_Type().getType().equals("A")){
-            MinistryofHealth.CallCenter(H);
-            number_of_A_Calls--; 
-            if(number_of_A_Calls <= 0)
-            break;
-        }
-    }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 4th Block MinistryofHealth Recives the Calls and Declare who is A and who they interacted with
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -111,66 +92,92 @@ if( day%3==0 ){//Happens Every 3 Days
     MinistryofHealth.Interacted_A_to_B();
 
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 6th Gov declaring type A Recoverd and Dead 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
 if(day>=7){
+
+    
         
-        MinistryofHealth.A_to_Dead(icu.getWaitingList(),day);
-        MinistryofHealth.Recovered(day);// add a line to remove the perosn if he exsist in a bed
-      
+    MinistryofHealth.A_to_Dead(icu.getWaitingList(),day);
+    MinistryofHealth.Recovered(day);// add a line to remove the perosn if he exsist in a bed
+  
 
 
+    icu.removeType_Normal_From_ICU();
+
+
+    ArrayList<Human> Witing = icu.getWaitingList();
+    if(Witing.size()!=0)
+        for (int i = 0;i<Witing.size();i++) {
+
+        icu.SetBedWithCap(Witing.get(i),day);
+
+        if(icu.getBeds().size() == 1000)
+            break;
         
+    }
 
 
+//    ArrayList<Human> Witing = icu.getWaitingList();
+//     for (int i=0 ;i < Witing.size() ;i++ ) {
+    
+//         icu.SetBedWithCap(Witing.get(i),day);
 
-       
-    // for (int i=0 ;i < icu.getWaitingList().size() ;i++ ) {
-        
-    //     icu.SetBedWithCap(icu.getWaitingList().get(i),day);
+//     }
 
-    //    }
-
-
-
-
-
-
-    //     for (Human HumenBed : icu.getBeds()) {
-    //        ArrayList <Human> WatingList =icu.getWaitingList();
-    //         if(HumenBed != null ){
-    //         String type = HumenBed.getCovidInfection_TypeType();
-           
-    //         if(!type.equals("A")){
-    //           if(WatingList.size() !=  0){
-                
-    //             HumenBed=WatingList.get(0);
-    //             HumenBed.SetStatus("At Day:"+day+" ICU\n");
-    //             WatingList.remove(0);
-
-
-    //           } 
-    //         }
-    //     } 
-         
-            
-    //    }
    
-      
+
+
+
+
+//     for (Human HumenBed : icu.getBeds()) {
+//        ArrayList <Human> WatingList =icu.getWaitingList();
+//         if(HumenBed != null ){
+//         String type = HumenBed.getCovidInfection_TypeType();
+       
+//         if(!type.equals("A")){
+//           if(WatingList.size() !=  0){
+            
+//             HumenBed=WatingList.get(0);
+//             HumenBed.SetStatus("At Day:"+day+" ICU\n");
+//             WatingList.remove(0);
+
+
+//           } 
+//         }
+//     } 
+     
+        
+//    }
+
+
+  
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// 7th Clearing the Calls form the day and moveing the Dead Citizins to A diffrant Array and Removing them fomr the Orignal 
+// 5th ICU Beds filing for the the Type Who needs it which is 0.15 of them
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-ArrayList<Human> Dead = MinistryofHealth.getDead();
+int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
+int typeAIndex; 
+Human person;
 
-for (Human  h :  city.get_Citizen()) {
-    h.updatehumna(day);;
-} // UpdateHistry
-    city.setDeadCitizen(Dead);
-    city.get_Citizen().removeAll(Dead);
+while(numOfBeds != 0){
+    
+    
+    typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
+    ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
+    person =  ArrayPostiveA.get(typeAIndex);
+
+    icu.SetBedWithCap(person,day);
+    
+    numOfBeds--;
+
+
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -257,49 +264,32 @@ for (Human H :  city.get_Citizen()) {
     //Table_XYZ(day, A, B, C,Normal);
           
 ///////////////////Clearing the Call history
-MinistryofHealth.getCalls().clear();            
+MinistryofHealth.getCalls().clear();      
 
-
-        
-}
-
-public void Summary(int day,City city,ICU icu){
-
-    String cityStatus;
-    double percentageOfA = (double) (GOV_A) / (double)(city.get_Citizen().size()); 
-    int inWitingList = icu.getInWitingList();
-
-    if (percentageOfA < 0.05 || inWitingList < 0 )
-        cityStatus = "Excellent";
-    else if (percentageOfA < 0.08 ||  inWitingList<100)
-         cityStatus = "Good";
-    else if (percentageOfA < 0.1 ||  inWitingList<500)
-        cityStatus = "Neutral";
-    else if (percentageOfA < 0.12 ||  inWitingList<1000)
-        cityStatus = "Bad";
-    else
-        cityStatus = "Very Bad";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 7th Clearing the Calls form the day and moveing the Dead Citizins to A diffrant Array and Removing them fomr the Orignal 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-        
-    System.out.println("\nThe city status at day "+day+" is: "+cityStatus);
+ArrayList<Human> Dead = MinistryofHealth.getDead();
+
+for (Human  h :  city.get_Citizen()) {
+    h.updatehumna(day);;
+} // UpdateHistry
+
+    city.setDeadCitizen(Dead);
+    city.get_Citizen().removeAll(Dead);
 
    
 
+    
+
+
+
+        
 }
 
 
-public void City_Output(int day){
-
-    // TableViewer table = new TableViewer(Dayslist, data);
-    System.out.println("Programmer view");
-    Table_XYZ(day, A, B, C, Normal);
-
-    System.out.println("\n __________________________________________________________________________________________________ \n");
-    // table.viewTable(day, day);  
-    System.out.println("Government view");
-    // TableViewer table1 = new TableViewer(Dayslist, Govdata);
-    // table1.viewTable(day, day);
-    Table_XYZ2(day, govA, govB, govDead, govRecovered,Beds,waitingList);
+public void City_Output(int day,ICU icu,City city){
 
     int fullDays = 0;
 
@@ -313,7 +303,34 @@ public void City_Output(int day){
             fullDays=0;
         } 
     }
-    if(fullDays!=0){
+
+    String cityStatus;
+    double percentageOfA = (double) (GOV_A) / (double)(city.get_Citizen().size()); 
+    int inWitingList = icu.getInWitingList();
+
+    if (percentageOfA < 0.05 || fullDays < 0 )
+        cityStatus = "Excellent";
+    else if (percentageOfA < 0.08 ||  fullDays<20)
+         cityStatus = "Good";
+    else if (percentageOfA < 0.1 ||  fullDays < 40)
+        cityStatus = "Neutral";
+    else if (percentageOfA < 0.12 ||  fullDays<60)
+        cityStatus = "Bad";
+    else
+        cityStatus = "Very Bad";
+    
+        
+    System.out.println("\nThe city status at day "+day+" is: "+cityStatus);
+     // TableViewer table = new TableViewer(Dayslist, data);
+     System.out.println("Programmer view");
+     Table_XYZ(day, A, B, C, Normal);
+ 
+     System.out.println("\n __________________________________________________________________________________________________ \n");
+     
+     System.out.println("Government view");
+     
+     Table_XYZ2(day, govA, govB, govDead, govRecovered,Beds,waitingList);
+     if(fullDays!=0){
         System.out.println("\n __________________________________________________________________________________________________ \n");
         System.out.println("Warning: the ICU is full for "+fullDays+" continuous days");
     }
@@ -332,13 +349,12 @@ public  void CitySwitch(City city,int day, ICU icu){
     
 
     System.out.println("The City Name "+ city.get_Name());
-    Summary(day,city,icu);
     System.out.println("\n __________________________________________________________________________________________________ \n");
-    City_Output(day);
+    City_Output(day,icu,city);
     System.out.println("\n __________________________________________________________________________________________________ \n");
-   // Table_XY(city, icu);
    
-    System.out.println("Pick the information you wanna see\n"+
+   
+    System.out.println("Pick the information you want to see\n"+
     "1 Alive Citzizas:\n"+
     "2 Dead Citzizas:\n"+
     "3 IN ICU:\n"+
@@ -370,11 +386,12 @@ public  void CitySwitch(City city,int day, ICU icu){
         break;
         
         case 5:
-        System.out.println("Pick the information you wanna see\n"+
+        System.out.println("Pick the information you want to see\n"+
         "1 History of Alive Person\n"+
         "2 History of Dead Person\n"+
         "3 History of Traveler Person\n"+
-        "4 History of ICU Person\n");
+        "4 History of ICU Person\n"+
+        "5 History of ID");
         int input = Switchinput();
         int index;
         Human Person;
@@ -384,9 +401,9 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 1:
             Citizen = city.get_Citizen();
-                System.out.println("Enter num from 0 to "+Citizen.size()+": ");
+                System.out.println("Enter num from 1 to "+Citizen.size()+": ");
                 index = Switchinput();
-                Person = Citizen.get(index);
+                Person = Citizen.get(index-1);
                 History = Person.getHistory() ;
                 System.out.println(History);
 
@@ -394,9 +411,9 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 2:
                     Citizen = city.getDeadCitizen();
-                    System.out.println("Enter num from 0 to "+Citizen.size()+": ");
+                    System.out.println("Enter num from 1 to "+Citizen.size()+": ");
                     index = Switchinput();
-                    Person = Citizen.get(index);
+                    Person = Citizen.get(index-1);
                     History = Person.getHistory() ;
                     System.out.println(History);
                     System.out.println(Person.Sumarry());//testing line
@@ -404,9 +421,9 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 3:
                     Citizen = city.getTravelers();
-                    System.out.println("Enter num from 0 to "+Citizen.size()+": ");
+                    System.out.println("Enter num from 1 to "+Citizen.size()+": ");
                     index = Switchinput();
-                    Person = Citizen.get(index);
+                    Person = Citizen.get(index-1);
                     History = Person.getHistory() ;
                     System.out.println(History);
                     
@@ -414,10 +431,10 @@ public  void CitySwitch(City city,int day, ICU icu){
 
             case 4:
                     ArrayList<Human> Beds = icu.getBeds();
-                    System.out.println("Enter num from 0 to "+Beds.size()+": ");
+                    System.out.println("Enter num from 1 to "+Beds.size()+": ");
                     index = Switchinput();
                    try {
-                    Person = Beds.get(index);
+                    Person = Beds.get(index-1);
                     History = Person.getHistory();
                     System.out.println(History);
                     System.out.println(Person.Sumarry());//testing line
@@ -426,6 +443,25 @@ public  void CitySwitch(City city,int day, ICU icu){
                    }
                    
                     break;
+
+            case 5:
+                   Citizen = city.get_Citizen();
+                   Citizen.addAll(city.getDeadCitizen());
+                   System.out.println("Enter the ID: ");
+                   String id = in.next();
+
+                   for (Human human : Citizen) {
+
+                    if(human.getId().equals(id)){
+
+                        System.out.println(human.getHistory());
+                        System.out.println(human.Sumarry());
+
+                    }
+                    
+                   }
+
+
     
 
 

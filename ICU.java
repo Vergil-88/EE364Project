@@ -107,7 +107,7 @@ public class ICU {
 
 
     public void SetBedWithCap(Human human,int day){
-        if(Beds.size()+1<=bedCap){
+        if(Beds.size()<bedCap){
           if(!Beds.contains(human)){
             Beds.add(human);
             human.SetStatus("At Day:"+day+" ICU\n");
@@ -125,15 +125,19 @@ public class ICU {
         }
     }
 
+    
+
+    
+
 public int getBedCap() {
     return bedCap;
 }
 
 public void removeType_Normal_From_ICU(){
 
-    for (int i=0; i <= Beds.size()-1 ;i++ ) {
-        
-        if(!(Beds.get(i).getCovidInfection_TypeType().equals("A"))){
+    for (int i=0; i < Beds.size() ;i++ ) {
+        Human person = Beds.get(i);
+        if(!(person.getCovidInfection_TypeType().equals("A"))||!(person.getAlive())){
             Beds.remove(i);
 
         }
