@@ -1,10 +1,19 @@
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javax.swing.text.Position;
 
 public class Main_Method {
+    ArrayList <String>  output1     = new ArrayList <String>();
+    ArrayList <String>  output2     = new ArrayList <String>();
+    
+    ObservableList <String> Out1 = output1.observableArrayList();
+    ObservableList <String> Out2 = output2.observableArrayList();
+
+
+
     ArrayList <String>  data     = new ArrayList <String>();
     ArrayList <String>  Dayslist = new ArrayList <String>();
     ArrayList <String>  Govdata  = new ArrayList <String>();
@@ -512,9 +521,11 @@ public void Table_XY (City city, ICU icu ){
     }
 
     for (Object[] row : table) {
+        
+        
         System.out.format("%15s%15s%15s%15s%n", row);
     }
-
+   
 
 }
 
@@ -543,8 +554,12 @@ public  void Table_XYZ (int day,ArrayList <String> A,ArrayList <String> B,ArrayL
        }
 
        for (Object[] row : table) {
+        output1.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
         System.out.format("%15s%15s%15s%15s%15s%n", row);
     }
+ 
+    
+
 }
 
 public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> Dead,ArrayList <String> Recoverd,ArrayList <String> Beds ,ArrayList <String> witingList ){
@@ -579,6 +594,7 @@ public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,Array
 
    for (Object[] row : table) {
     System.out.format("%15s%15s%15s%15s%15s%15s%15s%n", row);
+    output2.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
 }
 }
 public  int Switchinput(){
