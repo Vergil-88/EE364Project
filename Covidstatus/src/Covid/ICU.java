@@ -112,7 +112,7 @@ public class ICU {
           if(!Beds.contains(human)){
             Beds.add(human);
             human.SetStatus("At Day:"+day+" ICU\n");
-            waitingList.remove(human);
+            //waitingList.remove(human);
 
           }
         }
@@ -142,14 +142,22 @@ public void removeType_Normal_From_ICU(){
             Beds.remove(i);
 
         }
-        if(waitingList.size()<=i){
-         if(waitingList.contains(Beds.get(i))){
-             Beds.remove(i);
-         }
-     }
+       // if(waitingList.size()<=i){
+       //  if(waitingList.contains(Beds.get(i))){
+          //   Beds.remove(i);
+        // }
+     //}
 
     }
 
+
+    
+    
+    
+    
+    
+    
+    
 }
 
 

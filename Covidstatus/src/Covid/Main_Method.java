@@ -115,8 +115,8 @@ if(day>=7){
 
     
         
-    MinistryofHealth.A_to_Dead(icu.getWaitingList(),day);
-    MinistryofHealth.Recovered(day);// add a line to remove the perosn if he exsist in a bed
+    MinistryofHealth.A_to_Dead(icu.getWaitingList(),day,icu);
+    MinistryofHealth.Recovered(day,icu);// add a line to remove the perosn if he exsist in a bed
   
 
 
@@ -124,17 +124,25 @@ if(day>=7){
 
 
     ArrayList<Human> Witing = icu.getWaitingList();
-    if(Witing.size()!=0)
-        for (int i = 0;i<Witing.size();i++) {
+   // if(Witing.size()!=0){
+       // System.out.println("//////////////////////////////////////////////////////////////////");
+       // for (int i = 0;i<Witing.size();i++) {
 
-        icu.SetBedWithCap(Witing.get(i),day);
+        //icu.SetBedWithCap(Witing.get(i),day);
 
-        if(icu.getBeds().size() == 1000)
-            break;
+        //if(icu.getBeds().size() == 1000)
+           // break;
         
-    }
-
-
+    //}
+    //}
+   // ArrayList<Human> removeAfter= new ArrayList<Human>();
+  //  for (Human human : Witing) {
+     //   icu.SetBedWithCap(human,day);
+      //  removeAfter.add(human);
+        
+        
+   // }
+   // Witing.removeAll(removeAfter);
 //    ArrayList<Human> Witing = icu.getWaitingList();
 //     for (int i=0 ;i < Witing.size() ;i++ ) {
     
@@ -180,7 +188,7 @@ Human person;
 
 while(numOfBeds != 0){
     
-    
+    //if(icu.getBeds().size()+1 <= icu.getBedCap() ){
     typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
     ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
     person =  ArrayPostiveA.get(typeAIndex);
@@ -188,11 +196,24 @@ while(numOfBeds != 0){
     icu.SetBedWithCap(person,day);
     
     numOfBeds--;
-
-
+   // }
+   // else{
+   //   numOfBeds--;  
+   // }
 }
 
+icu.removeType_Normal_From_ICU();
 
+
+    ArrayList<Human> Witing = icu.getWaitingList();
+    ArrayList<Human> removeAfter= new ArrayList<Human>();
+    for (Human human : Witing) {
+        icu.SetBedWithCap(human,day);
+        removeAfter.add(human);
+        if(icu.getBeds().size()+1 >= icu.getBedCap() )
+        break;
+    }
+    Witing.removeAll(removeAfter);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Counting
@@ -295,7 +316,7 @@ for (Human  h :  city.get_Citizen()) {
 
    
 
-    
+   
 
 
 

@@ -131,7 +131,7 @@ public class ministryofHealth {
     }
 
     //////////////////////////////////////////////
-    public void A_to_Dead( ArrayList <Human>  WaitingList,int day){
+    public void A_to_Dead( ArrayList <Human>  WaitingList,int day,ICU icu){
 
         Human person;
         int Counter;
@@ -153,6 +153,7 @@ public class ministryofHealth {
                     B.setDead();
                     B.SetStatus("At Day:"+day+" Dead\n");
                     PostiveA.remove(B);
+                    icu.getBeds().remove(B);
                     Dead.add(B); 
                     
                     
@@ -163,6 +164,7 @@ public class ministryofHealth {
                     B.setDead();
                     B.SetStatus("At Day:"+day+" Dead\n");
                     PostiveA.remove(B);
+                    icu.getBeds().remove(B);
                     Dead.add(B); 
                     
                    
@@ -171,7 +173,7 @@ public class ministryofHealth {
             }
         }
 
-        int randomDead = (int) (PostiveA.size()*0.00);
+        int randomDead = (int) (PostiveA.size()*0.00);// this is zero 
         int randomIndex;
         Human Die;
 
@@ -181,13 +183,14 @@ public class ministryofHealth {
             Die.setDead();
             Die.SetStatus("At Day:"+day+" Dead\n");
             PostiveA.remove(Die);
+            icu.getBeds().remove(Die);
             Dead.add(Die); 
         }
 
     }
 
     //////////////////////////////////////////////
-    public void Recovered(int day){
+    public void Recovered(int day,ICU icu){
 
         int numOfRecovered= (int) (PostiveA.size() * 0.05 );
         int RecoveredIndex;
@@ -204,6 +207,8 @@ public class ministryofHealth {
             person.SetStatus("At Day:"+day+"Normal\n");
 
             PostiveA.remove(person);
+            icu.getBeds().remove(person);
+
             Recovered.add(person);
             
 
