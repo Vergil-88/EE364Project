@@ -39,7 +39,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="covidstatus.JeddahController">
    <children>
       <ListView fx:id="List_Two" layoutX="60.0" layoutY="136.0" prefHeight="203.0" prefWidth="165.0" />
-      <ListView fx:id="List_One" layoutX="352.0" layoutY="136.0" prefHeight="203.0" prefWidth="166.0" />
+      <ListView fx:id="List_One" layoutX="353.0" layoutY="136.0" prefHeight="203.0" prefWidth="166.0" />
       <Button fx:id="ICU" layoutX="482.0" layoutY="34.0" mnemonicParsing="false" onAction="#ICU_Action" text="ICU" />
       <Button layoutX="352.0" layoutY="34.0" mnemonicParsing="false" text="Travel" />
       <Button layoutX="204.0" layoutY="34.0" mnemonicParsing="false" text="Dead" />

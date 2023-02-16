@@ -42,8 +42,8 @@ public class JeddahController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          
-      List_Two.setItems(MAIN_loop.RRRR); 
-           
+      List_Two.setItems(MAIN_loop.R2_C1_out1); 
+      List_One.setItems(MAIN_loop.R2_C1_out2);    
             
          
         
@@ -55,8 +55,8 @@ public class JeddahController implements Initializable {
 
     @FXML
     private void GOV_Action(ActionEvent event) {
-        System.out.println(MAIN_loop.RRRR);
-          List_Two.setItems(MAIN_loop.RRRR);
+        System.out.println(MAIN_loop.R2_C1_out1);
+          List_Two.setItems(MAIN_loop.R2_C1_out1);
        // List_One.getItems().addAll(MAIN_loop.RRRR);
     }
 

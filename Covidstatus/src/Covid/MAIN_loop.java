@@ -7,10 +7,29 @@ import covidstatus.*;
 
 public class MAIN_loop {
     public static Main_Method R2_C1;
+            public static ObservableList <String> R2_C1_out1;
+            public static ObservableList <String> R2_C1_out2;
     public static Main_Method R2_C2;
+            public static ObservableList <String> R2_C2_out1;
+            public static ObservableList <String> R2_C2_out2;
     public static Main_Method R2_C3;
+            public static ObservableList <String> R2_C3_out1;
+            public static ObservableList <String> R2_C3_out2;
     public static Main_Method R2_C4;
-    public static ObservableList <String> RRRR;
+            public static ObservableList <String> R2_C4_out1;
+            public static ObservableList <String> R2_C4_out2;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     static Main_Method R3_C1;
     static Main_Method R3_C2;
     static Main_Method R3_C3;
@@ -108,7 +127,7 @@ Cities.addAll(West.getCities());
 Cities.addAll(East.getCities());
 
 int Porgress=0;
-int days=365;// a year
+int days=10;// a year
 int numOfTravle;
 for (int day = 1; day <=days  ; day++) {
 
@@ -240,8 +259,8 @@ ON_OFF=false;
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Output for java Fx
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-RRRR =R2_C1.Out1;
-
+R2_C1_out1 =R2_C1.Out1;
+R2_C1_out2 =R2_C1.Out2;
 
 
 
