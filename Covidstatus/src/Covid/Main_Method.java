@@ -182,7 +182,7 @@ if(day>=7){
 // 5th ICU Beds filing for the the Type Who needs it which is 0.15 of them
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.30); 
+int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.40); 
 int typeAIndex; 
 Human person;
 if(!(icu.getWaitingList().size() >= 1)){
@@ -201,6 +201,17 @@ while(numOfBeds != 0){
    //   numOfBeds--;  
    // }
 }
+}
+else{
+    typeAIndex = rad.nextInt(MinistryofHealth.getPostiveA().size()-1);
+    ArrayList <Human> ArrayPostiveA= MinistryofHealth.getPostiveA();
+    person =  ArrayPostiveA.get(typeAIndex);
+
+    icu.getWaitingList().add(person);
+    person.SetStatus("At Day: "+day+" Waiting List\n");
+    
+    numOfBeds--;
+    
 }
 icu.removeType_Normal_From_ICU();
 
