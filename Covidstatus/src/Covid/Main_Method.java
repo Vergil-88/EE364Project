@@ -580,7 +580,6 @@ public  void Table_XYZ (int day,ArrayList <String> A,ArrayList <String> B,ArrayL
 
        for (Object[] row : table) {
         output1.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
-           System.out.println("adsa");
         Out1 = FXCollections.observableArrayList(output1);
         System.out.format("%15s%15s%15s%15s%15s%n", row);
     }
