@@ -142,11 +142,11 @@ public void removeType_Normal_From_ICU(){
             Beds.remove(i);
 
         }
-    //    if(waitingList.size()<=i){
-    //     if(waitingList.contains(Beds.get(i))){
-    //         Beds.remove(i);
-    //     }
-    // }
+        if(waitingList.size()<=i){
+         if(waitingList.contains(Beds.get(i))){
+             Beds.remove(i);
+         }
+     }
 
     }
 
