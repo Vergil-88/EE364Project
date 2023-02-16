@@ -182,10 +182,10 @@ if(day>=7){
 // 5th ICU Beds filing for the the Type Who needs it which is 0.15 of them
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
+int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.30); 
 int typeAIndex; 
 Human person;
-
+if(!(icu.getWaitingList().size() >= 1)){
 while(numOfBeds != 0){
     
     //if(icu.getBeds().size()+1 <= icu.getBedCap() ){
@@ -201,7 +201,7 @@ while(numOfBeds != 0){
    //   numOfBeds--;  
    // }
 }
-
+}
 icu.removeType_Normal_From_ICU();
 
 
@@ -210,7 +210,7 @@ icu.removeType_Normal_From_ICU();
     for (Human human : Witing) {
         icu.SetBedWithCap(human,day);
         removeAfter.add(human);
-        if(icu.getBeds().size()+1 >= icu.getBedCap() )
+        if(icu.getBeds().size() >= icu.getBedCap() )
         break;
     }
     Witing.removeAll(removeAfter);
