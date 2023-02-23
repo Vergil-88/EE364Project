@@ -5,6 +5,7 @@
  */
 package covidstatus;
 
+//import java.awt.Color;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,13 +14,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
 
 /**
  *
  * @author BFO6
  */
 public class Covidstatus extends Application {
+    Circle circle = new Circle();
     
     @Override
     public void start(Stage stage) {
@@ -38,6 +42,9 @@ public class Covidstatus extends Application {
         } catch (Exception e) {
             System.out.println("FXML Loading Error");
         }
+        
+        
+        
     }
 
     /**

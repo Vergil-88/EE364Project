@@ -34,6 +34,12 @@ public class SecondWindowController implements Initializable {
     private Button southButton;
     @FXML
     private Button northStats;
+    @FXML
+    private Button eastStats;
+    @FXML
+    private Button westStats;
+    @FXML
+    private Button southStats;
 
     /**
      * Initializes the controller class.
@@ -107,6 +113,18 @@ public class SecondWindowController implements Initializable {
         } catch (IOException io) {
             System.out.println("FXML Loading Error");
         }
+    }
+
+    @FXML
+    private void esAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void wsAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void ssAction(ActionEvent event) {
     }
     
     

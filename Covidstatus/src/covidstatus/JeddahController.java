@@ -12,10 +12,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import jdk.jpackage.main.Main;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+//import jdk.jpackage.main.Main;
 
 /**
  * FXML Controller class
@@ -29,13 +34,19 @@ public class JeddahController implements Initializable {
     @FXML
     private ListView<String> List_One;
     @FXML
-    private Button ICU;
-    @FXML
     private Button GOV;
     @FXML
     private Button Programmer;
   ObservableList<String> Stu = FXCollections.observableArrayList();
         ArrayList <String> arr = new ArrayList <String>();
+    @FXML
+    private Button icuB;
+    @FXML
+    private Button travelB;
+    @FXML
+    private Button deadB;
+    @FXML
+    private Button aliveB;
     /**
      * Initializes the controller class.
      */
@@ -45,12 +56,23 @@ public class JeddahController implements Initializable {
       List_Two.setItems(MAIN_loop.R2_C1_out1); 
       List_One.setItems(MAIN_loop.R2_C1_out2);    
             
-         
+       
+    
         
     }    
-
+   
+    
     @FXML
     private void ICU_Action(ActionEvent event) {
+        try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
@@ -64,6 +86,18 @@ public class JeddahController implements Initializable {
     private void Programmer_Action(ActionEvent event) {
         
         
+    }
+
+    @FXML
+    private void travel_action(ActionEvent event) {
+    }
+
+    @FXML
+    private void dead_action(ActionEvent event) {
+    }
+
+    @FXML
+    private void alive_action(ActionEvent event) {
     }
     
 }
