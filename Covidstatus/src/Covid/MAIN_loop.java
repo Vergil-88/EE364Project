@@ -313,6 +313,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
         
 
             R2_C1.City_Activite(day, East_City_1, GovR2_C1, icuR2_C1, covid,false);
+            
+            
             R2_C2.City_Activite(day, East_City_2, GovR2_C2, icuR2_C2, covid,false);
             R2_C3.City_Activite(day, East_City_3, GovR2_C3, icuR2_C3, covid,false);
             R2_C4.City_Activite(day, East_City_4, GovR2_C4, icuR2_C4, covid,false);
