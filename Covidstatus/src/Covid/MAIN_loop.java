@@ -8,25 +8,29 @@ public class MAIN_loop {
     ////////////////////////////////////////////////
    public static ArrayList<Human> R1_city1_Citizen;
    public static ArrayList<Human> R1_city1_DeadCitizen;
-   public static ArrayList<Human> R1_city1_PosA ;
+   public static ArrayList<String> R1_city1_pView ;
+   public static ArrayList<String> R1_city1_GovView ;
    public static ArrayList<Human> R1_city1_Travel ;
    public static ArrayList<Human> R1_city1_ICU ;
 
    public static ArrayList<Human> R1_city2_Citizen;
    public static ArrayList<Human> R1_city2_DeadCitizen;
-   public static ArrayList<Human> R1_city2_PosA ;
+   public static ArrayList<String> R1_city2_pView ;
+   public static ArrayList<String> R1_city2_GovView ;
    public static ArrayList<Human> R1_city2_Travel ;
    public static ArrayList<Human> R1_city2_ICU ;
 
   public  static ArrayList<Human> R1_city3_Citizen;
   public  static ArrayList<Human> R1_city3_DeadCitizen;
-  public  static ArrayList<Human> R1_city3_PosA ;
+  public  static ArrayList<String> R1_city3_pView ;
+  public static ArrayList<String> R1_city3_GovView ;
   public  static ArrayList<Human> R1_city3_Travel ;
   public  static ArrayList<Human> R1_city3_ICU ;
 
   public  static ArrayList<Human> R1_city4_Citizen;
  public   static ArrayList<Human> R1_city4_DeadCitizen;
- public   static ArrayList<Human> R1_city4_PosA ;
+ public   static ArrayList<String> R1_city4_pView ;
+ public static ArrayList<String> R1_city4_GovView ;
   public  static ArrayList<Human> R1_city4_Travel ;
    public static ArrayList<Human> R1_city4_ICU ;
 
@@ -35,50 +39,58 @@ public class MAIN_loop {
 
   public  static ArrayList<Human> R2_city1_Citizen;
    public static ArrayList<Human> R2_city1_DeadCitizen;
-   public static ArrayList<Human> R2_city1_PosA ;
+   public static ArrayList<String> R2_city1_pView ;
+   public static ArrayList<String> R2_city1_GovView ;
   public  static ArrayList<Human> R2_city1_Travel ;
    public static ArrayList<Human> R2_city1_ICU ;
 
    public static ArrayList<Human> R2_city2_Citizen;
   public  static ArrayList<Human> R2_city2_DeadCitizen;
-  public  static ArrayList<Human> R2_city2_PosA ;
+  public  static ArrayList<String> R2_city2_pView ;
+  public static ArrayList<String> R2_city2_GovView ;
   public  static ArrayList<Human> R2_city2_Travel ;
   public  static ArrayList<Human> R2_city2_ICU ;
 
   public  static ArrayList<Human> R2_city3_Citizen;
   public  static ArrayList<Human> R2_city3_DeadCitizen;
-  public  static ArrayList<Human> R2_city3_PosA ;
+  public  static ArrayList<String> R2_city3_pView ;
+  public static ArrayList<String> R2_city3_GovView ;
   public  static ArrayList<Human> R2_city3_Travel ;
   public  static ArrayList<Human> R2_city3_ICU ;
 
  public   static ArrayList<Human> R2_city4_Citizen;
   public  static ArrayList<Human> R2_city4_DeadCitizen;
-  public  static ArrayList<Human> R2_city4_PosA ;
+  public  static ArrayList<String> R2_city4_pView ;
+  public static ArrayList<String> R2_city4_GovView ;
   public  static ArrayList<Human> R2_city4_Travel ;
   public  static ArrayList<Human> R2_city4_ICU ;
 
       ////////////////////////////////// Clone
   public    static ArrayList<Human> P2_R1_city1_Citizen;
  public     static ArrayList<Human> P2_R1_city1_DeadCitizen;
- public     static ArrayList<Human> P2_R1_city1_PosA ;
+ public     static ArrayList<String> P2_R1_city1_pView ;
+ public     static ArrayList<String> P2_R1_city1_GovView ;
  public     static ArrayList<Human> P2_R1_city1_Travel ;
 public      static ArrayList<Human> P2_R1_city1_ICU ;
   
   public    static ArrayList<Human> P2_R1_city2_Citizen;
   public    static ArrayList<Human> P2_R1_city2_DeadCitizen;
-  public    static ArrayList<Human> P2_R1_city2_PosA ;
+  public    static ArrayList<String> P2_R1_city2_pView ;
+  public     static ArrayList<String> P2_R1_city2_GovView ;
    public   static ArrayList<Human> P2_R1_city2_Travel ;
    public   static ArrayList<Human> P2_R1_city2_ICU ;
   
    public   static ArrayList<Human> P2_R1_city3_Citizen;
    public   static ArrayList<Human> P2_R1_city3_DeadCitizen;
-    public  static ArrayList<Human> P2_R1_city3_PosA ;
+    public  static ArrayList<String> P2_R1_city3_pView ;
+    public     static ArrayList<String> P2_R1_city3_GovView ;
     public  static ArrayList<Human> P2_R1_city3_Travel ;
     public  static ArrayList<Human> P2_R1_city3_ICU ;
   
   public    static ArrayList<Human> P2_R1_city4_Citizen;
    public   static ArrayList<Human> P2_R1_city4_DeadCitizen;
-   public   static ArrayList<Human> P2_R1_city4_PosA ;
+   public   static ArrayList<String> P2_R1_city4_pView ;
+   public     static ArrayList<String> P2_R1_city4_GovView ;
    public   static ArrayList<Human> P2_R1_city4_Travel ;
     public  static ArrayList<Human> P2_R1_city4_ICU ;
   
@@ -87,25 +99,29 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
   
   public    static ArrayList<Human> P2_R2_city1_Citizen;
   public    static ArrayList<Human> P2_R2_city1_DeadCitizen;
-   public   static ArrayList<Human> P2_R2_city1_PosA ;
+   public   static ArrayList<String> P2_R2_city1_pView ;
+   public   static ArrayList<String> P2_R2_city1_GovView ;
    public   static ArrayList<Human> P2_R2_city1_Travel ;
    public   static ArrayList<Human> P2_R2_city1_ICU ;
   
    public   static ArrayList<Human> P2_R2_city2_Citizen;
    public   static ArrayList<Human> P2_R2_city2_DeadCitizen;
-   public   static ArrayList<Human> P2_R2_city2_PosA ;
+   public   static ArrayList<String> P2_R2_city2_pView;
+   public   static ArrayList<String> P2_R2_city2_GovView ;
    public   static ArrayList<Human> P2_R2_city2_Travel ;
    public   static ArrayList<Human> P2_R2_city2_ICU ;
   
     public  static ArrayList<Human> P2_R2_city3_Citizen;
     public  static ArrayList<Human> P2_R2_city3_DeadCitizen;
-    public  static ArrayList<Human> P2_R2_city3_PosA ;
+    public  static ArrayList<String> P2_R2_city3_pView ;
+    public   static ArrayList<String> P2_R2_city3_GovView ;
     public  static ArrayList<Human> P2_R2_city3_Travel ;
     public  static ArrayList<Human> P2_R2_city3_ICU ;
   
     public  static ArrayList<Human> P2_R2_city4_Citizen;
     public  static ArrayList<Human> P2_R2_city4_DeadCitizen;
-    public  static ArrayList<Human> P2_R2_city4_PosA ;
+    public  static ArrayList<String> P2_R2_city4_pView;
+    public   static ArrayList<String> P2_R2_city4_GovView ;
     public  static ArrayList<Human> P2_R2_city4_Travel ;
     public  static ArrayList<Human> P2_R2_city4_ICU ;
     
@@ -137,8 +153,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
         Region East = new Region("East");                                
         East.addCity("Dammam", 5000, 0);
         East.addCity("Jubail", 5000, 0);
-        East.addCity("Qatif", 5000, 0);
-        East.addCity("Ras Tanura", 5000, 0); 
+        East.addCity("Alhfof", 5000, 0);
+        East.addCity("Hafr Albaten", 5000, 0); 
         //Saving them to a Varible
         City East_City_1=East.Cities.get(0);
         City East_City_2=East.Cities.get(1);
@@ -350,7 +366,7 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
             }
             
 
-Boolean Switch_ON_OFF=false;
+            Boolean Switch_ON_OFF=false;
             if(Switch_ON_OFF==true){
             
             while(day>=PickedDay){
@@ -453,6 +469,12 @@ Boolean Switch_ON_OFF=false;
 
         }
         }//end of main loop
+
+
+        //////// print all City tabels
+        
+        
+
 ////////////////////////////////////////////////////java fx passing
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // assigning the static varibles     
@@ -461,25 +483,29 @@ Boolean Switch_ON_OFF=false;
  
 R1_city1_Citizen = East_City_1.get_Citizen();
 R1_city1_DeadCitizen = East_City_1.getDeadCitizen();
-R1_city1_PosA = GovR2_C1.getPostiveA() ;
+R1_city1_pView = R2_C1.pView; 
+R1_city1_GovView = R2_C1.GovView; 
 R1_city1_Travel = East_City_1.getTravelers() ;
 R1_city1_ICU = icuR2_C1.getBeds() ;
 
 R1_city2_Citizen = East_City_2.get_Citizen();
 R1_city2_DeadCitizen = East_City_2.getDeadCitizen();
-R1_city2_PosA = GovR2_C2.getPostiveA() ;
+R1_city2_pView = R2_C2.pView; 
+R1_city2_GovView = R2_C2.GovView; 
 R1_city2_Travel = East_City_2.getTravelers() ;
 R1_city2_ICU = icuR2_C2.getBeds() ;
 
 R1_city3_Citizen = East_City_3.get_Citizen();
 R1_city3_DeadCitizen = East_City_3.getDeadCitizen();
-R1_city3_PosA = GovR2_C3.getPostiveA() ;
+R1_city3_pView = R2_C3.pView; 
+R1_city3_GovView = R2_C3.GovView; 
 R1_city3_Travel = East_City_3.getTravelers() ;
 R1_city3_ICU = icuR2_C3.getBeds() ;
 
 R1_city4_Citizen = East_City_4.get_Citizen();
 R1_city4_DeadCitizen = East_City_4.getDeadCitizen();
-R1_city4_PosA = GovR2_C4.getPostiveA() ;
+R1_city4_pView = R2_C4.pView; 
+R1_city4_GovView = R2_C4.GovView; 
 R1_city4_Travel = East_City_4.getTravelers();
 R1_city4_ICU = icuR2_C4.getBeds() ;
 
@@ -487,50 +513,59 @@ R1_city4_ICU = icuR2_C4.getBeds() ;
 
 R2_city1_Citizen = West_City_1.get_Citizen();
 R2_city1_DeadCitizen = West_City_1.getDeadCitizen();
-R2_city1_PosA = GovR3_C1.getPostiveA() ;
+R2_city1_pView = R3_C1.pView; 
+R2_city1_GovView = R3_C1.GovView;  
 R2_city1_Travel = West_City_1.getTravelers() ;
 R2_city1_ICU = icuR3_C1.getBeds() ;
 
 R2_city2_Citizen = West_City_2.get_Citizen();
 R2_city2_DeadCitizen = West_City_2.getDeadCitizen();
-R2_city2_PosA = GovR3_C2.getPostiveA() ;
+R2_city2_pView = R3_C2.pView; 
+R2_city2_GovView = R3_C2.GovView;  
 R2_city2_Travel = West_City_2.getTravelers();
 R2_city2_ICU = icuR3_C2.getBeds() ;
 
 R2_city3_Citizen = West_City_3.get_Citizen();
 R2_city3_DeadCitizen = West_City_3.getDeadCitizen();
-R2_city3_PosA = GovR3_C3.getPostiveA() ;
+R2_city3_pView = R3_C3.pView; 
+R2_city3_GovView = R3_C3.GovView;  
 R2_city3_Travel = West_City_3.getTravelers() ;
 R2_city3_ICU = icuR3_C3.getBeds() ;
 
 R2_city4_Citizen = West_City_4.get_Citizen();
 R2_city4_DeadCitizen = West_City_4.getDeadCitizen();
-R2_city4_PosA = GovR3_C4.getPostiveA() ;
+R2_city4_pView = R3_C4.pView; 
+R2_city4_GovView = R3_C4.GovView;  
 R2_city4_Travel = West_City_4.getTravelers() ;
 R2_city4_ICU = icuR3_C4.getBeds() ;
 
 ///////////////// clone
+
 P2_R1_city1_Citizen = P2_East_City_1.get_Citizen();
 P2_R1_city1_DeadCitizen = P2_East_City_1.getDeadCitizen();
-P2_R1_city1_PosA = P2_GovR2_C1.getPostiveA() ;
+P2_R1_city1_pView = P2_R2_C1.pView; 
+P2_R1_city1_GovView = P2_R2_C1.GovView; 
 P2_R1_city1_Travel = P2_East_City_1.getTravelers() ;
 P2_R1_city1_ICU = P2_icuR2_C1.getBeds() ;
 
 P2_R1_city2_Citizen = P2_East_City_2.get_Citizen();
 P2_R1_city2_DeadCitizen = P2_East_City_2.getDeadCitizen();
-P2_R1_city2_PosA = P2_GovR2_C2.getPostiveA() ;
+P2_R1_city2_pView = P2_R2_C2.pView; 
+P2_R1_city2_GovView = P2_R2_C2.GovView; 
 P2_R1_city2_Travel = P2_East_City_2.getTravelers() ;
 P2_R1_city2_ICU = P2_icuR2_C2.getBeds() ;
 
 P2_R1_city3_Citizen = P2_East_City_3.get_Citizen();
 P2_R1_city3_DeadCitizen = P2_East_City_3.getDeadCitizen();
-P2_R1_city3_PosA = P2_GovR2_C3.getPostiveA() ;
+P2_R1_city3_pView = P2_R2_C3.pView; 
+P2_R1_city3_GovView = P2_R2_C3.GovView; 
 P2_R1_city3_Travel = P2_East_City_3.getTravelers() ;
 P2_R1_city3_ICU = P2_icuR2_C3.getBeds() ;
 
 P2_R1_city4_Citizen = P2_East_City_4.get_Citizen();
 P2_R1_city4_DeadCitizen = P2_East_City_4.getDeadCitizen();
-P2_R1_city4_PosA = P2_GovR2_C4.getPostiveA() ;
+P2_R1_city4_pView = P2_R2_C4.pView; 
+P2_R1_city4_GovView = P2_R2_C4.GovView; 
 P2_R1_city4_Travel = P2_East_City_4.getTravelers();
 P2_R1_city4_ICU = P2_icuR2_C4.getBeds() ;
 
@@ -538,27 +573,32 @@ P2_R1_city4_ICU = P2_icuR2_C4.getBeds() ;
 
 P2_R2_city1_Citizen = P2_West_City_1.get_Citizen();
 P2_R2_city1_DeadCitizen = P2_West_City_1.getDeadCitizen();
-P2_R2_city1_PosA = P2_GovR3_C1.getPostiveA() ;
+P2_R2_city1_pView = P2_R3_C1.pView; 
+P2_R2_city1_GovView = P2_R3_C1.GovView; 
 P2_R2_city1_Travel = P2_West_City_1.getTravelers() ;
 P2_R2_city1_ICU = P2_icuR3_C1.getBeds() ;
 
 P2_R2_city2_Citizen = P2_West_City_2.get_Citizen();
 P2_R2_city2_DeadCitizen = P2_West_City_2.getDeadCitizen();
-P2_R2_city2_PosA = P2_GovR3_C2.getPostiveA() ;
+P2_R2_city2_pView = P2_R3_C2.pView; 
+P2_R2_city2_GovView = P2_R3_C2.GovView; 
 P2_R2_city2_Travel =P2_West_City_2.getTravelers();
 P2_R2_city2_ICU = P2_icuR3_C2.getBeds() ;
 
 P2_R2_city3_Citizen = P2_West_City_3.get_Citizen();
 P2_R2_city3_DeadCitizen = P2_West_City_3.getDeadCitizen();
-P2_R2_city3_PosA = P2_GovR3_C3.getPostiveA() ;
+P2_R2_city3_pView = P2_R3_C3.pView; 
+P2_R2_city3_GovView = P2_R3_C3.GovView; 
 P2_R2_city3_Travel = P2_West_City_3.getTravelers() ;
 P2_R2_city3_ICU = P2_icuR3_C3.getBeds() ;
 
 P2_R2_city4_Citizen = P2_West_City_4.get_Citizen();
 P2_R2_city4_DeadCitizen = P2_West_City_4.getDeadCitizen();
-P2_R2_city4_PosA = P2_GovR3_C4.getPostiveA() ;
+P2_R2_city4_pView = P2_R3_C4.pView; 
+P2_R2_city4_GovView = P2_R3_C4.GovView; 
 P2_R2_city4_Travel = P2_West_City_4.getTravelers() ;
 P2_R2_city4_ICU = P2_icuR3_C4.getBeds() ;
+
         System.out.println("Starting GUI");
 Covidstatus.main(args);
     }// end of main 

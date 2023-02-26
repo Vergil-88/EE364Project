@@ -22,6 +22,9 @@ public class Main_Method {
     ArrayList <String>  Beds   = new ArrayList <String>();
     ArrayList <String>  waitingList   = new ArrayList <String>();
 
+    public ArrayList<String> pView = new ArrayList <String>();
+    public ArrayList<String> GovView = new ArrayList <String>();
+
     Random rad = new Random();
     int numOf_A=0;
     int numOf_B=0;
@@ -545,6 +548,9 @@ public class Main_Method {
         }
 
         for (Object[] row : table) {
+
+            pView.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
+
             System.out.format("%15s%15s%15s%15s%15s%n", row);
         }
     }
@@ -580,6 +586,10 @@ public class Main_Method {
         }
 
         for (Object[] row : table) {
+
+            
+            GovView.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%15s%15s%n", row)));
+
             System.out.format("%15s%15s%15s%15s%15s%15s%15s%n", row);
         }
     }
