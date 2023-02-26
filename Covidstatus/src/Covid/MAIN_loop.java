@@ -127,7 +127,7 @@ Cities.addAll(West.getCities());
 Cities.addAll(East.getCities());
 
 int Porgress=0;
-int days=100;// a year
+int days=10;// a year
 int numOfTravle;
 for (int day = 1; day <=days  ; day++) {
 

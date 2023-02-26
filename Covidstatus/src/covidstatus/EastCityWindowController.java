@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -32,6 +33,8 @@ public class EastCityWindowController implements Initializable {
     private Button dammamButton;
     @FXML
     private Button hafralbatenButton;
+    @FXML
+    private Button Bcakk;
 
     /**
      * Initializes the controller class.
@@ -91,6 +94,20 @@ public class EastCityWindowController implements Initializable {
         } catch (IOException io) {
             System.out.println("FXML Loading Error");
         }
+    }
+
+    @FXML
+    private void BcakkAA(ActionEvent event) {
+                       try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("secondWindow.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
     
 }

@@ -99,14 +99,41 @@ public class JeddahController implements Initializable {
 
     @FXML
     private void travel_action(ActionEvent event) {
+                try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
     private void dead_action(ActionEvent event) {
+                try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
     private void alive_action(ActionEvent event) {
+                try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
