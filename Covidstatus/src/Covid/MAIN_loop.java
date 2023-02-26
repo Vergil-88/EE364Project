@@ -485,7 +485,7 @@ R1_city4_ICU = icuR2_C4.getBeds() ;
 
 ////////////////////////// Regoin2
 
-R2_city1_Citizen = West_City_1.getDeadCitizen();
+R2_city1_Citizen = West_City_1.get_Citizen();
 R2_city1_DeadCitizen = West_City_1.getDeadCitizen();
 R2_city1_PosA = GovR3_C1.getPostiveA() ;
 R2_city1_PosB = GovR3_C1.getPostiveB() ;
