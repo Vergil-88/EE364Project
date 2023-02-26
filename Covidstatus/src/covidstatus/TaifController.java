@@ -48,18 +48,54 @@ public class TaifController implements Initializable {
 
     @FXML
     private void icu_Taction(ActionEvent event) {
+                           try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Taif_ICU.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }  
     }
 
     @FXML
     private void travel_Taction(ActionEvent event) {
+                      try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Taif_travel.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
     private void dead_Taction(ActionEvent event) {
+                      try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Taif_dead.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
     private void alive_Taction(ActionEvent event) {
+              try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Taif_alive.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }   
     }
 
     @FXML

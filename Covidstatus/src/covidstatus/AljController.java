@@ -66,7 +66,7 @@ public class AljController implements Initializable {
     @FXML
     private void travelJB_action(ActionEvent event) {
                  try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alj_alive.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alj_travel.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  
@@ -84,7 +84,7 @@ public class AljController implements Initializable {
     @FXML
     private void deadJB_action(ActionEvent event) {
                                               try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_dead.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alj_dead.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  
@@ -98,7 +98,7 @@ public class AljController implements Initializable {
     @FXML
     private void aliveJB_action(ActionEvent event) {
                                                       try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_alive.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alj_alive.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  

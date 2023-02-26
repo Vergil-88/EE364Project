@@ -60,7 +60,7 @@ public class CovidstatusController implements Initializable {
     @FXML
     private void phase_act(ActionEvent event) {
                 try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("secondWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("P2_2ndwin.fxml"));
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);

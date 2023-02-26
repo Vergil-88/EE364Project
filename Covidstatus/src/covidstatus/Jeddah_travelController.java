@@ -34,7 +34,7 @@ static int NUM=0;
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-                       ArrayList <Human > Array = MAIN_loop.R2_city1_Citizen; 
+                       ArrayList <Human > Array = MAIN_loop.R2_city1_Travel; 
         
         int Size=Array.size()-1;
         
