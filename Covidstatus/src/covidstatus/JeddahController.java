@@ -4,6 +4,7 @@
  */
 package covidstatus;
 import Covid.MAIN_loop;
+import java.io.IOException;
 import static java.lang.System.in;
 import java.net.URL;
 import java.util.ArrayList;
@@ -14,10 +15,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
+//import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 //import jdk.jpackage.main.Main;
@@ -47,6 +52,10 @@ public class JeddahController implements Initializable {
     private Button deadB;
     @FXML
     private Button aliveB;
+    @FXML
+    private Button backBJ;
+    
+    
     /**
      * Initializes the controller class.
      */
@@ -99,5 +108,19 @@ public class JeddahController implements Initializable {
     @FXML
     private void alive_action(ActionEvent event) {
     }
-    
-}
+
+    @FXML
+    private void backBJ_action(ActionEvent event) {
+        try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("westCityWindow.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+    }
+
+    }
+

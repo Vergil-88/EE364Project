@@ -36,16 +36,16 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="covidstatus.JeddahController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="covidstatus.MakkahController">
    <children>
-      <ListView fx:id="List_Two" layoutX="61.0" layoutY="360.0" prefHeight="203.0" prefWidth="526.0" />
-      <ListView fx:id="List_One" layoutX="61.0" layoutY="110.0" prefHeight="203.0" prefWidth="526.0" />
-      <Button fx:id="icuB" layoutX="551.0" layoutY="34.0" mnemonicParsing="false" onAction="#ICU_Action" text="ICU" />
-      <Button fx:id="travelB" layoutX="408.0" layoutY="34.0" mnemonicParsing="false" onAction="#travel_action" text="Travel" />
-      <Button fx:id="deadB" layoutX="204.0" layoutY="34.0" mnemonicParsing="false" onAction="#dead_action" text="Dead" />
-      <Button fx:id="aliveB" layoutX="74.0" layoutY="34.0" mnemonicParsing="false" onAction="#alive_action" text="Alive" />
-      <Button fx:id="GOV" layoutX="303.0" layoutY="591.0" mnemonicParsing="false" onAction="#GOV_Action" text="GOV" />
-      <Button fx:id="Programmer" layoutX="282.0" layoutY="325.0" mnemonicParsing="false" onAction="#Programmer_Action" text="Programmer" />
-      <Button fx:id="backBJ" layoutX="9.0" layoutY="617.0" mnemonicParsing="false" onAction="#backBJ_action" text="Back" />
+      <Button fx:id="icuK" layoutX="536.0" layoutY="40.0" mnemonicParsing="false" onAction="#icu_Kaction" text="ICU" />
+      <Button fx:id="travelK" layoutX="418.0" layoutY="40.0" mnemonicParsing="false" onAction="#travel_Kaction" text="Travel" />
+      <Button fx:id="deadK" layoutX="208.0" layoutY="40.0" mnemonicParsing="false" onAction="#dead_Kaction" text="Dead" />
+      <Button fx:id="aliveK" layoutX="62.0" layoutY="40.0" mnemonicParsing="false" onAction="#alive_Kaction" text="Alive" />
+      <Button fx:id="ProgrammerK" layoutX="294.0" layoutY="333.0" mnemonicParsing="false" onAction="#programmer_Kaction" text="Programmer" />
+      <ListView layoutX="62.0" layoutY="109.0" prefHeight="203.0" prefWidth="526.0" />
+      <ListView layoutX="57.0" layoutY="381.0" prefHeight="203.0" prefWidth="526.0" />
+      <Button fx:id="govK" layoutX="309.0" layoutY="597.0" mnemonicParsing="false" onAction="#gov_Kaction" prefHeight="26.0" prefWidth="68.0" text="GOV" />
+      <Button fx:id="backBK" layoutX="14.0" layoutY="617.0" mnemonicParsing="false" onAction="#backBK_action" text="Back" />
    </children>
 </AnchorPane>

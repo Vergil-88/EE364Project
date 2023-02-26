@@ -5,12 +5,17 @@
  */
 package covidstatus;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -38,18 +43,54 @@ public class EastCityWindowController implements Initializable {
 
     @FXML
     private void alhfofAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Alhf.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        }
     }
 
     @FXML
     private void aljubailAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Alj.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        }
     }
 
     @FXML
     private void dammamAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Dam.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        }
     }
 
     @FXML
     private void hafralbatenAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Haf.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        }
     }
     
 }

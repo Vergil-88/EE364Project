@@ -70,7 +70,16 @@ public class WestCityWindowController implements Initializable {
 
     @FXML
     private void openMakkah(ActionEvent event) {
-        onionHead.setOpacity(100);
+        //onionHead.setOpacity(100);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Makkah.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+    }
     }
 
     @FXML
@@ -88,10 +97,28 @@ public class WestCityWindowController implements Initializable {
 
     @FXML
     private void openMadinah(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Madinah.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+    }
     }
 
     @FXML
     private void openTaif(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Taif.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+    }
     }
     
 

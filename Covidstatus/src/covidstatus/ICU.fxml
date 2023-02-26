@@ -32,20 +32,11 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="covidstatus.JeddahController">
-   <children>
-      <ListView fx:id="List_Two" layoutX="61.0" layoutY="360.0" prefHeight="203.0" prefWidth="526.0" />
-      <ListView fx:id="List_One" layoutX="61.0" layoutY="110.0" prefHeight="203.0" prefWidth="526.0" />
-      <Button fx:id="icuB" layoutX="551.0" layoutY="34.0" mnemonicParsing="false" onAction="#ICU_Action" text="ICU" />
-      <Button fx:id="travelB" layoutX="408.0" layoutY="34.0" mnemonicParsing="false" onAction="#travel_action" text="Travel" />
-      <Button fx:id="deadB" layoutX="204.0" layoutY="34.0" mnemonicParsing="false" onAction="#dead_action" text="Dead" />
-      <Button fx:id="aliveB" layoutX="74.0" layoutY="34.0" mnemonicParsing="false" onAction="#alive_action" text="Alive" />
-      <Button fx:id="GOV" layoutX="303.0" layoutY="591.0" mnemonicParsing="false" onAction="#GOV_Action" text="GOV" />
-      <Button fx:id="Programmer" layoutX="282.0" layoutY="325.0" mnemonicParsing="false" onAction="#Programmer_Action" text="Programmer" />
-      <Button fx:id="backBJ" layoutX="9.0" layoutY="617.0" mnemonicParsing="false" onAction="#backBJ_action" text="Back" />
-   </children>
-</AnchorPane>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="covidstatus.ICUController">
+  <content>
+    <AnchorPane fx:id="anchorP" minHeight="0.0" minWidth="0.0" prefHeight="5000.0" prefWidth="5000.0" />
+  </content>
+</ScrollPane>
