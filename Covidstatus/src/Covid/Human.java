@@ -11,6 +11,7 @@ public class Human {
     private String Status="";
     private String History="";
     private String TravelHistory="";
+    private Boolean Vaccine;
     /*how many critical dieases do you guys want? three? or four?
     /* and what about we make "String cD" boolean instead of a string of dieases which will make it easier for us because if it was true we can apply a percantage where the person can get covid faster or not
     */
@@ -25,6 +26,8 @@ public class Human {
     public Human()
     {
        
+        Vaccine=false;
+
 
         Status= "Normal \n";
         id=super.toString() ; 
@@ -96,7 +99,7 @@ public class Human {
     public String getfamily()
     {
         String familyMembers="";
-        for ( Human fm :family ) {
+        for ( Human fm :family ){
             familyMembers += fm.id+" | ";
 
         }
@@ -161,14 +164,11 @@ public class Human {
 
 
 ///////////////////////////////////////////////////
-    public String getRandomIndividuals()
-    {
+    public String getRandomIndividuals(){
         String Randindivs="";
         for ( Human Randind :randomIndividuals ) {
             Randindivs += Randind.id+" | ";
-
         }
-
         return Randindivs;
     }
 
@@ -196,8 +196,7 @@ public class Human {
     }
 
 
-
-  public void setCovidInfection_Type(covidInfection X){
+    public void setCovidInfection_Type(covidInfection X){
 
 
     CovidInfection_Type = X;
@@ -217,16 +216,12 @@ public class Human {
         this.History +=" At day: "+day+" "+Status; 
     }
 
-  
-
-
-
     public String getHistory() {
         return History + TravelHistory;
     }
    
 ///////////////////////////////////////////////////
-public void updatehumna(int day) {
+public void updatehuman(int day) {
     
         if(CovidInfection_Type.getType().equals("A")){
         A X=(A) CovidInfection_Type;
@@ -238,6 +233,12 @@ public void updatehumna(int day) {
 
 }
 
+public void setVaccine(Boolean vaccine) {
+    Vaccine = vaccine;
+}
+public Boolean getVaccine() {
+    return Vaccine;
+}
 
 
 
@@ -267,22 +268,9 @@ public void updatehumna(int day) {
     }
     public String Sumarry(){
         return " |ID: "+ id + " |Sex: " + Sex + " | CD: " + cD + " |Alive: " + Alive + " |CovidInfection Type: " + CovidInfection_Type.getType() + "\n ";
-        // +"family Members are "+ getfamily()+"\n"+
-        // " friends are "+ getfriends()+"\n"+
-        // " CoWorkers are "+ getcoWorkers()+"\n"+
-        // " randomIndividuals are "+ getRandomIndividuals()+"\n"+
-        // "------------------------------------------------------------------------------------------------------------------------------------"  
-        //  ;
+     
     }
 
-    // public static void main(String[] args) {
-    //     Human H = new Human();
 
-    //     H.setCovidInfection_Type(new A());
-
-    //     System.out.println(H);
-
-
-    // }
     }
 

@@ -1,6 +1,4 @@
 package Covid;
-import java.util.ArrayList;
-
 interface Places {
 
 

@@ -48,6 +48,16 @@ public class AlhfController implements Initializable {
 
     @FXML
     private void icuHB_action(ActionEvent event) {
+                               try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_ICU.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML
@@ -56,6 +66,15 @@ public class AlhfController implements Initializable {
 
     @FXML
     private void travelHB_action(ActionEvent event) {
+                                      try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_travel.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
@@ -64,10 +83,29 @@ public class AlhfController implements Initializable {
 
     @FXML
     private void deadHB_action(ActionEvent event) {
+                             try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_dead.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }  
+        
     }
 
     @FXML
     private void alivrHB_action(ActionEvent event) {
+                                  try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_alive.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML

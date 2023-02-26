@@ -35,8 +35,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -45,38 +43,30 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="400.0" fitWidth="640.0">
-               <image>
-                  <Image url="@../../../../../../../Desktop/sky.jpeg" />
-               </image>
-            </ImageView>
-            <Button fx:id="eastButton" layoutX="190.0" layoutY="208.0" mnemonicParsing="false" onAction="#ebAction" prefHeight="26.0" prefWidth="71.0" text="EAST">
+            <Button fx:id="eastButton" layoutX="179.0" layoutY="208.0" mnemonicParsing="false" onAction="#ebAction" prefHeight="54.0" prefWidth="82.0" text="EAST">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="westButton" layoutX="339.0" layoutY="208.0" mnemonicParsing="false" onAction="#wbAction" prefHeight="26.0" prefWidth="71.0" text="WEST">
+            <Button fx:id="westButton" layoutX="328.0" layoutY="208.0" mnemonicParsing="false" onAction="#wbAction" prefHeight="54.0" prefWidth="82.0" text="WEST">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button fx:id="northButton" layoutX="58.0" layoutY="209.0" mnemonicParsing="false" onAction="#nbAction" prefHeight="25.0" prefWidth="71.0" text="NORTH">
+            <Button fx:id="northButton" layoutX="47.0" layoutY="209.0" mnemonicParsing="false" onAction="#nbAction" prefHeight="54.0" prefWidth="82.0" text="NORTH">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="southButton" layoutX="495.0" layoutY="208.0" mnemonicParsing="false" onAction="#sbAction" prefHeight="26.0" prefWidth="71.0" text="SOUTH">
+            <Button fx:id="southButton" layoutX="484.0" layoutY="208.0" mnemonicParsing="false" onAction="#sbAction" prefHeight="54.0" prefWidth="82.0" text="SOUTH">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="northStats" layoutX="58.0" layoutY="264.0" mnemonicParsing="false" onAction="#nsAction" prefHeight="26.0" prefWidth="71.0" text="N_Stats" />
             <Label layoutX="157.0" layoutY="50.0" prefHeight="54.0" prefWidth="326.0" text="Choose a region">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button fx:id="eastStats" layoutX="190.0" layoutY="264.0" mnemonicParsing="false" onAction="#esAction" prefHeight="26.0" prefWidth="71.0" text="E_Stats" />
-            <Button fx:id="westStats" layoutX="339.0" layoutY="264.0" mnemonicParsing="false" onAction="#wsAction" prefHeight="26.0" prefWidth="71.0" text="W_Stats" />
-            <Button fx:id="southStats" layoutX="495.0" layoutY="264.0" mnemonicParsing="false" onAction="#ssAction" prefHeight="26.0" prefWidth="71.0" text="S_Stats" />
+            <Button fx:id="BACK" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#BACK_act" prefHeight="25.0" prefWidth="82.0" text="BACK" />
       </children>
     </AnchorPane>
   </children>

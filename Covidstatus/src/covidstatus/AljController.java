@@ -48,6 +48,15 @@ public class AljController implements Initializable {
 
     @FXML
     private void icuJB_action(ActionEvent event) {
+         try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alj_ICU.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
@@ -56,6 +65,16 @@ public class AljController implements Initializable {
 
     @FXML
     private void travelJB_action(ActionEvent event) {
+                 try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alj_alive.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML
@@ -64,10 +83,30 @@ public class AljController implements Initializable {
 
     @FXML
     private void deadJB_action(ActionEvent event) {
+                                              try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_dead.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML
     private void aliveJB_action(ActionEvent event) {
+                                                      try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Alhf_alive.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML

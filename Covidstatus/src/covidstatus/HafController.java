@@ -48,6 +48,15 @@ public class HafController implements Initializable {
 
     @FXML
     private void icuFB_action(ActionEvent event) {
+                  try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Haf_ICU.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
@@ -56,6 +65,15 @@ public class HafController implements Initializable {
 
     @FXML
     private void travelFB_action(ActionEvent event) {
+                         try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Haf_travel.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
@@ -64,10 +82,29 @@ public class HafController implements Initializable {
 
     @FXML
     private void deadFB_action(ActionEvent event) {
+                                 try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Haf_dead.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
     private void aliveFB_action(ActionEvent event) {
+         try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Haf_alive.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML

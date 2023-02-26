@@ -49,13 +49,15 @@
                   <Image url="@vaccine.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="Exit" layoutX="58.0" layoutY="238.0" mnemonicParsing="false" onAction="#ExitAction" text="exit" />
-            <Button fx:id="Start" layoutX="155.0" layoutY="238.0" mnemonicParsing="false" onAction="#StartAction" text="start" />
+            <Button fx:id="Exit" layoutX="591.0" layoutY="364.0" mnemonicParsing="false" onAction="#ExitAction" text="exit" />
+            <Button fx:id="Start" layoutX="33.0" layoutY="85.0" mnemonicParsing="false" onAction="#StartAction" prefHeight="63.0" prefWidth="121.0" text="Phase 1" />
             <Label contentDisplay="CENTER" layoutX="33.0" layoutY="22.0" prefHeight="73.0" prefWidth="243.0" text="Covid status">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
+            <Button fx:id="Phase" layoutX="168.0" layoutY="85.0" mnemonicParsing="false" onAction="#phase_act" prefHeight="63.0" prefWidth="121.0" text="Phase 2" />
+            <Button layoutX="33.0" layoutY="170.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="256.0" text="Graphes" />
       </children>
     </AnchorPane>
   </children>

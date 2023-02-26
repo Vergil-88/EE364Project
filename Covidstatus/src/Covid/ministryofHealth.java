@@ -27,7 +27,7 @@ public class ministryofHealth {
         for(Human x : Calls){
             
 
-            if  (x.getCovidInfection_Type().getType().equals("A") ){
+            if  (x.getCovidInfection_TypeType().equals("A") ){
                 if(!(PostiveA.contains(x)))
 
                 PostiveA.add(x);
@@ -51,14 +51,14 @@ public class ministryofHealth {
             ArrayList <Human>  randomIndividuals =x.getrandomIndividuals_Arraylist();
         
             for(Human f : family){
-                if( f.getCovidInfection_Type().getType().equals("B") ){
+                if( f.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(f)))
                     PostiveB.add(f);
                 }
             }
 
             for(Human fr : friends){
-                if( fr.getCovidInfection_Type().getType().equals("B") ){
+                if( fr.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(fr)))
 
                     PostiveB.add(fr);
@@ -66,14 +66,14 @@ public class ministryofHealth {
             }
 
             for(Human Co : coWorkers){
-                if( Co.getCovidInfection_Type().getType().equals("B") ){
+                if( Co.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(Co)))
                     PostiveB.add(Co);
                 }
             }
 
             for(Human r : randomIndividuals){
-                if( r.getCovidInfection_Type().getType().equals("B") ){
+                if( r.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(r)))
                     PostiveB.add(r);
                 }
@@ -95,7 +95,7 @@ public class ministryofHealth {
             ArrayList <Human>  randomIndividuals =x.getrandomIndividuals_Arraylist();
             
             for(Human f : family){
-                if( f.getCovidInfection_Type().getType().equals("C") ){
+                if( f.getCovidInfection_TypeType().equals("C") ){
                     if(!(PostiveC.contains(f)))
 
                     PostiveC.add(f);
@@ -103,7 +103,7 @@ public class ministryofHealth {
             }
     
             for(Human fr : friends){
-                if( fr.getCovidInfection_Type().getType().equals("C") ){
+                if( fr.getCovidInfection_TypeType().equals("C") ){
                     if(!(PostiveC.contains(fr)))
 
                     PostiveC.add(fr);
@@ -111,7 +111,7 @@ public class ministryofHealth {
             }
     
             for(Human Co : coWorkers){
-                if( Co.getCovidInfection_Type().getType().equals("C") ){
+                if( Co.getCovidInfection_TypeType().equals("C") ){
                     if(!(PostiveC.contains(Co)))
 
                     PostiveC.add(Co);
@@ -119,7 +119,7 @@ public class ministryofHealth {
             }
     
             for(Human r : randomIndividuals){
-                if( r.getCovidInfection_Type().getType().equals("C") ){
+                if( r.getCovidInfection_TypeType().equals("C") ){
                     if(!(PostiveC.contains(r)))
 
                     PostiveC.add(r);
@@ -132,8 +132,9 @@ public class ministryofHealth {
 
     //////////////////////////////////////////////
     public void A_to_Dead( ArrayList <Human>  WaitingList,int day,ICU icu){
-
-        Human person;
+       
+        ArrayList<Human> Witing = icu.getWaitingList();
+        
         int Counter;
 
      
@@ -147,33 +148,33 @@ public class ministryofHealth {
                 Counter = CovidInf.getDaysCounter();
                 double Ran0= Math.random();
                 
+            if(B.getVaccine()==true)
+            continue;
 
                 if(Counter>=7&&Counter<14 ){
-                    if(Ran0 >= 0.90){//10%
+                    
+                    if(Ran0 >= 0.98){//2%
                     B.setDead();
                     B.SetStatus("At Day:"+day+" Dead\n");
                     PostiveA.remove(B);
-                    icu.getBeds().remove(B);
                     Dead.add(B); 
-                    
+                    //Witing.remove(B);
                     
                     }
-                }
-               else if(Counter>=14){
-                    if(Ran0 >= 0.80){//20%
+                }else if(Counter>=14){
+                    if(Ran0 >= 0.96){//4%
                     B.setDead();
                     B.SetStatus("At Day:"+day+" Dead\n");
                     PostiveA.remove(B);
-                    icu.getBeds().remove(B);
                     Dead.add(B); 
-                    
+                    //Witing.remove(B);
                    
                     }
                 }
             }
         }
 
-        int randomDead = (int) (PostiveA.size()*0.00);// this is zero 
+        int randomDead = (int) (PostiveA.size()*0.007);
         int randomIndex;
         Human Die;
 
@@ -183,74 +184,35 @@ public class ministryofHealth {
             Die.setDead();
             Die.SetStatus("At Day:"+day+" Dead\n");
             PostiveA.remove(Die);
-            icu.getBeds().remove(Die);
             Dead.add(Die); 
+            
         }
 
     }
 
     //////////////////////////////////////////////
-    public void Recovered(int day,ICU icu){
+    // public void Recovered(int day,ICU icu){
 
-        int numOfRecovered= (int) (PostiveA.size() * 0.05 );
-        int RecoveredIndex;
-        Human person;
-        covidInfection normal = new Normal();
-        
-        while(numOfRecovered != 0){
-            
-            RecoveredIndex = rad.nextInt(PostiveA.size());
-            person = PostiveA.get(RecoveredIndex);
-        
-            person.setCovidInfection_Type(normal);
-
-            person.SetStatus("At Day:"+day+"Normal\n");
-
-            PostiveA.remove(person);
-            icu.getBeds().remove(person);
-
-            Recovered.add(person);
-            
-
-            numOfRecovered--;
-            
-        }
-
-
-
-
-    }
-
-    // public void RecoveredICU(int day,ICU icu){// like the one above it but it deals wiht ppl in the ICU 
-    //     Human Bed[]=icu.getBeds();
-    //     int numOfRecovered= (int) (Bed.length * 0.05 );
+    //     int numOfRecovered= (int) (PostiveA.size() * 0.05 );
     //     int RecoveredIndex;
     //     Human person;
+
     //     covidInfection normal = new Normal();
         
     //     while(numOfRecovered != 0){
             
-    //         RecoveredIndex = rad.nextInt(Bed.length);
-    //         try {
-    //             person = Bed[RecoveredIndex] ;  
-    //             person.setCovidInfection_Type(normal);
-
-    //             person.SetStatus("At Day:"+day+"Normal\n");
-    
-    //             PostiveA.remove(person);
-    //             Recovered.add(person);
-                
-    //             icu.RemoveBedof(person);//this line cuze 0 death for someReson
-    //             numOfRecovered--;
-
-    //         } catch (Exception e) {
-             
-                
-
-    //         }
-            
+    //         RecoveredIndex = rad.nextInt(PostiveA.size());
+    //         person = PostiveA.get(RecoveredIndex);
         
-            
+    //         person.setCovidInfection_Type(normal);
+
+    //         person.SetStatus("At Day:"+day+"Normal\n");
+
+    //         PostiveA.remove(person);
+    //         icu.getWaitingList().remove(person);
+    //         Recovered.add(person);
+
+    //         numOfRecovered--;
             
     //     }
 
@@ -259,6 +221,41 @@ public class ministryofHealth {
 
     // }
 
+   
+    public void Recovered(int day,ICU icu){
+
+    
+
+        covidInfection normal = new Normal();
+        
+      
+      for (Human human : PostiveA) {
+        double ran = Math.random();
+
+        if(ran >= 0.70 && human.getVaccine()==true){
+            human.setCovidInfection_Type(normal);
+            human.SetStatus("At Day:"+day+"Normal\n");
+
+            
+            icu.getWaitingList().remove(human);
+            Recovered.add(human);
+
+        }
+        else if (ran >= 0.99 && human.getVaccine()==false){
+            human.setCovidInfection_Type(normal);
+            human.SetStatus("At Day:"+day+"Normal\n");
+
+            
+            icu.getWaitingList().remove(human);
+            Recovered.add(human);
+        }
+
+      }
+
+      PostiveA.removeAll(Recovered);
+
+
+    }
 
 
 

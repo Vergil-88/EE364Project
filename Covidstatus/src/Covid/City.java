@@ -2,17 +2,35 @@ package Covid;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class City implements Places {
+public class City implements Places, Cloneable {
     
     private String Name;
     private int Population;
     private double Area;
     private double Overpopulation;
-    private ArrayList <Human> Citizen   =   new ArrayList<Human>();
-    private ArrayList <Human> DeadCitizen = new ArrayList<Human>();
-    private ArrayList <Human> Travelers = new ArrayList<Human>();
+    private ArrayList <Human> Citizen              =   new ArrayList<Human>();
+    private ArrayList <Human> Quarantine_Citizen   =   new ArrayList<Human>();
+    private ArrayList <Human> DeadCitizen          =   new ArrayList<Human>();
+    private ArrayList <Human> Travelers            =   new ArrayList<Human>();
     
-    //private ArrayList <Human> quarantineCitizen = new ArrayList<Human>();
+    public City(String name, int Population , double Area,double Overpopulation,ArrayList <Human> Citizen,ArrayList <Human> Quarantine_Citizen,ArrayList <Human> DeadCitizen,ArrayList <Human> Travelers  ){
+
+
+            name=this.Name;
+            Population=this.Population;
+            Area=this.Area;
+            Overpopulation=this.Overpopulation;
+            Citizen=this.Citizen;
+            Quarantine_Citizen=this.Quarantine_Citizen;
+            DeadCitizen=this.DeadCitizen;
+            Travelers=this.Travelers;
+
+
+
+
+
+
+    }
 
     public City(String Name, int Population, double Area){
         this.Name = Name;
@@ -27,7 +45,7 @@ public class City implements Places {
             Citizen.add(new Human());
    
    
-           //  System.out.println(Citizen.get(i).toString());
+           
    
         }
         int size= Citizen.size();
@@ -210,14 +228,14 @@ public class City implements Places {
         for (Human human : Citizen) {
             if (human.getId().equals(ID)){
                 System.out.println(human.getHistory()); 
-             }
+            }
         }
-                for (Human Person : DeadCitizen) {
-                    if (Person.getId().equals(ID)){
-                       System.out.println(Person.getHistory()); 
-                    }
+            for (Human Person : DeadCitizen) {
+                if (Person.getId().equals(ID)){
+                    System.out.println(Person.getHistory()); 
+                }
                     
-                } 
+            } 
             
                     
     }
@@ -241,19 +259,18 @@ public class City implements Places {
         City City_1 = cities.get(R1);
         City City_2 = cities.get(R2);
 
-       ArrayList<Human> Pepole_city2 = City_2.get_Citizen();
-       ArrayList<Human> Pepole_city1 = City_1.get_Citizen();
-       ArrayList<Human> travelerPepole = City_2.getTravelers();
+        ArrayList<Human> Pepole_city2 = City_2.get_Citizen();
+        ArrayList<Human> Pepole_city1 = City_1.get_Citizen();
 
-       int NumberOfCitizin= Pepole_city1.size();
-       int RandomIndex=R.nextInt(NumberOfCitizin-1);
-       Human Person=Pepole_city1.get(RandomIndex);
+        int NumberOfCitizin= Pepole_city1.size();
+        int RandomIndex=R.nextInt(NumberOfCitizin-1);
+        Human Person=Pepole_city1.get(RandomIndex);
        
         
 
-       City_2.addCitizen(Person);
-       City_2.addTraveler(Person);
-       Pepole_city1.remove(Person);
+        City_2.addCitizen(Person);
+        City_2.addTraveler(Person);
+        Pepole_city1.remove(Person);
 
 
         Person.Clear_F(); // Clears his Current Family and randomIndividuals so he dosent interact with them in the other City
@@ -283,9 +300,9 @@ public class City implements Places {
        
         String City_1_Name=City_1.get_Name();
         String City_2_Name=City_2.get_Name();
-        Person.updateTravelHistory(City_1_Name,City_2_Name , day );
+        Person.updateTravelHistory(City_1_Name,City_2_Name , day);
 
-        //System.out.println(Person.getHistory());
+        
 
 
 
@@ -304,22 +321,19 @@ public class City implements Places {
 
     }
 
+    public ArrayList<Human> getQuarantine_Citizen() {
+        return Quarantine_Citizen;
+    }
+    public void setQuarantine_Citizen(ArrayList<Human> quarantine_Citizen) {
+        Quarantine_Citizen = quarantine_Citizen;
+    }
+    public void AddQuarantine_Citizen(Human human) {
+        Quarantine_Citizen.add(human);
+    }
 
-    // public static void main(String[] args) {
-        
-        
-    //     City A = new City("Jeddah", 100, 5000);
-    //     City B = new City("Riadh", 100, 1800);
-    //     City E = new City("HHh", 10, 19);
-    //     City F = new City("gfd",100 , 10000);
-    //     ArrayList<City> C = new ArrayList<>();
-    //     C.add(B);
-    //     C.add(A);
-    //     C.add(E);
-    //     C.add(F);
-        
-    //     A.Travel(C, 1);
+    public Object clone() {
 
-    // }
+        return new City(Name, Population, Area, Overpopulation, Citizen, Quarantine_Citizen, DeadCitizen, Travelers);
+    }
 
 }

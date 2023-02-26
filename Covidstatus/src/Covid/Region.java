@@ -77,15 +77,7 @@ public class Region implements Places {
 
 
 
-    public static void main(String[] args) {
-        Region South = new Region("South");
-        South.addCity("Jeddah", 10, 1600);
 
-        South.getCities().get(0).get_Citizen().get(0).setCovidInfection_Type(new A());
-
-        System.out.println(South.getCities().get(0).get_Citizen().get(0));
-
-        System.out.println(South.getCities().get(0).get_Citizen().size());
-    }
+    
 
 }

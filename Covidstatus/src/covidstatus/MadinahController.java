@@ -61,18 +61,58 @@ public class MadinahController implements Initializable {
 
     @FXML
     private void icu_Maction(ActionEvent event) {
+                try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Madinah_ICU.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML
     private void travel_Maction(ActionEvent event) {
+                           try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Madinah_travel.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
     private void dead_Maction(ActionEvent event) {
+                   try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Madinah_dead.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }     
+        
+        
+        
     }
 
     @FXML
     private void alive_Maction(ActionEvent event) {
+                           try{
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Madinah_alive.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML

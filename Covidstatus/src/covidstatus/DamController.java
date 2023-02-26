@@ -48,6 +48,15 @@ public class DamController implements Initializable {
 
     @FXML
     private void icuDB_action(ActionEvent event) {
+                                              try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dam_ICU.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML
@@ -56,6 +65,16 @@ public class DamController implements Initializable {
 
     @FXML
     private void travelDB_action(ActionEvent event) {
+  try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dam_travel.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML
@@ -64,10 +83,29 @@ public class DamController implements Initializable {
 
     @FXML
     private void deadDB_action(ActionEvent event) {
+          try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dam_dead.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
+        
     }
 
     @FXML
     private void aliveDB_action(ActionEvent event) {
+                  try{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Dam_alive.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root1));  
+        stage.show();
+        }catch(Exception e){
+            System.out.println("error");
+        }
     }
 
     @FXML

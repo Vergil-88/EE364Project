@@ -62,8 +62,7 @@ public class JeddahController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          
-      List_Two.setItems(MAIN_loop.R2_C1_out1); 
-      List_One.setItems(MAIN_loop.R2_C1_out2);    
+   
             
        
     
@@ -74,7 +73,7 @@ public class JeddahController implements Initializable {
     @FXML
     private void ICU_Action(ActionEvent event) {
         try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Jeddah_ICU.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  
@@ -86,9 +85,7 @@ public class JeddahController implements Initializable {
 
     @FXML
     private void GOV_Action(ActionEvent event) {
-        System.out.println(MAIN_loop.R2_C1_out1);
-          List_Two.setItems(MAIN_loop.R2_C1_out1);
-       // List_One.getItems().addAll(MAIN_loop.RRRR);
+
     }
 
     @FXML
@@ -100,7 +97,7 @@ public class JeddahController implements Initializable {
     @FXML
     private void travel_action(ActionEvent event) {
                 try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Jeddah_travel.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  
@@ -113,7 +110,7 @@ public class JeddahController implements Initializable {
     @FXML
     private void dead_action(ActionEvent event) {
                 try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Jeddah_dead.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  
@@ -126,7 +123,7 @@ public class JeddahController implements Initializable {
     @FXML
     private void alive_action(ActionEvent event) {
                 try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dummy.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Jeddah_alive.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));  

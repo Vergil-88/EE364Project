@@ -33,13 +33,7 @@ public class SecondWindowController implements Initializable {
     @FXML
     private Button southButton;
     @FXML
-    private Button northStats;
-    @FXML
-    private Button eastStats;
-    @FXML
-    private Button westStats;
-    @FXML
-    private Button southStats;
+    private Button BACK;
 
     /**
      * Initializes the controller class.
@@ -79,7 +73,7 @@ public class SecondWindowController implements Initializable {
     @FXML
     private void nbAction(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("northCityWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));//northCityWindow
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
@@ -92,7 +86,7 @@ public class SecondWindowController implements Initializable {
     @FXML
     private void sbAction(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("southCityWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(".fxml"));//southCityWindow
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(loader.load());
             stage.setScene(scene);
@@ -102,7 +96,6 @@ public class SecondWindowController implements Initializable {
         }
     }
 
-    @FXML
     private void nsAction(ActionEvent event) {
          try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("northStats.fxml"));
@@ -116,16 +109,18 @@ public class SecondWindowController implements Initializable {
     }
 
     @FXML
-    private void esAction(ActionEvent event) {
+    private void BACK_act(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Covidstatus.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        }
     }
 
-    @FXML
-    private void wsAction(ActionEvent event) {
-    }
-
-    @FXML
-    private void ssAction(ActionEvent event) {
-    }
     
     
     
