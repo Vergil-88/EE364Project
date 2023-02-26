@@ -238,15 +238,15 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
 // Clone for Phase 2 and its Requrments          
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    City P2_East_City_1      =   (City) East_City_1.clone();
-    City P2_East_City_2      =   (City) East_City_2.clone();
-    City P2_East_City_3      =   (City) East_City_3.clone();
-    City P2_East_City_4      =   (City) East_City_4.clone();
+    City P2_East_City_1      =   East_City_1.clone();
+    City P2_East_City_2      =   East_City_2.clone();
+    City P2_East_City_3      =   East_City_3.clone();
+    City P2_East_City_4      =   East_City_4.clone();
 
-    City P2_West_City_1      =   (City) West_City_1.clone();
-    City P2_West_City_2      =   (City) West_City_2.clone();
-    City P2_West_City_3      =   (City) West_City_3.clone();
-    City P2_West_City_4      =   (City) West_City_4.clone();
+    City P2_West_City_1      =   West_City_1.clone();
+    City P2_West_City_2      =   West_City_2.clone();
+    City P2_West_City_3      =   West_City_3.clone();
+    City P2_West_City_4      =   West_City_4.clone();
 
     Region P2_East = new Region("East");
     Region P2_West = new Region("West"); 
@@ -365,6 +365,7 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
 
             for (int i = 0; i < numOfTravle; i++) {
                 City.Travel(Cities, day);
+                //City.Travel(P2_Cities, day);
             }
             
 
@@ -398,8 +399,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
                     System.out.println("Pick The City\n"+
                     "1 Dammam:\n"+
                     "2 Jubail:\n"+
-                    "3 Qatif:\n"+
-                    "4 Ras Tanura:\n");
+                    "3 Alhfof:\n"+
+                    "4 Hafr Albaten:\n");
 
                     User_Choice= R2_C1.Switchinput();   
                     switch (User_Choice){
@@ -474,6 +475,46 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
 
 
         //////// print all City tabels
+
+        R2_C1.CitySwitch(East_City_1,days,icuR2_C1);
+
+        R2_C2.CitySwitch(East_City_2,days,icuR2_C2);
+
+        R2_C3.CitySwitch(East_City_3,days,icuR2_C3);
+
+        R2_C4.CitySwitch(East_City_4,days,icuR2_C4);
+
+        R3_C1.CitySwitch(West_City_1,days,icuR3_C1);
+
+        R3_C2.CitySwitch(West_City_2,days,icuR3_C2);
+
+        R3_C3.CitySwitch(West_City_3,days,icuR3_C3);
+
+        R3_C4.CitySwitch(West_City_4,days,icuR3_C4);
+
+        ///////// Clone
+
+        System.out.println("\n///////////////////////////////////////////////////////////////////////////////////////////////");
+        System.out.println("\nClone\n");
+        System.out.println("\n///////////////////////////////////////////////////////////////////////////////////////////////");
+
+        P2_R2_C1.CitySwitch(P2_East_City_1,days,P2_icuR2_C1);
+
+        P2_R2_C2.CitySwitch(P2_East_City_2,days,P2_icuR2_C2);
+
+        P2_R2_C3.CitySwitch(P2_East_City_3,days,P2_icuR2_C3);
+
+        P2_R2_C4.CitySwitch(P2_East_City_4,days,P2_icuR2_C4);
+
+        P2_R3_C1.CitySwitch(P2_West_City_1,days,P2_icuR3_C1);
+
+        P2_R3_C2.CitySwitch(P2_West_City_2,days,P2_icuR3_C2);
+
+        P2_R3_C3.CitySwitch(P2_West_City_3,days,P2_icuR3_C3);
+
+        P2_R3_C4.CitySwitch(P2_West_City_4,days,P2_icuR3_C4);
+
+
         
         
 
