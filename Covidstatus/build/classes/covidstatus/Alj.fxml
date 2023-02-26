@@ -45,7 +45,7 @@
       <Button fx:id="deadJB" layoutX="185.0" layoutY="22.0" mnemonicParsing="false" onAction="#deadJB_action" text="Dead" />
       <Button fx:id="aliveJB" layoutX="37.0" layoutY="22.0" mnemonicParsing="false" onAction="#aliveJB_action" text="Alive" />
       <Button fx:id="backJB" layoutX="19.0" layoutY="560.0" mnemonicParsing="false" onAction="#backJB_action" text="Back" />
-      <ListView layoutX="37.0" layoutY="67.0" prefHeight="203.0" prefWidth="526.0" />
-      <ListView layoutX="37.0" layoutY="325.0" prefHeight="203.0" prefWidth="526.0" />
+      <ListView fx:id="List1" layoutX="37.0" layoutY="67.0" prefHeight="203.0" prefWidth="526.0" />
+      <ListView fx:id="List2" layoutX="37.0" layoutY="325.0" prefHeight="203.0" prefWidth="526.0" />
    </children>
 </AnchorPane>

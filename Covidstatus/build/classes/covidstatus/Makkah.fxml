@@ -43,8 +43,8 @@
       <Button fx:id="deadK" layoutX="208.0" layoutY="40.0" mnemonicParsing="false" onAction="#dead_Kaction" text="Dead" />
       <Button fx:id="aliveK" layoutX="62.0" layoutY="40.0" mnemonicParsing="false" onAction="#alive_Kaction" text="Alive" />
       <Button fx:id="ProgrammerK" layoutX="294.0" layoutY="333.0" mnemonicParsing="false" onAction="#programmer_Kaction" text="Programmer" />
-      <ListView layoutX="62.0" layoutY="109.0" prefHeight="203.0" prefWidth="526.0" />
-      <ListView layoutX="57.0" layoutY="381.0" prefHeight="203.0" prefWidth="526.0" />
+      <ListView fx:id="List1" layoutX="62.0" layoutY="109.0" prefHeight="203.0" prefWidth="526.0" />
+      <ListView fx:id="List2" layoutX="57.0" layoutY="381.0" prefHeight="203.0" prefWidth="526.0" />
       <Button fx:id="govK" layoutX="309.0" layoutY="597.0" mnemonicParsing="false" onAction="#gov_Kaction" prefHeight="26.0" prefWidth="68.0" text="GOV" />
       <Button fx:id="backBK" layoutX="14.0" layoutY="617.0" mnemonicParsing="false" onAction="#backBK_action" text="Back" />
    </children>
