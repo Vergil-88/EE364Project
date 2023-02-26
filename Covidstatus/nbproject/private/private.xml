@@ -4,14 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/MadinahController.java</file>
-            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/AlhfController.java</file>
-            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/HafController.java</file>
+            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/TravelController.java</file>
             <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/SecondWindowController.java</file>
             <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/DummyController.java</file>
+            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/ICUController.java</file>
+            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/DeadController.java</file>
+            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/AliveController.java</file>
             <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/EastCityWindowController.java</file>
-            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/TaifController.java</file>
-            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/AljController.java</file>
-            <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/DamController.java</file>
             <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/JeddahController.java</file>
             <file>file:/C:/Users/OMEN/OneDrive/Documents/GitHub/EE364Project/Covidstatus/src/covidstatus/MakkahController.java</file>
         </group>
