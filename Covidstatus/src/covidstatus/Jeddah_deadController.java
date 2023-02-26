@@ -6,6 +6,7 @@ package covidstatus;
 
 import Covid.Human;
 import Covid.MAIN_loop;
+import static covidstatus.Jeddah_aliveController.NUM;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -24,6 +25,7 @@ import javafx.scene.shape.Circle;
  */
 public class Jeddah_deadController implements Initializable {
 Circle circle;
+static int NUM=0;
     @FXML
     private AnchorPane anchorPane;
 
@@ -32,7 +34,7 @@ Circle circle;
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        ArrayList <Human > Array = MAIN_loop.R2_city1_ICU; 
+                      ArrayList <Human > Array = MAIN_loop.R2_city1_DeadCitizen; 
         
         int Size=Array.size()-1;
         
@@ -47,7 +49,7 @@ Circle circle;
                 j+=30;
             }
      String TYPE =Array.get(count).getCovidInfection_TypeType();
-            
+            System.out.println(TYPE);
             switch(TYPE){
                 case "A":
                     circle = new Circle(i,j,15);
@@ -82,20 +84,25 @@ Circle circle;
             i+=30;         
     }
         
-        int NUM=0;
+        
         for(Circle s:c){
-            String HISTROY =Array.get(count).getHistory();
+            String HISTROY =Array.get(NUM).getHistory();
+            System.out.println(HISTROY);
         s.addEventHandler(MouseEvent.MOUSE_MOVED,new EventHandler<MouseEvent>(){
             
                 
          
              
              public void handle(MouseEvent mo){
+                
+                 
+                 
              Tooltip.install(s, new Tooltip(HISTROY));
+             
              }
              
          });  
-        NUM=NUM+1;
+       NUM++;
         }
     }    
     

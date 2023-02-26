@@ -26,6 +26,7 @@ import javafx.scene.shape.Circle;
  */
 public class Jeddah_ICUController implements Initializable {
 Circle circle;
+static int NUM=0;
 
     @FXML
     private AnchorPane anchorPane;
