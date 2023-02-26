@@ -16,14 +16,14 @@ public class City implements Places, Cloneable {
     public City(String name, int Population , double Area,double Overpopulation,ArrayList <Human> Citizen,ArrayList <Human> Quarantine_Citizen,ArrayList <Human> DeadCitizen,ArrayList <Human> Travelers  ){
 
 
-            name=this.Name;
-            Population=this.Population;
-            Area=this.Area;
-            Overpopulation=this.Overpopulation;
-            Citizen=this.Citizen;
-            Quarantine_Citizen=this.Quarantine_Citizen;
-            DeadCitizen=this.DeadCitizen;
-            Travelers=this.Travelers;
+            Name = name;
+            this.Population= Population;
+            this.Area=Area;
+            this.Overpopulation=Overpopulation;
+            this.Citizen=Citizen;
+            this.Quarantine_Citizen=Quarantine_Citizen;
+            this.DeadCitizen=DeadCitizen;
+            this.Travelers=Travelers;
 
 
 
@@ -331,9 +331,9 @@ public class City implements Places, Cloneable {
         Quarantine_Citizen.add(human);
     }
 
-    public Object clone() {
+    public City clone() {
 
-        return new City(Name, Population, Area, Overpopulation, Citizen, Quarantine_Citizen, DeadCitizen, Travelers);
+        return new City(Name, Population, Area);
     }
 
 }

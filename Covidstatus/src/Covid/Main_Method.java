@@ -378,7 +378,7 @@ public class Main_Method {
         City_Output(day,icu,city);
         System.out.println("\n __________________________________________________________________________________________________ \n");
     
-    
+    if(day < 10 ){
         System.out.println("Pick the information you want to see\n"+
         "1 Alive Citizens:\n"+
         "2 Dead Citizens:\n"+
@@ -503,6 +503,7 @@ public class Main_Method {
                         break;
                     } 
                     }
+                }
 
 
         
