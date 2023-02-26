@@ -4,8 +4,11 @@
  */
 package covidstatus;
 
+import Covid.MAIN_loop;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,9 +27,9 @@ import javafx.stage.Stage;
 public class P2_JeddahController implements Initializable {
 
     @FXML
-    private ListView<?> List_Two;
+    private ListView<String> List_Two;
     @FXML
-    private ListView<?> List_One;
+    private ListView<String> List_One;
     @FXML
     private Button icuB;
     @FXML
@@ -47,6 +50,11 @@ public class P2_JeddahController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ObservableList <String> Out1 = FXCollections.observableArrayList(MAIN_loop.P2_R2_city1_pView);
+        ObservableList <String> Out2 = FXCollections.observableArrayList(MAIN_loop.P2_R2_city1_GovView);   
+       
+    List_One.setItems(Out1);
+    List_Two.setItems(Out2);
         // TODO
     }    
 

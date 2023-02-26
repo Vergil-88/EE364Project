@@ -61,6 +61,11 @@ public class JeddahController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+         ObservableList <String> Out1 = FXCollections.observableArrayList(MAIN_loop.R2_city1_pView);
+            ObservableList <String> Out2 = FXCollections.observableArrayList(MAIN_loop.R2_city1_GovView);   
+       
+    List_One.setItems(Out1);
+    List_Two.setItems(Out2);
          
    
             

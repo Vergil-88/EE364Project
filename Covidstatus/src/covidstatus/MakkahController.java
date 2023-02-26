@@ -5,8 +5,11 @@
  */
 package covidstatus;
 
+import Covid.MAIN_loop;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -37,12 +41,21 @@ public class MakkahController implements Initializable {
     private Button govK;
     @FXML
     private Button backBK;
+    @FXML
+    private ListView<String> List1;
+    @FXML
+    private ListView<String> List2;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+          ObservableList <String> Out1 = FXCollections.observableArrayList(MAIN_loop.R2_city2_pView);
+         ObservableList <String> Out2 = FXCollections.observableArrayList(MAIN_loop.R2_city2_GovView);   
+       
+    List1.setItems(Out1);
+    List2.setItems(Out2);
         // TODO
     }    
 
