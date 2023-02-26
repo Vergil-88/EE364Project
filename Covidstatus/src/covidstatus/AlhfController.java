@@ -14,7 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import Covid.MAIN_loop;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * FXML Controller class
@@ -37,13 +41,26 @@ public class AlhfController implements Initializable {
     private Button aliveHB;
     @FXML
     private Button backHB;
+    @FXML
+    private ListView<String> List1;
+    @FXML
+    private ListView<String> List2;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+        
+    ObservableList <String> Out1 = FXCollections.observableArrayList(MAIN_loop.R1_city1_pView);
+    ObservableList <String> Out2 = FXCollections.observableArrayList(MAIN_loop.R1_city1_GovView);   
+       
+    List1.setItems(Out1);
+    List2.setItems(Out2);
+        
+        
+        
     }    
 
     @FXML

@@ -317,6 +317,7 @@ public class Main_Method {
             city.get_Citizen().removeAll(Dead);
             city.getQuarantine_Citizen().removeAll(Dead);
      
+          
     }
 
 
@@ -546,7 +547,8 @@ public class Main_Method {
             table[i] = new String[]{String.valueOf(i),a,b,c,normal};
 
         }
-
+        
+        
         for (Object[] row : table) {
 
             pView.add(String.valueOf(String.format("%15s%15s%15s%15s%15s%n", row)));
@@ -555,6 +557,8 @@ public class Main_Method {
         }
     }
 
+    
+    
     public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> Dead,ArrayList <String> Recoverd,ArrayList <String> Beds ,ArrayList <String> witingList ){
 
 
