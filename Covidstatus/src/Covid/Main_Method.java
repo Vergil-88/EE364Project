@@ -63,32 +63,7 @@ public class Main_Method {
             
         }
     }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // Vaccinating ppl every day 0.03 of ppl every day          
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        int NumOFPlltoVaccinating = (int) 0.03 * NumofCitz;
-        
-        if(Phase2ENABLE == true && day ==1 ){
-            ArrayList <Human>  pll     =   city.get_Citizen();
-            
-        
-    
-            for (Human C : pll) {
-                
-                if((C.getVaccine())==false){
-
-                C.setVaccine(true);
-                C.SetStatus("Vaccenatied  \n");
-                NumOFPlltoVaccinating--;
-    
-                if(NumOFPlltoVaccinating == 0)
-                break;
-            }
-
-            }
-        }
-
+      
 
 
 
@@ -202,6 +177,32 @@ public class Main_Method {
             numOfBeds--;
 
 
+        }
+
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Vaccinating ppl every day 0.03 of ppl every day          
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        int NumOFPlltoVaccinating = (int) 0.03 * NumofCitz;
+        
+        if(Phase2ENABLE == true && day ==1 ){
+            ArrayList <Human>  pll     =   city.get_Citizen();
+            
+        
+    
+            for (Human C : pll) {
+                
+                if((C.getVaccine())==false){
+
+                C.setVaccine(true);
+                C.SetStatus("Vaccenatied  \n");
+                NumOFPlltoVaccinating--;
+    
+                if(NumOFPlltoVaccinating == 0)
+                break;
+            }
+
+            }
         }
 
 

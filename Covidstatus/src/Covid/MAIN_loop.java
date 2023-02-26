@@ -149,89 +149,89 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
 
 
 
-        //////////////////////////////////////////////// Region 2 and its Cities 
-        Region East = new Region("East");                                
-        East.addCity("Dammam", 5000, 0);
-        East.addCity("Jubail", 5000, 0);
-        East.addCity("Alhfof", 5000, 0);
-        East.addCity("Hafr Albaten", 5000, 0); 
-        //Saving them to a Varible
-        City East_City_1=East.Cities.get(0);
-        City East_City_2=East.Cities.get(1);
-        City East_City_3=East.Cities.get(2);
-        City East_City_4=East.Cities.get(3);
-
-        //////////////////////////////////////////////// Region 3 and its Cities                                
-        Region West = new Region("West");                               
-        West.addCity("Jeddah", 5000, 0);
-        West.addCity("Mecca", 5000, 0);
-        West.addCity("Medina", 5000, 0);
-        West.addCity("Taif", 5000, 0);
-        //Saving them to a Varible
-        City West_City_1=West.Cities.get(0);
-        City West_City_2=West.Cities.get(1);
-        City West_City_3=West.Cities.get(2);
-        City West_City_4=West.Cities.get(3);
-
-//////////////////////////////////////////////// Region 4 and its Cities 
-
-
-        ////////////////////////////////////////////////////////////// Start Covid just Happens for 1 time for all the Cities
-        CovidSpread covid = new CovidSpread();
-
-
-
-        covid.StartCovid(East_City_1);
-        covid.StartCovid(East_City_2);
-        covid.StartCovid(East_City_3);
-        covid.StartCovid(East_City_4);
-
-        covid.StartCovid(West_City_1);
-        covid.StartCovid(West_City_2);
-        covid.StartCovid(West_City_3);
-        covid.StartCovid(West_City_4);
-
-
-        ////////////////////////////////////////////////////////////// 
-
-        ministryofHealth GovR2_C1 = new ministryofHealth();
-        ministryofHealth GovR2_C2 = new ministryofHealth();
-        ministryofHealth GovR2_C3 = new ministryofHealth();
-        ministryofHealth GovR2_C4 = new ministryofHealth();
-
-        ministryofHealth GovR3_C1 = new ministryofHealth();
-        ministryofHealth GovR3_C2 = new ministryofHealth();
-        ministryofHealth GovR3_C3 = new ministryofHealth();
-        ministryofHealth GovR3_C4 = new ministryofHealth();
-
-        ICU icuR2_C1 = new ICU();
-        ICU icuR2_C2 = new ICU();
-        ICU icuR2_C3 = new ICU();
-        ICU icuR2_C4 = new ICU();
-
-        ICU icuR3_C1 = new ICU();
-        ICU icuR3_C2 = new ICU();
-        ICU icuR3_C3 = new ICU();
-        ICU icuR3_C4 = new ICU();
-
-
-    /////////////////////////////////////////////////////////////////
-
-        Main_Method R2_C1 = new Main_Method();
-        Main_Method R2_C2 = new Main_Method();
-        Main_Method R2_C3 = new Main_Method();
-        Main_Method R2_C4 = new Main_Method();
-
-        Main_Method R3_C1 = new Main_Method();
-        Main_Method R3_C2 = new Main_Method();
-        Main_Method R3_C3 = new Main_Method();
-        Main_Method R3_C4 = new Main_Method();
-
-        ArrayList<City> Cities = new ArrayList<>();
-
-        Cities.addAll(West.getCities());
-        Cities.addAll(East.getCities());
-
+               //////////////////////////////////////////////// Region 2 and its Cities 
+               Places East = new Region("East");                              
+               ((Region)East).addCity("Dammam", 5000, 0);
+               ((Region)East).addCity("Jubail", 5000, 0);
+               ((Region)East).addCity("Qatif", 5000, 0);
+               ((Region)East).addCity("Ras Tanura", 5000, 0); 
+               //Saving them to a Varible
+               City East_City_1=((Region)East).Cities.get(0);
+               City East_City_2=((Region)East).Cities.get(1);
+               City East_City_3=((Region)East).Cities.get(2);
+               City East_City_4=((Region)East).Cities.get(3);
+       
+               //////////////////////////////////////////////// Region 3 and its Cities                                
+               Places West = new Region("West");                                
+               ((Region)West).addCity("Jeddah", 5000, 0);
+               ((Region)West).addCity("Mecca", 5000, 0);
+               ((Region)West).addCity("Medina", 5000, 0);
+               ((Region)West).addCity("Taif", 5000, 0);
+               //Saving them to a Varible
+               City West_City_1=((Region)West).Cities.get(0);
+               City West_City_2=((Region)West).Cities.get(1);
+               City West_City_3=((Region)West).Cities.get(2);
+               City West_City_4=((Region)West).Cities.get(3);
+       
+       //////////////////////////////////////////////// Region 4 and its Cities 
+       
+       
+               ////////////////////////////////////////////////////////////// Start Covid just Happens for 1 time for all the Cities
+               CovidSpread covid = new CovidSpread();
+       
+       
+       
+               covid.StartCovid(East_City_1);
+               covid.StartCovid(East_City_2);
+               covid.StartCovid(East_City_3);
+               covid.StartCovid(East_City_4);
+       
+               covid.StartCovid(West_City_1);
+               covid.StartCovid(West_City_2);
+               covid.StartCovid(West_City_3);
+               covid.StartCovid(West_City_4);
+       
+       
+               ////////////////////////////////////////////////////////////// 
+       
+               ministryofHealth GovR2_C1 = new ministryofHealth();
+               ministryofHealth GovR2_C2 = new ministryofHealth();
+               ministryofHealth GovR2_C3 = new ministryofHealth();
+               ministryofHealth GovR2_C4 = new ministryofHealth();
+       
+               ministryofHealth GovR3_C1 = new ministryofHealth();
+               ministryofHealth GovR3_C2 = new ministryofHealth();
+               ministryofHealth GovR3_C3 = new ministryofHealth();
+               ministryofHealth GovR3_C4 = new ministryofHealth();
+       
+               ICU icuR2_C1 = new ICU();
+               ICU icuR2_C2 = new ICU();
+               ICU icuR2_C3 = new ICU();
+               ICU icuR2_C4 = new ICU();
+       
+               ICU icuR3_C1 = new ICU();
+               ICU icuR3_C2 = new ICU();
+               ICU icuR3_C3 = new ICU();
+               ICU icuR3_C4 = new ICU();
+       
+       
+           /////////////////////////////////////////////////////////////////
+       
+               Main_Method R2_C1 = new Main_Method();
+               Main_Method R2_C2 = new Main_Method();
+               Main_Method R2_C3 = new Main_Method();
+               Main_Method R2_C4 = new Main_Method();
+       
+               Main_Method R3_C1 = new Main_Method();
+               Main_Method R3_C2 = new Main_Method();
+               Main_Method R3_C3 = new Main_Method();
+               Main_Method R3_C4 = new Main_Method();
+       
+               ArrayList<City> Cities = new ArrayList<>();
+       
+               Cities.addAll(((Region)West).getCities());
+               Cities.addAll(((Region)East).getCities());
+       
 
         
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -248,8 +248,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
     City P2_West_City_3      =   West_City_3.clone();
     City P2_West_City_4      =   West_City_4.clone();
 
-    Region P2_East = new Region("East");
-    Region P2_West = new Region("West"); 
+    Places P2_East = new Region("East");
+    Places P2_West = new Region("West"); 
 
 
     ministryofHealth P2_GovR2_C1 = new ministryofHealth();
@@ -295,8 +295,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
 
     ArrayList<City> P2_Cities = new ArrayList<>();
 
-    P2_Cities.addAll(P2_West.getCities());
-    P2_Cities.addAll(P2_East.getCities());
+    P2_Cities.addAll(((Region)P2_West).getCities());
+    P2_Cities.addAll(((Region)P2_East).getCities());
 
 
 
@@ -369,7 +369,7 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
             }
             
 
-            Boolean Switch_ON_OFF=false;
+            Boolean Switch_ON_OFF=true;
             if(Switch_ON_OFF==true){
             
             while(day>=PickedDay){
@@ -406,7 +406,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
                     switch (User_Choice){
 
                         case 1:
-                        R2_C1.CitySwitch(East_City_1,day,icuR2_C1);
+                        //R2_C1.CitySwitch(East_City_1,day,icuR2_C1);
+                        P2_R2_C1.CitySwitch(P2_West_City_4, day, P2_icuR3_C4);
                         break;
                         //////
                         case 2:
