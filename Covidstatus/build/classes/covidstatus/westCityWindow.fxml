@@ -66,15 +66,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fx:id="onionHead" fitHeight="420.0" fitWidth="682.0" layoutX="-9.0" layoutY="-8.0" opacity="0.0">
-               <image>
-                  <Image url="@../../../../../../Desktop/onionHead.jpg" />
-               </image>
-            </ImageView>
             <Button fx:id="Makkahb" layoutX="141.0" layoutY="218.0" mnemonicParsing="false" onAction="#openMakkah" text="Makkah" />
             <Button fx:id="jeddahB" layoutX="151.0" layoutY="36.0" mnemonicParsing="false" onAction="#openJeddah" text="Jeddah" />
             <Button fx:id="MadinahB" layoutX="475.0" layoutY="35.0" mnemonicParsing="false" onAction="#openMadinah" prefHeight="26.0" prefWidth="70.0" text="Madinah" />
             <Button fx:id="taifB" layoutX="468.0" layoutY="217.0" mnemonicParsing="false" onAction="#openTaif" prefHeight="26.0" prefWidth="70.0" text="Taif" />
+            <Button fx:id="BACK" layoutX="14.0" layoutY="374.0" mnemonicParsing="false" onAction="#backk" prefHeight="25.0" prefWidth="100.0" text="BACK" />
       </children>
     </AnchorPane>
   </children>
