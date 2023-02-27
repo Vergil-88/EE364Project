@@ -123,15 +123,15 @@ public class WestCityWindowController implements Initializable {
     }
 
     @FXML
-    private void backk(ActionEvent event) {
-                             try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("secondWindow.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));  
-        stage.show();
-        }catch(Exception e){
-            System.out.println("error");
+    private void backk(ActionEvent event) {//secondWindow
+              try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("secondWindow.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
         }
     }
     

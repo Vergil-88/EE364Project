@@ -139,15 +139,15 @@ public class JeddahController implements Initializable {
     }
 
     @FXML
-    private void backBJ_action(ActionEvent event) {
-        try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("westCityWindow.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));  
-        stage.show();
-        }catch(Exception e){
-            System.out.println("error");
+    private void backBJ_action(ActionEvent event) {//westCityWindow
+               try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("westCityWindow.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
         }
     }
 

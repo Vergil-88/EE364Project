@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 
 public class Main_Method {
+   ArrayList <Integer> CityDead =new ArrayList <Integer>();
+    
+    
     ArrayList <String>  data     = new ArrayList <String>();
     ArrayList <String>  Dayslist = new ArrayList <String>();
     ArrayList <String>  Govdata  = new ArrayList <String>();
@@ -318,6 +321,9 @@ public class Main_Method {
             city.get_Citizen().removeAll(Dead);
             city.getQuarantine_Citizen().removeAll(Dead);
      
+            
+            CityDead.add(city.getDeadCitizen().size());
+            
           
     }
 

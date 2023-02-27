@@ -57,7 +57,7 @@
                </font>
             </Label>
             <Button fx:id="Phase" layoutX="168.0" layoutY="85.0" mnemonicParsing="false" onAction="#phase_act" prefHeight="63.0" prefWidth="121.0" text="Phase 2" />
-            <Button layoutX="33.0" layoutY="170.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="256.0" text="Graphes" />
+            <Button fx:id="Chart" layoutX="33.0" layoutY="170.0" mnemonicParsing="false" onAction="#Chart_act" prefHeight="63.0" prefWidth="256.0" text="Chart" />
       </children>
     </AnchorPane>
   </children>

@@ -17,8 +17,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import Covid.MAIN_loop;
+import java.io.IOException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Node;
 
 /**
  * FXML Controller class
@@ -126,15 +128,15 @@ public class AlhfController implements Initializable {
     }
 
     @FXML
-    private void backHB_action(ActionEvent event) {
-                       try{
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("eastCityWindow.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root1));  
-        stage.show();
-        }catch(Exception e){
-            System.out.println("error");
+    private void backHB_action(ActionEvent event) {//eastCityWindow
+         try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("eastCityWindow.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
         }
     }
     

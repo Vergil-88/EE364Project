@@ -30,6 +30,8 @@ public class CovidstatusController implements Initializable {
     private Button Start;
     @FXML
     private Button Phase;
+    @FXML
+    private Button Chart;
 
     /**
      * Initializes the controller class.
@@ -69,5 +71,19 @@ public class CovidstatusController implements Initializable {
             System.out.println("FXML Loading Error");
         } 
     }
+
+    @FXML
+    private void Chart_act(ActionEvent event) {
+                      try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Chart.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        } 
+    }
+    
     
 }

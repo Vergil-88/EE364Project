@@ -127,7 +127,8 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
     
 
 
-
+public static  ArrayList <String > ALLDEAD_1 = new ArrayList <String >();
+public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 
 
 
@@ -305,7 +306,7 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         int Porgress=0;
-        int days=10;// a year
+        int days=50;// a year
         int numOfTravle;
         for (int day = 1; day <=days  ; day++) {
 
@@ -367,7 +368,7 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
             }
             
 
-            Boolean Switch_ON_OFF=true;
+            Boolean Switch_ON_OFF=false;
             if(Switch_ON_OFF==true){
             
             while(day>=PickedDay){
@@ -518,6 +519,46 @@ public      static ArrayList<Human> P2_R1_city1_ICU ;
         
 
 ////////////////////////////////////////////////////java fx passing
+
+for(int i =0 ;i<days ;i++){
+    int SUM1=R3_C1.CityDead.get(i)
+            +R3_C2.CityDead.get(i)
+            +R3_C3.CityDead.get(i)
+            +R3_C4.CityDead.get(i)
+            +R2_C1.CityDead.get(i)
+            +R2_C2.CityDead.get(i)
+            +R2_C3.CityDead.get(i)
+            +R2_C4.CityDead.get(i);
+    
+    
+    
+    
+    ALLDEAD_1.add(String.valueOf(SUM1));
+    
+    int SUM2=P2_R3_C1.CityDead.get(i)
+            +P2_R3_C2.CityDead.get(i)
+            +P2_R3_C3.CityDead.get(i)
+            +P2_R3_C4.CityDead.get(i)
+            +P2_R2_C1.CityDead.get(i)
+            +P2_R2_C2.CityDead.get(i)
+            +P2_R2_C3.CityDead.get(i)
+            +P2_R2_C4.CityDead.get(i);
+    
+    
+    
+    
+    ALLDEAD_2.add(String.valueOf(SUM2));    
+    
+    
+    
+   
+}
+    
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // assigning the static varibles     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
