@@ -5,128 +5,133 @@ import covidstatus.*;
 
 public class MAIN_loop {
     static Scanner input = new Scanner(System.in);
-    ////////////////////////////////////////////////
-   public static ArrayList<Human> R1_city1_Citizen;
-   public static ArrayList<Human> R1_city1_DeadCitizen;
-   public static ArrayList<String> R1_city1_pView ;
-   public static ArrayList<String> R1_city1_GovView ;
-   public static ArrayList<Human> R1_city1_Travel ;
-   public static ArrayList<Human> R1_city1_ICU ;
 
-   public static ArrayList<Human> R1_city2_Citizen;
-   public static ArrayList<Human> R1_city2_DeadCitizen;
-   public static ArrayList<String> R1_city2_pView ;
-   public static ArrayList<String> R1_city2_GovView ;
-   public static ArrayList<Human> R1_city2_Travel ;
-   public static ArrayList<Human> R1_city2_ICU ;
+    // static ArrayList for GUI
 
-  public  static ArrayList<Human> R1_city3_Citizen;
-  public  static ArrayList<Human> R1_city3_DeadCitizen;
-  public  static ArrayList<String> R1_city3_pView ;
-  public static ArrayList<String> R1_city3_GovView ;
-  public  static ArrayList<Human> R1_city3_Travel ;
-  public  static ArrayList<Human> R1_city3_ICU ;
+    ////////////// Region1
 
-  public  static ArrayList<Human> R1_city4_Citizen;
- public   static ArrayList<Human> R1_city4_DeadCitizen;
- public   static ArrayList<String> R1_city4_pView ;
- public static ArrayList<String> R1_city4_GovView ;
-  public  static ArrayList<Human> R1_city4_Travel ;
-   public static ArrayList<Human> R1_city4_ICU ;
+public static ArrayList<Human> R1_city1_Citizen;
+public static ArrayList<Human> R1_city1_DeadCitizen;
+public static ArrayList<String> R1_city1_pView ;
+public static ArrayList<String> R1_city1_GovView ;
+public static ArrayList<Human> R1_city1_Travel ;
+public static ArrayList<Human> R1_city1_ICU ;
 
-////////////// Region2
+public static ArrayList<Human> R1_city2_Citizen;
+public static ArrayList<Human> R1_city2_DeadCitizen;
+public static ArrayList<String> R1_city2_pView ;
+public static ArrayList<String> R1_city2_GovView ;
+public static ArrayList<Human> R1_city2_Travel ;
+public static ArrayList<Human> R1_city2_ICU ;
 
+public static ArrayList<Human> R1_city3_Citizen;
+public static ArrayList<Human> R1_city3_DeadCitizen;
+public static ArrayList<String> R1_city3_pView ;
+public static ArrayList<String> R1_city3_GovView ;
+public static ArrayList<Human> R1_city3_Travel ;
+public static ArrayList<Human> R1_city3_ICU ;
 
-  public  static ArrayList<Human> R2_city1_Citizen;
-   public static ArrayList<Human> R2_city1_DeadCitizen;
-   public static ArrayList<String> R2_city1_pView ;
-   public static ArrayList<String> R2_city1_GovView ;
-  public  static ArrayList<Human> R2_city1_Travel ;
-   public static ArrayList<Human> R2_city1_ICU ;
+public static ArrayList<Human> R1_city4_Citizen;
+public static ArrayList<Human> R1_city4_DeadCitizen;
+public static ArrayList<String> R1_city4_pView ;
+public static ArrayList<String> R1_city4_GovView ;
+public static ArrayList<Human> R1_city4_Travel ;
+public static ArrayList<Human> R1_city4_ICU ;
 
-   public static ArrayList<Human> R2_city2_Citizen;
-  public  static ArrayList<Human> R2_city2_DeadCitizen;
-  public  static ArrayList<String> R2_city2_pView ;
-  public static ArrayList<String> R2_city2_GovView ;
-  public  static ArrayList<Human> R2_city2_Travel ;
-  public  static ArrayList<Human> R2_city2_ICU ;
+    ////////////// Region2
 
-  public  static ArrayList<Human> R2_city3_Citizen;
-  public  static ArrayList<Human> R2_city3_DeadCitizen;
-  public  static ArrayList<String> R2_city3_pView ;
-  public static ArrayList<String> R2_city3_GovView ;
-  public  static ArrayList<Human> R2_city3_Travel ;
-  public  static ArrayList<Human> R2_city3_ICU ;
+public static ArrayList<Human> R2_city1_Citizen;
+public static ArrayList<Human> R2_city1_DeadCitizen;
+public static ArrayList<String> R2_city1_pView ;
+public static ArrayList<String> R2_city1_GovView ;
+public static ArrayList<Human> R2_city1_Travel ;
+public static ArrayList<Human> R2_city1_ICU ;
 
- public   static ArrayList<Human> R2_city4_Citizen;
-  public  static ArrayList<Human> R2_city4_DeadCitizen;
-  public  static ArrayList<String> R2_city4_pView ;
-  public static ArrayList<String> R2_city4_GovView ;
-  public  static ArrayList<Human> R2_city4_Travel ;
-  public  static ArrayList<Human> R2_city4_ICU ;
+public static ArrayList<Human> R2_city2_Citizen;
+public static ArrayList<Human> R2_city2_DeadCitizen;
+public static ArrayList<String> R2_city2_pView ;
+public static ArrayList<String> R2_city2_GovView ;
+public static ArrayList<Human> R2_city2_Travel ;
+public static ArrayList<Human> R2_city2_ICU ;
 
-      ////////////////////////////////// Clone
-  public    static ArrayList<Human> P2_R1_city1_Citizen;
- public     static ArrayList<Human> P2_R1_city1_DeadCitizen;
- public     static ArrayList<String> P2_R1_city1_pView ;
- public     static ArrayList<String> P2_R1_city1_GovView ;
- public     static ArrayList<Human> P2_R1_city1_Travel ;
-public      static ArrayList<Human> P2_R1_city1_ICU ;
+public static ArrayList<Human> R2_city3_Citizen;
+public static ArrayList<Human> R2_city3_DeadCitizen;
+public static ArrayList<String> R2_city3_pView ;
+public static ArrayList<String> R2_city3_GovView ;
+public static ArrayList<Human> R2_city3_Travel ;
+public static ArrayList<Human> R2_city3_ICU ;
+
+public static ArrayList<Human> R2_city4_Citizen;
+public static ArrayList<Human> R2_city4_DeadCitizen;
+public static ArrayList<String> R2_city4_pView ;
+public static ArrayList<String> R2_city4_GovView ;
+public static ArrayList<Human> R2_city4_Travel ;
+public static ArrayList<Human> R2_city4_ICU ;
+
+    ////////////// Region 1 Clone(Phase2)
+
+public static ArrayList<Human> P2_R1_city1_Citizen;
+public static ArrayList<Human> P2_R1_city1_DeadCitizen;
+public static ArrayList<String> P2_R1_city1_pView ;
+public static ArrayList<String> P2_R1_city1_GovView ;
+public static ArrayList<Human> P2_R1_city1_Travel ;
+public static ArrayList<Human> P2_R1_city1_ICU ;
   
-  public    static ArrayList<Human> P2_R1_city2_Citizen;
-  public    static ArrayList<Human> P2_R1_city2_DeadCitizen;
-  public    static ArrayList<String> P2_R1_city2_pView ;
-  public     static ArrayList<String> P2_R1_city2_GovView ;
-   public   static ArrayList<Human> P2_R1_city2_Travel ;
-   public   static ArrayList<Human> P2_R1_city2_ICU ;
+public    static ArrayList<Human> P2_R1_city2_Citizen;
+public    static ArrayList<Human> P2_R1_city2_DeadCitizen;
+public    static ArrayList<String> P2_R1_city2_pView ;
+public     static ArrayList<String> P2_R1_city2_GovView ;
+public   static ArrayList<Human> P2_R1_city2_Travel ;
+public   static ArrayList<Human> P2_R1_city2_ICU ;
   
-   public   static ArrayList<Human> P2_R1_city3_Citizen;
-   public   static ArrayList<Human> P2_R1_city3_DeadCitizen;
-    public  static ArrayList<String> P2_R1_city3_pView ;
-    public     static ArrayList<String> P2_R1_city3_GovView ;
-    public  static ArrayList<Human> P2_R1_city3_Travel ;
-    public  static ArrayList<Human> P2_R1_city3_ICU ;
+public static ArrayList<Human> P2_R1_city3_Citizen;
+public static ArrayList<Human> P2_R1_city3_DeadCitizen;
+public static ArrayList<String> P2_R1_city3_pView ;
+public static ArrayList<String> P2_R1_city3_GovView ;
+public static ArrayList<Human> P2_R1_city3_Travel ;
+public static ArrayList<Human> P2_R1_city3_ICU ;
   
-  public    static ArrayList<Human> P2_R1_city4_Citizen;
-   public   static ArrayList<Human> P2_R1_city4_DeadCitizen;
-   public   static ArrayList<String> P2_R1_city4_pView ;
-   public     static ArrayList<String> P2_R1_city4_GovView ;
-   public   static ArrayList<Human> P2_R1_city4_Travel ;
-    public  static ArrayList<Human> P2_R1_city4_ICU ;
+public static ArrayList<Human> P2_R1_city4_Citizen;
+public static ArrayList<Human> P2_R1_city4_DeadCitizen;
+public static ArrayList<String> P2_R1_city4_pView ;
+public static ArrayList<String> P2_R1_city4_GovView ;
+public static ArrayList<Human> P2_R1_city4_Travel ;
+public static ArrayList<Human> P2_R1_city4_ICU ;
   
-  ////////////// Region2
+    ////////////// Region 2 Clone(Phase2)
   
   
-  public    static ArrayList<Human> P2_R2_city1_Citizen;
-  public    static ArrayList<Human> P2_R2_city1_DeadCitizen;
-   public   static ArrayList<String> P2_R2_city1_pView ;
-   public   static ArrayList<String> P2_R2_city1_GovView ;
-   public   static ArrayList<Human> P2_R2_city1_Travel ;
-   public   static ArrayList<Human> P2_R2_city1_ICU ;
+public static ArrayList<Human> P2_R2_city1_Citizen;
+public static ArrayList<Human> P2_R2_city1_DeadCitizen;
+public static ArrayList<String> P2_R2_city1_pView ;
+public static ArrayList<String> P2_R2_city1_GovView ;
+public static ArrayList<Human> P2_R2_city1_Travel ;
+public static ArrayList<Human> P2_R2_city1_ICU ;
   
-   public   static ArrayList<Human> P2_R2_city2_Citizen;
-   public   static ArrayList<Human> P2_R2_city2_DeadCitizen;
-   public   static ArrayList<String> P2_R2_city2_pView;
-   public   static ArrayList<String> P2_R2_city2_GovView ;
-   public   static ArrayList<Human> P2_R2_city2_Travel ;
-   public   static ArrayList<Human> P2_R2_city2_ICU ;
+public static ArrayList<Human> P2_R2_city2_Citizen;
+public static ArrayList<Human> P2_R2_city2_DeadCitizen;
+public static ArrayList<String> P2_R2_city2_pView;
+public static ArrayList<String> P2_R2_city2_GovView ;
+public static ArrayList<Human> P2_R2_city2_Travel ;
+public static ArrayList<Human> P2_R2_city2_ICU ;
   
-    public  static ArrayList<Human> P2_R2_city3_Citizen;
-    public  static ArrayList<Human> P2_R2_city3_DeadCitizen;
-    public  static ArrayList<String> P2_R2_city3_pView ;
-    public   static ArrayList<String> P2_R2_city3_GovView ;
-    public  static ArrayList<Human> P2_R2_city3_Travel ;
-    public  static ArrayList<Human> P2_R2_city3_ICU ;
+public static ArrayList<Human> P2_R2_city3_Citizen;
+public static ArrayList<Human> P2_R2_city3_DeadCitizen;
+public static ArrayList<String> P2_R2_city3_pView ;
+public static ArrayList<String> P2_R2_city3_GovView ;
+public static ArrayList<Human> P2_R2_city3_Travel ;
+public static ArrayList<Human> P2_R2_city3_ICU ;
   
-    public  static ArrayList<Human> P2_R2_city4_Citizen;
-    public  static ArrayList<Human> P2_R2_city4_DeadCitizen;
-    public  static ArrayList<String> P2_R2_city4_pView;
-    public   static ArrayList<String> P2_R2_city4_GovView ;
-    public  static ArrayList<Human> P2_R2_city4_Travel ;
-    public  static ArrayList<Human> P2_R2_city4_ICU ;
+public static ArrayList<Human> P2_R2_city4_Citizen;
+public static ArrayList<Human> P2_R2_city4_DeadCitizen;
+public static ArrayList<String> P2_R2_city4_pView;
+public static ArrayList<String> P2_R2_city4_GovView ;
+public static ArrayList<Human> P2_R2_city4_Travel ;
+public static ArrayList<Human> P2_R2_city4_ICU ;
     
 
 
+// Arrays for Dead 
 public static  ArrayList <String > ALLDEAD_1 = new ArrayList <String >();
 public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 
@@ -146,11 +151,11 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
         boolean ON_OFF=true;   
         
         //(Genrating Objects )    
-        ///////////////////////Genertings Cites and Regins
+        //Genertings Cites and Regins
 
 
 
-               //////////////////////////////////////////////// Region 2 and its Cities 
+               // Region 2 and its Cities 
                Places East = new Region("East");                              
                ((Region)East).addCity("Dammam", 5000, 0);
                ((Region)East).addCity("Jubail", 5000, 0);
@@ -174,10 +179,10 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                City West_City_3=((Region)West).Cities.get(2);
                City West_City_4=((Region)West).Cities.get(3);
        
-       //////////////////////////////////////////////// Region 4 and its Cities 
+       // Region 4 and its Cities 
        
        
-               ////////////////////////////////////////////////////////////// Start Covid just Happens for 1 time for all the Cities
+               //  Start Covid just Happens for 1 time for all the Cities
                CovidSpread covid = new CovidSpread();
        
        
@@ -193,7 +198,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                covid.StartCovid(West_City_4);
        
        
-               ////////////////////////////////////////////////////////////// 
+               // Create ministryofHealth for each City
        
                ministryofHealth GovR2_C1 = new ministryofHealth();
                ministryofHealth GovR2_C2 = new ministryofHealth();
@@ -205,6 +210,8 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                ministryofHealth GovR3_C3 = new ministryofHealth();
                ministryofHealth GovR3_C4 = new ministryofHealth();
        
+               // Create ICU for each City
+
                ICU icuR2_C1 = new ICU();
                ICU icuR2_C2 = new ICU();
                ICU icuR2_C3 = new ICU();
@@ -216,7 +223,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                ICU icuR3_C4 = new ICU();
        
        
-           /////////////////////////////////////////////////////////////////
+               // Create Main_Method for each City
        
                Main_Method R2_C1 = new Main_Method();
                Main_Method R2_C2 = new Main_Method();
@@ -228,6 +235,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                Main_Method R3_C3 = new Main_Method();
                Main_Method R3_C4 = new Main_Method();
        
+               // add All Citeis to Cities Array
                ArrayList<City> Cities = new ArrayList<>();
        
                Cities.addAll(((Region)West).getCities());
@@ -239,6 +247,8 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 // Clone for Phase 2 and its Requrments          
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Create clone for each City
+
     City P2_East_City_1      =   East_City_1.clone();
     City P2_East_City_2      =   East_City_2.clone();
     City P2_East_City_3      =   East_City_3.clone();
@@ -249,9 +259,13 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
     City P2_West_City_3      =   West_City_3.clone();
     City P2_West_City_4      =   West_City_4.clone();
 
+    // create Phase2 Region
+
     Places P2_East = new Region("East");
     Places P2_West = new Region("West"); 
 
+
+    // Create ministryofHealth for each City
 
     ministryofHealth P2_GovR2_C1 = new ministryofHealth();
     ministryofHealth P2_GovR2_C2 = new ministryofHealth();
@@ -262,6 +276,8 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
     ministryofHealth P2_GovR3_C2 = new ministryofHealth();
     ministryofHealth P2_GovR3_C3 = new ministryofHealth();
     ministryofHealth P2_GovR3_C4 = new ministryofHealth();
+
+    // Create ICU for each City
 
     ICU P2_icuR2_C1 = new ICU();
     ICU P2_icuR2_C2 = new ICU();
@@ -274,6 +290,8 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
     ICU P2_icuR3_C4 = new ICU();
 
 
+    //  Start Covid just Happens for 1 time for all the Cities
+
     covid.StartCovid(P2_East_City_1);
     covid.StartCovid(P2_East_City_2);
     covid.StartCovid(P2_East_City_3);
@@ -284,6 +302,8 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
     covid.StartCovid(P2_West_City_3);
     covid.StartCovid(P2_West_City_4);
 
+    // Create Main_Method for each City
+    
     Main_Method P2_R2_C1 = new Main_Method();
     Main_Method P2_R2_C2 = new Main_Method();
     Main_Method P2_R2_C3 = new Main_Method();
@@ -294,6 +314,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
     Main_Method P2_R3_C3 = new Main_Method();
     Main_Method P2_R3_C4 = new Main_Method();
 
+    // add All Citeis to P2_Cities Array
     ArrayList<City> P2_Cities = new ArrayList<>();
 
     P2_Cities.addAll(((Region)P2_West).getCities());
@@ -306,8 +327,9 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         int Porgress=0;
-        int days=30;// a year
+        int days=30;
         int numOfTravle;
+
         for (int day = 1; day <=days  ; day++) {
 
 
@@ -338,27 +360,11 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
             P2_R3_C4.City_Activite(day, P2_West_City_4, P2_GovR3_C4, P2_icuR3_C4, covid,true);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             Porgress++;
             System.out.println("day:"+Porgress);
             
             
-
+            // Random Travlers
 
             numOfTravle = (int) (Math.random()*100);
 
@@ -368,6 +374,8 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
             }
             
 
+            // Main Loop
+
             Boolean Switch_ON_OFF=false;
             if(Switch_ON_OFF==true){
             
@@ -376,6 +384,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                 while  ( ON_OFF==true){
 
 
+                // Pick Regin   
                 System.out.println("the Day is:"+day+
                 " Pick Regin \n"+
                 "1 East:\n"+
@@ -386,15 +395,13 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 
                 int  User_Choice= R2_C1.Switchinput();
 
-
-
                 switch (User_Choice){
 
-
-                //////////////////////////
+                    //East
                 case 1:
                 System.out.println("East");
 
+                // Pick City 
                     System.out.println("Pick The City\n"+
                     "1 Dammam:\n"+
                     "2 Jubail:\n"+
@@ -404,25 +411,26 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                     User_Choice= R2_C1.Switchinput();   
                     switch (User_Choice){
 
-                        case 1:
-                        //R2_C1.CitySwitch(East_City_1,day,icuR2_C1);
-                        P2_R2_C1.CitySwitch(P2_West_City_4, day, P2_icuR3_C4);
+                        case 1://Dammam
+                        R2_C1.CitySwitch(East_City_1,day,icuR2_C1);
                         break;
                         //////
-                        case 2:
+                        case 2://Jubail
                         R2_C2.CitySwitch(East_City_2,day,icuR2_C2);
                         break;
                         //////
-                        case 3:
+                        case 3://Alhfof
                         R2_C3.CitySwitch(East_City_3,day,icuR2_C3);
                         break;
                         //////
-                        case 4:
+                        case 4://Hafr Albaten
                         R2_C4.CitySwitch(East_City_4,day,icuR2_C4);
                         break;
                     }
                     break;
-                    //////////////////////////
+
+                
+                    //West
                 case 2:
                     System.out.println("West");
                     System.out.println("Pick The City\n"+
@@ -433,19 +441,19 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                     User_Choice= R3_C1.Switchinput();;   
                     switch (User_Choice){
 
-                        case 1:
+                        case 1://Jeddah
                         R3_C1.CitySwitch(West_City_1,day,icuR3_C1);
                         break;
                         //////
-                        case 2:
+                        case 2://Mecca
                         R3_C2.CitySwitch(West_City_2,day,icuR3_C2);
                         break;
                         //////
-                        case 3:
+                        case 3://Medina
                         R3_C3.CitySwitch(West_City_3,day,icuR3_C3);
                         break;
                         //////
-                        case 4:
+                        case 4://Taif
                         R3_C4.CitySwitch(West_City_4,day,icuR3_C4);
                         break;
                     }
@@ -455,13 +463,14 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 
                         
                     ///////////////
-                case 3:
+                case 3: // next Day
                         ON_OFF=false;
                         PickedDay++;
                         
                     break;
                     //////////////////////////
-                case 4:
+
+                case 4:// Pick Day
                     System.out.println("Pick the Day");
                     PickedDay=User_Choice= R2_C1.Switchinput();
                     ON_OFF=false;
@@ -492,10 +501,10 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 
         R3_C4.CitySwitch(West_City_4,days,icuR3_C4);
 
-        ///////// Clone
+        ///////// Phase 2
 
         System.out.println("\n///////////////////////////////////////////////////////////////////////////////////////////////");
-        System.out.println("\nClone\n");
+        System.out.println("\nPhase 2");
         System.out.println("\n///////////////////////////////////////////////////////////////////////////////////////////////");
 
         P2_R2_C1.CitySwitch(P2_East_City_1,days,P2_icuR2_C1);
@@ -518,7 +527,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
         
         
 
-////////////////////////////////////////////////////java fx passing
+/////////java fx passing
 
 for(int i =0 ;i<days ;i++){
     int SUM1=R3_C1.CityDead.get(i)
@@ -553,16 +562,12 @@ for(int i =0 ;i<days ;i++){
     
    
 }
-    
-
-
-
-
-
+  
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // assigning the static varibles     
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+////////////// Region1
  
 R1_city1_Citizen = East_City_1.get_Citizen();
 R1_city1_DeadCitizen = East_City_1.getDeadCitizen();
@@ -592,7 +597,7 @@ R1_city4_GovView = R2_C4.GovView;
 R1_city4_Travel = East_City_4.getTravelers();
 R1_city4_ICU = icuR2_C4.getBeds() ;
 
-////////////////////////// Regoin2
+////////////// Region2
 
 R2_city1_Citizen = West_City_1.get_Citizen();
 R2_city1_DeadCitizen = West_City_1.getDeadCitizen();
@@ -622,7 +627,7 @@ R2_city4_GovView = R3_C4.GovView;
 R2_city4_Travel = West_City_4.getTravelers() ;
 R2_city4_ICU = icuR3_C4.getBeds() ;
 
-///////////////// clone
+////////////// Region 1 Clone(Phase2)
 
 P2_R1_city1_Citizen = P2_East_City_1.get_Citizen();
 P2_R1_city1_DeadCitizen = P2_East_City_1.getDeadCitizen();
@@ -652,7 +657,7 @@ P2_R1_city4_GovView = P2_R2_C4.GovView;
 P2_R1_city4_Travel = P2_East_City_4.getTravelers();
 P2_R1_city4_ICU = P2_icuR2_C4.getBeds() ;
 
-////////////////////////// Regoin2
+////////////// Region 2 Clone(Phase2)
 
 P2_R2_city1_Citizen = P2_West_City_1.get_Citizen();
 P2_R2_city1_DeadCitizen = P2_West_City_1.getDeadCitizen();

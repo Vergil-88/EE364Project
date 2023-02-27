@@ -2,11 +2,15 @@ package Covid;
 import java.util.ArrayList;
 
 public class Region implements Places {
+    // data field
+
     private String Name;
     private int Population;
     private double Area;
     private double Overpopulation;
     ArrayList <City> Cities = new ArrayList<City>();
+
+    // constructor
 
     public Region(String Name){
         this.Name = Name;
@@ -24,6 +28,8 @@ public class Region implements Places {
         Overpopulation = totalOP/numofCities;
 
     }
+
+    // Geters and Seters
 
     public String get_Name(){
         return Name;
@@ -47,6 +53,8 @@ public class Region implements Places {
 
     public void addCity(String Name, int Population, double Area){
 
+        // Creat new city then add it to the Cities Array
+        
         City city = new City(Name, Population, Area);
         Cities.add(city);
 

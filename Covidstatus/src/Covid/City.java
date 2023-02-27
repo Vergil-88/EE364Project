@@ -3,7 +3,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class City implements Places, Cloneable {
-    
+    // data field
+
     private String Name;
     private int Population;
     private double Area;
@@ -13,25 +14,9 @@ public class City implements Places, Cloneable {
     private ArrayList <Human> DeadCitizen          =   new ArrayList<Human>();
     private ArrayList <Human> Travelers            =   new ArrayList<Human>();
     
-    public City(String name, int Population , double Area,double Overpopulation,ArrayList <Human> Citizen,ArrayList <Human> Quarantine_Citizen,ArrayList <Human> DeadCitizen,ArrayList <Human> Travelers  ){
-
-
-            Name = name;
-            this.Population= Population;
-            this.Area=Area;
-            this.Overpopulation=Overpopulation;
-            this.Citizen=Citizen;
-            this.Quarantine_Citizen=Quarantine_Citizen;
-            this.DeadCitizen=DeadCitizen;
-            this.Travelers=Travelers;
-
-
-
-
-
-
-    }
-
+    
+    // constructor
+    
     public City(String Name, int Population, double Area){
         this.Name = Name;
         this.Population = Population;
@@ -39,7 +24,9 @@ public class City implements Places, Cloneable {
         Overpopulation = Calc_Overpopulation(Population, Area);
 
         Random ran1 = new Random();
-        
+
+        // filing the Citizen Array
+
         for (int i = 0 ; i<Population ; i++ ){
 
             Citizen.add(new Human());
@@ -62,6 +49,7 @@ public class City implements Places, Cloneable {
             Citizen.addAll(member);
    
    
+
             for(Human W : member){
                    
                 Citizen.get(xx).setfamily(W);//fammliy member to C 
@@ -91,7 +79,8 @@ public class City implements Places, Cloneable {
    
         Random numRan= new Random();
    
-       
+       // filling the friends Array 
+
         for (Human  C : Citizen) {
             int Num_Of_friends= (int)(Math.random()*5+2);
    
@@ -99,6 +88,8 @@ public class City implements Places, Cloneable {
                
             int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
             Human SearchCitizen = Citizen.get(index_of_friends);
+
+            // conditions to make sure the Humen not in  family, friends, coWorkers,or randomIndividuals Arrays. 
 
             if( !(C.equals(SearchCitizen)))
                 if(!(C.getfamily_Arraylist().contains(SearchCitizen)))
@@ -112,7 +103,8 @@ public class City implements Places, Cloneable {
            }  
         }
        
-           
+           // filling the coWorkers Array 
+
        for (Human  C : Citizen) {
             int Num_Of_friends= (int)(Math.random()*5+2);
    
@@ -121,6 +113,8 @@ public class City implements Places, Cloneable {
             int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
    
             Human SearchCitizen = Citizen.get(index_of_friends);
+
+            // conditions to make sure the Humen not in  family, friends, coWorkers,or randomIndividuals Arrays. 
 
             if( !(C.equals(SearchCitizen)))
                 if(!(C.getfamily_Arraylist().contains(SearchCitizen)))
@@ -133,7 +127,8 @@ public class City implements Places, Cloneable {
                             }
             }  
         }   
-   
+        // filling the RandomIndividuals Array 
+
         for (Human  C : Citizen) {
             int Num_Of_friends= (int)(Math.random()*5+2);
    
@@ -142,6 +137,8 @@ public class City implements Places, Cloneable {
             int index_of_friends =numRan.nextInt(Citizen.size()-1) ;  
    
             Human SearchCitizen = Citizen.get(index_of_friends);
+
+            // conditions to make sure the Humen not in  family, friends, coWorkers,or randomIndividuals Arrays. 
 
             if( !(C.equals(SearchCitizen)))
                 if(!(C.getfamily_Arraylist().contains(SearchCitizen)))
@@ -169,6 +166,122 @@ public class City implements Places, Cloneable {
     
     }
 
+
+
+    
+    public void setDeadCitizen(ArrayList<Human> deadCitizen) {
+        DeadCitizen = deadCitizen;
+    }
+    public ArrayList<Human> getDeadCitizen() {
+        return DeadCitizen;
+    }
+
+    // Print the History of Human.
+
+    public void Find_Citizen_History(String ID){
+
+    // find the Human and then print his history 
+
+        for (Human human : Citizen) {
+            if (human.getId().equals(ID)){
+                System.out.println(human.getHistory()); 
+            }
+        }
+
+
+            for (Human Person : DeadCitizen) {
+                if (Person.getId().equals(ID)){
+                    System.out.println(Person.getHistory()); 
+                }
+                    
+            } 
+            
+                    
+    }
+        
+    
+
+
+
+
+
+    public static void Travel(ArrayList<City> cities,int day){
+        
+        Random R = new Random();
+        int R1=0;
+        int R2=0;
+
+        // pick two random Cities
+        do{
+            R1=R.nextInt(cities.size()-1);
+            R2=R.nextInt(cities.size()-1);
+        }while(R1==R2);
+        
+
+        City City_1 = cities.get(R1);
+        City City_2 = cities.get(R2);
+
+        ArrayList<Human> Pepole_city2 = City_2.get_Citizen();
+        ArrayList<Human> Pepole_city1 = City_1.get_Citizen();
+
+        // pick a random Human 
+
+        int NumberOfCitizin= Pepole_city1.size();
+        int RandomIndex=R.nextInt(NumberOfCitizin-1);
+        Human Person=Pepole_city1.get(RandomIndex);
+       
+        
+        // Add the travler to the new city
+        City_2.addCitizen(Person);   
+        City_2.addTraveler(Person); 
+
+        // remove the travler from the old city 
+        Pepole_city1.remove(Person); 
+
+
+        // Clears his Current Family and randomIndividuals so he dosent interact with them in the other City
+        Person.Clear_F(); 
+       
+        
+    
+        //Person IS ASSIGNED NEW randomIndividuals
+        int Num_Of_friends= (int)(Math.random()*5+2);
+
+        // for loop to add all the new randomIndividuals
+        for (int i = 0; i<Num_Of_friends; i++) {
+           
+        // pick random person
+        int index_of_friends =R.nextInt(Pepole_city2.size()-1) ;  
+
+        Human SearchCitizen = Pepole_city2.get(index_of_friends);
+
+        // conditions to make sure the Humen not in  family, friends, coWorkers,or randomIndividuals Arrays. 
+        if( !(Person.equals(SearchCitizen)))
+            if(!(Person.getfamily_Arraylist().contains(SearchCitizen)))
+                if(!(Person.getfriends_Arraylist().contains(SearchCitizen)))
+                    if(!(Person.getcoWorkers_Arraylist().contains(SearchCitizen)))
+                        if(!(Person.getrandomIndividuals_Arraylist().contains(SearchCitizen))){
+
+                            Person.setRandomIndividuals(Pepole_city2.get(index_of_friends));
+                            Pepole_city2.get(index_of_friends).setRandomIndividuals(Person);
+
+                        }
+        }  
+       
+        // update the travler history
+
+        String City_1_Name=City_1.get_Name();
+        String City_2_Name=City_2.get_Name();
+        Person.updateTravelHistory(City_1_Name,City_2_Name , day);
+
+        
+
+
+
+    }
+
+
+    /// Geters and Seters.
 
     public String get_Name(){
         return Name;
@@ -199,7 +312,7 @@ public class City implements Places, Cloneable {
         return Travelers;
     }
     
-    //////////////////////  dummy code might consider adding    /////////////////////////////
+   
 
     public String get_Citizeninfo(){
         String p="";
@@ -208,105 +321,7 @@ public class City implements Places, Cloneable {
         }
         return p;
     }
-    /////////////////////////////////////////////////////////////////////////////////////////
-    public String toString(){
-        return Name + " | Population: " + Population + " | Area: " + Area + " | OverPopulation: " + Overpopulation;
-    }
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////
-    public void setDeadCitizen(ArrayList<Human> deadCitizen) {
-        DeadCitizen = deadCitizen;
-    }
-    public ArrayList<Human> getDeadCitizen() {
-        return DeadCitizen;
-    }
-
-    public void Find_Citizen_History(String ID){
-
-        for (Human human : Citizen) {
-            if (human.getId().equals(ID)){
-                System.out.println(human.getHistory()); 
-            }
-        }
-            for (Human Person : DeadCitizen) {
-                if (Person.getId().equals(ID)){
-                    System.out.println(Person.getHistory()); 
-                }
-                    
-            } 
-            
-                    
-    }
-        
     
-
-
-
-
-
-    public static void Travel(ArrayList<City> cities,int day){
-        Random R = new Random();
-        int R1=0;
-        int R2=0;
-        do{
-            R1=R.nextInt(cities.size()-1);
-            R2=R.nextInt(cities.size()-1);
-        }while(R1==R2);
-        
-
-        City City_1 = cities.get(R1);
-        City City_2 = cities.get(R2);
-
-        ArrayList<Human> Pepole_city2 = City_2.get_Citizen();
-        ArrayList<Human> Pepole_city1 = City_1.get_Citizen();
-
-        int NumberOfCitizin= Pepole_city1.size();
-        int RandomIndex=R.nextInt(NumberOfCitizin-1);
-        Human Person=Pepole_city1.get(RandomIndex);
-       
-        
-
-        City_2.addCitizen(Person);
-        City_2.addTraveler(Person);
-        Pepole_city1.remove(Person);
-
-
-        Person.Clear_F(); // Clears his Current Family and randomIndividuals so he dosent interact with them in the other City
-       
-        
-    
-    
-        int Num_Of_friends= (int)(Math.random()*5+2);//Person IS ASSIGNED NEW randomIndividuals
-
-        for (int i = 0; i<Num_Of_friends; i++) {
-           
-        int index_of_friends =R.nextInt(Pepole_city2.size()-1) ;  
-
-        Human SearchCitizen = Pepole_city2.get(index_of_friends);
-
-        if( !(Person.equals(SearchCitizen)))
-            if(!(Person.getfamily_Arraylist().contains(SearchCitizen)))
-                if(!(Person.getfriends_Arraylist().contains(SearchCitizen)))
-                    if(!(Person.getcoWorkers_Arraylist().contains(SearchCitizen)))
-                        if(!(Person.getrandomIndividuals_Arraylist().contains(SearchCitizen))){
-
-                            Person.setRandomIndividuals(Pepole_city2.get(index_of_friends));
-                            Pepole_city2.get(index_of_friends).setRandomIndividuals(Person);
-
-                        }
-        }  
-       
-        String City_1_Name=City_1.get_Name();
-        String City_2_Name=City_2.get_Name();
-        Person.updateTravelHistory(City_1_Name,City_2_Name , day);
-
-        
-
-
-
-    }
 
     public void addCitizen(Human person) {
 
@@ -324,12 +339,23 @@ public class City implements Places, Cloneable {
     public ArrayList<Human> getQuarantine_Citizen() {
         return Quarantine_Citizen;
     }
+
     public void setQuarantine_Citizen(ArrayList<Human> quarantine_Citizen) {
         Quarantine_Citizen = quarantine_Citizen;
     }
+
     public void AddQuarantine_Citizen(Human human) {
         Quarantine_Citizen.add(human);
     }
+
+    public String toString(){
+        return Name + " | Population: " + Population + " | Area: " + Area + " | OverPopulation: " + Overpopulation;
+    }
+
+
+
+
+    // clone to Creat a Copy for the Phase2.
 
     public City clone() {
 

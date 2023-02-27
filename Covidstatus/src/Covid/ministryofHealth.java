@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ministryofHealth {
-    //Delration 
+    //Delration
 
     private ArrayList<Human> Calls = new ArrayList<Human>();
     private ArrayList<Human> PostiveA = new ArrayList<Human>();
@@ -12,6 +12,7 @@ public class ministryofHealth {
     private ArrayList<Human> Dead = new ArrayList<Human>();
     private ArrayList<Human> Recovered = new ArrayList<Human>();
     private Random rad = new Random();
+
     //methods
 
     // genrait Calls in main
@@ -23,10 +24,13 @@ public class ministryofHealth {
 
 
 
+    // Test all the Calls if they type A or not
+
     public void TestCenter(ArrayList <Human> Calls){
         for(Human x : Calls){
-            
 
+
+            // add him to PostiveA Array if he was type (A)
             if  (x.getCovidInfection_TypeType().equals("A") ){
                 if(!(PostiveA.contains(x)))
 
@@ -34,14 +38,15 @@ public class ministryofHealth {
 
 
             }
-        
+
 
 
         }
 
     }
 
-    //////////////////////////////////////////////
+    // Interacted TypeA With TypeB
+
     public void Interacted_A_to_B(){
 
         for(Human x : PostiveA){
@@ -49,7 +54,8 @@ public class ministryofHealth {
             ArrayList <Human>  friends =x.getfriends_Arraylist();
             ArrayList <Human>  coWorkers =x.getcoWorkers_Arraylist();
             ArrayList <Human>  randomIndividuals =x.getrandomIndividuals_Arraylist();
-        
+
+            // add family to PostiveB
             for(Human f : family){
                 if( f.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(f)))
@@ -57,6 +63,7 @@ public class ministryofHealth {
                 }
             }
 
+            // add friends to PostiveB
             for(Human fr : friends){
                 if( fr.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(fr)))
@@ -65,6 +72,7 @@ public class ministryofHealth {
                 }
             }
 
+            // add coWorkers to PostiveB
             for(Human Co : coWorkers){
                 if( Co.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(Co)))
@@ -72,103 +80,59 @@ public class ministryofHealth {
                 }
             }
 
+            // add randomIndividuals to PostiveB
             for(Human r : randomIndividuals){
                 if( r.getCovidInfection_TypeType().equals("B") ){
                     if(!(PostiveB.contains(r)))
                     PostiveB.add(r);
                 }
             }
-            
+
 
         }
 
 
     }
 
-    //////////////////////////////////////////////
-    public void Interacted_B_to_C(){
-
-        for(Human x : PostiveB){
-            ArrayList <Human>  family =x.getfamily_Arraylist();
-            ArrayList <Human>  friends =x.getfriends_Arraylist();
-            ArrayList <Human>  coWorkers =x.getcoWorkers_Arraylist();
-            ArrayList <Human>  randomIndividuals =x.getrandomIndividuals_Arraylist();
-            
-            for(Human f : family){
-                if( f.getCovidInfection_TypeType().equals("C") ){
-                    if(!(PostiveC.contains(f)))
-
-                    PostiveC.add(f);
-                }
-            }
-    
-            for(Human fr : friends){
-                if( fr.getCovidInfection_TypeType().equals("C") ){
-                    if(!(PostiveC.contains(fr)))
-
-                    PostiveC.add(fr);
-                }
-            }
-    
-            for(Human Co : coWorkers){
-                if( Co.getCovidInfection_TypeType().equals("C") ){
-                    if(!(PostiveC.contains(Co)))
-
-                    PostiveC.add(Co);
-                }
-            }
-    
-            for(Human r : randomIndividuals){
-                if( r.getCovidInfection_TypeType().equals("C") ){
-                    if(!(PostiveC.contains(r)))
-
-                    PostiveC.add(r);
-                }
-            }  
-    
-        }
-
-    }
-
-    //////////////////////////////////////////////
+    // from TypeA to Dead
     public void A_to_Dead( ArrayList <Human>  WaitingList,int day,ICU icu){
-       
-        ArrayList<Human> Witing = icu.getWaitingList();
-        
+
         int Counter;
 
-     
-           
-            
+            // make sure there are Human in WaitingList.
             if(WaitingList.size()!=0){
-            
+
             for (Human B : WaitingList ) {    // gose over the WaitingList Array
-                
+
                 covidInfection CovidInf = B.getCovidInfection_Type();
-                Counter = CovidInf.getDaysCounter();
-                double Ran0= Math.random();
-                
+                Counter = CovidInf.getDaysCounter(); // get how many he is TypeA
+                double Ran0= Math.random();// Random percentage.
+
+            // if the human Vaccineted skip
             if(B.getVaccine()==true)
             continue;
 
-                if(Counter>=7&&Counter<14 ){
-                    
-                    if(Ran0 >= 0.98){//2%
-                    B.setDead();
-                    B.SetStatus("At Day:"+day+" Dead\n");
-                    PostiveA.remove(B);
-                    Dead.add(B); 
+                // TypeA more then 7 Days and Less then 14 days
+                if(Counter>=7 && Counter<14 ){ 
+
+                    if(Ran0 >= 0.98){//2% he die
+                    B.setDead();                             //convert it to (Dead)
+                    B.SetStatus("At Day:"+day+" Dead\n");   // Add to his History
+                    PostiveA.remove(B);                     // remove him from PostiveA Array
+                    Dead.add(B);                            // Add him to Dead Array
                     //Witing.remove(B);
-                    
+
                     }
+
+                // TypeA more then 14 Days 
                 }else if(Counter>=14){
-                    if(Ran0 >= 0.96){//4%
-                    B.setDead();
-                    B.SetStatus("At Day:"+day+" Dead\n");
-                    PostiveA.remove(B);
-                    Dead.add(B); 
+                    if(Ran0 >= 0.96){//4% he die
+                    B.setDead();                             //convert it to (Dead)
+                    B.SetStatus("At Day:"+day+" Dead\n");   // Add to his History
+                    PostiveA.remove(B);                     // remove him from PostiveA Array
+                    Dead.add(B);                            // Add him to Dead Array
                     //Witing.remove(B);
-                   
+
                     }
                 }
             }
@@ -178,76 +142,53 @@ public class ministryofHealth {
         int randomIndex;
         Human Die;
 
+        // Random Dead from TypeA
+
         for(int i = 0;i < randomDead;i++){
-            randomIndex = rad.nextInt(PostiveA.size()-1);
-            Die = PostiveA.get(randomIndex);
-            Die.setDead();
-            Die.SetStatus("At Day:"+day+" Dead\n");
-            PostiveA.remove(Die);
-            Dead.add(Die); 
-            
+
+            randomIndex = rad.nextInt(PostiveA.size()-1);// random index
+           
+            Die = PostiveA.get(randomIndex);          // random Person
+
+            Die.setDead();                             //convert it to (Dead)
+            Die.SetStatus("At Day:"+day+" Dead\n");   // Add to his History
+            PostiveA.remove(Die);                     // remove him from PostiveA Array
+            Dead.add(Die);                            // Add him to Dead Array
+
         }
 
     }
 
-    //////////////////////////////////////////////
-    // public void Recovered(int day,ICU icu){
 
-    //     int numOfRecovered= (int) (PostiveA.size() * 0.05 );
-    //     int RecoveredIndex;
-    //     Human person;
-
-    //     covidInfection normal = new Normal();
-        
-    //     while(numOfRecovered != 0){
-            
-    //         RecoveredIndex = rad.nextInt(PostiveA.size());
-    //         person = PostiveA.get(RecoveredIndex);
-        
-    //         person.setCovidInfection_Type(normal);
-
-    //         person.SetStatus("At Day:"+day+"Normal\n");
-
-    //         PostiveA.remove(person);
-    //         icu.getWaitingList().remove(person);
-    //         Recovered.add(person);
-
-    //         numOfRecovered--;
-            
-    //     }
-
-
-
-
-    // }
-
-   
+    // from TypeA to Normal
     public void Recovered(int day,ICU icu){
 
-    
+
 
         covidInfection normal = new Normal();
-        
-      
-      for (Human human : PostiveA) {
-        double ran = Math.random();
 
-        if(ran >= 0.70 && human.getVaccine()==true){
-            human.setCovidInfection_Type(normal);
-            human.SetStatus("At Day:"+day+"Normal\n");
 
-            
-            icu.getWaitingList().remove(human);
-            Recovered.add(human);
+      for (Human human : PostiveA) {  // gose over the PostiveA Array
+        double ran = Math.random();   // Random percentage.
+
+        // human is  Vaccineted
+        if(ran >= 0.70 && human.getVaccine()==true){ // 30% he convert to Normal (Recovered)
+            human.setCovidInfection_Type(normal);   //convert to Normal
+            human.SetStatus("At Day:"+day+"Normal\n"); // Add to his History
+
+
+            icu.getWaitingList().remove(human);// remove human from WaitingList
+            Recovered.add(human); // add human to Recovered Array
 
         }
-        else if (ran >= 0.99 && human.getVaccine()==false){
-            human.setCovidInfection_Type(normal);
-            human.SetStatus("At Day:"+day+"Normal\n");
+        //human isn't  Vaccineted
+        else if (ran >= 0.99 && human.getVaccine()==false){ // 1% he convert to Normal (Recovered)
+            human.setCovidInfection_Type(normal);   //convert to Normal
+            human.SetStatus("At Day:"+day+"Normal\n"); // Add to his History
 
-            
-            icu.getWaitingList().remove(human);
-            Recovered.add(human);
+
+            icu.getWaitingList().remove(human);// remove human from WaitingList
+            Recovered.add(human); // add human to Recovered Array
         }
 
       }
@@ -260,29 +201,7 @@ public class ministryofHealth {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ///////Geters/////////////
+    //Geters
 
     public ArrayList<Human> getCalls() {
         return Calls;
@@ -306,8 +225,6 @@ public class ministryofHealth {
     public ArrayList<Human> getPostiveC() {
         return PostiveC;
     }
-
-    //////////////////////////////////////////////
 
 
 

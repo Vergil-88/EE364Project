@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 
 public class Main_Method {
+     //Delration
+
    ArrayList <Integer> CityDead =new ArrayList <Integer>();
-    
     
     ArrayList <String>  data     = new ArrayList <String>();
     ArrayList <String>  Dayslist = new ArrayList <String>();
@@ -75,7 +76,7 @@ public class Main_Method {
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // First Block         this Block tells us who of Type B and C are Actlly A or Normal                      
+        // this Block tells us who of Type B and C are Actlly A or Normal                      
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if( day%3==0 ){//Happens Every 3 Days
             /// Changing B to A by Percentiges there rest that we havent made into A will become Normal 
@@ -95,7 +96,7 @@ public class Main_Method {
             }
         } 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // 2nd Block Calls Happen Every day
+        // Block Calls Happen Every day
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
         int number_of_A_Calls = (int) (numOf_A * 0.35);
         for (Human H : city.get_Citizen()) {
@@ -107,7 +108,7 @@ public class Main_Method {
             }
         }   
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // 3rd Block Spreding the Covid for the Day Happens Every Day
+        // Block Spreding the Covid for the Day Happens Every Day
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
             ///
             if(day%5==0){
@@ -120,7 +121,7 @@ public class Main_Method {
 
             }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // 4th Block MinistryofHealth Recives the Calls and Declare who is A and who they interacted with
+        // Block MinistryofHealth Recives the Calls and Declare who is A and who they interacted with
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             MinistryofHealth.TestCenter(MinistryofHealth.getCalls());
             MinistryofHealth.Interacted_A_to_B();
@@ -128,7 +129,7 @@ public class Main_Method {
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // 5th Gov declaring type A Recoverd and Dead 
+        // Gov declaring type A Recoverd and Dead 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
         if(day>=7){
@@ -161,7 +162,7 @@ public class Main_Method {
         
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // 6th ICU Beds filing for the the Type Who needs it which is 0.15 of them
+        // ICU Beds filing for the the Type Who needs it which is 0.15 of them
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
         int numOfBeds = (int) (MinistryofHealth.getPostiveA().size() *0.15); 
@@ -294,7 +295,7 @@ public class Main_Method {
         MinistryofHealth.getCalls().clear();      
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // 7th Clearing the Calls form the day and moveing the Dead Citizins to A diffrant Array and Removing them fomr the Orignal 
+        // Clearing the Calls form the day and moveing the Dead Citizins to A diffrant Array and Removing them fomr the Orignal 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ArrayList <Human> R = new ArrayList <Human>();
         for (Human H : icu.getWaitingList()) {
@@ -333,6 +334,7 @@ public class Main_Method {
     }
 
 
+    /// this Method shows all City info
     public void City_Output(int day,ICU icu,City city){
 
         int fullDays = 0;
@@ -537,6 +539,7 @@ public class Main_Method {
     }
 
 
+    // Table to show the Program View
     public  void Table_XYZ (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> C,ArrayList <String> Normal){
 
 
@@ -571,7 +574,7 @@ public class Main_Method {
     }
 
     
-    
+    // Table to show the Goverment View
     public  void Table_XYZ2 (int day,ArrayList <String> A,ArrayList <String> B,ArrayList <String> Dead,ArrayList <String> Recoverd,ArrayList <String> Beds ,ArrayList <String> witingList ){
 
 
@@ -612,6 +615,7 @@ public class Main_Method {
     }
 
 
+    // method to avoid i/o Exceptions
     public  int Switchinput(){
         int User_Choice=0;
         boolean TF=true;

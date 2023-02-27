@@ -16,7 +16,8 @@ public class CovidSpread {
 
     public void StartCovid(City CityName){
 
-        int numberOfPatients = (int) (CityName.get_Population() *0.05);
+
+        int numberOfPatients = (int) (CityName.get_Population() *0.05); // How many A type to create
         int PatientIndex;
         Human Patient;
         ArrayList<Human> Citizen = CityName.get_Citizen();
@@ -25,13 +26,16 @@ public class CovidSpread {
 
         for (int i = 0 ; i < numberOfPatients ; i++){
 
+           // in case if the Index was negative.
             try{ 
                 PatientIndex = rad.nextInt(CityName.get_Population()-1);
 
                 Patient = Citizen.get(PatientIndex);
 
-                Patient.setCovidInfection_Type(TypeA);
+                //convert it to (A)
+                Patient.setCovidInfection_Type(TypeA); 
 
+                // Add to his History
                 Patient.SetStatus("At Day:"+1+" A\n");
             }catch(Exception e){
 
@@ -65,11 +69,14 @@ public class CovidSpread {
 
         for (Human F : family){
             String Type = F.getCovidInfection_TypeType();
+            
+            // conditions to make sure the Humen not A, B, or C
+
             if(!(Type.equals("A")))
                 if(!(Type.equals("B")))
                     if(!(Type.equals("C"))){
-                        F.setCovidInfection_Type(TypeB);
-                        F.SetStatus("At Day:"+day+" B\n");
+                        F.setCovidInfection_Type(TypeB);//convert it to (B)
+                        F.SetStatus("At Day:"+day+" B\n");// Add to his History
                     }
 
         }
@@ -82,17 +89,19 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfFriends; i++) {
             
+            // in case if the Index was negative.
             try{  
                 FriendIndex = rad.nextInt(friends.size()-1);
 
                 Friend = friends.get(FriendIndex);
                 String Type = Friend.getCovidInfection_TypeType();
                 
+                // conditions to make sure the Humen not A, B, or C
                 if(!(Type.equals("A")))
                     if(!(Type.equals("B")))
                         if(!(Type.equals("C"))){
-                            Friend.setCovidInfection_Type(TypeB);
-                            Friend.SetStatus("At Day:"+day+" B\n");
+                            Friend.setCovidInfection_Type(TypeB);//convert it to (B)
+                            Friend.SetStatus("At Day:"+day+" B\n");// Add to his History
                         }
             }catch(Exception e){
                 continue;
@@ -107,16 +116,18 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfCoWorkers; i++) {
 
+            // in case if the Index was negative.
             try{  coWorkerIndex = rad.nextInt(coWorkers.size()-1);
 
                 coWorker = coWorkers.get(coWorkerIndex);
                 String Type = coWorker.getCovidInfection_TypeType();
                 
+                // conditions to make sure the Humen not A, B, or C
                 if (!(Type.equals("A")))
                     if(!(Type.equals("B")))
                         if(!(Type.equals("C"))){
-                            coWorker.setCovidInfection_Type(TypeB);
-                            coWorker.SetStatus("At Day:"+day+" B\n");
+                            coWorker.setCovidInfection_Type(TypeB);//convert it to (B)
+                            coWorker.SetStatus("At Day:"+day+" B\n");// Add to his History
                         }
             }catch(Exception e){
                 continue;
@@ -132,15 +143,18 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfRandomIndividuals; i++) {
 
+            // in case if the Index was negative.
             try{ randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
 
                 randomIndividual = randomIndividuals.get(randomIndividualsIndex);
                 String Type = randomIndividual.getCovidInfection_TypeType();
+
+                // conditions to make sure the Humen not A, B, or C
                 if(!(Type.equals("A")))
                     if(!(Type.equals("B")))
                         if(!(Type.equals("C"))){
-                            randomIndividual.setCovidInfection_Type(TypeB);
-                            randomIndividual.SetStatus("At Day:"+day+" B\n");
+                            randomIndividual.setCovidInfection_Type(TypeB);//convert it to (B)
+                            randomIndividual.SetStatus("At Day:"+day+" B\n");// Add to his History
                         }
             }catch(Exception e){
                 continue;
@@ -161,11 +175,13 @@ public class CovidSpread {
 
         for (Human F : family) {
             String Type = F.getCovidInfection_TypeType();
+
+            // conditions to make sure the Humen not A, B, or C
             if (!(Type.equals("A")))
                 if(!(Type.equals("B")))
                     if(!(Type.equals("C"))){
-                        F.setCovidInfection_Type(TypeC);
-                        F.SetStatus("At Day:"+day+" C\n");
+                        F.setCovidInfection_Type(TypeC);//convert it to (C)
+                        F.SetStatus("At Day:"+day+" C\n");// Add to his History
                 }
         }
 
@@ -177,16 +193,18 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfFriends; i++) {
 
+            // in case if the Index was negative.
             try{   FriendIndex = rad.nextInt(friends.size()-1);
 
                 Friend = friends.get(FriendIndex);
                 String Type = Friend.getCovidInfection_TypeType();
-                
+
+                // conditions to make sure the Humen not A, B, or C
                 if (!(Type.equals("A")))
                     if(!(Type.equals("B")))
                         if(!(Type.equals("C"))){
-                            Friend.setCovidInfection_Type(TypeC);
-                            Friend.SetStatus("At Day:"+day+" C\n");
+                            Friend.setCovidInfection_Type(TypeC);//convert it to (C)
+                            Friend.SetStatus("At Day:"+day+" C\n");// Add to his History
                 }
         }catch(Exception e){
             continue;
@@ -201,17 +219,19 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfCoWorkers; i++) {
 
+            // in case if the Index was negative.
             try{  
 
                 coWorkerIndex = rad.nextInt(coWorkers.size()-1);
                 coWorker = coWorkers.get(coWorkerIndex);
                 String Type = coWorker.getCovidInfection_TypeType();
                 
+                // conditions to make sure the Humen not A, B, or C
                 if (!(Type.equals("A")))
                     if(!(Type.equals("B")))
                         if(!(Type.equals("C"))){
-                            coWorker.setCovidInfection_Type(TypeC);
-                            coWorker.SetStatus("At Day:"+day+" C\n");
+                            coWorker.setCovidInfection_Type(TypeC);//convert it to (C)
+                            coWorker.SetStatus("At Day:"+day+" C\n");// Add to his History
                     }
             }catch(Exception e){
                 continue;
@@ -226,16 +246,19 @@ public class CovidSpread {
 
         for (int i = 0; i < numberOfRandomIndividuals; i++) {
 
+            // in case if the Index was negative.
           try{  
 
                 randomIndividualsIndex = rad.nextInt(randomIndividuals.size()-1);
                 randomIndividual = randomIndividuals.get(randomIndividualsIndex);
                 String Type = randomIndividual.getCovidInfection_TypeType();
+
+                // conditions to make sure the Humen not A, B, or C
                 if (!(Type.equals("A")))
                     if(!(Type.equals("B")))
                         if(!(Type.equals("C"))){
-                            randomIndividual.setCovidInfection_Type(TypeC);
-                            randomIndividual.SetStatus("At Day:"+day+" C\n");
+                            randomIndividual.setCovidInfection_Type(TypeC);//convert it to (C)
+                            randomIndividual.SetStatus("At Day:"+day+" C\n");// Add to his History
                     }
             }catch(Exception e){
                 continue;
@@ -252,23 +275,24 @@ public class CovidSpread {
         ArrayList <Human> Quarantine = city.getQuarantine_Citizen(); 
        
         if(B.getCovidInfection_TypeType().equals("B")){
-            double percentge=Math.random();
-            if(percentge>0.80 && !(Quarantine.contains(B)) ){   //20%
+            double percentge=Math.random(); // Create percentge
+
+            if(percentge>0.80 && !(Quarantine.contains(B)) ){   //20% he will convert to (A)
            
                 
 
-                B.setCovidInfection_Type(new A());
-                B.SetStatus("At Day:"+day+" A\n");
+                B.setCovidInfection_Type(new A());//convert it to (A)
+                B.SetStatus("At Day:"+day+" A\n");// Add to his History
                
 
                 
             }
-            else if(percentge>0.99 && Quarantine.contains(B)) {//10%
+            else if(percentge>0.99 && Quarantine.contains(B)) {//1% he will convert to (A)
 
 
 
-                B.setCovidInfection_Type(new A());
-                B.SetStatus("At Day:"+day+" A\n");
+                B.setCovidInfection_Type(new A());//convert it to (A)
+                B.SetStatus("At Day:"+day+" A\n");// Add to his History
 
 
 
@@ -277,8 +301,8 @@ public class CovidSpread {
             
             else{
 
-                B.setCovidInfection_Type(new Normal());
-                B.SetStatus("At Day:"+day+" Normal\n");
+                B.setCovidInfection_Type(new Normal());//convert it to (A)
+                B.SetStatus("At Day:"+day+" Normal\n");// Add to his History
 
             }
             PosB.remove(B);
@@ -291,30 +315,32 @@ public class CovidSpread {
 
         if(C.getCovidInfection_TypeType().equals("C")){
             double percentge=Math.random();
-            if(percentge>0.95   ){  //%5
-                C.setCovidInfection_Type(new A());
-                C.SetStatus("At Day:"+day+" A\n");
+            if (percentge>0.95 && !(Quarantine.contains(C))){  //%5 he will convert to (A)
+
+                C.setCovidInfection_Type(new A());//convert it to (A)
+                C.SetStatus("At Day:"+day+" A\n");// Add to his History
             }
-            else if(percentge>0.99 && Quarantine.contains(C)) {//3%
+            else if(percentge>0.99 && Quarantine.contains(C)) {//1% he will convert to (A)
 
 
 
-                C.setCovidInfection_Type(new A());
-                C.SetStatus("At Day:"+day+" A\n");
+                C.setCovidInfection_Type(new A());//convert it to (A)
+                C.SetStatus("At Day:"+day+" A\n");// Add to his History
 
 
 
             } 
             else{
-                C.setCovidInfection_Type(new Normal());
-                C.SetStatus("At Day:"+day+" Normal\n");
+                C.setCovidInfection_Type(new Normal());//convert it to (Normal)
+                C.SetStatus("At Day:"+day+" Normal\n");// Add to his History
             }
-            PosC.remove(C);
+            PosC.remove(C); // Remove the C Type from the PosC Array
         }
     
     }
-    ///////////////////////////////////////////////
 
+
+    // Counter for numbers of A,B,C, and Normal
     public void Count_Types(ArrayList<Human>  C){
         int numOf_A=0;
         int numOf_B=0;
