@@ -320,7 +320,12 @@ public class Main_Method {
             city.setDeadCitizen(Dead);
             city.get_Citizen().removeAll(Dead);
             city.getQuarantine_Citizen().removeAll(Dead);
-     
+
+            
+            
+            icu.removeType_Anything_From_ICU();
+            
+            
             
             CityDead.add(city.getDeadCitizen().size());
             

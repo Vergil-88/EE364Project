@@ -38,6 +38,8 @@ public class ChartController implements Initializable {
     private LineChart<String, Number> Chart1;
     @FXML
     private Label lbl;
+    @FXML
+    private Button Improvement;
 
     /**
      * Initializes the controller class.
@@ -98,6 +100,20 @@ public class ChartController implements Initializable {
         } catch (IOException io) {
             System.out.println("FXML Loading Error");
         }
+    }
+
+    @FXML
+    private void Improvement_act(ActionEvent event) {
+                                      try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("IMPRO_PER.fxml"));
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(loader.load());
+            stage.setScene(scene);
+        
+        } catch (IOException io) {
+            System.out.println("FXML Loading Error");
+        }
+        
     }
     
 }

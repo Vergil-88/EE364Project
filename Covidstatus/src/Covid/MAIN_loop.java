@@ -306,7 +306,7 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         int Porgress=0;
-        int days=50;// a year
+        int days=100;// a year
         int numOfTravle;
         for (int day = 1; day <=days  ; day++) {
 

@@ -50,15 +50,19 @@ public class ICU {
     public void SetBedWithCap(Human human,int day){
         if(Beds.size()<bedCap){
             if(!Beds.contains(human)){
+               
                 Beds.add(human);
                 human.SetStatus("At Day:"+day+" ICU\n");
                 waitingList.remove(human);
+                
             }
         }else{
             if(!waitingList.contains(human)){
                 if(!Beds.contains(human)){
+                   
                 waitingList.add(human);                
                 human.SetStatus("At Day: "+day+" Waiting List\n");
+                    
                 }
             }
         }
@@ -81,7 +85,7 @@ public class ICU {
 
             }
 
-        for(int j=0; i<waitingList.size();i++)
+        for(int j=0; i<waitingList.size()-1;i++)
             if(waitingList.size()<j){
             if(waitingList.contains(Beds.get(j))){
                 waitingList.remove(j);
@@ -93,7 +97,29 @@ public class ICU {
     }
 
 
+   public void removeType_Anything_From_ICU(){
+ArrayList <Human> Remove = new ArrayList <Human>();
 
+       for(Human H : Beds){
+            if(!(H.getCovidInfection_TypeType().equals("A"))||!(H.getAlive())){
+                Remove.add(H);
+           
+       }
+     
+       }
+       Beds.removeAll(Remove);
+       
+       
+//        for(int j=0; i<waitingList.size()-1;i++)
+//            if(waitingList.size()<j){
+//            if(waitingList.contains(Beds.get(j))){
+//                waitingList.remove(j);
+//            }
+//        }
+//
+//        }
+
+    }
 
 
 
