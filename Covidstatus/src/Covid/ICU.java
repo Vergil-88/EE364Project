@@ -45,7 +45,7 @@ public class ICU {
     public void SetBedWithCap(Human human,int day){
         if(Beds.size()<bedCap){
             if(!Beds.contains(human))
-                if(human.getVaccine()==false){
+                {
                
                 Beds.add(human); // add human to ICU
                 human.SetStatus("At Day:"+day+" ICU\n");// add to his History
@@ -59,7 +59,7 @@ public class ICU {
         else{
             if(!waitingList.contains(human)){
                 if(!Beds.contains(human))
-                    if(human.getVaccine()==false){
+                   {
                    
                 waitingList.add(human);    // add human to waitingList        
                 human.SetStatus("At Day: "+day+" Waiting List\n"); // add to his History

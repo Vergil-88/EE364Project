@@ -120,7 +120,6 @@ public class ministryofHealth {
                     B.SetStatus("At Day:"+day+" Dead\n");   // Add to his History
                     PostiveA.remove(B);                     // remove him from PostiveA Array
                     Dead.add(B);                            // Add him to Dead Array
-                    //Witing.remove(B);
 
                     }
 
@@ -131,7 +130,6 @@ public class ministryofHealth {
                     B.SetStatus("At Day:"+day+" Dead\n");   // Add to his History
                     PostiveA.remove(B);                     // remove him from PostiveA Array
                     Dead.add(B);                            // Add him to Dead Array
-                    //Witing.remove(B);
 
                     }
                 }

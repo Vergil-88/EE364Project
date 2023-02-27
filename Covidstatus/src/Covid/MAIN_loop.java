@@ -327,9 +327,9 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         int Porgress=0;
-        int days=30;
+        int days=100;
         int numOfTravle;
-
+        
         for (int day = 1; day <=days  ; day++) {
 
 
@@ -459,10 +459,6 @@ public static  ArrayList <String > ALLDEAD_2 = new ArrayList <String >();
                     }
                     break;
                     ////////////////////////////
-
-
-                        
-                    ///////////////
                 case 3: // next Day
                         ON_OFF=false;
                         PickedDay++;
