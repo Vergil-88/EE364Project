@@ -10,22 +10,17 @@ public class ICU {
     private ArrayList <Human> waitingList = new ArrayList<Human>();
     private int bedNum = Beds.size() ; // number of availsble beds
     private int inWitingList=0;
+    
     //methods
     
-
-
-
-
-
-
 
     public void RemoveBedof(Human person){
 
            for (Human bed : Beds) {
 
             if(person.equals(bed)){
-                bed = null;
-                bedNum++;
+                Beds.remove(person); // Remove from icu
+                bedNum++; // increas number of free beds
             }    
         }
     }
@@ -49,19 +44,25 @@ public class ICU {
 
     public void SetBedWithCap(Human human,int day){
         if(Beds.size()<bedCap){
-            if(!Beds.contains(human)){
+            if(!Beds.contains(human))
+                if(human.getVaccine()==false){
                
-                Beds.add(human);
-                human.SetStatus("At Day:"+day+" ICU\n");
-                waitingList.remove(human);
+                Beds.add(human); // add human to ICU
+                human.SetStatus("At Day:"+day+" ICU\n");// add to his History
+                waitingList.remove(human);// remove human from waitingList
+
+                }
                 
-            }
-        }else{
+            
+        }
+        // if there is no free bed start add to waitingList
+        else{
             if(!waitingList.contains(human)){
-                if(!Beds.contains(human)){
+                if(!Beds.contains(human))
+                    if(human.getVaccine()==false){
                    
-                waitingList.add(human);                
-                human.SetStatus("At Day: "+day+" Waiting List\n");
+                waitingList.add(human);    // add human to waitingList        
+                human.SetStatus("At Day: "+day+" Waiting List\n"); // add to his History
                     
                 }
             }
@@ -76,19 +77,20 @@ public class ICU {
         return bedCap;
     }
 
+    // remove the recoverd from icu and waitingList
     public void removeType_Normal_From_ICU(){
 
         for (int i=0; i < Beds.size() ;i++ ) {
             Human person = Beds.get(i);
             if(!(person.getCovidInfection_TypeType().equals("A"))||!(person.getAlive())){
-                Beds.remove(i);
+                Beds.remove(i); // remove from ICU
 
             }
 
         for(int j=0; i<waitingList.size()-1;i++)
             if(waitingList.size()<j){
             if(waitingList.contains(Beds.get(j))){
-                waitingList.remove(j);
+                waitingList.remove(j);// remove from waitingList
             }
         }
 
@@ -97,8 +99,9 @@ public class ICU {
     }
 
 
+    // to make sure all human in ICU are TypeA
    public void removeType_Anything_From_ICU(){
-ArrayList <Human> Remove = new ArrayList <Human>();
+    ArrayList <Human> Remove = new ArrayList <Human>();
 
        for(Human H : Beds){
             if(!(H.getCovidInfection_TypeType().equals("A"))||!(H.getAlive())){
@@ -110,14 +113,6 @@ ArrayList <Human> Remove = new ArrayList <Human>();
        Beds.removeAll(Remove);
        
        
-//        for(int j=0; i<waitingList.size()-1;i++)
-//            if(waitingList.size()<j){
-//            if(waitingList.contains(Beds.get(j))){
-//                waitingList.remove(j);
-//            }
-//        }
-//
-//        }
 
     }
 
